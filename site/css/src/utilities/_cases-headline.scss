@@ -1,0 +1,32 @@
+.ggv-csheadline {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 1;
+
+  .ffo-loaded & {
+    font-family:'Ciutadella W04 Lt';
+  }
+
+  @media screen and (min-width: 316px) {
+    font-size: 42px;
+  }
+
+  @media screen and (min-width: 460px) {
+    // font-size: 60px;
+    font-size: 65px;
+  }
+
+  &:first-child {
+    color: #BAC9D4;
+  }
+  > *:nth-child(2) {
+    font-family:'Ciutadella W04 Bold';
+  }
+  &:last-child {
+    color: #3B7092;
+  }
+  &._push {
+    text-align: right;
+  }
+}
