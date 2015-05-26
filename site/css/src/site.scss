@@ -55,6 +55,9 @@ body {
 html.case {
   background: url(../img/site/space.jpg) top left no-repeat;
   background-size: cover;
+  > * {
+    color: white;
+  }
 }
 
 
