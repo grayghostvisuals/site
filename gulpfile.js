@@ -161,21 +161,7 @@ gulp.task('cssmin', ['sass'], function() {
 
 gulp.task('usemin', ['assemble', 'cssmin'], function() {
   var stream = gulp.src([
-        paths.site + '/index.html'
-      ])
-      .pipe($.usemin({
-        css: [ $.rev() ],
-        html: [ $.minhtml({ empty: true }) ],
-        js: [ $.uglify(), $.rev() ]
-      }))
-      .pipe(gulp.dest(paths.dist));
-
-  return stream;
-});
-
-gulp.task('minguide', ['assemble', 'cssmin'], function() {
-  var stream = gulp.src([
-        paths.site + '/atomic-guide.html'
+        paths.site + '/*.html'
       ])
       .pipe($.usemin({
         css: [ $.rev() ],
@@ -238,5 +224,5 @@ gulp.task('watch', function() {
 // Tasks
 // ===================================================
 
-gulp.task('build', ['copy', 'usemin', 'minguide']);
+gulp.task('build', ['copy', 'usemin']);
 gulp.task('default', ['sass', 'assemble', 'serve', 'watch']);
