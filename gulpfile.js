@@ -181,7 +181,7 @@ gulp.task('minguide', ['assemble', 'cssmin'], function() {
 // ===================================================
 
 gulp.task('deploy', function() {
-  return gulp.src(paths.dist + '/**/*')
+  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
     .pipe($.ghPages({ branch: 'master' }));
 });
 
