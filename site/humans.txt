@@ -1,0 +1,47 @@
+  .oooooo.                            .o8           
+ d8P'  `Y8b                          "888           
+888          oooo d8b  .ooooo.   .oooo888   .oooo.o 
+888          `888""8P d88' `88b d88' `888  d88(  "8 
+888           888     888ooo888 888   888  `"Y88b.  
+`88b    ooo   888     888    .o 888   888  o.  )88b 
+ `Y8bood8P'  d888b    `Y8bod8P' `Y8bod88P" 8""888P' 
+
+-------------------------------------------------------------------------------                                                    
+
+Author: Gray Ghost Visuals
+Site: http://www.grayghostvisuals.com
+Twitter: https://twitter.com/gryghostvisuals
+Location: Buffalo, NY
+
+
+
+ooooooooooooo oooo                              oooo                 
+8'   888   `8 `888                              `888                 
+     888       888 .oo.    .oooo.   ooo. .oo.    888  oooo   .oooo.o 
+     888       888P"Y88b  `P  )88b  `888P"Y88b   888 .8P'   d88(  "8 
+     888       888   888   .oP"888   888   888   888888.    `"Y88b.  
+     888       888   888  d8(  888   888   888   888 `88b.  o.  )88b 
+    o888o     o888o o888o `Y888""8o o888o o888o o888o o888o 8""888P' 
+
+------------------------------------------------------------------------------- 
+
+Paul Irish, Chris Coyier, Dave Rupert, Fractal, Hampton Catlin,
+John Resig and many more!
+
+
+
+ooooooooooooo                     oooo        
+8'   888   `8                     `888        
+     888       .ooooo.   .ooooo.   888 .oo.   
+     888      d88' `88b d88' `"Y8  888P"Y88b  
+     888      888ooo888 888        888   888  
+     888      888    .o 888   .o8  888   888  
+    o888o     `Y8bod8P' `Y8bod8P' o888o o888o
+
+------------------------------------------------------------------------------- 
+
+Built on Web Standards
+Tooling: SublimeText, Fetch, iTerm, Illustrator, Photoshop, Gulp, Node, Git, Assemble, Bower, NPM
+Components: Prism, jQuery
+OpenSource HT: Atomic Guide, Normalize
+Platform: Node
