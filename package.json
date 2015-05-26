@@ -1,18 +1,17 @@
 {
-  "name": "AtomicGuide",
-  "description": "Creating atomic patterns using Assemble.io and Gulp",
+  "name": "GrayGhostVisuals",
+  "description": "A design and development company based in Buffalo, New York using the Web as our medium to create stunning, performant experiences that delight and engage",
   "version": "1.0.0",
   "authors": "@gryghostvisuals",
-  "contributors": [],
-  "homepage": "https://github.com/grayghostvisuals/atomic-guide",
-  "main": "https://github.com/grayghostvisuals/atomic-guide",
+  "homepage": "http://grayghostvisuals.com",
+  "main": "https://github.com/grayghostvisuals/grayghostvisuals",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/grayghostvisuals/atomic-guide/issues"
+    "url": "https://github.com/grayghostvisuals/grayghostvisuals/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/grayghostvisuals/atomic-guide"
+    "url": "https://github.com/grayghostvisuals/grayghostvisuals"
   },
   "scripts": {
     "start": "node node_modules/gulp/bin/gulp"
