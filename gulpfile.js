@@ -135,7 +135,7 @@ gulp.task('copy', function() {
       bower      = gulp.src([paths.site + '/bower_components/**/*'])
                        .pipe(gulp.dest(paths.dist + '/bower_components')),
 
-      root_files = gulp.src(['webhook.php', paths.site + '/favicon.ico'])
+      root_files = gulp.src(['*.php',paths.site + '/googlee3138e5e7e9413ae.html', paths.site + '/*.ico', paths.site + '/.htaccess', paths.site + '/*.txt'])
                        .pipe(gulp.dest(paths.dist));
 });
 
