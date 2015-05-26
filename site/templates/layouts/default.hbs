@@ -66,14 +66,11 @@ class="landing"
   <script src="js/src/ffobserver.js"></script>
   <!-- endbuild -->
 
-  <script class="atomic-js">var circle = document.querySelectorAll('div.socials__btn');
-
-for(var i = 0, l = circle.length; i < l; i++) {
-  circle[i].addEventListener('click', function() {
-    this.parentNode.classList.toggle('is-bloomed');
-  });
-}
-</script>
+  <script class="atomic-js">var circle = document.querySelector('.socials__btn'),
+    loader = document.querySelector('.socials');
+circle.addEventListener('click', function() {
+  loader.classList.toggle('is-bloomed');
+});</script>
 
   {{#is 'atomicguide' this.basename}}
   {{> jquery}}
