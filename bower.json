@@ -1,10 +1,10 @@
 {
-  "name": "atomic-guide",
+  "name": "GrayGhostVisuals",
   "version": "1.0.0",
   "authors": [
-    "grayghostvisuals <grayghost@grayghostvisuals.com>"
+    "Dennis Gaebel <grayghost@grayghostvisuals.com>"
   ],
-  "license": "MIT",
+  "license": "CC30",
   "private": false,
   "ignore": [
     "**/.*",
@@ -13,8 +13,8 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
-    "normalize-css": "~3.0.2",
+  "dependencies": {
+    "normalize-scss": "~3.0.3",
     "typeplate-starter-kit": "~2.1.0",
     "jquery": "~2.1.3"
   }
