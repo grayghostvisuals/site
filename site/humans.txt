@@ -25,8 +25,7 @@ ooooooooooooo oooo                              oooo
 
 ------------------------------------------------------------------------------- 
 
-Paul Irish, Chris Coyier, Dave Rupert, Fractal, Hampton Catlin,
-John Resig and many more!
+COMING SOON
 
 
 
@@ -40,8 +39,7 @@ ooooooooooooo                     oooo
 
 ------------------------------------------------------------------------------- 
 
-Built on Web Standards
 Tooling: SublimeText, Fetch, iTerm, Illustrator, Photoshop, Gulp, Node, Git, Assemble, Bower, NPM
-Components: Prism, jQuery
+Addons: Prism, jQuery
 OpenSource HT: Atomic Guide, Normalize
 Platform: Node
