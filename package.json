@@ -40,6 +40,7 @@
     "gulp-gh-pages": "^0.5.1",
     "gulp-livereload": "3.7.0",
     "gulp-svgmin": "^1.1.1",
-    "gulp-svgstore": "^5.0.0"
+    "gulp-svgstore": "^5.0.0",
+    "merge-stream": "^0.1.7"
   }
 }

@@ -12,7 +12,8 @@ var gulp            = require('gulp'),
                         }
                       }),
     assemble        = require('assemble'),
-    del             = require('del');
+    del             = require('del'),
+    merge           = require('merge-stream');
 
 $.exec   = require('child_process').exec;
 $.fs     = require('fs');
@@ -126,17 +127,28 @@ gulp.task('svgstore', function () {
 // ===================================================
 
 gulp.task('copy', function() {
-  var jslibs     = gulp.src([paths.sitejs + '/lib/**/*.js'])
-                      .pipe(gulp.dest(paths.dist + '/js/lib')),
+  return merge(
+    // jslibs
+    gulp.src([paths.sitejs + '/lib/**/*.js'])
+      .pipe(gulp.dest(paths.dist + '/js/lib')),
 
-      images     = gulp.src([paths.site + '/img/**/*'])
-                       .pipe(gulp.dest(paths.dist + '/img')),
+    // images
+    gulp.src([paths.site + '/img/**/*'])
+      .pipe(gulp.dest(paths.dist + '/img')),
 
-      bower      = gulp.src([paths.site + '/bower_components/**/*'])
-                       .pipe(gulp.dest(paths.dist + '/bower_components')),
+    // bower
+    gulp.src([paths.site + '/bower_components/**/*'])
+      .pipe(gulp.dest(paths.dist + '/bower_components')),
 
-      root_files = gulp.src(['*.php',paths.site + '/googlee3138e5e7e9413ae.html', paths.site + '/*.ico', paths.site + '/.htaccess', paths.site + '/*.txt'])
-                       .pipe(gulp.dest(paths.dist));
+    // root files
+    gulp.src([
+        '*.php',
+        paths.site + '/googlee3138e5e7e9413ae.html',
+        paths.site + '/*.ico',
+        paths.site + '/.htaccess',
+        paths.site + '/*.txt'
+      ]).pipe(gulp.dest(paths.dist))
+  );
 });
 
 gulp.task('cssmin', ['sass'], function() {
