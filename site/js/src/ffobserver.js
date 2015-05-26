@@ -4,10 +4,10 @@
     return;
   }
 
-  var fontA = new w.FontFaceObserver('AvenirLTW01-45BookObliq'),
-      fontB = new w.FontFaceObserver('Ciutadella W04 SmBold'),
-      fontC = new w.FontFaceObserver('Avenir LT W01_45 Book'),
-      fontD = new w.FontFaceObserver('Ciutadella W04 Lt');
+  var fontA = new w.FontFaceObserver('Avenir LT W01_45 Book'),
+      fontB = new w.FontFaceObserver('Ciutadella W04 Lt'),
+      fontC = new w.FontFaceObserver('Ciutadella W04 SmBold'),
+      fontD = new w.FontFaceObserver('Ciutadella W04 Bold');
 
   w.Promise
     .all([fontA.check(), fontB.check(), fontC.check(), fontD.check()])

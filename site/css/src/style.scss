@@ -3,10 +3,17 @@
 
 @import "vars/styling";
 
+
 // Mixins
 // ===============================================
 
 @import "mixins/media-query";
+
+
+// Bower Plugins
+// ===============================================
+
+@import "../../bower_components/normalize-scss/normalize";
 
 
 // Globals
@@ -28,10 +35,6 @@
 // ===============================================
 
 @import "utilities/cases-headline";
-
-
-// Atoms
-// ===============================================
 
 
 // Molecules
@@ -64,11 +67,3 @@ footer[role="contentinfo"] {
     font-family: 'Ciutadella W04 SmBold';
   }
 }
-
-
-// Organisms
-// ===============================================
-// Views
-// ===============================================
-// Helpers
-// ===============================================
