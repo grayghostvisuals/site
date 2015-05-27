@@ -88,12 +88,12 @@ gulp.task('sass', function() {
 
 assemble.layouts(paths.templates + '/layouts/*.hbs');
 assemble.partials(paths.templates + '/includes/**/*.hbs');
-assemble.pages(paths.templates + '/pages/*.hbs');
+assemble.pages(paths.templates + '/pages/**/*.hbs');
 assemble.option('layout', 'default');
 assemble.data(paths.data + '/**/*.{json,yaml}');
 
 gulp.task('assemble', function() {
-  var stream = assemble.src(paths.templates + '/pages/*.hbs')
+  var stream = assemble.src(paths.templates + '/pages/**/*.hbs')
     .pipe($.extname())
     .pipe(assemble.dest(paths.site))
     .pipe($.connect.reload());

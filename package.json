@@ -2,7 +2,7 @@
   "name": "GrayGhostVisuals",
   "description": "A design and development company based in Buffalo, New York using the Web as our medium to create stunning, performant experiences that delight and engage",
   "version": "1.0.0",
-  "authors": "@gryghostvisuals",
+  "author": "Dennis Gaebel",
   "homepage": "http://grayghostvisuals.com",
   "main": "https://github.com/grayghostvisuals/grayghostvisuals",
   "license": "MIT",

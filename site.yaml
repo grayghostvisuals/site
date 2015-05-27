@@ -2,6 +2,10 @@
 # CONFIG
 # =============================================
 
+root:             <%= site.root %>
+dest:             <%= site.root %>
+data:             data
+
 # Templates
 templates:         site/templates
 layouts:           <%= site.templates %>/layouts
@@ -11,9 +15,10 @@ includes:          <%= site.templates %>/{includes, pages}
 
 
 # =============================================
-# METADATA
+# META
 # =============================================
 
 # Site
 title:              Gray Ghost Visuals
-url:                http://grayghostvisuals.com
+author:             <%= pkg.author %>
+url:                <%= pkg.homepage %>
