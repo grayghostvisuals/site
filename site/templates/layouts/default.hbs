@@ -59,7 +59,9 @@ class="landing"
     {% body %}
   </main>
 
+  {{#any 'landing, atomicguide' this.basename}}
   {{> footer}}
+  {{/any}}
   
   <!-- build:js js/src/site.min.js -->
   <script src="js/lib/ffobserver.js"></script>

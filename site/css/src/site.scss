@@ -60,6 +60,7 @@ body {
 
 html.case {
   background: url(../img/site/space.jpg) top left no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   > * {
     color: white;
@@ -82,7 +83,7 @@ html.case {
 
 @import "molecules/socials";
 
-.ggv-csheadline {
+.ggv-headline._hero {
   text-align: center;
 
   &._push {

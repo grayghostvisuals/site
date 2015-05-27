@@ -1,7 +1,7 @@
 // http://prismjs.com/download.html?themes=prism-twilight&languages=markup+css+clike+javascript+scss+bash+ruby&plugins=show-language
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #8B7F9E;
+  color: #CFD7E0;
   direction: ltr;
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   text-align: left;
@@ -96,7 +96,7 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 }
 
 .token.punctuation {
-  color: #839496;
+  color: #ABAACB;
 }
 
 .token.attr-value > .token.punctuation:first-child {
