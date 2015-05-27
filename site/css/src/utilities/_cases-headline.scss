@@ -8,13 +8,13 @@
     font-family:'Ciutadella W04 Lt';
   }
 
-  &._default > *:nth-child(2) {
-    font-family:'Ciutadella W04 Bold';
+  &._default {
+    > *:nth-child(2) {
+      font-family:'Ciutadella W04 Bold';
+    }
   }
 
   &._casestudy {
-    font-size: 60px;
-    color: white;
     > *:nth-child(1) {
       font-family:'Ciutadella W04 Bold';
     }
