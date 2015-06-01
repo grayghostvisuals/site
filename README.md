@@ -1,6 +1,6 @@
 ![Gray Ghost Visuals](https://dl.dropboxusercontent.com/u/41114960/github/ggv/site.png)
 
-## Project Specs
+## Project Tooling and Languages
 
  - Templates : Assemble
  - Styles : Sass
