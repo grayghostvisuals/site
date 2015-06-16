@@ -63,6 +63,33 @@ html.case {
 }
 
 
+// Testimonials
+// ===============================================
+
+#testimonials {
+  position: relative;
+  min-height: 100px;
+
+  figure {
+    margin: 0;
+    padding: 0 20px;
+  }
+
+  blockquote {
+    padding: 0;
+    margin: 0;
+    p { margin-top: 0; }
+  }
+}
+
+.client-quote {
+  position:absolute;
+  top: 0;
+  left: 0;
+  display:none;
+}
+
+
 // Organisms
 // ===============================================
 // Landing

@@ -86,14 +86,26 @@ gulp.task('sass', function() {
 // Templates
 // ===================================================
 
-assemble.layouts(paths.templates + '/layouts/*.hbs');
-assemble.partials(paths.templates + '/includes/**/*.hbs');
-assemble.pages(paths.templates + '/pages/**/*.hbs');
+// https://github.com/assemble/assemble/issues/715
+
+// def: Middleware functions are run at certain points during the build, and only on templates that match the middleware's regex pattern.
+
+// 1. In assemble 0.6 it would require setting up a middleware to collect the categories from the pages.
+// 2. Then add the category information to each page’s data or use a custom helper to get the category information.
+// 3. The documentation isn’t done for this yet, but there’s some on going discussion in a couple of issues (around collections)
+
+// assemble.onLoad(/\.hbs/, function() {
+//   console.log('onLoad middleware method');
+// });
+
+assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
+assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
+assemble.pages(paths.templates + '/pages/**/*.{md,hbs}');
 assemble.option('layout', 'default');
 assemble.data(paths.data + '/**/*.{json,yaml}');
 
 gulp.task('assemble', function() {
-  var stream = assemble.src(paths.templates + '/pages/**/*.hbs')
+  var stream = assemble.src(paths.templates + '/pages/**/*.{md,hbs}')
     .pipe($.extname())
     .pipe(assemble.dest(paths.site))
     .pipe($.connect.reload());
