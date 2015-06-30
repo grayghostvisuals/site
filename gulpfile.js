@@ -94,17 +94,78 @@ gulp.task('sass', function() {
 // 2. Then add the category information to each page’s data or use a custom helper to get the category information.
 // 3. The documentation isn’t done for this yet, but there’s some on going discussion in a couple of issues (around collections)
 
-// assemble.onLoad(/\.hbs/, function() {
-//   console.log('onLoad middleware method');
-// });
+// create a `categories` object to keep categories on (e.g. 'clients')
+// categories: {
+//  clients: {
+//    "polyon": { ... }
+//  }
+// };
+assemble.set('categories', {});
 
-assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
-assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
-assemble.pages(paths.templates + '/pages/**/*.{md,hbs}');
-assemble.option('layout', 'default');
-assemble.data(paths.data + '/**/*.{json,yaml}');
+/**
+ * Populate categories with pages that specify the categories they belong to.
+ */
+
+assemble.onLoad(/\.hbs/, function(file, next) {
+  // if the file doesn't have a data object or
+  // doesn't contain `categories` in it's front-matter, move on
+  if (!file.data || !file.data.categories) {
+    return next();
+  }
+
+  // use the default `renameKey` function to store
+  // pages on the `categories` object
+  var renameKey = assemble.option('renameKey');
+
+  // get the categories object
+  var categories = assemble.get('categories');
+
+  // figure out which categories this file belongs to
+  var cats = file.data.categories;
+  cats = Array.isArray(cats) ? cats : [cats];
+
+  // add this file's data (file object) to each of it's catogories
+  cats.forEach(function (cat) {
+    categories[cat] = categories[cat] || [];
+    categories[cat][renameKey(file.path)] = file;
+  });
+
+  // done
+  next();
+});
+
+/**
+ * Handlebars helper to iterator over an object of pages for a specific category
+ *
+ * ```
+ * {{#category "clients"}}
+ *   <li>{{data.summary}}</li>
+ * {{/category}}
+ * ```
+ */
+
+assemble.helper('category', function (category, options) {
+  var pages = this.app.get('categories.' + category);
+  if (!pages) {
+    return '';
+  }
+  return Object.keys(pages).map(function (page) {
+    // this renders the block between `{{#category}}` and `{{category}}` passing the
+    // entire page object as the context.
+    // If you only want to use the page's front-matter, then change this to something like
+    // return options.fn(pages[page].data);
+    return options.fn(pages[page]);
+  }).join('\n');
+});
 
 gulp.task('assemble', function() {
+
+  // putting assemble setup inside the task to allow reloading when files change
+  assemble.option('layout', 'default');
+  assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
+  assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
+  assemble.data(paths.data + '/**/*.{json,yaml}');
+
   var stream = assemble.src(paths.templates + '/pages/**/*.{md,hbs}')
     .pipe($.extname())
     .pipe(assemble.dest(paths.site))
