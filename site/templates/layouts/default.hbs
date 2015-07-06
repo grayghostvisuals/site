@@ -1,7 +1,7 @@
 <!doctype html>
 <html
 {{#is 'casestudy' this.basename}}
-class="case"
+class="case {{page.title}}"
 {{/is}}
 {{#is 'landing' this.basename}}
 class="landing"
@@ -96,8 +96,8 @@ for(var i = 0, l = circle.length; i < l; i++) {
   {{/is}}
 
   <script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
-(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));</script>
   </body>
 </html>

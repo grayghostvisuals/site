@@ -33,6 +33,10 @@ html {
   line-height: 1.5;
 }
 
+
+// Polyon Case
+// ===============================================
+
 html.case {
   background: url(../img/site/space.jpg) top left no-repeat;
   background-attachment: fixed;
@@ -40,6 +44,40 @@ html.case {
   > * {
     color: white;
   }
+}
+
+.case main {
+  max-width: 571px;
+  margin: 0 auto;
+  padding-left: 52px;
+  padding-right: 52px;
+}
+
+.case .ggv-headline {
+  margin: 0;
+  font-size: 68px;
+  font-weight: 200;
+  line-height: 1;
+  text-align: center;
+  color: white;
+}
+
+.case .figure-site {
+  margin-left: -120px;
+  margin-right: -120px;
+}
+
+.figure-txt {
+  float: left;
+  margin-left: -15%;
+}
+
+.polyonlion {
+  transform: translateX(100%);
+}
+
+.text {
+  margin-right: -20%;
 }
 
 

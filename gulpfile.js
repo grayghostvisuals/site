@@ -134,6 +134,7 @@ assemble.onLoad(/\.hbs/, function(file, next) {
   next();
 });
 
+
 /**
  * Handlebars helper to iterator over an object of pages for a specific category
  *
