@@ -1,0 +1,14 @@
+<div id="clients">
+  {{#category "client"}}
+  <div>
+    <figure>
+    {{#markdown}}{{data.description}}{{/markdown}}
+      <figcaption>
+        <cite>
+          <small>{{data.title}}</small>
+        </cite>
+      </figcaption>
+    </figure>
+  </div>
+  {{/category}}
+</div>
