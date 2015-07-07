@@ -1,11 +1,11 @@
-<div id="clients">
+<div class="ggv-clients">
   {{#category "client"}}
   <div>
     <figure>
-    {{#markdown}}{{data.description}}{{/markdown}}
+      {{#markdown}}{{data.summary}}{{/markdown}}
       <figcaption>
         <cite>
-          <small>{{data.title}}</small>
+          <a href="/{{ data.categories }}/{{ data.title }}.html"><small>{{data.title}}</small></a>
         </cite>
       </figcaption>
     </figure>

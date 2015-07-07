@@ -84,17 +84,18 @@ gulp.task('sass', function() {
 
 // ===================================================
 // Templates
+// https://github.com/assemble/assemble/issues/715
+// https://github.com/grayghostvisuals/grayghostvisuals/pull/3
 // ===================================================
 
-// https://github.com/assemble/assemble/issues/715
-
-// def: Middleware functions are run at certain points during the build, and only on templates that match the middleware's regex pattern.
+// def: Middleware functions are run at certain points during the build, 
+// and only on templates that match the middleware's regex pattern.
 
 // 1. In assemble 0.6 it would require setting up a middleware to collect the categories from the pages.
 // 2. Then add the category information to each page’s data or use a custom helper to get the category information.
 // 3. The documentation isn’t done for this yet, but there’s some on going discussion in a couple of issues (around collections)
 
-// create a `categories` object to keep categories on (e.g. 'clients')
+// create a `categories` object to keep categories in (e.g. 'clients')
 // categories: {
 //  clients: {
 //    "polyon": { ... }
@@ -103,7 +104,14 @@ gulp.task('sass', function() {
 assemble.set('categories', {});
 
 /**
- * Populate categories with pages that specify the categories they belong to.
+ Populate categories with pages that specify the categories they belong to.
+ When the onLoad middleware runs for a single file, it looks at the file's front-matter (file.data) to see if it contains a categories property. This property can be a string or an array of strings. If it exists, then the middleware updates the categories object for each category in the array. In the case of polyon.hbs, there is only 1 category called client, so the categories object becomes:
+
+categories: {
+ clients: {
+   "polyon": { ... }
+ }
+};
  */
 
 assemble.onLoad(/\.hbs/, function(file, next) {
@@ -136,7 +144,7 @@ assemble.onLoad(/\.hbs/, function(file, next) {
 
 
 /**
- * Handlebars helper to iterator over an object of pages for a specific category
+ * Handlebars helper to iterate over an object of pages for a specific category
  *
  * ```
  * {{#category "clients"}}
@@ -155,7 +163,7 @@ assemble.helper('category', function (category, options) {
     // entire page object as the context.
     // If you only want to use the page's front-matter, then change this to something like
     // return options.fn(pages[page].data);
-    return options.fn(pages[page]);
+    return options.fn(pages[page]).toLowerCase();
   }).join('\n');
 });
 
@@ -255,6 +263,11 @@ gulp.task('usemin', ['assemble', 'cssmin'], function() {
 gulp.task('deploy', function() {
   return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
     .pipe($.ghPages({ branch: 'master' }));
+});
+
+gulp.task('stage', function() {
+  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
+    .pipe($.ghPages({ branch: 'staging' }));
 });
 
 

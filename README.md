@@ -56,3 +56,12 @@ That would result in the following generated output.
 ```html
 <script src="script.js"></script>
 ```
+
+## Assemble Documentation
+
+This is a custom build of the Assemble project using some fancy whiz bangs. There are a couple ways to pull in categories on a template.
+
+**Option #1**
+```html
+{{> clients}}
+```

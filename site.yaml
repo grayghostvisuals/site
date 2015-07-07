@@ -2,7 +2,7 @@
 # CONFIG
 # =============================================
 
-root:             <%= site.root %>
+root:             .
 dest:             <%= site.root %>
 data:             data
 
