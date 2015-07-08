@@ -208,7 +208,34 @@ gulp.task('svgstore', function () {
 // Build
 // ===================================================
 
-gulp.task('copy', ['assemble'], function() {
+gulp.task('cssmin', ['sass'], function() {
+  var stream = gulp.src(paths.sitecss + '/*.css')
+    .pipe($.mincss({ keepBreaks:true }))
+    .pipe(gulp.dest(paths.sitecss));
+
+  return stream;
+});
+
+gulp.task('usemin', ['assemble', 'cssmin'], function() {
+  var stream = gulp.src([
+        paths.site + '/**/*.html'
+      ])
+      .pipe($.usemin({
+        css: [ $.rev() ],
+        html: [ $.minhtml({ empty: true }) ],
+        js: [ $.uglify(), $.rev() ]
+      },
+      {
+        assetsDir: paths.sitecss,
+        outputRelativePath: paths.sitecss
+      }
+      ))
+      .pipe(gulp.dest(paths.dist));
+
+  return stream;
+});
+
+gulp.task('copy', ['usemin'], function() {
   return merge(
     // jslibs
     gulp.src([paths.sitejs + '/lib/**/*.js'])
@@ -221,6 +248,7 @@ gulp.task('copy', ['assemble'], function() {
     // dirs
     gulp.src([paths.site + '/bower_components/**/*'])
         .pipe(gulp.dest(paths.dist + '/bower_components')),
+
     gulp.src([paths.site + '/client/**/*'])
         .pipe(gulp.dest(paths.dist + '/client')),
 
@@ -233,29 +261,6 @@ gulp.task('copy', ['assemble'], function() {
         paths.site + '/*.txt'
       ]).pipe(gulp.dest(paths.dist))
   );
-});
-
-gulp.task('cssmin', ['sass'], function() {
-  var stream = gulp.src(paths.sitecss + '/*.css')
-    .pipe($.mincss({ keepBreaks:true }))
-    .pipe(gulp.dest(paths.sitecss));
-
-  return stream;
-});
-
-
-gulp.task('usemin', ['assemble', 'cssmin'], function() {
-  var stream = gulp.src([
-        paths.site + '/*.html'
-      ])
-      .pipe($.usemin({
-        css: [ $.rev() ],
-        html: [ $.minhtml({ empty: true }) ],
-        js: [ $.uglify(), $.rev() ]
-      }))
-      .pipe(gulp.dest(paths.dist));
-
-  return stream;
 });
 
 
@@ -315,5 +320,5 @@ gulp.task('watch', function() {
 // Tasks
 // ===================================================
 
-gulp.task('build', ['copy', 'usemin']);
-gulp.task('default', ['sass', 'assemble', 'serve', 'watch']);
+gulp.task('build', [ 'copy','usemin' ]);
+gulp.task('default', [ 'sass','assemble','serve','watch' ]);
