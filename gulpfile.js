@@ -8,7 +8,8 @@ var gulp            = require('gulp'),
                         rename: {
                           'gulp-minify-css'  : 'mincss',
                           'gulp-minify-html' : 'minhtml',
-                          'gulp-gh-pages'    : 'ghPages'
+                          'gulp-gh-pages'    : 'ghPages',
+                          'gulp-foreach'     : 'foreach'
                         }
                       }),
     assemble        = require('assemble'),
@@ -50,7 +51,7 @@ var paths = {
 
 gulp.task('serve', ['assemble'], function() {
   $.connect.server({
-    root: [paths.site],
+    root: [paths.dist],
     port: 5000,
     livereload: true,
     middleware: function(connect) {
@@ -216,23 +217,18 @@ gulp.task('cssmin', ['sass'], function() {
   return stream;
 });
 
-gulp.task('usemin', ['assemble', 'cssmin'], function() {
-  var stream = gulp.src([
-        paths.site + '/**/*.html'
-      ])
-      .pipe($.usemin({
-        css: [ $.rev() ],
-        html: [ $.minhtml({ empty: true }) ],
-        js: [ $.uglify(), $.rev() ]
-      },
-      {
-        assetsDir: paths.sitecss,
-        outputRelativePath: paths.sitecss
-      }
-      ))
-      .pipe(gulp.dest(paths.dist));
+gulp.task('usemin', ['assemble', 'cssmin'], function () {
+  return gulp.src(paths.site + '/*.html')
 
-  return stream;
+    .pipe($.foreach(function (stream, file) {
+      return stream
+        .pipe($.usemin({
+          css: [ $.rev() ],
+          html: [ $.minhtml({ empty: true }) ],
+          js: [ $.uglify(), $.rev() ]
+        }))
+        .pipe(gulp.dest(paths.dist));
+    }));
 });
 
 gulp.task('copy', ['usemin'], function() {
