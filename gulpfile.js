@@ -51,7 +51,7 @@ var paths = {
 
 gulp.task('serve', ['assemble'], function() {
   $.connect.server({
-    root: [paths.dist],
+    root: [paths.site],
     port: 5000,
     livereload: true,
     middleware: function(connect) {
