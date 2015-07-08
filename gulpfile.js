@@ -223,6 +223,7 @@ gulp.task('usemin', ['assemble', 'cssmin'], function () {
     .pipe($.foreach(function (stream, file) {
       return stream
         .pipe($.usemin({
+          assetsDir: paths.site,
           css: [ $.rev() ],
           html: [ $.minhtml({ empty: true }) ],
           js: [ $.uglify(), $.rev() ]
@@ -257,6 +258,29 @@ gulp.task('copy', ['usemin'], function() {
         paths.site + '/*.txt'
       ]).pipe(gulp.dest(paths.dist))
   );
+});
+
+
+// ===================================================
+// File Manipulation
+// ===================================================
+
+// read the file(s)
+// find the build blocks
+// read the build blocks
+// cache the read info from build blocks
+// remove the build blocks
+// replace the removed build blocks with appropriate tag
+// replace src w/appropriate minified script refs and correlating revved version.
+// pass out because this just got too fucking complicated.
+
+gulp.task('fread', function() {
+  $.fs.readFile(paths.dist + '/client/polyon.html', 'utf8', function(err, data) {
+    if(err) {
+      return console.log(err);
+    }
+    console.log(data);
+  });
 });
 
 
@@ -302,7 +326,7 @@ gulp.task('watch', function() {
 
   gulp.watch([
     paths.templates + '/includes/**/*.hbs',
-    paths.templates + '/pages/*.hbs',
+    paths.templates + '/pages/**/*.hbs',
     paths.templates + '/layouts/*.hbs'
   ], ['assemble']);
 
