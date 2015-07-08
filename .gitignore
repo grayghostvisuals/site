@@ -1,10 +1,15 @@
+# temp dirs
 .sass-cache
-node_modules/
+# dotfiles
 *.log
 .publish/
 .DS_Store
+#dirs
+node_modules/
 site/bower_components
-site/css/**/*.css
-site/*.html
 lib/*
 dist/*
+site/client
+site/css/**/*.css
+#files
+site/*.html

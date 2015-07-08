@@ -208,19 +208,21 @@ gulp.task('svgstore', function () {
 // Build
 // ===================================================
 
-gulp.task('copy', function() {
+gulp.task('copy', ['assemble'], function() {
   return merge(
     // jslibs
     gulp.src([paths.sitejs + '/lib/**/*.js'])
-      .pipe(gulp.dest(paths.dist + '/js/lib')),
+        .pipe(gulp.dest(paths.dist + '/js/lib')),
 
     // images
     gulp.src([paths.site + '/img/**/*'])
-      .pipe(gulp.dest(paths.dist + '/img')),
+        .pipe(gulp.dest(paths.dist + '/img')),
 
-    // bower
+    // dirs
     gulp.src([paths.site + '/bower_components/**/*'])
-      .pipe(gulp.dest(paths.dist + '/bower_components')),
+        .pipe(gulp.dest(paths.dist + '/bower_components')),
+    gulp.src([paths.site + '/client/**/*'])
+        .pipe(gulp.dest(paths.dist + '/client')),
 
     // root files
     gulp.src([
@@ -241,6 +243,7 @@ gulp.task('cssmin', ['sass'], function() {
   return stream;
 });
 
+
 gulp.task('usemin', ['assemble', 'cssmin'], function() {
   var stream = gulp.src([
         paths.site + '/*.html'
@@ -260,14 +263,14 @@ gulp.task('usemin', ['assemble', 'cssmin'], function() {
 // Release
 // ===================================================
 
-gulp.task('deploy', function() {
-  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
-    .pipe($.ghPages({ branch: 'master' }));
-});
-
 gulp.task('stage', function() {
   return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
     .pipe($.ghPages({ branch: 'staging' }));
+});
+
+gulp.task('deploy', function() {
+  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
+    .pipe($.ghPages({ branch: 'master' }));
 });
 
 
@@ -279,6 +282,7 @@ gulp.task('clean', function(cb) {
   del([
     'dist',
     paths.site + '/css/*.css',
+    paths.site + '/client',
     paths.site + '/*.html',
     paths.site + '/js/build'
   ], cb);
