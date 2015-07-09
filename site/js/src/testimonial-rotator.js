@@ -1,7 +1,3 @@
-$(document).ready(function() {
-  setupRotator();
-}); 
-
 function setupRotator() {
   if($('.client-quote').length > 1) {
     $('.client-quote:first').addClass('current').fadeIn(1000);
@@ -11,7 +7,7 @@ function setupRotator() {
 
 function textRotate() {
   var current = $('#testimonials > .current');
-  if(current.next().length == 0) {
+  if(current.next().length === 0) {
     current
       .removeClass('current')
       .fadeOut(1000);
@@ -30,3 +26,5 @@ function textRotate() {
       .fadeIn(1000);
   }
 }
+
+setupRotator();
