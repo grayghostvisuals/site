@@ -38,10 +38,8 @@ $ gulp clean
 Environmental controls are governed by an option found within ``gulpfile.js``.
 
 ```javascript
-assemble.option('production', 'false');
+assemble.option('production', <true | false>);
 ```
-
-From any template use the ``{{#if}}`` condition to control output for post compile. For example if we set the argument to false and used the following if condition to control what script block is served…
 
 ```html
 {{#if production}}
@@ -51,10 +49,24 @@ From any template use the ``{{#if}}`` condition to control output for post compi
 {{/if}}
 ```
 
-That would result in the following generated output.
+From any template use the ``{{#if}}`` condition to control output for post compile.There's also an object in Node for [process.env](https://nodejs.org/api/process.html#process_process_env).
+
+```javascript
+assemble.option('env', process.env);
+```
+
+You can set it at the command line by doing something like…
+
+```shell
+BUILD_ENV=production gulp`
+```
+
+and then testing using the ``{{#is}}`` helper in Assemble from within your templates
 
 ```html
-<script src="script.js"></script>
+{{#is env.BUILD_ENV 'production'}}
+<p>Production Env</p>
+{{/is}}
 ```
 
 ## Assemble Documentation

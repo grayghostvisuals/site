@@ -170,7 +170,8 @@ assemble.helper('category', function (category, options) {
 
 gulp.task('assemble', function() {
 
-  // putting assemble setup inside the task to allow reloading when files change
+  // Placing assemble setups inside the task allows live reloading for files changes
+  assemble.option('production', false);
   assemble.option('layout', 'default');
   assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
   assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
@@ -206,7 +207,7 @@ gulp.task('svgstore', function () {
 
 
 // ===================================================
-// Build
+// Minification
 // ===================================================
 
 gulp.task('cssmin', ['sass'], function() {
@@ -217,9 +218,13 @@ gulp.task('cssmin', ['sass'], function() {
   return stream;
 });
 
+
+// ===================================================
+// Build
+// ===================================================
+
 gulp.task('usemin', ['assemble', 'cssmin'], function () {
   return gulp.src(paths.site + '/*.html')
-
     .pipe($.foreach(function (stream, file) {
       return stream
         .pipe($.usemin({
@@ -231,6 +236,11 @@ gulp.task('usemin', ['assemble', 'cssmin'], function () {
         .pipe(gulp.dest(paths.dist));
     }));
 });
+
+
+// ===================================================
+// Duplicate
+// ===================================================
 
 gulp.task('copy', ['usemin'], function() {
   return merge(
@@ -274,14 +284,14 @@ gulp.task('copy', ['usemin'], function() {
 // replace src w/appropriate minified script refs and correlating revved version.
 // pass out because this just got too fucking complicated.
 
-gulp.task('fread', function() {
-  $.fs.readFile(paths.dist + '/client/polyon.html', 'utf8', function(err, data) {
-    if(err) {
-      return console.log(err);
-    }
-    console.log(data);
-  });
-});
+// gulp.task('fread', function() {
+//   $.fs.readFile(paths.dist + '/client/polyon.html', 'utf8', function(err, data) {
+//     if(err) {
+//       return console.log(err);
+//     }
+//     console.log(data);
+//   });
+// });
 
 
 // ===================================================
