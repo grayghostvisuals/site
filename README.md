@@ -58,7 +58,7 @@ assemble.option('env', process.env);
 You can set it at the command line by doing something like…
 
 ```shell
-BUILD_ENV=production gulp`
+BUILD_ENV=production
 ```
 
 and then testing using the ``{{#is}}`` helper in Assemble from within your templates
