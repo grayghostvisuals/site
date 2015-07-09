@@ -1,29 +1,22 @@
+var quotes = document.querySelectorAll('.client-quote');
+
 function setupRotator() {
-  if($('.client-quote').length > 1) {
-    $('.client-quote:first').addClass('current').fadeIn(1000);
-    setInterval('textRotate()', 9000);
+  if(quotes.length > 1) {
+    quotes[0].classList.add('current');
+    setInterval('cycleQuotes()', 9000);
   }
 }
 
-function textRotate() {
-  var current = $('#testimonials > .current');
-  if(current.next().length === 0) {
-    current
-      .removeClass('current')
-      .fadeOut(1000);
+function cycleQuotes() {
+  var current = document.querySelectorAll('.current'),
+      next    = current[0].nextElementSibling;
 
-    $('.client-quote:first')
-      .addClass('current')
-      .fadeIn(1000);
+  if(!next) {
+    current[0].classList.remove('current');
+    quotes[0].classList.add('current');
   } else {
-    current
-      .removeClass('current')
-      .fadeOut(1000);
-
-    current
-      .next()
-      .addClass('current')
-      .fadeIn(1000);
+    current[0].classList.remove('current');
+    next.classList.add('current');
   }
 }
 

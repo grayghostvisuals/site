@@ -124,7 +124,12 @@ html.case {
   position:absolute;
   top: 0;
   left: 0;
-  display:none;
+  transition: .3s all ease-in-out;
+  opacity: 0;
+
+  &.current {
+    opacity: 1;
+  }
 }
 
 
