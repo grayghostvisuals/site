@@ -24,34 +24,48 @@ $.fs     = require('fs');
 // Config
 // ===================================================
 
-var paths_dir = {
+var env_flag = false;
+
+var asset_dir = {
   site: 'site',
   templates : 'templates',
   data: 'data',
   dist: 'dist',
-  sitejs: 'js',
-  sitecss: 'css',
-  sitesass: 'src'
+  js: 'js',
+  css: 'css',
+  sass: 'src'
 };
 
-var paths = {
-  site: paths_dir.site,
-  data: paths_dir.data,
-  templates: paths_dir.site + '/' + paths_dir.templates,
-  dist: paths_dir.dist,
-  sitejs: paths_dir.site + '/' + paths_dir.sitejs,
-  sitecss: paths_dir.site + '/' + paths_dir.sitecss,
-  sitesass: paths_dir.site + '/' + paths_dir.sitecss + '/' + paths_dir.sitesass
+var path = {
+  site: asset_dir.site,
+  data: asset_dir.data,
+  templates: asset_dir.site + '/' + asset_dir.templates,
+  dist: asset_dir.dist,
+  js: asset_dir.site + '/' + asset_dir.js,
+  css: asset_dir.site + '/' + asset_dir.css,
+  sass: asset_dir.site + '/' + asset_dir.css + '/' + asset_dir.sass
+};
+
+var glob = {
+  html: path.site + '/*.html',
+  css: path.css + '/*.css',
+  sass: path.sass + '/**/*.scss',
+  js: path.js + '/src/**/*.js',
+  jslibs : path.js + '/lib/**/*.js',
+  layouts: path.templates + '/layouts/*.{md,hbs}',
+  pages: path.templates + '/pages/**/*.{md,hbs}',
+  includes: path.templates + '/includes/**/*.{md,hbs}',
+  data: path.data + '/**/*.{json,yaml}'
 };
 
 
 // ===================================================
-// Server
+// Development
 // ===================================================
 
 gulp.task('serve', ['assemble'], function() {
   $.connect.server({
-    root: [paths.site],
+    root: [path.site],
     port: 5000,
     livereload: true,
     middleware: function(connect) {
@@ -66,17 +80,31 @@ gulp.task('serve', ['assemble'], function() {
 
 
 // ===================================================
+// Testing
+// ===================================================
+
+gulp.task('test', function() {
+  $.connect.server({
+    root: [path.dist],
+    port: 5000
+  });
+
+  $.exec('open http://localhost:5000');
+});
+
+
+// ===================================================
 // Stylesheets
 // ===================================================
 
 gulp.task('sass', function() {
-  var stream = gulp.src(paths.sitesass + '/**/*.scss')
+  var stream = gulp.src(glob.sass)
     .pipe($.sass())
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest(paths.sitecss))
+    .pipe(gulp.dest(path.css))
     .pipe($.connect.reload());
 
   return stream;
@@ -171,15 +199,15 @@ assemble.helper('category', function (category, options) {
 gulp.task('assemble', function() {
 
   // Placing assemble setups inside the task allows live reloading for files changes
-  assemble.option('production', false);
+  assemble.option('production', env_flag);
   assemble.option('layout', 'default');
-  assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
-  assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
-  assemble.data(paths.data + '/**/*.{json,yaml}');
+  assemble.layouts(glob.layouts);
+  assemble.partials(glob.includes);
+  assemble.data(glob.data);
 
-  var stream = assemble.src(paths.templates + '/pages/**/*.{md,hbs}')
+  var stream = assemble.src(glob.pages)
     .pipe($.extname())
-    .pipe(assemble.dest(paths.site))
+    .pipe(assemble.dest(path.site))
     .pipe($.connect.reload());
 
   return stream;
@@ -192,7 +220,7 @@ gulp.task('assemble', function() {
 
 gulp.task('svgstore', function () {
   return gulp
-    .src(paths.site + '/img/icons/linear/*.svg')
+    .src(path.site + '/img/icons/linear/*.svg')
     .pipe($.svgmin({
       plugins: [{
         removeDoctype: true
@@ -202,7 +230,7 @@ gulp.task('svgstore', function () {
     .pipe($.cheerio(function($) {
         $('svg').attr('style', 'display:none');
     }))
-    .pipe(gulp.dest(paths.templates + '/includes/atoms/svg-sprite.svg'));
+    .pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
 });
 
 
@@ -211,9 +239,9 @@ gulp.task('svgstore', function () {
 // ===================================================
 
 gulp.task('cssmin', ['sass'], function() {
-  var stream = gulp.src(paths.sitecss + '/*.css')
+  var stream = gulp.src(glob.css)
     .pipe($.mincss({ keepBreaks:true }))
-    .pipe(gulp.dest(paths.sitecss));
+    .pipe(gulp.dest(path.css));
 
   return stream;
 });
@@ -224,16 +252,16 @@ gulp.task('cssmin', ['sass'], function() {
 // ===================================================
 
 gulp.task('usemin', ['assemble', 'cssmin'], function () {
-  return gulp.src(paths.site + '/*.html')
+  return gulp.src(glob.html)
     .pipe($.foreach(function (stream, file) {
       return stream
         .pipe($.usemin({
-          assetsDir: paths.site,
+          assetsDir: path.site,
           css: [ $.rev() ],
           html: [ $.minhtml({ empty: true }) ],
           js: [ $.uglify(), $.rev() ]
         }))
-        .pipe(gulp.dest(paths.dist));
+        .pipe(gulp.dest(path.dist));
     }));
 });
 
@@ -244,54 +272,33 @@ gulp.task('usemin', ['assemble', 'cssmin'], function () {
 
 gulp.task('copy', ['usemin'], function() {
   return merge(
-    // jslibs
-    gulp.src([paths.sitejs + '/lib/**/*.js'])
-        .pipe(gulp.dest(paths.dist + '/js/lib')),
+    // js
+    gulp.src([glob.jslibs])
+        .pipe(gulp.dest(path.dist + '/js/lib')),
+    gulp.src([glob.js])
+        .pipe(gulp.dest(path.dist + '/js/src')),
 
     // images
-    gulp.src([paths.site + '/img/**/*'])
-        .pipe(gulp.dest(paths.dist + '/img')),
+    gulp.src([path.site + '/img/**/*'])
+        .pipe(gulp.dest(path.dist + '/img')),
 
     // dirs
-    gulp.src([paths.site + '/bower_components/**/*'])
-        .pipe(gulp.dest(paths.dist + '/bower_components')),
+    gulp.src([path.site + '/bower_components/**/*'])
+        .pipe(gulp.dest(path.dist + '/bower_components')),
 
-    gulp.src([paths.site + '/client/**/*'])
-        .pipe(gulp.dest(paths.dist + '/client')),
+    gulp.src([path.site + '/client/**/*'])
+        .pipe(gulp.dest(path.dist + '/client')),
 
     // root files
     gulp.src([
         '*.php',
-        paths.site + '/googlee3138e5e7e9413ae.html',
-        paths.site + '/*.ico',
-        paths.site + '/.htaccess',
-        paths.site + '/*.txt'
-      ]).pipe(gulp.dest(paths.dist))
+        path.site + '/googlee3138e5e7e9413ae.html',
+        path.site + '/*.ico',
+        path.site + '/.htaccess',
+        path.site + '/*.txt'
+      ]).pipe(gulp.dest(path.dist))
   );
 });
-
-
-// ===================================================
-// File Manipulation
-// ===================================================
-
-// read the file(s)
-// find the build blocks
-// read the build blocks
-// cache the read info from build blocks
-// remove the build blocks
-// replace the removed build blocks with appropriate tag
-// replace src w/appropriate minified script refs and correlating revved version.
-// pass out because this just got too fucking complicated.
-
-// gulp.task('fread', function() {
-//   $.fs.readFile(paths.dist + '/client/polyon.html', 'utf8', function(err, data) {
-//     if(err) {
-//       return console.log(err);
-//     }
-//     console.log(data);
-//   });
-// });
 
 
 // ===================================================
@@ -299,12 +306,12 @@ gulp.task('copy', ['usemin'], function() {
 // ===================================================
 
 gulp.task('stage', function() {
-  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
+  return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
     .pipe($.ghPages({ branch: 'staging' }));
 });
 
 gulp.task('deploy', function() {
-  return gulp.src([paths.dist + '/**/*', paths.dist + '/.htaccess' ])
+  return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
     .pipe($.ghPages({ branch: 'master' }));
 });
 
@@ -316,10 +323,10 @@ gulp.task('deploy', function() {
 gulp.task('clean', function(cb) {
   del([
     'dist',
-    paths.site + '/css/*.css',
-    paths.site + '/client',
-    paths.site + '/*.html',
-    paths.site + '/js/build'
+    glob.css,
+    path.site + '/client',
+    glob.html,
+    path.site + '/js/build'
   ], cb);
 });
 
@@ -330,19 +337,15 @@ gulp.task('clean', function(cb) {
 
 gulp.task('watch', function() {
   gulp.watch([
-    paths.dist + '/**/*.scss',
-    paths.sitesass + '/**/*.scss'
+    path.dist + '/**/*.scss',
+    glob.sass
   ], ['sass']);
 
   gulp.watch([
-    paths.templates + '/includes/**/*.hbs',
-    paths.templates + '/pages/**/*.hbs',
-    paths.templates + '/layouts/*.hbs'
+    glob.includes,
+    glob.pages,
+    glob.layouts
   ], ['assemble']);
-
-  gulp.watch([
-    paths.site + '/includes/*.html'
-  ], [$.connect.reload()]);
 });
 
 
