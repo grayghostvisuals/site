@@ -24,6 +24,15 @@
 @import "globals/bases";
 
 
+// Temp
+// ===============================================
+
+.landing main {
+  max-width: 571px;
+  margin: 0 auto;
+}
+
+
 // App Globals
 // ===============================================
 
@@ -31,11 +40,6 @@ html {
   font-family: sans-serif;
   font-size: 100%;
   line-height: 1.5;
-}
-
-body {
-  max-width: 540px;
-  margin: 0 auto;
 }
 
 
@@ -94,6 +98,13 @@ html.case {
 
 // Atoms
 // ===============================================
+
+.idea {
+  height: auto;
+  max-width: 100%;
+  overflow: visible;
+  width: 120px;
+}
 
 
 // Molecules

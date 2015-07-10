@@ -207,6 +207,7 @@ assemble.helper('category', function (category, options) {
  *
  * After all data is loaded, process the data to resolve templates
  * in values.
+ * @doowb PR: https://github.com/grayghostvisuals/grayghostvisuals/pull/5
  */
 
 function loadData () {
@@ -251,7 +252,7 @@ gulp.task('svgstore', function () {
     }))
     .pipe($.svgstore())
     .pipe($.cheerio(function($) {
-        $('svg').attr('style', 'display:none');
+      $('svg').attr('style', 'display:none');
     }))
     .pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
 });
