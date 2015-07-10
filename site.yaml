@@ -13,6 +13,7 @@ layouts:           <%= site.templates %>/layouts
 layout:            default
 pages:             <%= site.templates %>/pages
 includes:          <%= site.templates %>/{includes, pages}
+imgdir:            <%= site.root %>/img/site
 
 
 # =============================================
