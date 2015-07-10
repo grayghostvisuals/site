@@ -2,11 +2,12 @@
 # CONFIG
 # =============================================
 
+# site
 root:
 dest:             <%= site.root %>
 data:             data
 
-# Templates
+# assemble
 templates:         site/templates
 layouts:           <%= site.templates %>/layouts
 layout:            default
@@ -18,7 +19,7 @@ includes:          <%= site.templates %>/{includes, pages}
 # META
 # =============================================
 
-# Site
+# site
 title:              Gray Ghost Visuals
 author:             <%= pkg.author %>
 url:                <%= pkg.homepage %>
