@@ -1,23 +1,26 @@
-var quotes = document.querySelectorAll('.client-quote');
+function quotator(selector, state, speed) {
+  var quotes      = document.querySelectorAll(selector),
+      cycle_speed = speed;
 
-function setupRotator() {
-  if(quotes.length > 1) {
-    quotes[0].classList.add('current');
-    setInterval('cycleQuotes()', 9000);
+  if(quotes.length !== 'undefined') {
+    quotes[0].classList.add(state);
+    setInterval(function() {
+      cycle(quotes, state);
+    }, cycle_speed);
   }
 }
 
-function cycleQuotes() {
-  var current = document.querySelectorAll('.current'),
+function cycle(selector, state) {
+  var current = document.querySelectorAll('.'+state),
       next    = current[0].nextElementSibling;
 
   if(!next) {
-    current[0].classList.remove('current');
-    quotes[0].classList.add('current');
+    current[0].classList.remove(state);
+    selector[0].classList.add(state);
   } else {
-    current[0].classList.remove('current');
-    next.classList.add('current');
+    current[0].classList.remove(state);
+    next.classList.add(state);
   }
 }
 
-setupRotator();
+quotator('.client-quote', 'current', 9000);
