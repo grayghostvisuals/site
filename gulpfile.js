@@ -9,7 +9,8 @@ var gulp            = require('gulp'),
                           'gulp-minify-css'  : 'mincss',
                           'gulp-minify-html' : 'minhtml',
                           'gulp-gh-pages'    : 'ghPages',
-                          'gulp-foreach'     : 'foreach'
+                          'gulp-foreach'     : 'foreach',
+                          'gulp-mocha'       : 'mocha'
                         }
                       }),
     assemble        = require('assemble'),
@@ -83,16 +84,26 @@ gulp.task('serve', ['assemble'], function() {
 
 
 // ===================================================
-// Testing
+// Staging
 // ===================================================
 
-gulp.task('test', function() {
+gulp.task('preview', function() {
   $.connect.server({
     root: [path.dist],
-    port: 5000
+    port: 5001
   });
 
-  $.exec('open http://localhost:5000');
+  $.exec('open http://localhost:5001');
+});
+
+
+// ===================================================
+// Unit Testing
+// ===================================================
+
+gulp.task('mocha', function () {
+  return gulp.src('test/*.js', {read: false})
+    .pipe($.mocha({ reporter: 'nyan' }));
 });
 
 
@@ -309,7 +320,6 @@ gulp.task('copy', ['usemin'], function() {
     // dirs
     gulp.src([path.site + '/bower_components/**/*'])
         .pipe(gulp.dest(path.dist + '/bower_components')),
-
     gulp.src([path.site + '/client/**/*'])
         .pipe(gulp.dest(path.dist + '/client')),
 
