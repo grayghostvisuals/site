@@ -106,11 +106,23 @@ html.case.Walmedia {
 // Atoms
 // ===============================================
 
-.idea {
+.ggv-graphic {
   height: auto;
   max-width: 100%;
   overflow: visible;
   width: 120px;
+}
+
+
+// SVG Animation
+// ===============================================
+
+.ggv-graphic {
+  visibility: hidden;
+  g > * {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
 }
 
 
