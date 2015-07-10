@@ -14,7 +14,9 @@ var gulp            = require('gulp'),
                       }),
     assemble        = require('assemble'),
     del             = require('del'),
-    merge           = require('merge-stream');
+    merge           = require('merge-stream'),
+    basename        = require('path').basename,
+    extname         = require('path').extname;
 
 $.exec   = require('child_process').exec;
 $.fs     = require('fs');
@@ -55,7 +57,8 @@ var glob = {
   layouts: path.templates + '/layouts/*.{md,hbs}',
   pages: path.templates + '/pages/**/*.{md,hbs}',
   includes: path.templates + '/includes/**/*.{md,hbs}',
-  data: path.data + '/**/*.{json,yaml}'
+  data: path.data + '/**/*.{json,yaml}',
+  rootData: ['site.yaml', 'package.json']
 };
 
 
@@ -117,7 +120,7 @@ gulp.task('sass', function() {
 // https://github.com/grayghostvisuals/grayghostvisuals/pull/3
 // ===================================================
 
-// def: Middleware functions are run at certain points during the build, 
+// def: Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
 
 // 1. In assemble 0.6 it would require setting up a middleware to collect the categories from the pages.
@@ -196,6 +199,26 @@ assemble.helper('category', function (category, options) {
   }).join('\n');
 });
 
+/**
+ * Load data onto assemble cache.
+ * This loads data from `glob.data` and `glob.rootData`.
+ * When loading `glob.rootData`, use a custom namespace function
+ * to return `pkg` for `package.json`.
+ *
+ * After all data is loaded, process the data to resolve templates
+ * in values.
+ */
+
+function loadData () {
+  assemble.data(glob.data);
+  assemble.data(assemble.plasma(glob.rootData, {namespace: function (fp) {
+    var name = basename(fp, extname(fp));
+    if (name === 'package') return 'pkg';
+    return name;
+  }}));
+  assemble.data(assemble.process(assemble.data()));
+}
+
 gulp.task('assemble', function() {
 
   // Placing assemble setups inside the task allows live reloading for files changes
@@ -203,7 +226,7 @@ gulp.task('assemble', function() {
   assemble.option('layout', 'default');
   assemble.layouts(glob.layouts);
   assemble.partials(glob.includes);
-  assemble.data(glob.data);
+  loadData();
 
   var stream = assemble.src(glob.pages)
     .pipe($.extname())
