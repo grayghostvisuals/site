@@ -14,8 +14,15 @@ description: A design and development company based in Buffalo, New York using t
   <p>Pragmatic and thoughtful solutions are what drive my work each day. Think abstractly and work pragmatically in this ever changing environment we call The Web.</p>
 </div>
 
+<h3>TITLE: {{site.title}}</h3>
+
 <h3 class="ggv-headline _reverse"><span>The</span><span>Work</span></h3>
 
+{{#if production}}
+  <div>PRODUCTION</div>
+{{else}}
+  <div>DEVELOPMENT</div>
+{{/if}}
 <h4>Development</h4>
 <p>Building atomically helps to ensure that each component of an interface can travel across a wide array of uses and scenarios making each part lasting. <a href="#">Learn More</a></p>
 

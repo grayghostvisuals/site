@@ -89,7 +89,7 @@ gulp.task('sass', function() {
 // https://github.com/grayghostvisuals/grayghostvisuals/pull/3
 // ===================================================
 
-// def: Middleware functions are run at certain points during the build, 
+// def: Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
 
 // 1. In assemble 0.6 it would require setting up a middleware to collect the categories from the pages.
@@ -174,7 +174,18 @@ gulp.task('assemble', function() {
   assemble.option('layout', 'default');
   assemble.layouts(paths.templates + '/layouts/*.{md,hbs}');
   assemble.partials(paths.templates + '/includes/**/*.{md,hbs}');
+  assemble.data('./site.yaml');
+  assemble.data(assemble.plasma('./package.json', {namespace: function() { return 'pkg'; }}));
+  console.log(assemble.data());
+  console.log();
   assemble.data(paths.data + '/**/*.{json,yaml}');
+  console.log(assemble.data());
+  console.log();
+  assemble.data(assemble.process(assemble.data()));
+  console.log(assemble.cache.data);
+  console.log();
+
+  assemble.option('production', true);
 
   var stream = assemble.src(paths.templates + '/pages/**/*.{md,hbs}')
     .pipe($.extname())
