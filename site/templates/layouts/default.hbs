@@ -6,7 +6,11 @@
 
     <title>{{title}}{{#any 'landing, categories' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
     <meta name="description" content="{{description}}">
+    {{#if production}}
     <meta name="robots" content="all">
+    {{else}}
+    <meta name="robots" content="none">
+    {{/if}}
     <meta name="author" content="{{title}}">
     <meta name="Copyright" content="Copyright Gray Ghost Visuals ©2015. All Rights Reserved.">
 
