@@ -6,6 +6,8 @@ description: |
   Jonno Riekwel of Polyon enthusiastically approached Gray Ghost Visuals with a vision to develop and construct a vector animation sequence involving the Polyon logo wonderfully crafted by Jord Riekwel.  Polyon requested that each polygon element animate indenpendently and in a staggered fashion in a desired sequence.
 categories: client
 summary: A summary description about polyon project
+url: http://polyon.co
+project: SVG Logo Animation
 ---
 
 {{> logo-polyon}}
@@ -13,10 +15,10 @@ summary: A summary description about polyon project
 <h2 class="ggv-headline _reverse"><span>Animated</span><span>Polylion</span></h2>
 
 <ul>
-  <li><b>CLIENT:</b> Polyon</li>
+  <li><b>CLIENT:</b> {{ title }}</li>
   <li><b>CATEGORY:</b> {{ categories }}</li>
-  <li><b>PROJECT:</b> SVG Logo Animation</li>
-  <li><b>WEBSITE:</b> <a href="http://polyon.co">http://polyon.co</a></li>
+  <li><b>PROJECT:</b> {{ project }}</li>
+  <li><b>WEBSITE:</b> <a href="{{ url }}">{{ url }}</a></li>
 </ul>
 
 <p>Jonno Riekwel of Polyon possessed a deep and enthusiastic vision to develop and construct a vector animation sequence involving the Polyon logo crafted by my own logo creator Jord Riekwel. Polyon requested that each polygon element animate indenpendently and in a staggered fashion for it's sequence.</p>
@@ -30,12 +32,12 @@ summary: A summary description about polyon project
 </ul>
 
 <figure class="figure-site">
-  <img src="/img/site/polyonsite.png" alt="">
+  <img src="{{site.imgdir}}/polyonsite.png" alt="">
 </figure>
 
 <div>
   <figure class="figure-txt">
-    <img src="/img/site/polyon-ai.png" alt="">
+    <img src="{{site.imgdir}}/polyon-ai.png" alt="">
   </figure>
 
   <div class="text">
@@ -45,20 +47,20 @@ summary: A summary description about polyon project
 </div>
 
 <figure>
-  <img src="/img/site/polyonlion-pulse.gif" alt="">
+  <img src="{{site.imgdir}}/polyonlion-pulse.gif" alt="">
 </figure>
 
 <h3>Challenges</h3>
 In the initial researching phases I found CSS to be very difficult in terms of control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations keyframes can be controlled and executed independently as well as triggering points of the animations execution. The ultimate goal as the project evolved was to make each polygon element move independently and in a particular sequence that made it difficult to time properly with CSS. You can also see the reason why we needed to leave no traces since each polygon element was not orignally lined up correctly to each adjacent polygon.
 
 <figure>
-  <img src="/img/site/polyon-stroke.png" alt="">
+  <img src="{{site.imgdir}}/polyon-stroke.png" alt="">
 </figure>
 
 Each polyon when placed within the browser seemed to have some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke with a value of 2.5 and the color of each corresponding polygon element it was placed on helped to alleviate this issue slightly. Post artile for CSS-Tricks brought plenty of smart suggestions using SVG filters, but none have completely solved the problem.
 
 <h3>Results</h3>
 <figure>
-  <img src="/img/site/polyonlion-hover.gif" alt="">
+  <img src="{{site.imgdir}}/polyonlion-hover.gif" alt="">
 </figure>
 The final result is gorgeous and attractive. The cherry on top is the hidden eater egg hover animation that Polyon asked as a last minute add on.
