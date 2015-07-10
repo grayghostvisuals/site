@@ -33,6 +33,11 @@ html {
   line-height: 1.5;
 }
 
+body {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
 
 // Polyon Case
 // ===============================================
@@ -101,7 +106,7 @@ html.case {
 }
 
 
-// Testimonials
+// Quotator
 // ===============================================
 
 #testimonials {
@@ -124,7 +129,14 @@ html.case {
   position:absolute;
   top: 0;
   left: 0;
-  display:none;
+  transform: rotate3d(100, -1, 1, 90deg);
+  transition: 800ms all cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  opacity: 0;
+
+  &.current {
+    transform: rotate3d(1, 1, 1, 0);
+    opacity: 1;
+  }
 }
 
 

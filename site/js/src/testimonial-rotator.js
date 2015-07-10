@@ -1,32 +1,26 @@
-$(document).ready(function() {
-  setupRotator();
-}); 
+function quotator(selector, state, speed) {
+  var quotes      = document.querySelectorAll(selector),
+      cycle_speed = speed;
 
-function setupRotator() {
-  if($('.client-quote').length > 1) {
-    $('.client-quote:first').addClass('current').fadeIn(1000);
-    setInterval('textRotate()', 9000);
+  if(quotes.length !== 'undefined') {
+    quotes[0].classList.add(state);
+    setInterval(function() {
+      cycle(quotes, state);
+    }, cycle_speed);
   }
 }
 
-function textRotate() {
-  var current = $('#testimonials > .current');
-  if(current.next().length == 0) {
-    current
-      .removeClass('current')
-      .fadeOut(1000);
+function cycle(selector, state) {
+  var current = document.querySelectorAll('.'+state),
+      next    = current[0].nextElementSibling;
 
-    $('.client-quote:first')
-      .addClass('current')
-      .fadeIn(1000);
+  if(!next) {
+    current[0].classList.remove(state);
+    selector[0].classList.add(state);
   } else {
-    current
-      .removeClass('current')
-      .fadeOut(1000);
-
-    current
-      .next()
-      .addClass('current')
-      .fadeIn(1000);
+    current[0].classList.remove(state);
+    next.classList.add(state);
   }
 }
+
+quotator('.client-quote', 'current', 9000);
