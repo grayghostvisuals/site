@@ -46,12 +46,19 @@ html {
 // Polyon Case
 // ===============================================
 
-html.case {
+html.case.Polyon {
   background: url(../img/site/space.jpg) top left no-repeat;
   background-attachment: fixed;
   background-size: cover;
   > * {
     color: white;
+  }
+}
+
+html.case.Walmedia {
+  background: #1B2D33;
+  > * {
+    color: #D9DDDF;
   }
 }
 
