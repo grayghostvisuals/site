@@ -288,7 +288,7 @@ gulp.task('cssmin', ['sass'], function() {
 
 gulp.task('usemin', ['assemble', 'cssmin'], function () {
   return gulp.src(glob.html)
-    .pipe($.foreach(function (stream, file) {
+    .pipe($.foreach(function (stream, file) { // foreach is because usemin 0.3.11 won't do multiple files as an array
       return stream
         .pipe($.usemin({
           assetsDir: path.site,
@@ -307,30 +307,21 @@ gulp.task('usemin', ['assemble', 'cssmin'], function () {
 
 gulp.task('copy', ['usemin'], function() {
   return merge(
-    // js
+    // assets
     gulp.src([glob.jslibs])
         .pipe(gulp.dest(path.dist + '/js/lib')),
     gulp.src([glob.js])
         .pipe(gulp.dest(path.dist + '/js/src')),
 
-    // images
-    gulp.src([path.site + '/img/**/*'])
-        .pipe(gulp.dest(path.dist + '/img')),
-
     // dirs
-    gulp.src([path.site + '/bower_components/**/*'])
-        .pipe(gulp.dest(path.dist + '/bower_components')),
-    gulp.src([path.site + '/client/**/*'])
-        .pipe(gulp.dest(path.dist + '/client')),
+    gulp.src([path.site + '/{img,bower_components}/**/*'])
+        .pipe(gulp.dest(path.dist)),
 
-    // root files
+    // roots
     gulp.src([
-        '*.php',
-        path.site + '/googlee3138e5e7e9413ae.html',
-        path.site + '/*.ico',
-        path.site + '/*.png',
-        path.site + '/.htaccess',
-        path.site + '/*.txt'
+        'webhook.php',
+        path.site + '/*.{html,ico,png,txt}',
+        path.site + '/.{htaccess}',
       ]).pipe(gulp.dest(path.dist))
   );
 });
