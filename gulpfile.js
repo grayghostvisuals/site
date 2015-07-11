@@ -320,7 +320,7 @@ gulp.task('copy', ['usemin'], function() {
     // roots
     gulp.src([
         'webhook.php',
-        path.site + '/*.{html,ico,png,txt}',
+        path.site + '/*.{ico,png,txt}',
         path.site + '/.{htaccess}',
       ]).pipe(gulp.dest(path.dist))
   );
