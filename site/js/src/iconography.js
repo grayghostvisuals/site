@@ -1,14 +1,17 @@
 function drawBulb() {
-  var tl   = new TimelineMax({ delay: 0.25 }),
-      from = { drawSVG: '0' },
-      to   = { drawSVG: '100%' };
-
-  var iconographic  = document.querySelectorAll('.ggv-graphic'),
+  var tl            = new TimelineMax({ delay: 0.25 }),
+      from          = { drawSVG: '0' },
+      to            = { drawSVG: '100%' },
+      iconographic  = document.querySelectorAll('.ggv-graphic'),
       shell_path    = document.querySelectorAll('.shell'),
-      shell_paths   = [shell_path[0].children, shell_path[1].children],
+      shell_paths   = [],
       wire_path     = document.querySelector('#wire').children,
       plug_path     = document.querySelector('#plug').children,
       filament_path = document.querySelector('#filament').children;
+
+  for(var i = 0, l = shell_path.length; i < l; i++) {
+    shell_paths.push(shell_path[i].children);
+  }
 
   TweenMax.set([iconographic], { visibility: 'visible' });
 
