@@ -1,6 +1,26 @@
-- id: testimonials
-  quote:
+endorsements:
   - company: Polyon
-    quote: Working with Dennis was a pleasure. He got exactly what I had in mind and went the extra mile to make sure the result would be amazing! It made for a great <a href="//css-tricks.com/polylion">CSS-Tricks</a> article as well.
+    quote: Working with Dennis was a pleasure. He got exactly what I had in mind and went the extra mile to make sure the result would be amazing! It made for a great CSS-Tricks article as well.
     cite: Jonno Riekwel
     url: http://polyon.co
+    twitter: https://twitter.com/jonnotie
+  - company: Tracks
+    quote: I admire Dennis' ability to push the boundaries of his work using an iterative approach to development when most people want pages!
+    cite: Gregor KcKelvie
+    url: http://buildtracks.com
+    twitter: https://twitter.com/buildtracks
+  - company: Theron Studios
+    quote: I love working with Dennis because he’s fearless when speaking up in order to arrive at a better method of solving the problem. He’s knowledgable, quick, and meticulous with his work.
+    cite: Christopher Kennedy
+    url: https://twitter.com/kennedysgarage
+    twitter: http://theronstudios.com
+  - company: Field 2 Design
+    quote: Dennis is one of those rare people that is so well versed and crazy about what he loves that he'll search for the best outlet for that love. What he loves is the Web and the outlets are his clients, students, and fellow colleagues.
+    cite: Ben Dunkle
+    url: http://field2.com
+    twitter: https://twitter.com/empireoflight
+  - company: Staple Web Design
+    quote: Dennis is one of those rare people that is so well versed and crazy about what he loves that he'll search for the best outlet for that love. What he loves is the Web and the outlets are his clients, students, and fellow colleagues.
+    cite: Andy Staple
+    url: http://www.staplewebdesign.com
+    twitter: https://twitter.com/andystaple
