@@ -84,7 +84,7 @@ gulp.task('serve', ['assemble'], function() {
 
 
 // ===================================================
-// Staging
+// Preview
 // ===================================================
 
 gulp.task('preview', function() {
@@ -328,6 +328,7 @@ gulp.task('copy', ['usemin'], function() {
         '*.php',
         path.site + '/googlee3138e5e7e9413ae.html',
         path.site + '/*.ico',
+        path.site + '/*.png',
         path.site + '/.htaccess',
         path.site + '/*.txt'
       ]).pipe(gulp.dest(path.dist))
