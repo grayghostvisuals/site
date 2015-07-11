@@ -321,7 +321,7 @@ gulp.task('copy', ['usemin'], function() {
     gulp.src([
         'webhook.php',
         path.site + '/*.{ico,png,txt}',
-        path.site + '/.{htaccess}',
+        path.site + '/.htaccess',
       ]).pipe(gulp.dest(path.dist))
   );
 });
