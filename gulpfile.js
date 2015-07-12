@@ -1,5 +1,5 @@
 // ===================================================
-// Setup
+// Settings
 // ===================================================
 
 var gulp            = require('gulp'),
@@ -10,7 +10,8 @@ var gulp            = require('gulp'),
                           'gulp-minify-html' : 'minhtml',
                           'gulp-gh-pages'    : 'ghPages',
                           'gulp-foreach'     : 'foreach',
-                          'gulp-mocha'       : 'mocha'
+                          'gulp-mocha'       : 'mocha',
+                          'gulp-if'          : 'if'
                         }
                       }),
     assemble        = require('assemble'),
@@ -24,7 +25,7 @@ $.fs     = require('fs');
 
 
 // ===================================================
-// Config
+// Configin'
 // ===================================================
 
 var env_flag = false;
@@ -64,7 +65,7 @@ var glob = {
 
 
 // ===================================================
-// Development
+// Developing
 // ===================================================
 
 gulp.task('serve', ['assemble'], function() {
@@ -84,7 +85,7 @@ gulp.task('serve', ['assemble'], function() {
 
 
 // ===================================================
-// Preview
+// Previewing
 // ===================================================
 
 gulp.task('preview', function() {
@@ -98,7 +99,7 @@ gulp.task('preview', function() {
 
 
 // ===================================================
-// Unit Testing
+// Testing
 // ===================================================
 
 gulp.task('mocha', function () {
@@ -108,7 +109,7 @@ gulp.task('mocha', function () {
 
 
 // ===================================================
-// Stylesheets
+// Styling
 // ===================================================
 
 gulp.task('sass', function() {
@@ -126,18 +127,10 @@ gulp.task('sass', function() {
 
 
 // ===================================================
-// Templates
-// https://github.com/assemble/assemble/issues/715
-// https://github.com/grayghostvisuals/grayghostvisuals/pull/3
+// Templating
 // ===================================================
 
-// def: Middleware functions are run at certain points during the build,
-// and only on templates that match the middleware's regex pattern.
-
-// 1. In assemble 0.6 it would require setting up a middleware to collect the categories from the pages.
-// 2. Then add the category information to each page’s data or use a custom helper to get the category information.
-// 3. The documentation isn’t done for this yet, but there’s some on going discussion in a couple of issues (around collections)
-
+// Pull #3. Also see https://github.com/assemble/assemble/issues/715
 // create a `categories` object to keep categories in (e.g. 'clients')
 // categories: {
 //  clients: {
@@ -159,7 +152,8 @@ categories: {
 
 assemble.onLoad(/\.hbs/, function(file, next) {
   // if the file doesn't have a data object or
-  // doesn't contain `categories` in it's front-matter, move on
+  // doesn't contain `categories` in it's
+  // front-matter, move on.
   if (!file.data || !file.data.categories) {
     return next();
   }
@@ -175,8 +169,9 @@ assemble.onLoad(/\.hbs/, function(file, next) {
   var cats = file.data.categories;
   cats = Array.isArray(cats) ? cats : [cats];
 
-  // add this file's data (file object) to each of it's catogories
-  cats.forEach(function (cat) {
+  // add this file's data (file object) to each of
+  // it's catogories
+  cats.forEach(function(cat) {
     categories[cat] = categories[cat] || [];
     categories[cat][renameKey(file.path)] = file;
   });
@@ -196,12 +191,12 @@ assemble.onLoad(/\.hbs/, function(file, next) {
  * ```
  */
 
-assemble.helper('category', function (category, options) {
+assemble.helper('category', function(category, options) {
   var pages = this.app.get('categories.' + category);
   if (!pages) {
     return '';
   }
-  return Object.keys(pages).map(function (page) {
+  return Object.keys(pages).map(function(page) {
     // this renders the block between `{{#category}}` and `{{category}}` passing the
     // entire page object as the context.
     // If you only want to use the page's front-matter, then change this to something like
@@ -221,7 +216,7 @@ assemble.helper('category', function (category, options) {
  * @doowb PR: https://github.com/grayghostvisuals/grayghostvisuals/pull/5
  */
 
-function loadData () {
+function loadData() {
   assemble.data(glob.data);
   assemble.data(assemble.plasma(glob.rootData, {namespace: function (fp) {
     var name = basename(fp, extname(fp));
@@ -231,9 +226,9 @@ function loadData () {
   assemble.data(assemble.process(assemble.data()));
 }
 
+// Placing assemble setups inside the task allows
+// live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
-
-  // Placing assemble setups inside the task allows live reloading for files changes
   assemble.option('production', env_flag);
   assemble.option('layout', 'default');
   assemble.layouts(glob.layouts);
@@ -250,10 +245,10 @@ gulp.task('assemble', function() {
 
 
 // ===================================================
-// SVG
+// Optimizing
 // ===================================================
 
-gulp.task('svgstore', function () {
+gulp.task('svgstore', function() {
   return gulp
     .src(path.site + '/img/icons/linear/*.svg')
     .pipe($.svgmin({
@@ -270,7 +265,7 @@ gulp.task('svgstore', function () {
 
 
 // ===================================================
-// Minification
+// Minifying
 // ===================================================
 
 gulp.task('cssmin', ['sass'], function() {
@@ -283,12 +278,17 @@ gulp.task('cssmin', ['sass'], function() {
 
 
 // ===================================================
-// Build
+// Building
 // ===================================================
 
-gulp.task('usemin', ['assemble', 'cssmin'], function () {
+/*
+ * foreach is because usemin 0.3.11 won't manipulate
+ * multiple files as an array.
+ */
+
+gulp.task('usemin', ['assemble', 'cssmin'], function() {
   return gulp.src(glob.html)
-    .pipe($.foreach(function (stream, file) { // foreach is because usemin 0.3.11 won't do multiple files as an array
+    .pipe($.foreach(function(stream, file) {
       return stream
         .pipe($.usemin({
           assetsDir: path.site,
@@ -302,22 +302,14 @@ gulp.task('usemin', ['assemble', 'cssmin'], function () {
 
 
 // ===================================================
-// Duplicate
+// Duplicating
 // ===================================================
 
 gulp.task('copy', ['usemin'], function() {
   return merge(
-    // assets
-    gulp.src([glob.jslibs])
-        .pipe(gulp.dest(path.dist + '/js/lib')),
-    gulp.src([glob.js])
-        .pipe(gulp.dest(path.dist + '/js/src')),
-
-    // dirs
-    gulp.src([path.site + '/{img,bower_components}/**/*'])
+    gulp.src([path.site + '/{img,bower_components,js/lib}/**/*'])
         .pipe(gulp.dest(path.dist)),
 
-    // roots
     gulp.src([
         'webhook.php',
         path.site + '/*.{ico,png,txt}',
@@ -328,17 +320,16 @@ gulp.task('copy', ['usemin'], function() {
 
 
 // ===================================================
-// Release
+// Releasing
 // ===================================================
-
-gulp.task('stage', function() {
-  return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
-    .pipe($.ghPages({ branch: 'staging' }));
-});
 
 gulp.task('deploy', function() {
   return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
-    .pipe($.ghPages({ branch: 'master' }));
+             .pipe($.ghPages(
+                $.if(env_flag === false,
+                { branch: 'staging' },
+                { branch: 'master'  })
+             ));
 });
 
 
@@ -351,8 +342,7 @@ gulp.task('clean', function(cb) {
     'dist',
     glob.css,
     path.site + '/client',
-    glob.html,
-    path.site + '/js/build'
+    glob.html
   ], cb);
 });
 
