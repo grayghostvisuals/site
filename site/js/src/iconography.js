@@ -1,5 +1,5 @@
 function drawBulb() {
-  var tl            = new TimelineMax({ delay: 0.25 }),
+  var tl            = new TimelineMax({ delay: 1 }),
       from          = { drawSVG: '0' },
       to            = { drawSVG: '100%' },
       iconographic  = document.querySelectorAll('.ggv-graphic'),
