@@ -57,24 +57,22 @@
 
   {{> footer}}
 
-  {{#is 'atomicguide' this.basename}}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.1/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.1/plugins/animation.gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/plugins/ScrollToPlugin.min.js"></script>
-  {{/is}}
-
   <!-- build:js {{site.root}}/js/src/scripts.min.js -->
   <script src="{{site.root}}/js/lib/ffobserver.js"></script>
   <script src="{{site.root}}/js/src/ffobserver.js"></script>
   <script src="{{site.root}}/js/src/social-widget.js"></script>
-  {{#is 'landing' this.basename}}
+  {{#any 'landing, atomicguide' this.basename}}
   <script src="{{site.root}}/js/lib/TweenMax.min.js"></script>
+  <script src="{{site.root}}/js/src/quotator.js"></script>
+  {{/any}}
+  {{#is 'landing' this.basename}}
   <script src="{{site.root}}/js/lib/DrawSVGPlugin.min.js"></script>
   <script src="{{site.root}}/js/src/iconography.js"></script>
-  <script src="{{site.root}}/js/src/quotator.js"></script>
   {{/is}}
   {{#is 'atomicguide' this.basename}}
+  <script src="bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="{{site.root}}/js/lib/ScrollToPlugin.min.js"></script>
   <script src="/js/src/scrollmation.js"></script>
   <script src="/js/lib/prism.js"></script>
   <script src="/js/src/atomic-swatch.js"></script>
