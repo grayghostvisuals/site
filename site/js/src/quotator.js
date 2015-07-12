@@ -41,4 +41,4 @@ var quotator = (function() {
   };
 })();
 
-quotator.init('.quote', '.current', 9000);
+quotator.init('.quote', '.js-current', 9000);
