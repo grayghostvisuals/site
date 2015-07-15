@@ -4,10 +4,10 @@ function drawBulb() {
       to            = { drawSVG: '100%' },
       iconographic  = document.querySelectorAll('.ggv-graphic'),
       shell_path    = document.querySelectorAll('.shell'),
-      shell_paths   = [],
       wire_path     = document.querySelector('#wire').children,
       plug_path     = document.querySelector('#plug').children,
-      filament_path = document.querySelector('#filament').children;
+      filament_path = document.querySelector('#filament').children,
+      shell_paths   = [];
 
   for(var i = 0, l = shell_path.length; i < l; i++) {
     shell_paths.push(shell_path[i].children);
@@ -21,4 +21,22 @@ function drawBulb() {
   return tl;
 }
 
-drawBulb();
+
+function inView() {
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      reverse: false
+    }
+  });
+
+  var scene = new ScrollMagic.Scene({
+      triggerElement: '#trigger',
+      duration: document.getElementById('trigger').scrollHeight
+    })
+    .addTo(controller)
+    .on('enter', function(e) {
+      drawBulb();
+    });
+}
+
+inView();
