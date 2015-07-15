@@ -35,7 +35,7 @@
 
     <!-- build:css {{site.root}}/css/style.min.css -->
     {{#is 'atomicguide' this.basename}}
-    <link rel="stylesheet" href="{{site.root}}/css/style.css">
+    <link rel="stylesheet" href="{{site.root}}/css/atomic-guide.css">
     {{/is}}
     {{#any 'landing, casestudy, categories' this.basename}}
     <link rel="stylesheet" href="{{site.root}}/css/site.css">
@@ -60,23 +60,24 @@
   <!-- build:js {{site.root}}/js/src/scripts.min.js -->
   <script src="{{site.root}}/js/lib/ffobserver.js"></script>
   <script src="{{site.root}}/js/src/ffobserver.js"></script>
-  <script src="{{site.root}}/js/src/social-widget.js"></script>
+  <script src="{{site.root}}/js/src/social-bloomer.js"></script>
   {{#any 'landing, atomicguide' this.basename}}
   <script src="{{site.root}}/js/lib/TweenMax.min.js"></script>
+  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
   <script src="{{site.root}}/js/src/quotator.js"></script>
   {{/any}}
   {{#is 'landing' this.basename}}
   <script src="{{site.root}}/js/lib/DrawSVGPlugin.min.js"></script>
+  <script src="{{site.root}}/bower_components/within-viewport/withinViewport.js"></script>
   <script src="{{site.root}}/js/src/iconography.js"></script>
   {{/is}}
   {{#is 'atomicguide' this.basename}}
-  <script src="bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-  <script src="bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
   <script src="{{site.root}}/js/lib/ScrollToPlugin.min.js"></script>
-  <script src="/js/src/scrollmation.js"></script>
-  <script src="/js/lib/prism.js"></script>
-  <script src="/js/src/atomic-swatch.js"></script>
-  <script src="/js/src/atomic-generator.js"></script>
+  <script src="{{site.root}}/js/src/scrollmation.js"></script>
+  <script src="{{site.root}}/js/lib/prism.js"></script>
+  <script src="{{site.root}}/js/src/atomic-swatch.js"></script>
+  <script src="{{site.root}}/js/src/atomic-generator.js"></script>
   {{/is}}
   <!-- endbuild -->
 
