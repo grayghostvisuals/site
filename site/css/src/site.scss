@@ -24,43 +24,120 @@
 @import "globals/bases";
 
 
-// Temp
+// App Globals
+// ===============================================
+// Utilities
 // ===============================================
 
+@import "utilities/cases-headline";
+
+
+// Atoms
+// ===============================================
+
+@import "atoms/typography";
+@import "atoms/svgraphics";
+
+
+// SVG Animation
+// ===============================================
+
+.ggv-graphic {
+  visibility: hidden;
+  g > * {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+}
+
+
+// Molecules
+// ===============================================
+
+@import "molecules/socials";
+@import "molecules/quotator.scss";
+
+header[role="banner"] {
+  svg {
+    width: 60px;
+    height: auto;
+    @media screen and (min-width: 460px) {
+      width: 80px;
+      height: auto;
+    }
+  }
+}
+
+.landing nav[role="navigation"] {
+  width: 100%;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #76bff4;
+
+    &:visited {
+      color: #76bff4;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      font-weight: inherit;
+      color: #4380A7;
+    }
+  }
+}
+
+
+footer[role="contentinfo"] {
+  width: 100%;
+  text-align: center;
+
+  small {
+    text-transform: uppercase;
+    color: #4E8BB3;
+  }
+}
+
+
+.ggv-graphic {
+  visibility: hidden;
+  g > * {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+}
+
+
+.ggv-slogan p {
+  color: #1e5a81;
+}
+
+
+// Organisms
+// ===============================================
+// Landing
+// ===============================================
+// Pages
+// ===============================================
+
+// Landing
+// ============
+
 .landing main {
-  max-width: 571px;
+  max-width: 1181px;
   margin: 0 auto;
 }
 
-
-// App Globals
-// ===============================================
-
-html {
-  font-family: sans-serif;
-  font-size: 100%;
-  line-height: 1.5;
+.landing .ggv-wtypes {
+  display: flex;
 }
 
 
-// Polyon Case
-// ===============================================
-
-html.case.Polyon {
-  background: url(../img/site/space.jpg) top left no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  > * {
-    color: white;
-  }
-}
-
-html.case.Walmedia {
-  background: #1B2D33;
-  > * {
-    color: #D9DDDF;
-  }
-}
+// Polyon
+// ============
 
 .case main {
   max-width: 571px;
@@ -88,119 +165,35 @@ html.case.Walmedia {
   margin-left: -15%;
 }
 
-.polyonlion {
-  transform: translateX(100%);
-}
-
 .text {
   margin-right: -20%;
 }
 
 
-// Utilities
+// Polyon
 // ===============================================
 
-@import "utilities/cases-headline";
-
-
-// Atoms
-// ===============================================
-
-.ggv-graphic {
-  height: 192px;
-  max-width: 100%;
-  overflow: visible;
-  width: auto;
-}
-
-
-// SVG Animation
-// ===============================================
-
-.ggv-graphic {
-  visibility: hidden;
-  g > * {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
+html.case.Polyon {
+  background: url(../img/site/space.jpg) top left no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  > * {
+    color: white;
   }
 }
 
-// .testimonials {
-//   background: #002A52;
-// }
+.polyonlion {
+  transform: translateX(100%);
+}
 
 
-// Molecules
+// Walmedia
 // ===============================================
 
-@import "molecules/socials";
-@import "molecules/quotator.scss";
-
-.ggv-slogan p {
-  color: #1e5a81;
-}
-
-
-// Organisms
-// ===============================================
-// Landing
-// ===============================================
-
-header[role="banner"] {
-
-  svg {
-    width: 60px;
-    height: auto;
-    @media screen and (min-width: 460px) {
-      width: 80px;
-      height: auto;
-    }
-  }
-
-}
-
-
-.ffo-loaded.landing nav[role="navigation"] {
-  font-family: 'Ciutadella W04 SmBold';
-}
-
-
-.landing nav[role="navigation"] {
-  width: 100%;
-  text-align: center;
-
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #76bff4;
-
-    &:visited {
-      color: #76bff4;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      font-weight: inherit;
-      color: #4380A7;
-    }
-  }
-
-}
-
-
-.ffo-loaded footer[role="contentinfo"] small {
-  font-family: 'Ciutadella W04 SmBold';
-}
-
-
-footer[role="contentinfo"] {
-  width: 100%;
-  text-align: center;
-
-  small {
-    text-transform: uppercase;
-    color: #4E8BB3;
+html.case.Walmedia {
+  background: #1B2D33;
+  > * {
+    color: #D9DDDF;
   }
 }
 
