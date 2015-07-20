@@ -353,7 +353,6 @@ gulp.task('clean', function(cb) {
 
 gulp.task('watch', function() {
   gulp.watch([
-    path.dist + '/**/*.scss',
     glob.sass
   ], ['sass']);
 
