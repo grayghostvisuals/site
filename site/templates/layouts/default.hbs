@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{title}}{{#any 'landing, categories' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
+    <title>{{title}}{{#any 'landing' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
     <meta name="description" content="{{description}}">
     {{#if production}}
     <meta name="robots" content="all">
@@ -45,7 +45,7 @@
   <body class="{{#is 'atomicguide' this.basename}}atomic{{/is}}">
 
   <header role="banner">
-    {{#any 'landing, atomicguide, categories' this.basename}}
+    {{#any 'landing, atomicguide' this.basename}}
     {{> logo}}
     {{/any}}
     {{> nav}}
