@@ -33,6 +33,18 @@ $ gulp build
 $ gulp clean
 ```
 
+**Preview Build**
+
+```javascript
+$ gulp preview
+```
+
+**Deployment**
+
+```javascript
+$ gulp deploy
+```
+
 ## Environment Control
 
 Environmental controls are governed by an option found within ``gulpfile.js``.
