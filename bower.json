@@ -15,7 +15,6 @@
   "dependencies": {
     "normalize-scss": "~3.0.3",
     "typeplate-starter-kit": "~2.1.0",
-    "ScrollMagic": "~2.0.5",
-    "within-viewport": "~0.1.0"
+    "ScrollMagic": "~2.0.5"
   }
 }
