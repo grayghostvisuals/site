@@ -65,7 +65,7 @@ var glob = {
 
 
 // ===================================================
-// Developing
+// Developin'
 // ===================================================
 
 gulp.task('serve', ['assemble'], function() {
@@ -85,7 +85,7 @@ gulp.task('serve', ['assemble'], function() {
 
 
 // ===================================================
-// Previewing
+// Previewin'
 // ===================================================
 
 gulp.task('preview', function() {
@@ -99,7 +99,7 @@ gulp.task('preview', function() {
 
 
 // ===================================================
-// Testing
+// Testin'
 // ===================================================
 
 gulp.task('mocha', function () {
@@ -109,7 +109,7 @@ gulp.task('mocha', function () {
 
 
 // ===================================================
-// Styling
+// Stylin'
 // ===================================================
 
 gulp.task('sass', function() {
@@ -127,7 +127,7 @@ gulp.task('sass', function() {
 
 
 // ===================================================
-// Templating
+// Templatin'
 // ===================================================
 
 // Pull #3. Also see https://github.com/assemble/assemble/issues/715
@@ -245,7 +245,7 @@ gulp.task('assemble', function() {
 
 
 // ===================================================
-// Optimizing
+// Optimizin'
 // ===================================================
 
 gulp.task('svgstore', function() {
@@ -265,7 +265,7 @@ gulp.task('svgstore', function() {
 
 
 // ===================================================
-// Minifying
+// Minifyin'
 // ===================================================
 
 gulp.task('cssmin', ['sass'], function() {
@@ -278,7 +278,7 @@ gulp.task('cssmin', ['sass'], function() {
 
 
 // ===================================================
-// Building
+// Buildin'
 // ===================================================
 
 /*
@@ -302,9 +302,9 @@ gulp.task('usemin', ['assemble', 'cssmin'], function() {
 
 
 // ===================================================
-// Duplicating
+// Duplicatin'
 // ===================================================
-
+0
 gulp.task('copy', ['usemin'], function() {
   return merge(
     gulp.src([path.site + '/{img,bower_components,js/lib}/**/*'])
@@ -320,7 +320,7 @@ gulp.task('copy', ['usemin'], function() {
 
 
 // ===================================================
-// Releasing
+// Releasin'
 // ===================================================
 
 gulp.task('deploy', function() {
@@ -334,7 +334,7 @@ gulp.task('deploy', function() {
 
 
 // ===================================================
-// Cleaning
+// Cleanin'
 // ===================================================
 
 gulp.task('clean', function(cb) {
@@ -348,7 +348,7 @@ gulp.task('clean', function(cb) {
 
 
 // ===================================================
-// Monitoring
+// Monitorin'
 // ===================================================
 
 gulp.task('watch', function() {
@@ -365,7 +365,7 @@ gulp.task('watch', function() {
 
 
 // ===================================================
-// Tasks
+// Taskin'
 // ===================================================
 
 gulp.task('build', [ 'copy','usemin' ]);
