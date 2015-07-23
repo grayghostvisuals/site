@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{{title}}{{#any 'landing' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
+    <title>{{title}}{{#any 'landing, categories' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
     <meta name="description" content="{{description}}">
     {{#if production}}
     <meta name="robots" content="all">
@@ -42,11 +42,11 @@
     {{/any}}
     <!-- endbuild -->
   </head>
-  <body class="{{#is 'atomicguide' this.basename}}atomic{{/is}}">
+  <body class="{{#is 'atomicguide' this.basename}}atomic{{/is}}" id="top">
 
   <header role="banner">
-    {{#any 'landing, atomicguide' this.basename}}
-    {{> logo}}
+    {{#any 'landing, atomicguide, categories' this.basename}}
+    <a href="/">{{> logo}}</a>
     {{/any}}
     {{> nav}}
   </header>
@@ -61,19 +61,22 @@
   <script src="{{site.root}}/js/lib/ffobserver.js"></script>
   <script src="{{site.root}}/js/src/ffobserver.js"></script>
   <script src="{{site.root}}/js/src/social-bloomer.js"></script>
+
   {{#any 'landing, atomicguide' this.basename}}
   <script src="{{site.root}}/js/lib/TweenMax.min.js"></script>
   <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="{{site.root}}/js/lib/ScrollToPlugin.min.js"></script>
+  <script src="{{site.root}}/js/src/scrollmation.js"></script>
   <script src="{{site.root}}/js/src/quotator.js"></script>
   {{/any}}
+
   {{#is 'landing' this.basename}}
   <script src="{{site.root}}/js/lib/DrawSVGPlugin.min.js"></script>
   <script src="{{site.root}}/js/src/iconography.js"></script>
   {{/is}}
+
   {{#is 'atomicguide' this.basename}}
-  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-  <script src="{{site.root}}/js/lib/ScrollToPlugin.min.js"></script>
-  <script src="{{site.root}}/js/src/scrollmation.js"></script>
   <script src="{{site.root}}/js/lib/prism.js"></script>
   <script src="{{site.root}}/js/src/atomic-swatch.js"></script>
   <script src="{{site.root}}/js/src/atomic-generator.js"></script>

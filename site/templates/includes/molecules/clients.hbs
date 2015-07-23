@@ -1,14 +1,8 @@
-<div class="ggv-clients">
+<div class="ggv-catblock">
   {{#category "client"}}
-  <div>
-    <figure>
-      {{#markdown}}{{data.summary}}{{/markdown}}
-      <figcaption>
-        <cite>
-          <a href="{{ data.title }}.html"><small>{{data.title}}</small></a>
-        </cite>
-      </figcaption>
-    </figure>
+  <div class="ggv-workblock">
+    <a href="{{data.title}}.html">{{data.title}}</a>
+    {{#markdown}}{{data.summary}}{{/markdown}}
   </div>
   {{/category}}
 </div>

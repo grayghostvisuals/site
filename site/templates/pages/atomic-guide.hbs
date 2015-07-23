@@ -1,6 +1,6 @@
 ---
 basename: atomicguide
-title: Atomic Guide › Gray Ghost Visuals
+title: Atomic Guide
 layout: default
 description: Documented styling guide intended to help analyze a system's interface from a molecular level to build out and structure a system of highly reusable components.
 ---
@@ -45,6 +45,7 @@ description: Documented styling guide intended to help analyze a system's interf
     <div style="font-family:'Ciutadella W04 SmBold';">Ciutadella W04 SemiBold</div>
     <div style="font-family:'Ciutadella W04 Bold';">Ciutadella W04 Bold</div>
   </div>
+
   <pre class="language-scss"><code>font-family:'Ciutadella W04 Lt';
 font-family:'Ciutadella W04 Medium';
 font-family:'Ciutadella W04 SmBold';
@@ -77,10 +78,6 @@ font-family:'AvenirLTW01-65MediumObl';
   {{> paragraphs}}
   <pre class="language-html"><code>{{> paragraphs}}</code></pre>
 
-  <h2 class="typl8-zeta">Anchors</h2>
-  {{> anchors}}
-  <pre class="language-html"><code>{{> anchors}}</code></pre>
-
   <h2 class="typl8-zeta">Unordered List</h2>
   {{> unordered-list}}
   <pre class="language-html"><code>{{> unordered-list}}</code></pre>
@@ -92,17 +89,35 @@ font-family:'AvenirLTW01-65MediumObl';
     <h1 class="typl8-delta">Atoms</h1>
   </header>
 
-  <h2 class="typl8-zeta">SVG Graphics</h2>
+  <h2 class="typl8-zeta">Anchors</h2>
+  {{> anchors}}
+  <pre class="language-html"><code>{{> anchors}}</code></pre>
+
+  <div class="atomic-logos">
+    <h2 class="typl8-zeta">SVG Logos</h2>
+    {{> logo}}
+    {{> logo-polyon}}
+    {{> logo-wdw}}
+    {{> logo-tutsplus}}
+    {{> logo-sitepoint}}
+    {{> logo-csstricks}}
+  </div>
+
+  <h2 class="typl8-zeta">InfoGraphics</h2>
   {{> devgraphic }}
   {{> handgraphic }}
   {{> bulbgraphic}}
 </section>
 
-<!-- #Widgets -->
-<section class="row" id="widgets">
+<!-- Molecules -->
+<section class="row" id="molecules">
   <header>
-    <h1 class="typl8-delta">Widgets</h1>
+    <h1 class="typl8-delta">Molecules</h1>
   </header>
+
+  <h2 class="typl8-zeta">Category Blocks</h2>
+  {{> clients}}
+  <pre class="language-html"><code>{{> clients}}</code></pre>
 
   <h2 class="typl8-zeta">Social Bloomer</h2>
   {{> social-bloomer}}
