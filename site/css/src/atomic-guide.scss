@@ -40,7 +40,21 @@
 // Atoms
 // ===============================================
 
+@import "atoms/top-link";
 @import "atoms/svgraphics";
+
+.atomic-logos svg {
+  height: 140px;
+  width: 120px;
+}
+
+.atomic-logos svg:not(:last-child) {
+  margin-right: 20px;
+}
+
+.ggv-graphic:not(:last-child) {
+  margin-right: 40px;
+}
 
 
 // Molecules
