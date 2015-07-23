@@ -1,0 +1,6 @@
+a[href*="top"] {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: opacity 400ms cubic-bezier(0.43, 0.01, 0.39, 0.99);
+}
