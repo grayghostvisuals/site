@@ -35,8 +35,14 @@
 // Atoms
 // ===============================================
 
+@import "atoms/top-link";
 @import "atoms/typography";
 @import "atoms/svgraphics";
+
+.pub-logo {
+  width: 120px;
+  height: 48px;
+}
 
 
 // SVG Animation
@@ -56,6 +62,12 @@
 
 @import "molecules/socials";
 @import "molecules/quotator.scss";
+
+.ggv-publist {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+}
 
 header[role="banner"] {
   svg {
