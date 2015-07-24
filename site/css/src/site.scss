@@ -39,6 +39,10 @@
 @import "atoms/typography";
 @import "atoms/svgraphics";
 
+.ggv-graphic:not(:root) {
+  overflow: visible;
+}
+
 .pub-logo {
   width: 120px;
   height: 48px;
