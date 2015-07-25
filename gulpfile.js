@@ -293,7 +293,7 @@ gulp.task('usemin', ['assemble', 'cssmin'], function() {
         .pipe($.usemin({
           assetsDir: path.site,
           css: [ $.rev() ],
-          html: [ $.minhtml({ empty: true }) ],
+          html: [ $.minhtml({ empty: false }) ],
           js: [ $.uglify(), $.rev() ]
         }))
         .pipe(gulp.dest(path.dist));
@@ -304,7 +304,7 @@ gulp.task('usemin', ['assemble', 'cssmin'], function() {
 // ===================================================
 // Duplicatin'
 // ===================================================
-0
+
 gulp.task('copy', ['usemin'], function() {
   return merge(
     gulp.src([path.site + '/{img,bower_components,js/lib}/**/*'])
