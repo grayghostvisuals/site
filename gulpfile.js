@@ -6,6 +6,7 @@ var gulp            = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     $               = gulpLoadPlugins({
                         rename: {
+                          'gulp-sourcemaps'  : 'sourcemaps',
                           'gulp-minify-css'  : 'mincss',
                           'gulp-minify-html' : 'minhtml',
                           'gulp-gh-pages'    : 'ghPages',
@@ -114,7 +115,17 @@ gulp.task('mocha', function () {
 
 gulp.task('sass', function() {
   var stream = gulp.src(glob.sass)
-    .pipe($.sass())
+    .pipe($.if(env_flag === false, $.sourcemaps.init()))
+    .pipe($.sass({
+      outputStyle: $.if(env_flag === false, 'expanded', 'compressed')
+    }))
+    .pipe($.if(env_flag === false,
+      $.sourcemaps.write({
+        debug: true,
+        includeContent: false,
+        sourceRoot: path.css
+      })
+    ))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
@@ -265,19 +276,6 @@ gulp.task('svgstore', function() {
 
 
 // ===================================================
-// Minifyin'
-// ===================================================
-
-gulp.task('cssmin', ['sass'], function() {
-  var stream = gulp.src(glob.css)
-    .pipe($.mincss({ keepBreaks:true }))
-    .pipe(gulp.dest(path.css));
-
-  return stream;
-});
-
-
-// ===================================================
 // Buildin'
 // ===================================================
 
@@ -286,7 +284,7 @@ gulp.task('cssmin', ['sass'], function() {
  * multiple files as an array.
  */
 
-gulp.task('usemin', ['assemble', 'cssmin'], function() {
+gulp.task('usemin', ['assemble', 'sass'], function() {
   return gulp.src(glob.html)
     .pipe($.foreach(function(stream, file) {
       return stream
