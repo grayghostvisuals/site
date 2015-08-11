@@ -1,0 +1,747 @@
+/* ==========================================================================
+   Normalize.scss settings
+   ========================================================================== */
+/**
+ * Includes legacy browser support IE6/7
+ *
+ * Set to false if you want to drop support for IE6 and IE7
+ */
+/* Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS and IE text size adjust after device orientation change,
+ *    without disabling user zoom.
+ * 3. Corrects text resizing oddly in IE 6/7 when body `font-size` is set using
+ *  `em` units.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevents modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability of focused elements when they are also in an
+ * active/hover state.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Addresses styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * 1. Remove border when inside `a` element in IE 8/9/10.
+ * 2. Improves image quality when scaled in IE 7.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ * Correct font family set oddly in IE 6, Safari 4/5, and Chrome.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *  Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ * 4. Improves appearance and consistency in all browsers.
+ */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *  and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *  `input` and others.
+ * 4. Removes inner spacing in IE 7 without affecting normal text inputs.
+ *  Known issue: inner spacing remains in IE 6.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ *  Known issue: excess padding remains in IE 6.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  box-sizing: content-box;
+  /* 2 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ * 3. Corrects text not wrapping in Firefox 3.
+ * 4. Corrects alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+@font-face {
+  font-family: "Avenir LT W01_35 Light";
+  src: url(http://static.grayghostvisuals.com/fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/3511a780-31ca-4ee1-9083-89b1b7185748.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/4fb9056b-4ac3-488b-9bac-75741b0ff0bd.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/c4352a95-7a41-48c1-83ce-d8ffd2a3b118.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/3e419b5b-c789-488d-84cf-a64009cc308e.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/ca038835-1be3-4dc5-ba25-be1df6121499.svg#ca038835-1be3-4dc5-ba25-be1df6121499) format("svg"); }
+
+@font-face {
+  font-family: "Avenir LT W01_45 Book";
+  src: url(http://static.grayghostvisuals.com/fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/4f32268f-fd86-4960-b72c-4bb1ba75ec6f.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/9bcb625d-81de-48c2-ba0c-664558d197e3.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/939cba03-5b40-4d01-9bc5-7589eca863db.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/849bc5b9-a2ff-4343-977b-26ba8bd24a60.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/f67fa3b5-c1d1-488f-8e60-a828b9ad56a4.svg#f67fa3b5-c1d1-488f-8e60-a828b9ad56a4) format("svg"); }
+
+@font-face {
+  font-family: "AvenirLTW01-45BookObliq";
+  src: url(http://static.grayghostvisuals.com/fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/acc13cdc-338a-43e6-a156-e54a4c87582d.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/70ed6fd5-9adf-4d08-8b30-514af1de7ca2.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/ca94ed56-18fc-4856-940a-70a072607c7c.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/dd6da407-70fe-4aa3-a1c7-64f0cb086f01.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/c7f424be-90e1-45b8-b617-ee3589a859bd.svg#c7f424be-90e1-45b8-b617-ee3589a859bd) format("svg"); }
+
+@font-face {
+  font-family: "Avenir LT W01_65 Medium";
+  src: url(http://static.grayghostvisuals.com/fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/212ab03d-5db2-4d6a-b94c-171cc702aa51.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/e4d36745-a861-4a49-aa17-6510e67429d3.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/2cac77ec-9bc0-4ee7-87e4-27650190744f.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/aaf11848-aac2-4d09-9a9c-aac5ff7b8ff4.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/294099f3-8d00-4676-afc5-5e9d8d43ad69.svg#294099f3-8d00-4676-afc5-5e9d8d43ad69) format("svg"); }
+
+@font-face {
+  font-family: "AvenirLTW01-65MediumObl";
+  src: url(http://static.grayghostvisuals.com/fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/2a6f81a2-475c-4831-9949-33d7748ee561.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/695a9fa5-9f57-4800-9993-3684d520f107.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/e0af2f49-a399-482b-a54e-d745e268ec80.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/6803d3dd-2107-45fc-ac8a-a4fa13771547.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8.svg#1bb1acb5-8d4e-4800-88af-dbcf1fe96ef8) format("svg"); }
+
+@font-face {
+  font-family: "Ciutadella W04 Lt";
+  src: url(http://static.grayghostvisuals.com/fonts/4daeaa7d-f7fb-47c6-a8e7-c077e372e184.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/4daeaa7d-f7fb-47c6-a8e7-c077e372e184.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/d1cabf8f-280c-4998-9463-ecac69b4a97d.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/10451487-1f0d-48e9-9c47-1a263b7c2ca5.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/afae55b3-a505-4aba-b04e-15b52f5e87ed.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/148856b7-f6c2-4488-aa9e-64b4aabd523d.svg#148856b7-f6c2-4488-aa9e-64b4aabd523d) format("svg"); }
+
+@font-face {
+  font-family: "Ciutadella W04 Medium";
+  src: url(http://static.grayghostvisuals.com/fonts/7bdd0be0-f361-4d36-9e14-05337303f255.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/7bdd0be0-f361-4d36-9e14-05337303f255.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/ed194b8a-64f3-48d2-bddf-92263193203f.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/37b97c80-647a-4123-b7ee-7bd3701ba68a.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/5a50bc44-892b-4ab3-8b7b-f652b48ee431.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/e232f02f-57b5-48ae-951e-b3117b3d91de.svg#e232f02f-57b5-48ae-951e-b3117b3d91de) format("svg"); }
+
+@font-face {
+  font-family: "Ciutadella W04 SmBold";
+  src: url(http://static.grayghostvisuals.com/fonts/829adf53-a18c-4a54-9cd3-dd894a8634a9.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/829adf53-a18c-4a54-9cd3-dd894a8634a9.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/7b38e6b6-d5db-412d-b147-145b5840d624.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/9ed1d093-f7c8-4fe8-965f-be965fe3f50e.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/0a464e3c-b811-4aa2-b3ef-42877f0913d7.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/bf4747b0-2500-4f42-b2d3-9df1d7175e3e.svg#bf4747b0-2500-4f42-b2d3-9df1d7175e3e) format("svg"); }
+
+@font-face {
+  font-family: "Ciutadella W04 Bold";
+  src: url(http://static.grayghostvisuals.com/fonts/74b4dd68-6d32-47cc-84de-23e5a5ed0b33.eot?#iefix);
+  src: url(http://static.grayghostvisuals.com/fonts/74b4dd68-6d32-47cc-84de-23e5a5ed0b33.eot?#iefix) format("eot"), url(http://static.grayghostvisuals.com/fonts/20db9fd0-d6d6-445c-ae1f-b2a89f76eef7.woff2) format("woff2"), url(http://static.grayghostvisuals.com/fonts/032894d3-2aab-40ca-bbef-651cdc9cd972.woff) format("woff"), url(http://static.grayghostvisuals.com/fonts/dfe36cb7-94ef-477f-981c-25cf8e6a1452.ttf) format("truetype"), url(http://static.grayghostvisuals.com/fonts/9dd50792-6387-4112-9787-40456e7bafbc.svg#9dd50792-6387-4112-9787-40456e7bafbc) format("svg"); }
+
+*:before, *:after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  background: #F4F5F6; }
+
+html, body {
+  height: 100%; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%; }
+
+body {
+  -webkit-animation: fontFade 400ms normal forwards cubic-bezier(.81, .01, .71, .98);
+  animation: fontFade 400ms normal forwards cubic-bezier(.81, .01, .71, .98);
+  -webkit-animation-delay: 550ms;
+  animation-delay: 550ms;
+  color: #003461;
+  opacity: 0; }
+  .ffo-loaded body {
+    font-family: 'Avenir LT W01_45 Book'; }
+
+@-webkit-keyframes fontFade {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+@keyframes fontFade {
+  from {
+    opacity: 0; }
+
+  to {
+    opacity: 1; } }
+
+img, embed, object, video {
+  max-width: 100%;
+  height: auto; }
+
+svg {
+  max-width: 100%; }
+
+a {
+  text-decoration: none; }
+  a:link, a:visited {
+    color: #EB8315; }
+  a:focus, a:hover, a:active {
+    font-weight: inherit;
+    color: #AF5C1E; }
+
+h1 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h1 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+h2 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h2 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+h3 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h3 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+h4 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h4 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+h5 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h5 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+h6 {
+  text-transform: uppercase;
+  color: #132e49; }
+  .ffo-loaded h6 {
+    font-family: 'Ciutadella W04 Medium'; }
+
+.ggv-headline {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 1; }
+  .ffo-loaded .ggv-headline {
+    font-family: 'Ciutadella W04 Lt'; }
+  .ggv-headline._default > *:nth-child(2) {
+    font-family: 'Ciutadella W04 Bold'; }
+  .ggv-headline._reverse > *:nth-child(1) {
+    font-family: 'Ciutadella W04 Bold'; }
+  .ggv-headline._push {
+    text-align: right; }
+
+.ggv-headline._hero:first-child {
+  color: #BAC9D4; }
+.ggv-headline._hero:last-child {
+  color: #3B7092; }
+@media screen and (min-width: 316px) {
+  .ggv-headline._hero {
+    font-size: 42px; } }
+@media screen and (min-width: 460px) {
+  .ggv-headline._hero {
+    font-size: 65px; } }
+
+a[href*="top"] {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  transition: opacity 400ms cubic-bezier(0.43, 0.01, 0.39, 0.99);
+  background-color: rgba(255, 255, 255, 0.83);
+  padding: 10px 20px; }
+
+html {
+  font-family: sans-serif;
+  font-size: 100%;
+  line-height: 1.5; }
+
+.ffo-loaded.landing nav[role="navigation"] {
+  font-family: 'Ciutadella W04 SmBold'; }
+.ffo-loaded footer[role="contentinfo"] small {
+  font-family: 'Ciutadella W04 SmBold'; }
+
+.ggv-graphic {
+  height: 192px;
+  max-width: 100%;
+  overflow: visible;
+  width: auto; }
+
+.ggv-graphic:not(:root) {
+  overflow: visible; }
+
+.pub-logo {
+  width: 120px;
+  height: 48px; }
+
+.ggv-graphic {
+  visibility: hidden; }
+  .ggv-graphic g > * {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000; }
+
+.socials {
+  height: 48px;
+  position: relative;
+  width: 48px; }
+  .socials svg#trigger {
+    height: 48px;
+    position: relative;
+    z-index: 2; }
+  .socials svg#trigger, .socials a {
+    width: 48px; }
+  .socials svg path {
+    fill: #FF6500; }
+  .socials svg#trigger path {
+    fill: #FF6500; }
+  .socials svg#trigger:hover path {
+    fill: #CA4D00; }
+  .socials a {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transition: 900ms all cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transform-origin: top center;
+    transform-origin: top center;
+    z-index: 0;
+    opacity: 0; }
+    .socials a:hover {
+      cursor: pointer; }
+    .socials a:hover svg path {
+      fill: #CA4D00; }
+    .socials a:hover svg#trigger path {
+      fill: #FF7E00; }
+  .socials svg {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg); }
+  .socials svg#trigger {
+    -webkit-transform: rotate(0deg) scale(0.875);
+    transform: rotate(0deg) scale(0.875); }
+  .socials svg#github {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .socials svg#dribble {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .socials svg:hover {
+    cursor: pointer; }
+
+.socials.is-bloomed a {
+  opacity: 1;
+  padding-top: 50%;
+  z-index: 0; }
+
+.socials.is-bloomed a:nth-of-type(1) {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition-delay: 36ms; }
+
+.socials.is-bloomed a:nth-of-type(2) {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transition-delay: 72ms; }
+
+.socials.is-bloomed a:nth-of-type(3) {
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  transition-delay: 108ms; }
+
+.socials.is-bloomed a:nth-of-type(4) {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+  transition-delay: 144ms; }
+
+.socials.is-bloomed a:nth-of-type(5) {
+  -webkit-transform: rotate(450deg);
+  transform: rotate(450deg);
+  transition-delay: 180ms; }
+
+.quotator {
+  position: relative;
+  width: 100%;
+  min-height: 180px; }
+
+.quote {
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: rotate3d(100, -1, 1, 90deg);
+  transform: rotate3d(100, -1, 1, 90deg);
+  transition-duration: 800ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition-property: -webkit-transform, opacity;
+  transition-property: transform, opacity;
+  opacity: 0; }
+  .quote.js-current {
+    -webkit-transform: rotate3d(1, 1, 1, 0);
+    transform: rotate3d(1, 1, 1, 0);
+    opacity: 1; }
+
+.quotator {
+  position: relative;
+  min-height: 180px; }
+  .quotator figure {
+    margin: 0;
+    padding: 0 20px; }
+  .quotator blockquote {
+    padding: 0;
+    margin: 0; }
+    .quotator blockquote p {
+      margin-top: 0; }
+
+.ggv-publist {
+  list-style-type: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0; }
+
+header[role="banner"] svg {
+  width: 60px;
+  height: auto; }
+  @media screen and (min-width: 460px) {
+    header[role="banner"] svg {
+      width: 80px;
+      height: auto; } }
+
+.landing nav[role="navigation"] {
+  width: 100%;
+  text-align: center; }
+  .landing nav[role="navigation"] a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #76bff4; }
+    .landing nav[role="navigation"] a:visited {
+      color: #76bff4; }
+    .landing nav[role="navigation"] a:hover, .landing nav[role="navigation"] a:focus, .landing nav[role="navigation"] a:active {
+      font-weight: inherit;
+      color: #4380A7; }
+
+footer[role="contentinfo"] {
+  width: 100%;
+  text-align: center; }
+  footer[role="contentinfo"] small {
+    text-transform: uppercase;
+    color: #4E8BB3; }
+
+.ggv-graphic {
+  visibility: hidden; }
+  .ggv-graphic g > * {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000; }
+
+.ggv-slogan p {
+  color: #1e5a81; }
+
+.landing main {
+  max-width: 1181px;
+  margin: 0 auto; }
+
+.landing .ggv-wtypes {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.case main {
+  max-width: 571px;
+  margin: 0 auto;
+  padding-left: 52px;
+  padding-right: 52px; }
+
+.case .ggv-headline {
+  margin: 0;
+  font-size: 68px;
+  font-weight: 200;
+  line-height: 1;
+  text-align: center;
+  color: white; }
+
+.case .figure-site {
+  margin-left: -120px;
+  margin-right: -120px; }
+
+.figure-txt {
+  float: left;
+  margin-left: -15%; }
+
+.text {
+  margin-right: -20%; }
+
+html.case.Polyon {
+  background: url(../img/site/space.jpg) top left no-repeat;
+  background-attachment: fixed;
+  background-size: cover; }
+  html.case.Polyon > * {
+    color: white; }
+
+.polyonlion {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%); }
+
+html.case.Walmedia {
+  background: #1B2D33; }
+  html.case.Walmedia > * {
+    color: #D9DDDF; }
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL2Jvd2VyX2NvbXBvbmVudHMvbm9ybWFsaXplLXNjc3MvX25vcm1hbGl6ZS5zY3NzIiwiZ2xvYmFscy9fZm9udHMuc2NzcyIsImdsb2JhbHMvX2Jhc2VzLnNjc3MiLCJ1dGlsaXRpZXMvX2Nhc2VzLWhlYWRsaW5lLnNjc3MiLCJhdG9tcy9fdG9wLWxpbmsuc2NzcyIsImF0b21zL190eXBvZ3JhcGh5LnNjc3MiLCJhdG9tcy9fc3ZncmFwaGljcy5zY3NzIiwic2l0ZS5zY3NzIiwibW9sZWN1bGVzL19zb2NpYWxzLnNjc3MiLCJtb2xlY3VsZXMvX3F1b3RhdG9yLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFzQkE7RUFDRSxBQUFhOztFQUNiLEFBQXNCOztFQUN0QixBQUEwQjs7Ozs7O0FBVTVCO0VBQ0UsQUFBUTs7Ozs7Ozs7OztBQWFWLEFBQVMsQUFBTyxBQUFTLEFBQVksQUFBUSxBQUFRLEFBQVEsQUFBUSxBQUFNLEFBQU0sQUFBSyxBQUFTO0VBYTdGLEFBQVM7Ozs7OztBQVFYLEFBQU8sQUFBUSxBQUFVO0VBSXZCLEFBQVM7O0VBQ1QsQUFBZ0I7Ozs7Ozs7QUFZbEIsQUFBSyxBQUFLO0VBQ1IsQUFBUztFQUNULEFBQVE7Ozs7OztBQVFWLEFBQVU7RUFFUixBQUFTOzs7Ozs7O0FBVVg7RUFDRSxBQUFrQjs7Ozs7O0FBU3BCLEFBQUMsQUFBUyxBQUFDO0VBQ1AsQUFBUzs7Ozs7OztBQVdiLEFBQUk7RUFDRixBQUFlOzs7OztBQU9qQixBQUFHO0VBRUQsQUFBYTs7Ozs7QUFhZjtFQUNFLEFBQVk7Ozs7OztBQVFkO0VBQ0UsQUFBVztFQUNYLEFBQVE7Ozs7O0FBa0NWO0VBQ0UsQUFBWTtFQUNaLEFBQU87Ozs7O0FBcUNUO0VBQ0UsQUFBVzs7Ozs7QUFPYixBQUFLO0VBRUgsQUFBVztFQUNYLEFBQWE7RUFDYixBQUFVO0VBQ1YsQUFBZ0I7O0FBR2xCO0VBQ0UsQUFBSzs7QUFHUDtFQUNFLEFBQVE7Ozs7Ozs7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 */
