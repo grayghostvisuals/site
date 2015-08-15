@@ -1,5 +1,0 @@
-@mixin bp($bp, $query) {
-  @media screen and (min-width: $bp) and (min-height: $query) {
-    @content;
-  }
-}
