@@ -6,16 +6,16 @@ var gulp            = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     $               = gulpLoadPlugins({
                         rename: {
-                          'gulp-if'          : 'if',
-                          'gulp-gh-pages'    : 'ghPages',
-                          'gulp-foreach'     : 'foreach',
-                          'gulp-livereload'  : 'livereload',
-                          'gulp-minify-css'  : 'mincss',
+                          'gulp-if' : 'if',
+                          'gulp-gh-pages' : 'ghPages',
+                          'gulp-foreach' : 'foreach',
+                          'gulp-livereload' : 'livereload',
+                          'gulp-minify-css' : 'mincss',
                           'gulp-minify-html' : 'minhtml',
-                          'gulp-mocha'       : 'mocha',
-                          'gulp-sass-glob'   : 'sassglob',
-                          'gulp-sourcemaps'  : 'sourcemaps',
-                          'gulp-babel'       : 'babel'
+                          'gulp-mocha' : 'mocha',
+                          'gulp-sass-glob-import' : 'sassglob',
+                          'gulp-sourcemaps' : 'sourcemaps',
+                          'gulp-babel' : 'babel'
                         }
                       }),
     assemble        = require('assemble'),
@@ -273,6 +273,7 @@ app.helper('date', function() {
 });
 
 function loadData() {
+
   app.data([glob.data, 'site.yaml'], {
     namespace: function(fp) {
       var name = basename(fp, extname(fp));
@@ -294,6 +295,7 @@ function loadData() {
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
+
   app.option('layout', 'default');
   app.helpers(helpers());
   app.layouts(glob.layouts);
@@ -309,18 +311,22 @@ gulp.task('assemble', function() {
     .pipe($.livereload());
 
   return stream;
+
 });
 
 
 gulp.task('babel', function() {
 
-  var stream = app.src(path.js + '/scripts/*.js')
+  var stream = app.src(path.js + '/dev/*.js')
     .pipe($.babel({
-      presets: ['es2015']
+      presets: ['es2015'],
+      plugins: ['transform-runtime']
     }))
-    .pipe(gulp.dest(path.js + '/src/'));
+    .pipe(gulp.dest(path.js + '/src'))
+    .pipe($.livereload());
 
   return stream;
+
 });
 
 
@@ -329,6 +335,7 @@ gulp.task('babel', function() {
 // ===================================================
 
 gulp.task('svgstore', function() {
+
   var stream = gulp.src(path.images + '/svgsprite/*.svg')
     .pipe($.svgmin({
       plugins: [{
@@ -354,6 +361,7 @@ gulp.task('svgstore', function() {
     .pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
 
     return stream;
+
 });
 
 
@@ -366,7 +374,8 @@ gulp.task('svgstore', function() {
  * multiple files as an array.
  */
 
-gulp.task('usemin', ['assemble', 'sass'], function() {
+gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
+
   return gulp.src(glob.html)
     .pipe($.foreach(function(stream, file) {
       return stream
@@ -382,6 +391,7 @@ gulp.task('usemin', ['assemble', 'sass'], function() {
         }))
         .pipe(gulp.dest(path.dist));
     }));
+
 });
 
 
@@ -390,6 +400,7 @@ gulp.task('usemin', ['assemble', 'sass'], function() {
 // ===================================================
 
 gulp.task('copy', ['usemin'], function() {
+
   return merge(
     gulp.src([path.site + '/{img,bower_components,js/lib}/**/*'])
         .pipe(gulp.dest(path.dist)),
@@ -400,6 +411,7 @@ gulp.task('copy', ['usemin'], function() {
         path.site + '/.htaccess',
       ]).pipe(gulp.dest(path.dist))
   );
+
 });
 
 
@@ -408,12 +420,14 @@ gulp.task('copy', ['usemin'], function() {
 // ===================================================
 
 gulp.task('deploy', function() {
+
   return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
              .pipe($.ghPages(
                 $.if(process.env.NODE_ENV === 'development',
                 { branch: 'staging' },
                 { branch: 'master' })
              ));
+
 });
 
 
@@ -422,12 +436,14 @@ gulp.task('deploy', function() {
 // ===================================================
 
 gulp.task('clean', function(cb) {
+
   del([
     'dist',
     glob.css,
     path.site + '/client',
     glob.html
   ], cb);
+
 });
 
 
@@ -436,6 +452,7 @@ gulp.task('clean', function(cb) {
 // ===================================================
 
 gulp.task('watch', function() {
+
   gulp.watch([
     glob.sass
   ], ['sass']);
@@ -446,7 +463,12 @@ gulp.task('watch', function() {
     glob.pages
   ], ['assemble']);
 
+  gulp.watch([
+    path.js + '/dev/*.js'
+  ], ['babel']);
+
   $.livereload.listen();
+
 });
 
 
