@@ -1,9 +1,14 @@
 # temp dirs
 .sass-cache
+
+# Sourcemaps
+*.*.map
+
 # dotfiles
 *.log
 .publish/
 .DS_Store
+
 #dirs
 node_modules/
 site/bower_components
@@ -11,5 +16,6 @@ lib/*
 dist/*
 site/client
 site/css/**/*.css
+
 #files
 site/*.html

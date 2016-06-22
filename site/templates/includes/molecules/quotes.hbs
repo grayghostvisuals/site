@@ -1,17 +1,25 @@
-<div class="quotator">
-  {{#each testimonials.endorsements}}
-  <div class="quote">
-    <figure>
-      <blockquote>
-        <p>{{this.quote}}</p>
-      </blockquote>
+{{#testimonials}}
+<div class="testimonials">
+  <div class="quotator">
 
-      <figcaption>
-        <cite>
-          <small><a href="{{this.twitter}}">{{this.cite}}</a> &bull; <a href="{{this.url}}">{{company}}</a></small>
-        </cite>
-      </figcaption>
-    </figure>
+    {{#each endorsements}}
+    <div class="quote">
+      <figure>
+        <blockquote>
+          <p>{{this.quote}}</p>
+        </blockquote>
+
+        <figcaption>
+          <cite>
+            <small>
+              <a href="{{this.twitter}}">{{this.cite}}</a> &bull; <a href="{{this.url}}">{{company}}</a>
+            </small>
+          </cite>
+        </figcaption>
+      </figure>
+    </div>
+    {{/each}}
+
   </div>
-  {{/each}}
 </div>
+{{/testimonials}}

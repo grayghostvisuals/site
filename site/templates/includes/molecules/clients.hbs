@@ -1,8 +1,8 @@
-<div class="ggv-catblock">
+<ul class="ggv-catblock">
   {{#category "client"}}
-  <div class="ggv-workblock">
+  <li class="ggv-workblock">
     <a href="{{data.title}}.html">{{data.title}}</a>
-    {{#markdown}}{{data.summary}}{{/markdown}}
-  </div>
+    {{data.summary}}
+  </li>
   {{/category}}
-</div>
+</ul>

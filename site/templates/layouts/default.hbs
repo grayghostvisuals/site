@@ -1,24 +1,47 @@
 <!doctype html>
-<html class="{{#is 'casestudy' this.basename}}case {{this.title}}{{/is}}{{#is 'landing' this.basename}}landing{{/is}}" lang="en">
+<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}{{#is 'landing' this.basename}} landing{{/is}}" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="cleartype" content="on">
 
-    <title>{{title}}{{#any 'landing, categories' this.basename}} › Front-end Web Development, Interaction & Design{{/any}}</title>
+    {{! Prefetching, preloading, prebrowsing }}
+    {{! <link rel="dns-prefetch" href="https://ajax.googleapis.com">
+    <link rel="dns-prefetch" href="https://maps.googleapis.com">
+    <link rel="dns-prefetch" href="//example.com/">
+    <link rel="preconnect" href="https://www.example.com/">
+    <link rel="prefetch" href="https://www.example.com/">
+    <link rel="prerender" href="https://example.com/">
+    <link rel="subresource" href="styles.css">
+    <link rel="preload" href="image.png"> }}
+    {{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
+
+    <title>{{#is 'casestudy' this.basename}}Gray Ghost Visuals Case Study › {{/is}}{{title}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}}</title>
+
     <meta name="description" content="{{description}}">
+
     {{#if production}}
     <meta name="robots" content="all">
     {{else}}
     <meta name="robots" content="none">
     {{/if}}
-    <meta name="author" content="{{title}}">
-    <meta name="Copyright" content="Copyright Gray Ghost Visuals ©2015. All Rights Reserved.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+    <meta name="author" content="{{title}}">
+    <meta name="Copyright" content="Copyright {{site.title}} ©{{#date}}{{/date}}. All Rights Reserved.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, shrink-to-fit=no">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta name="designer" content="https://grayghostvisuals.comm">
+
+    {{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
+    {{! <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png"> }}
 
     <meta property="og:title" content="{{site.title}}">
     <meta property="og:type" content="company">
@@ -27,59 +50,66 @@
     <meta property="og:description" content="{{site.description}}">
     <meta property="fb:admins" content="1">
 
-    <link rel="author" href="//grayghostvisuals.com/humans.txt">
+    <link rel="author" href="{{site.url}}/humans.txt">
 
     {{#if production}}
     <script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
     {{/if}}
 
+    <!--[if lte IE 9]><style>body {display: none;}html{background:red;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
+
     <!-- build:css {{site.root}}/css/style.min.css -->
     {{#is 'atomicguide' this.basename}}
-    <link rel="stylesheet" href="{{site.root}}/css/atomic-guide.css">
+    <!--[if (gt IE 9)]><!-->
+    <link rel="stylesheet" href="./css/atomic-guide.css">
+    <!-- endbuild -->
     {{/is}}
-    {{#any 'landing, casestudy, categories' this.basename}}
-    <link rel="stylesheet" href="{{site.root}}/css/site.css">
-    {{/any}}
+
+    {{#contains 'landing, casestudy, categories' this.basename}}
+    <!--[if (gt IE 9)]><!-->
+    <link rel="stylesheet" href="./css/site.css">
+    <!--<![endif]-->
+    {{/contains}}
     <!-- endbuild -->
   </head>
-  <body class="{{#is 'atomicguide' this.basename}}atomic{{/is}}" id="top">
+  <body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
 
-  <header role="banner">
-    {{#any 'landing, atomicguide, categories' this.basename}}
-    <a href="/">{{> logo}}</a>
-    {{/any}}
-    {{> nav}}
-  </header>
+  <div class="sticky-container">
+    <header class="sticky-row sticky-header" role="banner">
+      {{> logo}}
+      {{> nav}}
+    </header>
 
-  <main role="main">
-  {% body %}
-  </main>
+    <main class="sticky-row sticky-content" role="main">
+    {% body %}
+    </main>
 
-  {{> footer}}
+    {{> footer}}
+  </div>
 
   <!-- build:js {{site.root}}/js/src/scripts.min.js -->
-  <script src="{{site.root}}/js/lib/ffobserver.js"></script>
-  <script src="{{site.root}}/js/src/ffobserver.js"></script>
-  <script src="{{site.root}}/js/src/social-bloomer.js"></script>
+  <script src="./js/lib/ffobserver.js"></script>
+  <script src="./js/src/ffobserver-config.js"></script>
+  <script src="./js/src/social-bloomer.js"></script>
 
-  {{#any 'landing, atomicguide' this.basename}}
-  <script src="{{site.root}}/js/lib/TweenMax.min.js"></script>
-  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-  <script src="{{site.root}}/bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-  <script src="{{site.root}}/js/lib/ScrollToPlugin.min.js"></script>
-  <script src="{{site.root}}/js/src/scrollmation.js"></script>
-  <script src="{{site.root}}/js/src/quotator.js"></script>
-  {{/any}}
+  {{#contains 'landing, atomicguide' this.basename}}
+  <script src="./js/lib/TweenMax.min.js"></script>
+  <script src="./bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="./bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="./js/lib/ScrollToPlugin.min.js"></script>
+  <script src="./js/src/scrollmation.js"></script>
+  <script src="./js/src/quotator.js"></script>
+  {{/contains }}
 
   {{#is 'landing' this.basename}}
-  <script src="{{site.root}}/js/lib/DrawSVGPlugin.min.js"></script>
-  <script src="{{site.root}}/js/src/iconography.js"></script>
+  <script src="./js/lib/DrawSVGPlugin.min.js"></script>
+  <script src="./js/src/iconography.js"></script>
   {{/is}}
 
   {{#is 'atomicguide' this.basename}}
-  <script src="{{site.root}}/js/lib/prism.js"></script>
-  <script src="{{site.root}}/js/src/atomic-swatch.js"></script>
-  <script src="{{site.root}}/js/src/atomic-generator.js"></script>
+  <script src="./js/lib/prism.js"></script>
+  <script src="./js/src/atomic-swatch.js"></script>
+  <script src="./js/src/atomic-generator.js"></script>
   {{/is}}
   <!-- endbuild -->
 

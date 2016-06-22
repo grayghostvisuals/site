@@ -1,19 +1,21 @@
+'use strict';
+
 // Quotator : A simplistic testimonial rotator
 // ======================================================================
 // @credit  : Created and shared by Dennis Gaebel (@gryghostvisuals)
 // @support : No dependencies required. IE10+ (querySelectorAll, classList)
 
-var quotator = (function() {
+var quotator = function () {
   return {
-    init: function(selector, state, speed) {
-      var quotes      = document.querySelectorAll(selector),
-          state       = replaceString(state),
+    init: function init(selector, state, speed) {
+      var quotes = document.querySelectorAll(selector),
+          state = replaceString(state),
           cycle_speed = speed;
 
-      if(quotes.length !== 'undefined') {
+      if (quotes.length !== 'undefined') {
         quotes[0].classList.add(state);
 
-        setInterval(function() {
+        setInterval(function () {
           cycle(quotes, state);
         }, cycle_speed);
       }
@@ -23,13 +25,13 @@ var quotator = (function() {
       }
 
       function cycle(selector, state) {
-        var state   = '.' + state,
+        var state = '.' + state,
             current = document.querySelectorAll(state),
-            next    = current[0].nextElementSibling;
+            next = current[0].nextElementSibling;
 
         state = replaceString(state);
 
-        if(!next) {
+        if (!next) {
           current[0].classList.remove(state);
           selector[0].classList.add(state);
         } else {
@@ -39,6 +41,6 @@ var quotator = (function() {
       }
     }
   };
-})();
+}();
 
 quotator.init('.quote', '.js-current', 9000);

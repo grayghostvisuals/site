@@ -6,20 +6,27 @@ var gulp            = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     $               = gulpLoadPlugins({
                         rename: {
-                          'gulp-sourcemaps'  : 'sourcemaps',
-                          'gulp-minify-css'  : 'mincss',
-                          'gulp-minify-html' : 'minhtml',
+                          'gulp-if'          : 'if',
                           'gulp-gh-pages'    : 'ghPages',
                           'gulp-foreach'     : 'foreach',
+                          'gulp-livereload'  : 'livereload',
+                          'gulp-minify-css'  : 'mincss',
+                          'gulp-minify-html' : 'minhtml',
                           'gulp-mocha'       : 'mocha',
-                          'gulp-if'          : 'if'
+                          'gulp-sass-glob'   : 'sassglob',
+                          'gulp-sourcemaps'  : 'sourcemaps',
+                          'gulp-babel'       : 'babel'
                         }
                       }),
     assemble        = require('assemble'),
+    yaml            = require('js-yaml'),
+    helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
+    app             = assemble(),
     del             = require('del'),
     merge           = require('merge-stream'),
     basename        = require('path').basename,
     extname         = require('path').extname;
+    gulpStylelint   = require('gulp-stylelint');
 
 $.exec   = require('child_process').exec;
 $.fs     = require('fs');
@@ -28,8 +35,6 @@ $.fs     = require('fs');
 // ===================================================
 // Configin'
 // ===================================================
-
-var env_flag = false;
 
 var asset_dir = {
   site: 'site',
@@ -43,7 +48,7 @@ var asset_dir = {
 
 var path = {
   site: asset_dir.site,
-  data: asset_dir.data,
+  data: './' + asset_dir.data,
   templates: asset_dir.site + '/' + asset_dir.templates,
   dist: asset_dir.dist,
   js: asset_dir.site + '/' + asset_dir.js,
@@ -60,8 +65,7 @@ var glob = {
   layouts: path.templates + '/layouts/*.{md,hbs}',
   pages: path.templates + '/pages/**/*.{md,hbs}',
   includes: path.templates + '/includes/**/*.{md,hbs}',
-  data: path.data + '/**/*.{json,yaml}',
-  rootData: ['site.yaml', 'package.json']
+  data: path.data + '/**/*.{json,yaml}'
 };
 
 
@@ -71,9 +75,21 @@ var glob = {
 
 gulp.task('serve', ['assemble'], function() {
   $.connect.server({
-    root: [path.site],
-    port: 5000,
-    livereload: true,
+    root: $.if(
+      process.env.NODE_ENV === 'development',
+      path.site,
+      path.dist
+    ),
+    port: $.if(
+      process.env.NODE_ENV === 'development',
+      5000,
+      5001
+    ),
+    livereload: $.if(
+      process.env.NODE_ENV === 'development',
+      true,
+      false
+    ),
     middleware: function(connect) {
       return [
         connect().use(connect.query())
@@ -81,21 +97,11 @@ gulp.task('serve', ['assemble'], function() {
     }
   });
 
-  $.exec('open http://localhost:5000');
-});
-
-
-// ===================================================
-// Previewin'
-// ===================================================
-
-gulp.task('preview', function() {
-  $.connect.server({
-    root: [path.dist],
-    port: 5001
-  });
-
-  $.exec('open http://localhost:5001');
+  $.exec($.if(
+    process.env.NODE_ENV === 'development',
+    'open http://localhost:5000',
+    'open http://localhost:5001'
+  ));
 });
 
 
@@ -104,8 +110,30 @@ gulp.task('preview', function() {
 // ===================================================
 
 gulp.task('mocha', function () {
-  return gulp.src('test/*.js', {read: false})
+  return gulp.src('test/*.js', { read: false })
     .pipe($.mocha({ reporter: 'nyan' }));
+});
+
+
+// ===================================================
+// Lintin'
+// ===================================================
+
+// @docs
+// https://github.com/kristerkari/stylelint-scss
+// https://github.com/stylelint/stylelint/blob/master/docs/user-guide/about-rules.md
+gulp.task('lintsass', function() {
+  var stream = gulp.src(glob.sass)
+    .pipe(gulpStylelint({
+      reporters: [
+        {
+          formatter: 'string',
+          console: true
+        }
+      ]
+    }));
+
+  return stream;
 });
 
 
@@ -115,23 +143,28 @@ gulp.task('mocha', function () {
 
 gulp.task('sass', function() {
   var stream = gulp.src(glob.sass)
-    .pipe($.if(env_flag === false, $.sourcemaps.init()))
-    .pipe($.sass({
-      outputStyle: $.if(env_flag === false, 'expanded', 'compressed')
-    }))
-    .pipe($.if(env_flag === false,
-      $.sourcemaps.write({
-        debug: true,
-        includeContent: false,
-        sourceRoot: path.css
-      })
+    .pipe($.if(
+      process.env.NODE_ENV === 'development',
+      $.sourcemaps.init()
     ))
+    .pipe($.sassglob())
+    .pipe($.sass({
+      outputStyle: $.if(
+        process.env.NODE_ENV === 'development',
+        'expanded',
+        'compressed'
+      )
+    }))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
+    .pipe($.if(
+      process.env.NODE_ENV === 'development',
+      $.sourcemaps.write()
+    ))
     .pipe(gulp.dest(path.css))
-    .pipe($.connect.reload());
+    .pipe($.livereload());
 
   return stream;
 });
@@ -141,6 +174,17 @@ gulp.task('sass', function() {
 // Templatin'
 // ===================================================
 
+// @reference
+// https://github.com/node-base/base-data#dataloader
+//
+// @notes
+// Loading yaml files is not built in. Assemble uses
+// base-data now. You can add yaml loading by using
+// a custom dataLoader.
+app.dataLoader('yaml', function(str, fp) {
+  return yaml.safeLoad(str);
+});
+
 // Pull #3. Also see https://github.com/assemble/assemble/issues/715
 // create a `categories` object to keep categories in (e.g. 'clients')
 // categories: {
@@ -148,7 +192,7 @@ gulp.task('sass', function() {
 //    "polyon": { ... }
 //  }
 // };
-assemble.set('categories', {});
+app.set('categories', {});
 
 /**
  Populate categories with pages that specify the categories they belong to.
@@ -161,7 +205,7 @@ categories: {
 };
  */
 
-assemble.onLoad(/\.hbs/, function(file, next) {
+app.onLoad(/\.hbs/, function(file, next) {
   // if the file doesn't have a data object or
   // doesn't contain `categories` in it's
   // front-matter, move on.
@@ -171,17 +215,17 @@ assemble.onLoad(/\.hbs/, function(file, next) {
 
   // use the default `renameKey` function to store
   // pages on the `categories` object
-  var renameKey = assemble.option('renameKey');
+  var renameKey = app.option('renameKey');
 
   // get the categories object
-  var categories = assemble.get('categories');
+  var categories = app.get('categories');
 
   // figure out which categories this file belongs to
   var cats = file.data.categories;
   cats = Array.isArray(cats) ? cats : [cats];
 
   // add this file's data (file object) to each of
-  // it's catogories
+  // it's categories
   cats.forEach(function(cat) {
     categories[cat] = categories[cat] || [];
     categories[cat][renameKey(file.path)] = file;
@@ -202,11 +246,12 @@ assemble.onLoad(/\.hbs/, function(file, next) {
  * ```
  */
 
-assemble.helper('category', function(category, options) {
+app.helper('category', function(category, options) {
   var pages = this.app.get('categories.' + category);
   if (!pages) {
     return '';
   }
+
   return Object.keys(pages).map(function(page) {
     // this renders the block between `{{#category}}` and `{{category}}` passing the
     // entire page object as the context.
@@ -216,40 +261,59 @@ assemble.helper('category', function(category, options) {
   }).join('\n');
 });
 
-/**
- * Load data onto assemble cache.
- * This loads data from `glob.data` and `glob.rootData`.
- * When loading `glob.rootData`, use a custom namespace function
- * to return `pkg` for `package.json`.
- *
- * After all data is loaded, process the data to resolve templates
- * in values.
- * @doowb PR: https://github.com/grayghostvisuals/grayghostvisuals/pull/5
- */
+app.helper('date', function() {
+  var time_stamp = new Date().getFullYear();
+  return time_stamp;
+});
 
 function loadData() {
-  assemble.data(glob.data);
-  assemble.data(assemble.plasma(glob.rootData, {namespace: function (fp) {
-    var name = basename(fp, extname(fp));
-    if (name === 'package') return 'pkg';
-    return name;
-  }}));
-  assemble.data(assemble.process(assemble.data()));
+  app.data([glob.data, 'site.yaml'], {
+    namespace: function(fp) {
+      var name = basename(fp, extname(fp));
+      return name;
+    }
+  });
+
+  app.data('package.json', {
+    namespace: function(fp) {
+      var name = basename(fp, extname(fp));
+      if (name === 'package') return 'package';
+      return name;
+    }
+  });
+
+  //console.log(app.cache.data);
 }
 
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
-  assemble.option('production', env_flag);
-  assemble.option('layout', 'default');
-  assemble.layouts(glob.layouts);
-  assemble.partials(glob.includes);
+  //app.option('production', true);
+  app.option('layout', 'default');
+  app.helpers(helpers());
+  app.layouts(glob.layouts);
+  app.partials(glob.includes);
   loadData();
 
-  var stream = assemble.src(glob.pages)
+  var stream = app.src(glob.pages)
+    .on('error', console.log)
+    .pipe(app.renderFile())
+    .on('error', console.log)
     .pipe($.extname())
-    .pipe(assemble.dest(path.site))
-    .pipe($.connect.reload());
+    .pipe(app.dest(path.site))
+    .pipe($.livereload());
+
+  return stream;
+});
+
+
+gulp.task('babel', function() {
+
+  var stream = app.src(path.js + '/scripts/*.js')
+    .pipe($.babel({
+      presets: ['es2015']
+    }))
+    .pipe(gulp.dest(path.js + '/src/'));
 
   return stream;
 });
@@ -260,18 +324,31 @@ gulp.task('assemble', function() {
 // ===================================================
 
 gulp.task('svgstore', function() {
-  return gulp
-    .src(path.site + '/img/icons/linear/*.svg')
+  var stream = gulp.src(path.images + '/svgsprite/*.svg')
     .pipe($.svgmin({
       plugins: [{
         removeDoctype: true
+      },
+      {
+        removeComments: true
       }]
     }))
-    .pipe($.svgstore())
-    .pipe($.cheerio(function($) {
-      $('svg').attr('style', 'display:none');
+    .pipe($.svgstore({
+      inlineSvg: true
+    }))
+    .pipe($.cheerio({
+      run: function($) {
+        $('svg').attr('style', 'display:none');
+      },
+      parserOptions: {
+        //https://github.com/cheeriojs/cheerio#loading
+        //https://github.com/fb55/htmlparser2/wiki/Parser-options#option-xmlmode
+        xmlMode: true
+      }
     }))
     .pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
+
+    return stream;
 });
 
 
@@ -290,9 +367,13 @@ gulp.task('usemin', ['assemble', 'sass'], function() {
       return stream
         .pipe($.usemin({
           assetsDir: path.site,
-          css: [ $.rev() ],
-          html: [ $.minhtml({ empty: false }) ],
-          js: [ $.uglify(), $.rev() ]
+          css: [$.rev()],
+          html: [$.minhtml({
+            empty: true,
+            collapseWhitespace: true,
+            removeComments: true
+          })],
+          js: [$.uglify(), $.rev()]
         }))
         .pipe(gulp.dest(path.dist));
     }));
@@ -324,9 +405,9 @@ gulp.task('copy', ['usemin'], function() {
 gulp.task('deploy', function() {
   return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
              .pipe($.ghPages(
-                $.if(env_flag === false,
+                $.if(process.env.NODE_ENV === 'development',
                 { branch: 'staging' },
-                { branch: 'master'  })
+                { branch: 'master' })
              ));
 });
 
@@ -355,10 +436,12 @@ gulp.task('watch', function() {
   ], ['sass']);
 
   gulp.watch([
+    glob.layouts,
     glob.includes,
-    glob.pages,
-    glob.layouts
+    glob.pages
   ], ['assemble']);
+
+  $.livereload.listen();
 });
 
 
@@ -366,5 +449,5 @@ gulp.task('watch', function() {
 // Taskin'
 // ===================================================
 
-gulp.task('build', [ 'copy','usemin' ]);
-gulp.task('default', [ 'sass','assemble','serve','watch' ]);
+gulp.task('build', [ 'copy', 'usemin' ]);
+gulp.task('default', [ 'sass', 'serve', 'watch' ]);

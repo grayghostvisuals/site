@@ -3,7 +3,7 @@
 # =============================================
 
 # site
-root:
+root:             .
 dest:             <%= site.root %>
 data:             data
 
@@ -12,8 +12,13 @@ templates:         site/templates
 layouts:           <%= site.templates %>/layouts
 layout:            default
 pages:             <%= site.templates %>/pages
-includes:          <%= site.templates %>/{includes, pages}
-imgdir:            <%= site.root %>/img/site
+includes:          <%= site.templates %>/{includes,pages}
+
+# assets
+imgdir:            ./img/site/
+js:                ./js/src/
+jslib:             ./js/lib/
+bowerlib:          ./bower_components/
 
 
 # =============================================
@@ -22,5 +27,5 @@ imgdir:            <%= site.root %>/img/site
 
 # site
 title:              Gray Ghost Visuals
-author:             <%= pkg.author %>
-url:                <%= pkg.homepage %>
+author:             Dennis Gaebel
+url:                http://grayghostvisuals.com

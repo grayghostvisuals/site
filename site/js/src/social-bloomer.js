@@ -1,17 +1,25 @@
-var socialBloomer = (function() {
+'use strict';
+
+var socialBloomer = function () {
   return {
-    init: function(el, state) {
+    init: function init(el, state) {
       var circle = document.querySelectorAll(el);
 
       function socialBloom() {
         this.parentNode.classList.toggle(state);
       }
 
-      for(var i = 0, l = circle.length; i < l; i++) {
+      function resetBloom() {
+        this.parentNode.classList.remove(state);
+      }
+
+      for (var i = 0, l = circle.length; i < l; i++) {
         circle[i].addEventListener('click', socialBloom);
+        circle[i].addEventListener('mouseenter', socialBloom);
+        circle[i].addEventListener('mouseleave', resetBloom);
       }
     }
   };
-})();
+}();
 
 socialBloomer.init('div.socials__btn', 'is-bloomed');

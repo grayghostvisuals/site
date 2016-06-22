@@ -15,10 +15,10 @@ project: SVG Logo Animation
 <h2 class="ggv-headline _reverse"><span>Animated</span><span>Polylion</span></h2>
 
 <ul>
-  <li><b>Client:</b> {{ title }}</li>
-  <li><b>Category:</b> {{ categories }}</li>
-  <li><b>Project:</b> {{ project }}</li>
-  <li><b>Website:</b> <a href="{{ url }}">{{ url }}</a></li>
+  <li><b>Client:</b> {{title}}</li>
+  <li><b>Category:</b> {{categories}}</li>
+  <li><b>Project:</b> {{project}}</li>
+  <li><b>Website:</b> <a href="{{url}}">{{url}}</a></li>
 </ul>
 
 <p>Jonno Riekwel of Polyon possessed a deep and enthusiastic vision to develop and construct a vector animation sequence involving the Polyon logo crafted by my own logo creator Jord Riekwel. Polyon requested that each polygon element animate indenpendently and in a staggered fashion for it's sequence.</p>
@@ -32,12 +32,12 @@ project: SVG Logo Animation
 <p><strong>Noteworthy</strong> The project was picked up as a guest article with CSS-Tricks due to an earier demo exploring the polygon lion orignally posted ion Dribbble by Breno Bettnecourt. This demo was studying the capabilities of SVG polygons to move and be controlled independently using the GreenSock Animation Platform.</p>
 
 <figure class="figure-site">
-  <img src="{{site.imgdir}}/polyonsite.png" alt="">
+  <img src="{{site.imgdir}}polyonsite.png" alt="">
 </figure>
 
 <div>
   <figure class="figure-txt">
-    <img src="{{site.imgdir}}/polyon-ai.png" alt="">
+    <img src="{{site.imgdir}}polyon-ai.png" alt="">
   </figure>
 
   <div class="text">
@@ -47,21 +47,21 @@ project: SVG Logo Animation
 </div>
 
 <figure>
-  <img src="{{site.imgdir}}/polyonlion-pulse.gif" alt="">
+  <img src="{{site.imgdir}}polyonlion-pulse.gif" alt="">
 </figure>
 
 <h3>Challenges</h3>
 <p>In the initial researching phases I found CSS to be very difficult in terms of control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations, keyframes can be controlled and executed independently. As the project evolved each polygon element would allow for independent movement while being presented in a particular sequence.</p>
 
 <figure>
-  <img src="{{site.imgdir}}/polyon-stroke.png" alt="">
+  <img src="{{site.imgdir}}polyon-stroke.png" alt="">
 </figure>
 
 <p>Each polyon when placed within the browser seemed to have some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke with a value of 2.5 and the color of each corresponding polygon element it was placed on helped to alleviate this issue slightly. Post artile for CSS-Tricks brought plenty of smart suggestions using SVG filters, but none have completely solved the problem.</p>
 
 <h3>Results</h3>
 <figure>
-  <img src="{{site.imgdir}}/polyonlion-hover.gif" alt="">
+  <img src="{{site.imgdir}}polyonlion-hover.gif" alt="">
 </figure>
 
 <p>The final result is gorgeous and attractive. The cherry on top is the hidden easter egg for hover animations that Polyon asked as a last minute add on. The result is amusing and delightful.</p>
