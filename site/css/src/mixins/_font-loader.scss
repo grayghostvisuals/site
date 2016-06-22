@@ -1,0 +1,20 @@
+// @example
+// @include font-loader(400, '"source-sans-pro", sans-serif');
+
+@mixin font-loader($weight, $family…) {
+  opacity: 0;
+  visibility: hidden;
+
+  .wf-active &,
+  .wf-inactive & {
+    font-family: #{$family…};
+    font-weight: $weight;
+  }
+
+  .wf-active &,
+  .wf-inactive &,
+  .no-js & {
+    opacity: 1;
+    visibility: visible;
+  }
+}

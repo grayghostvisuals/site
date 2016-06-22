@@ -1,0 +1,14 @@
+// ============================================================
+// Caret (i.e. triangle)
+// @requires opposite-direction function
+// @include caret(top, 50px, maroon);
+// ============================================================
+
+@mixin caret($point, $border-width, $color) {
+  $opposite: opposite-direction($point);
+  border: $border-width solid transparent;
+  border-#{$opposite}: $border-width solid $color;
+  border-#{$point}: 0;
+  height: 0;
+  width: 0;
+}

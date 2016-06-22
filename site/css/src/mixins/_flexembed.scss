@@ -1,0 +1,32 @@
+// Flexible Cover Images
+// http://nicolasgallagher.com/flexible-css-cover-images
+//
+// .FlexEmbed--3to1 { @include flexembed(33.33333%,  url(http://placeimg.com/1000/1000/nature), 600px, 600px); }
+// .FlexEmbed--4to1 { @include flexembed(25%,  url(http://placeimg.com/1000/1000/nature), 600px, 200px); }
+// .FlexEmbed--16to9 { @include flexembed(56.25%,  url(http://placeimg.com/1000/1000/nature), 600px, 600px); }
+//
+// $btm-padding: [ratio percentage]
+// For Example: 16:9 (16/9 = .5625 || 56.25%)
+// $btm-padding: 56.25%
+
+@mixin flexembed($btm-padding, $bg-image, $max-width, $max-height) {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  margin: 0 auto;
+  max-height: #{$max-height};
+  max-width: #{$max-width};
+
+  background-image: $bg-image;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+      content: "";
+      display: block;
+      padding-bottom: $btm-padding;
+      width: 100%;
+  }
+}

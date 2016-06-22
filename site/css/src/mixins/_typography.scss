@@ -1,0 +1,90 @@
+// $Typescale
+// -------------------------------------//
+
+@mixin typescale($scale, $base, $value, $measure:"") {
+	@if $value == rem {
+		font-size: $scale * 1px;
+		font-size: context-calc($scale, $base, $value);
+	} @else if $value == em {
+		font-size: context-calc($scale, $base, $value);
+	} @else {
+		font-size: $scale * 1px;
+	}
+
+	@if $measure != "" {
+		@if $value == rem {
+			margin-bottom: measure-margin($scale, $measure, $value: px);
+			margin-bottom: measure-margin($scale, $measure, $value);
+		} @else if $value == em {
+			margin-bottom: measure-margin($scale, $measure, $value: em);
+		} @else {
+			margin-bottom: measure-margin($scale, $measure, $value);
+		}
+	}
+}
+
+
+// $Headings
+// https://github.com/typeplate/starter-kit/issues/27
+// -------------------------------------//
+// Props to Harry Roberts for this trick.
+//
+// @notes
+// optimizeLegibility           Enables ligatures and kerning
+// single line height           Fixes large spaces when a heading wraps two lines
+
+%hN {
+	text-rendering: optimizeLegibility;
+	line-height: 1;
+	margin-top: 0;
+}
+
+@mixin headings() {
+	@each $name, $size in $scale {
+		.#{$name} {
+			@extend %hN;
+			@include typescale(
+				$size,
+				$font-base,
+				$typescale-unit,
+				$measure
+			);
+		}
+	}
+}
+
+@mixin headings-style() {
+	@each $h, $size in $headings {
+		#{$h} {
+			@extend .#{$size};
+		}
+	}
+}
+
+
+// $Hypens
+// -------------------------------------//
+// @notes
+// http://caniuse.com/#search=hyphens
+// http://trentwalton.com/2011/09/07/css-hyphenation
+//
+// @values              [ none | manual | auto ]
+
+@mixin hyphens($val) {
+	@each $prefix in $prefixes {
+		#{$prefix}hyphens: $val;
+	}
+}
+
+
+// $Code
+// -------------------------------------//
+
+@mixin white-space($wrap-space) {
+	@if $wrap-space == 'pre-wrap' {
+		white-space: #{-moz-}$wrap-space;
+		white-space: $wrap-space;
+	} @else {
+		white-space: $wrap-space;
+	}
+}

@@ -1,0 +1,19 @@
+// @example
+// @include font-features('font-feature-settings', liga, dlig);
+// text-rendering:optimizeLegibility;
+
+@mixin font-features($name, $value...) {
+  $list: $value;
+  $count: length($list);
+  length: $count;
+
+    @each $vendor in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    @if $vendor == '-moz-' {
+      @each $num in $count {
+        #{$vendor}#{$name}: "#{join($value, null)}=1";
+      }
+    } @else {
+      #{$vendor}#{$name}: "#{$value}";
+    }
+  }
+}

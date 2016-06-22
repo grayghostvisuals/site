@@ -1,0 +1,50 @@
+// ==========================================================================
+// Placeholders
+// https://github.com/drublic/Sass-Mixins/blob/master/mixins.scss
+// ==========================================================================
+
+// @example
+// input { @include placeholder-color($color); }
+
+@mixin placeholder-color($color) {
+	// Chrome, Safari, Opera
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+
+	// Gecko - Firefox 4 thru 18
+	&:-moz-placeholder {
+		color: $color;
+	}
+	// Gecko - Firefox 19+
+	&::-moz-placeholder {
+		color: $color;
+	}
+
+	// IE10+
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+
+// @example
+// .selector { @include placeholder-styles { color: #bada55; font-weight: bold; } }
+
+@mixin placeholder-styles {
+
+	// Chrome, Safari, Opera
+	&::-webkit-input-placeholder {
+		@content
+	}
+
+	// Firefox 19+
+	&::-moz-placeholder {
+		@content
+	}
+
+	// IE 10+
+	&:-ms-input-placeholder {
+		@content
+	}
+}

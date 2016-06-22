@@ -1,0 +1,41 @@
+// ============================================================
+// Centering
+// ============================================================
+
+// Centering Known
+// https://github.com/dustinhorton/mixture-boilerplate/blob/master/assets/css/src/_sass.scss#L134-L136
+@mixin centering-known($width, $height, $max-width) {
+  height: $height;
+  margin-top: (-$height/2);
+  margin-left: (-$max-width/2);
+  max-width: $max-width;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: $width;
+}
+
+
+// Centering Table Display.
+// https://github.com/dustinhorton/mixture-boilerplate/blob/master/assets/css/src/_sass.scss#L138-L142
+// All children are displayed as table-cells
+// and vertically aligned in the middle.
+@mixin centering-table {
+  display: table;
+
+  > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+
+// Transform Vertical Align
+// http://codepen.io/sebastianekstrom/pen/kzEhe
+// http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css
+@mixin vertical-align {
+  display: block;
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}

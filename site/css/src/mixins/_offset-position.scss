@@ -1,0 +1,48 @@
+// ============================================================
+// $Size
+// http://hugogiraudel.com/2013/08/05/offsets-sass-mixin
+// ============================================================
+
+// @demo
+// .el { @include absolute(left 10px right 0 bottom 25px); }
+
+@mixin position($position, $args) {
+  // List of offsets to check for in $args
+  $offsets: top right bottom left;
+
+  // We loop through $offsets to deal with them one by one
+  @each $o in $offsets {
+
+    // If current offset found in $args
+    // assigns its index to $i
+    // Or `false` if not found
+    $i: index($args, $o);
+
+    // Now we do the verifications
+    // 1. Is the offset listed in $args? (not false)
+    // 2. Is the offset value within the list range?
+    // 3. Is the offset value valid?
+    @if $i
+    and $i + 1 <= length($args) 
+    and (type-of( nth($args, $i + 1) ) == number
+    or nth($args, $i + 1) == initial
+    or nth($args, $i + 1) == inherit ) {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+
+  position: $position;
+}
+
+
+@mixin absolute($args) {
+  @include position(absolute, $args);
+}
+
+@mixin relative($args) {
+  @include position(relative, $args);
+}
+
+@mixin fixed($args) {
+  @include position(fixed, $args);
+}

@@ -1,0 +1,37 @@
+// ============================================================
+// $Font Icon Smoothing
+// http://maximilianhoffmann.com/posts/better-font-rendering-on-osx
+// ============================================================
+
+// @info
+// The two main factors which define how fonts will look on displays 
+// are their hinting and the operating system’s rendering algorithm.
+//
+// Due to its sub-pixel antialiasing algorithm OS X tends to render light
+// text on dark backgrounds too bold.
+//
+// These properties switch the rendering algorithm to grayscaling, which
+// will result in a thinner and sharper appearance of fonts.
+
+
+// @example
+//
+// .dark-on-light {
+//     @include fontIconSmoothing(off);
+// }
+
+// .light-on-dark {
+//     @include fontIconSmoothing(on);
+// }
+
+
+@mixin fontIconSmoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+  }
+}
