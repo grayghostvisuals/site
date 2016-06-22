@@ -1,0 +1,6 @@
+// Requires strip-units function
+// @example
+// @include fontSizeRem(18);
+@function rems($size, $font-base: $font-base) {
+	@return (strip-unit($size) / $font-base) + rem;
+}

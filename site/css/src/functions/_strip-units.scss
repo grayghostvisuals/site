@@ -1,0 +1,8 @@
+// ============================================================
+// $Strips Unit Values
+// http://hugogiraudel.com/2013/08/12/sass-functions
+// ============================================================
+
+@function strip-unit($num) {
+    @return $num / ($num * 0 + 1);
+}

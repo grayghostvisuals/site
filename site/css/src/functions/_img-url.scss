@@ -1,0 +1,11 @@
+// @returns
+// url('./img/')
+//
+// @requires
+// vars/_global.scss
+//
+// @example
+// background: img-url('picture.jpg') top left no-repeat;
+@function img-url($url) {
+  @return url("#{$img-dir}#{$url}");
+}

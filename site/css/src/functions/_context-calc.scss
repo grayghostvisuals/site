@@ -1,0 +1,6 @@
+// @example
+// p { font-size: context-calc(24, 16, px); }
+
+@function context-calc($target, $context, $value) {
+	@return ($target / $context) + $value;
+}

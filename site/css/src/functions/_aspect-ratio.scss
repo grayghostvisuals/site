@@ -1,0 +1,11 @@
+// @returns Aspect Ratio Percentage
+// padding-bottom: aspect-ratio(16, 9); // @returns 56.25%
+@function aspect-ratio($ratio-numerator, $ratio-denominator) {
+	@return (($ratio-denominator / $ratio-numerator) * 100%);
+}
+
+// @returns Based on Fixed Image Dimensions
+// padding: 0 0 aspect-ratio-fixed(1080, 720); // @returns 66.666666666667%
+@function aspect-ratio-fixed($w, $h) {
+	@return ($h / $w) * 100%;
+}

@@ -1,0 +1,11 @@
+// @info
+// aquire nested maps containing key/value objects
+// @reference
+// http://codepen.io/jakealbaugh/post/using-sass-functions-to-access-complex-variable-maps
+@function mapdig($map, $key, $objkey:null) {
+  @if ($objkey != null) {
+    @return map-get(map-get($map, $key), $objkey);
+  } @else {
+    @return map-get($map, $key);
+  }
+}
