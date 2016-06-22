@@ -115,6 +115,7 @@ gulp.task('mocha', function () {
 });
 
 
+
 // ===================================================
 // Lintin'
 // ===================================================
@@ -184,6 +185,11 @@ gulp.task('sass', function() {
 app.dataLoader('yaml', function(str, fp) {
   return yaml.safeLoad(str);
 });
+
+app.data(
+  $.if(process.env.NODE_ENV === 'production', 'production', 'development')
+);
+
 
 // Pull #3. Also see https://github.com/assemble/assemble/issues/715
 // create a `categories` object to keep categories in (e.g. 'clients')
@@ -288,7 +294,6 @@ function loadData() {
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
-  //app.option('production', true);
   app.option('layout', 'default');
   app.helpers(helpers());
   app.layouts(glob.layouts);
