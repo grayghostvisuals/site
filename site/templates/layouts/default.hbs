@@ -52,25 +52,21 @@
 
     <link rel="author" href="{{site.url}}/humans.txt">
 
-    {{#if production}}
-    <script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
-    {{/if}}
-
-    <!--[if lte IE 9]><style>body {display: none;}html{background:red;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
+    <!--[if lte IE 9]><style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
 
     <!-- build:css {{site.root}}/css/style.min.css -->
     {{#is 'atomicguide' this.basename}}
-    <!--[if (gt IE 9)]><!-->
     <link rel="stylesheet" href="./css/atomic-guide.css">
-    <!-- endbuild -->
     {{/is}}
 
     {{#contains 'landing, casestudy, categories' this.basename}}
-    <!--[if (gt IE 9)]><!-->
     <link rel="stylesheet" href="./css/site.css">
-    <!--<![endif]-->
     {{/contains}}
     <!-- endbuild -->
+
+    {{#if production}}
+    <script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
+    {{/if}}
   </head>
   <body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
 
