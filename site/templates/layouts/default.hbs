@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}{{#is 'landing' this.basename}} landing{{/is}}" lang="en">
+<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +16,7 @@
     <link rel="preload" href="image.png"> }}
     {{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
 
-    <title>{{#is 'casestudy' this.basename}}Gray Ghost Visuals Case Study › {{/is}}{{title}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}}</title>
+    <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{title}}</title>
 
     <meta name="description" content="{{description}}">
 

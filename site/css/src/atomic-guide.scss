@@ -1,13 +1,13 @@
 // Config
 // ===============================================
 
-@import "vars/styling";
+@import "vars/**/*";
 
 
 // Mixins
 // ===============================================
 
-@import "mixins/media-query";
+@import "mixins/**/*";
 
 
 // Bower Plugins
@@ -19,9 +19,7 @@
 // Globals
 // ===============================================
 
-@import "globals/fonts";
-@import "globals/bases";
-@import "globals/prism";
+@import "globals/**/*";
 
 
 // Guide
@@ -34,14 +32,13 @@
 // Utilities
 // ===============================================
 
-@import "utilities/cases-headline";
+@import "utility/**/*";
 
 
 // Atoms
 // ===============================================
 
-@import "atoms/top-link";
-@import "atoms/svgraphics";
+@import "atoms/**/*";
 
 .atomic-logos svg {
   height: 140px;

@@ -9,11 +9,11 @@ html {
 body.atomic {
   padding: 20px;
 
-  > main[role="main"] .row {
+  main[role="main"] .row {
     margin: 20px 0;
   }
 
-  > header {
+  header {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -21,8 +21,8 @@ body.atomic {
     justify-content: space-between;
 
     svg {
-      width: 80px;
-      height: 80px;
+      width: 80px !important;
+      height: 80px !important;
     }
   }
 }

@@ -87,21 +87,15 @@ $atomic_swatch.addEventListener('click', function(e) {
 atomic_hex_div.addEventListener('click', function(e) {
 
   if(e.target.nodeName !== 'P') {
-
     this.classList.remove('_active');
-
   }
 
   if(e.target.nodeName === 'P') {
-
     var atomic_hexprompt = window.prompt("Copy to clipboard: CTRL+C (CMD+C on macs)", e.target.innerHTML);
 
     if(atomic_hexprompt !== null) {
-
       this.classList.remove('_active');
-
     }
-
   }
 
 });

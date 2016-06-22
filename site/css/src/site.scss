@@ -1,41 +1,24 @@
 // Config
 @import "vars/**/*";
-
-// Helpers
+@import "functions/*";
 @import "mixins/*";
 
-// Globals
-@import "globals/**/*";
-
-// Bower Plugins
+// UI
 @import "../../bower_components/normalize-scss/normalize.scss";
-
-// Atoms
+@import "globals/**/*";
+@import "plugins/*";
+@import "toolbox/**/*";
 @import "atoms/**/*";
-
-.socials {
-  margin: auto;
-  margin-bottom: 60px;
-}
-
-.ggv-graphic:not(:root) {
-  overflow: visible;
-}
+@import "molecules/**/*";
+@import "organisms/**/*";
+@import "templates/**/*";
+@import "states/*";
+@import "utility/**/*";
 
 .pub-logo {
   width: 120px;
   height: 48px;
 }
-
-.ggv-graphic {
-  visibility: hidden;
-  g > * {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-  }
-}
-
-@import "molecules/**/*";
 
 .ggv-publist {
   list-style-type: none;
@@ -43,99 +26,8 @@
   padding-left: 0;
 }
 
-header[role="banner"] {
-  svg {
-    width: 60px;
-    height: auto;
-    @media screen and (min-width: 460px) {
-      width: 80px;
-      height: auto;
-    }
-  }
-}
-
-.landing nav[role="navigation"] {
-  width: 100%;
-  text-align: center;
-
-  font-family: sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #76bff4;
-
-    &:visited {
-      color: #76bff4;
-    }
-
-    &:hover,
-    &:focus,
-    &:active {
-      font-weight: inherit;
-      color: #4380A7;
-    }
-  }
-}
-
-.landing.ffo-loaded nav[role="navigation"] {
-  font-size: 16px;
-}
-
-footer[role="contentinfo"] {
-  width: 100%;
-  text-align: center;
-
-  small {
-    text-transform: uppercase;
-    color: #4E8BB3;
-  }
-}
-
-
-.ggv-graphic {
-  visibility: hidden;
-  g > * {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-  }
-}
-
-
 .ggv-slogan p {
   color: #1e5a81;
-}
-
-.landing main {
-  max-width: 1181px;
-  margin: 0 auto;
-}
-
-.landing .ggv-wtypes {
-  display: flex;
-}
-
-.case main {
-  max-width: 571px;
-  margin: 0 auto;
-  padding-left: 52px;
-  padding-right: 52px;
-}
-
-.case .ggv-headline {
-  margin: 0;
-  font-size: 68px;
-  font-weight: 200;
-  line-height: 1;
-  text-align: center;
-  color: white;
-}
-
-.case .figure-site {
-  margin-left: -120px;
-  margin-right: -120px;
 }
 
 .figure-txt {
@@ -146,64 +38,3 @@ footer[role="contentinfo"] {
 .text {
   margin-right: -20%;
 }
-
-// Polyon
-html.case.polyon {
-  background: url(../img/site/space.jpg) top left no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  > * {
-    color: white;
-  }
-}
-
-.polyonlion {
-  transform: translateX(100%);
-}
-
-// Walmedia
-html.case.walmedia {
-  background: #1B2D33;
-  > * {
-    color: #D9DDDF;
-  }
-}
-
-// Utilities
-// Flexbox on Steroids
-// http://codepen.io/dennisgaebel/pen/LVvqOx
-
-.sticky-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.sticky-container {
-  display: table;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  height: 100%;
-  width: 100%;
-}
-
-.sticky-row {
-  display: -moz-box; // As of FF42
-}
-
-.sticky-header {
-  flex: none;
-}
-
-.sticky-content {
-  flex: 1 0 auto;
-  height: auto;
-}
-
-.sticky-footer {
-  flex: none;
-  vertical-align: middle;
-  align-items: center;
-}
-
-@import "utilities/**/*";
