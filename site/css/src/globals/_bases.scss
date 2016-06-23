@@ -65,6 +65,10 @@ a {
   }
 }
 
+figcaption {
+  text-align: center;
+}
+
 @for $i from 1 through 6 {
   h#{$i} {
     text-transform: uppercase;

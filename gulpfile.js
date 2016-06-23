@@ -25,7 +25,7 @@ var gulp            = require('gulp'),
     del             = require('del'),
     merge           = require('merge-stream'),
     basename        = require('path').basename,
-    extname         = require('path').extname;
+    extname         = require('path').extname,
     gulpStylelint   = require('gulp-stylelint');
 
 $.exec   = require('child_process').exec;

@@ -1,0 +1,13 @@
+html.case.diy {
+  background: #6B3CDA;
+  // background: #5062CE;
+  *:not(a) {
+    color: white;
+  }
+
+  main svg {
+    width: 75%;
+    margin: auto;
+    display: inherit;
+  }
+}

@@ -1,21 +1,9 @@
-{{#is 'atomicguide' this.basename}}
-<nav id="nav" role="navigation">
-  <a href="#colors" id="atomic-colors">Colors</a>
-  <a href="#utilities" id="atomic-utilities">Utilities</a>
-  <a href="#typography" id="atomic-typography">Typography</a>
-  <a href="#atoms" id="atomic-atoms">Atoms</a>
-  <a href="#molecules" id="atomic-molecules">Molecules</a>
-</nav>
-{{/is}}
-
-{{#contains 'landing, categories' this.basename}}
-<nav id="nav" role="navigation">
-  <a href="/work.html">Work</a>
-  <a href="#about" id="ggv-about">About</a>
-  <a href="#methods" id="ggv-about">Methodology</a>
+<nav id="nav" class="primary-nav" role="navigation">
+  <a href="/work.html" class="{{#is 'categories' this.basename}}active{{/is}}">Work</a>
+  {{! <a href="#about" id="ggv-about">About</a> }}
+  {{! <a href="#methods" id="ggv-about">Methodology</a> }}
   <a href="#testimonials" id="ggv-testimonials">Testimonials</a>
-  <a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>
   <a href="http://blog.grayghostvisuals.com">Journal</a>
+  <a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>
   <a href="/atomic-guide.html">Atomic Guide</a>
 </nav>
-{{/contains}}

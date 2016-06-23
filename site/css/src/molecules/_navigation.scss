@@ -22,6 +22,10 @@ nav[role="navigation"] {
       font-weight: inherit;
       color: #4380A7;
     }
+
+    &.active {
+      color: red;
+    }
   }
 }
 

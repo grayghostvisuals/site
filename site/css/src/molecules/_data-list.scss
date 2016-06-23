@@ -4,7 +4,8 @@ $work: (
   3: tracks,
   4: theron,
   5: murmuration-malts,
-  6: codepen
+  6: diy,
+  7: codepen
 );
 
 $color: (
@@ -13,8 +14,20 @@ $color: (
   tracks: #5D5D7D,
   theron: #161819,
   murmuration-malts: #E2C454,
+  diy: #6B3CDA,
   codepen: black
 );
+
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
 
 .ggv-datalist__fig {
   margin: auto;
@@ -39,6 +52,14 @@ $color: (
   overflow: hidden;
   position: relative;
   color: white;
+  transform-origin: center center;
+  animation: 1200ms cubic-bezier(0.65, 0.05, 0.36, 1) 0s scaleIn;
+
+  @for $i from 1 through length(map-keys($work)) {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.025s;
+    }
+  }
 
   h3,p {
     color: white;
@@ -48,9 +69,11 @@ $color: (
 
   a {
     display: block;
-    width: 100%;
     height: 100%;
+    margin-left: auto;
+    margin-right: auto;
     transition: 300ms all ease-in-out;
+    width: 50%;
     color: white;
     &:hover {
       img {opacity: 0.1;}

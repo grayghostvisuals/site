@@ -14,29 +14,3 @@
 @import "templates/**/*";
 @import "states/*";
 @import "utility/**/*";
-
-.pub-logo {
-  width: 120px;
-  height: 48px;
-}
-
-.ggv-publist {
-  list-style-type: none;
-  display: flex;
-  padding-left: 0;
-}
-
-.ggv-slogan p {
-  color: #1e5a81;
-}
-
-#shots li {
-  position: relative;
-  p {
-    color: rgba(0,0,0,0.7);
-    position: absolute;
-    bottom: 20px;
-    text-shadow: 0 -1px 1px rgba(255, 255, 255, 0.1);
-    font-family: "Avenir LT W01_45 Book";
-  }
-}

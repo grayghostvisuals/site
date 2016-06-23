@@ -1,20 +1,19 @@
 <!doctype html>
-<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}{{#is 'experiments' this.basename}} experiment{{/is}}" lang="en">
+<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case default-template{{/is}}{{#is 'experiments' this.basename}} experiment default-template{{/is}}" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta http-equiv="cleartype" content="on">
 
     {{! Prefetching, preloading, prebrowsing }}
-    {{! <link rel="dns-prefetch" href="https://ajax.googleapis.com">
-    <link rel="dns-prefetch" href="https://maps.googleapis.com">
-    <link rel="dns-prefetch" href="//example.com/">
-    <link rel="preconnect" href="https://www.example.com/">
-    <link rel="prefetch" href="https://www.example.com/">
-    <link rel="prerender" href="https://example.com/">
-    <link rel="subresource" href="styles.css">
-    <link rel="preload" href="image.png"> }}
     {{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
+    {{#if production}}
+    <link rel="dns-prefetch" href="https://fast.fonts.net">
+    <link rel="preconnect" href="https://fast.fonts.net">
+    <link rel="prefetch" href="https://fast.fonts.net">
+    {{/if}}
+    <link rel="prerender" href="">
+    <link rel="subresource" href="./css/site.css">
 
     <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{title}}</title>
 
@@ -73,6 +72,11 @@
   <div class="sticky-container">
     <header class="sticky-row sticky-header" role="banner">
       {{> logo}} {{#contains 'casestudy, experiments' this.basename}}<a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>{{/contains}}
+
+      {{#is 'atomicguide' this.basename}}
+      {{> atomic-nav}}
+      {{/is}}
+
       {{> nav}}
     </header>
 
@@ -83,25 +87,41 @@
     {{> footer}}
   </div>
 
+  {{#is 'CodePen' this.title}}
+  <script>
+    var request  = new XMLHttpRequest(),
+        codepens = document.getElementById('codepens');
+
+    request.open('GET', 'http://cpv2api.com/pens/showcase/grayghostvisuals', true);
+
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        var data = JSON.parse(request.responseText);
+
+        for(var i = 0, l = data.data.length; i < l; i++) {
+          pen = document.createElement('li');
+          pen.className = 'pen';
+          pen.innerHTML = '<a href="' + data.data[i].link + '"><img src="' + data.data[i].images.large + '" class="pen"></a> <p class="pen-title">' + data.data[i].title + '</p>';
+
+          codepens.appendChild(pen);
+        }
+      } else {
+        console.log('server error');
+      }
+    };
+
+    request.onerror = function() {
+      console.log('connection error');
+    };
+
+    request.send();
+  </script>
+  {{/is}}
+
   <!-- build:js {{site.root}}/js/src/scripts.min.js -->
   <script src="./js/lib/ffobserver.js"></script>
   <script src="./js/src/ffobserver-config.js"></script>
   <script src="./js/src/social-bloomer.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script>
-    // http://cpv2api.com
-    $.ajax({
-      dataType: 'json',
-      url: "http://cpv2api.com/pens/showcase/grayghostvisuals",
-      data: "json",
-      success: function(data) {
-        console.log(data);
-        for(var i = 0, l = data.data.length; i < l; i++) {
-          $("#shots").append('<li><a href="' + data.data[i].link + '"><img src="' + data.data[i].images.large + '" class="pen"></a> <p>' + data.data[i].title + '</p></li>');
-        }
-      }
-    });
-  </script>
 
   {{#contains 'landing, atomicguide' this.basename}}
   <script src="./js/lib/TweenMax.min.js"></script>

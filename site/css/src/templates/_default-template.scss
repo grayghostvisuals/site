@@ -1,0 +1,23 @@
+.default-template nav[role="navigation"] {
+  display: none;
+}
+
+.default-template main {
+  max-width: 571px;
+  margin: 0 auto;
+  //padding: 100px 52px;
+}
+
+.default-template .ggv-headline {
+  line-height: 1;
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+  margin-bottom: 50px;
+  font-size: 48px;
+}
+
+.default-template .figure-site {
+  margin-left: -120px;
+  margin-right: -120px;
+}

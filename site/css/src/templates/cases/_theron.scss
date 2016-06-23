@@ -1,6 +1,6 @@
 html.case.theron {
   background: #161819;
-  * {
+  *:not(a) {
     color: white;
   }
 }

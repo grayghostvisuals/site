@@ -1,6 +1,11 @@
 html.case.tracks {
-  background: #5D5D7D;
-  * {
-    color: white;
+  background: #5B5F7C;
+  *:not(a) {
+    color: #D3E1E6;
+  }
+
+  main a,
+  footer a {
+    color: #00A5F9;
   }
 }

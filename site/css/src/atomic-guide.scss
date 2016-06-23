@@ -59,6 +59,11 @@
 
 @import "molecules/**/*";
 
+// temporary until a better handlebars approach is found
+.primary-nav {
+  display: none;
+}
+
 nav {
   font-family: 'Ciutadella W04 SmBold';
   text-transform: uppercase;

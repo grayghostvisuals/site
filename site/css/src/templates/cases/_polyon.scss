@@ -1,9 +1,8 @@
-// Polyon
 html.case.polyon {
-  background: url(../img/site/space.jpg) top left no-repeat;
+  background: img-url("space.jpg") top left no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  * {
+  *:not(a) {
     color: white;
   }
 }

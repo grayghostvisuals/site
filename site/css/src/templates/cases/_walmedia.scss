@@ -1,7 +1,16 @@
-// Walmedia
 html.case.walmedia {
   background: #1B2D33;
-  > * {
+  > *:not(a),
+  h3 {
+    color: #D9DDDF;
+  }
+
+  main a,
+  footer a {
+    color: #DFD151;
+  }
+
+  footer small {
     color: #D9DDDF;
   }
 }
