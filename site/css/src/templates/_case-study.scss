@@ -1,3 +1,4 @@
+.experiment main,
 .case main {
   max-width: 571px;
   margin: 0 auto;
@@ -5,6 +6,7 @@
   padding-right: 52px;
 }
 
+.experiment .ggv-headline,
 .case .ggv-headline {
   margin: 0;
   font-size: 68px;
@@ -14,6 +16,7 @@
   color: white;
 }
 
+.ggv-headline .figure-site,
 .case .figure-site {
   margin-left: -120px;
   margin-right: -120px;

@@ -3,11 +3,11 @@ html.case.polyon {
   background: url(../img/site/space.jpg) top left no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  > * {
+  * {
     color: white;
   }
 }
 
-.polyonlion {
+html.case.polyon .polyonlion {
   transform: translateX(100%);
 }

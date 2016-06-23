@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}" lang="en">
+<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case{{/is}}{{#is 'experiments' this.basename}} experiment{{/is}}" lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -59,7 +59,7 @@
     <link rel="stylesheet" href="./css/atomic-guide.css">
     {{/is}}
 
-    {{#contains 'landing, casestudy, categories' this.basename}}
+    {{#contains 'landing, casestudy, categories, experiments' this.basename}}
     <link rel="stylesheet" href="./css/site.css">
     {{/contains}}
     <!-- endbuild -->
@@ -72,7 +72,7 @@
 
   <div class="sticky-container">
     <header class="sticky-row sticky-header" role="banner">
-      {{> logo}}
+      {{> logo}} {{#contains 'casestudy, experiments' this.basename}}<a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>{{/contains}}
       {{> nav}}
     </header>
 
@@ -87,6 +87,21 @@
   <script src="./js/lib/ffobserver.js"></script>
   <script src="./js/src/ffobserver-config.js"></script>
   <script src="./js/src/social-bloomer.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script>
+    // http://cpv2api.com
+    $.ajax({
+      dataType: 'json',
+      url: "http://cpv2api.com/pens/showcase/grayghostvisuals",
+      data: "json",
+      success: function(data) {
+        console.log(data);
+        for(var i = 0, l = data.data.length; i < l; i++) {
+          $("#shots").append('<li><a href="' + data.data[i].link + '"><img src="' + data.data[i].images.large + '" class="pen"></a> <p>' + data.data[i].title + '</p></li>');
+        }
+      }
+    });
+  </script>
 
   {{#contains 'landing, atomicguide' this.basename}}
   <script src="./js/lib/TweenMax.min.js"></script>

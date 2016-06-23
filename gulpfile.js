@@ -261,8 +261,6 @@ app.helper('category', function(category, options) {
   return Object.keys(pages).map(function(page) {
     // this renders the block between `{{#category}}` and `{{category}}` passing the
     // entire page object as the context.
-    // If you only want to use the page's front-matter, then change this to something like
-    // return options.fn(pages[page].data);
     return options.fn(pages[page]).toLowerCase();
   }).join('\n');
 });

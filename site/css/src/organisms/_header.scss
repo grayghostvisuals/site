@@ -8,3 +8,41 @@ header[role="banner"] {
     }
   }
 }
+
+.portfolio header[role="banner"] {
+  padding: 60px 40px;
+  margin-bottom: 0px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  a[href="/"] {
+    position: absolute;
+    top: 20px;
+    left: -10px;
+  }
+}
+
+.experiment header[role="banner"],
+.case header[role="banner"] {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  align-content: stretch;
+  a[href="/"]{
+    transform: translateX(80px) scale(1.25);
+    transform-origin: top;
+  }
+  a[href*="mailto"] {
+    background: white;
+    align-self: stretch;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0 60px;
+    width: 200px;
+    font-family: "Ciutadella W04 Lt";
+    font-style: italic;
+    font-size: 24px;
+    border-radius: 25px 0 0 40px;
+  }
+}

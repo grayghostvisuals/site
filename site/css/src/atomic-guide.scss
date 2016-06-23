@@ -57,8 +57,7 @@
 // Molecules
 // ===============================================
 
-@import "molecules/socials";
-@import "molecules/quotator.scss";
+@import "molecules/**/*";
 
 nav {
   font-family: 'Ciutadella W04 SmBold';

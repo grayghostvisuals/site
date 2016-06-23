@@ -4,8 +4,10 @@ title: Walmedia
 layout: default
 description:
 categories: client
-url: http://faithmedia.com
-summary: the summary text of the project
+projecturl: https://faithmade.com
+url: http://liftux.com
+summary: Vector Animation
+logo: logo-faithmade.svg
 ---
 
 {{> logo-faithmade}}
@@ -13,10 +15,10 @@ summary: the summary text of the project
 <h2 class="ggv-headline _reverse"><span>Handwritten</span><span>Faith</span></h2>
 
 <ul>
-  <li><b>Client:</b> Walmedia LLC.</li>
-  <li><b>Category:</b> {{ categories }}</li>
+  <li><b>Company:</b> <a href="{{url}}">Walmedia LLC.</a></li>
+  <li><b>Category:</b> {{capitalize categories}}</li>
   <li><b>Project:</b> Animated Vector Handwriting</li>
-  <li><b>Website:</b> <a href="{{ url }}">{{ url }}</a></li>
+  <li><b>Website:</b> <a href="{{projecturl}}">{{projecturl}}</a></li>
   <li><b>Tooling:</b> Adobe Illustrator, Node, Gulp, SVGO</li>
   <li><b>Languages:</b> Sass, JavaScript</li>
   <li><b>Libraries:</b> TweenMax, DrawSVG</li>

@@ -1,0 +1,119 @@
+$work: (
+  1: polyon,
+  2: walmedia,
+  3: tracks,
+  4: theron,
+  5: murmuration-malts,
+  6: codepen
+);
+
+$color: (
+  polyon: #060E17,
+  walmedia: #1B2D33,
+  tracks: #5D5D7D,
+  theron: #161819,
+  murmuration-malts: #E2C454,
+  codepen: black
+);
+
+.ggv-datalist__fig {
+  margin: auto;
+  max-width: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 240ms all ease-in-out;
+  text-align: center;
+  opacity: 1;
+}
+
+.ggv-datalist__item {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1 0 300px;
+  height: 300px;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  color: white;
+
+  h3,p {
+    color: white;
+    text-align: center;
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: 300ms all ease-in-out;
+    color: white;
+    &:hover {
+      img {opacity: 0.1;}
+      span {opacity: 0;}
+      div {opacity: 1;transform: scale(1);}
+    }
+  }
+
+  span {
+    border-radius: 0 0 10px 10px;
+    transition: 300ms all ease-in-out;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -1px 10px rgba(0, 0, 0, 0.13);
+    display: inline-block;
+    max-width: 150px;
+    text-align: center;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "Ciutadella W04 Lt";
+    left: 0;
+    z-index: 1;
+    right: 0;
+    text-transform: capitalize;
+    font-weight: 100;
+  }
+}
+
+.ggv-summary {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  transition: 240ms all ease-in-out;
+  transform-origin: center center;
+  transform: scale(0);
+}
+
+.ggv-summary__desc {
+  text-transform: capitalize;
+}
+
+@each $key, $value in $work {
+  .ggv-datalist__item.#{$value} {
+    background: map-get($color, $value);
+    color: white;
+    span {
+      background: map-get($color, $value);
+    }
+  }
+}
+
+.ggv-datalist__item.theron {
+  img {
+    max-width: 200px;
+  }
+}
+
+.ggv-datalist__item.murmuration-malts {
+  img {
+    max-width: 180px;
+  }
+}

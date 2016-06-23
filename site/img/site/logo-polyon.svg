@@ -1,0 +1,117 @@
+<svg class="polyonlion" version="1.1" viewBox="13 103.7 586 580" width="200" height="236" xmlns="http://www.w3.org/2000/svg">
+  <g id="polyonlion-mouth">
+    <polygon fill="#231F20" points="306,524.3 388.3,551.9 311.6,502     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="223.7,551.9 306,524.3 300.4,501.8     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+  <g id="polyonlion-nose">
+    <polygon fill="#333333" points="359.6,420.7 306.2,448.6 354.7,448.6     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#454545" points="306,413.9 306.2,448.6 359.6,420.7     " stroke-width="2.5" stroke="#454545" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#707070" points="306,413.9 252.4,420.7 306.2,448.6     " stroke-width="2.5" stroke="#707070" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#454545" points="252.4,420.7 257.5,448.6 306.2,448.6     " stroke-width="2.5" stroke="#454545" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="257.5,448.6 306.4,484.9 306.2,448.6     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="306.4,484.9 306,524.3 318.2,476.1     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#231F20" points="306.2,448.6 306.4,484.9 354.7,448.6     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#231F20" points="293.8,475.5 306,524.3 306.4,484.9     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+  <g id="polyonlion-eye--left">
+    <polygon fill="#454545" points="211.3,319.9 192.4,325.5 228.4,339 261.2,326.2     " stroke-width="2.5" stroke="#454545" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="261.2,326.2 228.4,339 248.7,355.1     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#231F20" points="192.4,325.5 202.7,353.9 248.7,355.1 228.4,339     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#231F20" points="248.7,355.1 259.2,377.6 261.2,326.2     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+  <g id="polyonlion-eye--right">
+    <polygon fill="#454545" points="350.8,326.2 363,355.1 383.6,339 366,338.7     " stroke-width="2.5" stroke="#454545" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="350.8,326.2 352.8,377.6 363,355.1     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#333333" points="400.7,319.9 350.8,326.2 366,338.7 383.6,339 419.6,325.5
+  " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#231F20" points="363,355.1 383.6,339 419.6,325.5 409.3,353.9     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+  <g id="polyonlion-face">
+    <polygon fill="#CCCCCC" points="490.1,341.9 409.3,353.9 425.5,411.7     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="419.6,325.5 409.3,353.9 490.1,341.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="415.4,278.3 400.7,319.9 419.6,325.5 490.1,341.9     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="451.4,238.6 415.4,278.3 490.1,341.9     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="451.4,238.6 353.7,279.5 415.4,278.3     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="415.4,278.3 353.7,279.5 400.7,319.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="306,219.3 353.7,279.5 451.4,238.6     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="306,219.3 160.6,238.6 258,279.5     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="306,219.3 258,279.5 306,296.6     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="306,219.3 306,296.6 353.7,279.5     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="353.7,279.5 306,296.6 350.8,326.2     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="353.7,279.5 350.8,326.2 400.7,319.9     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="350.8,326.2 306,382.3 352.8,377.6     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="261.2,326.2 306,382.3 350.8,326.2     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="194.6,278.3 211.3,319.9 258,279.5     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="258,279.5 211.3,319.9 261.2,326.2     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="194.6,278.3 122.2,341.9 192.4,325.5 211.3,319.9     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="160.6,238.6 122.2,341.9 194.6,278.3     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="160.6,238.6 194.6,278.3 258,279.5     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="202.7,353.9 186.3,411.7 259.2,377.6     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="259.2,377.6 186.3,411.7 252.4,420.7     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="261.2,326.2 259.2,377.6 306,382.3     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="409.3,353.9 352.8,377.6 425.5,411.7     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="352.8,377.6 359.6,420.7 425.5,411.7     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="352.8,377.6 306,382.3 359.6,420.7     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="306,382.3 306,413.9 359.6,420.7     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="306,382.3 252.4,420.7 306,413.9     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="259.2,377.6 252.4,420.7 306,382.3     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="306,296.6 261.2,326.2 350.8,326.2     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="258,279.5 261.2,326.2 306,296.6     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="490.1,341.9 425.5,411.7 439.7,485.8     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="257.5,448.6 229.4,502.2 293.8,475.5     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="257.5,448.6 172.6,485.8 229.4,502.2     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="354.7,448.6 382.6,502.2 439.7,485.8     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="439.7,485.8 382.6,502.2 388.3,551.9     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="311.6,502 388.3,551.9 382.6,502.2     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="318.2,476.1 311.6,502 382.6,502.2     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="354.7,448.6 318.2,476.1 382.6,502.2     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="306,524.3 306.2,566.9 388.3,551.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="388.3,551.9 306.2,566.9 361.2,605.5     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="306.2,566.9 250.9,605.5 361.2,605.5     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="223.7,551.9 250.9,605.5 306.2,566.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="306,524.3 223.7,551.9 306.2,566.9     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="300.4,501.8 229.4,502.2 223.7,551.9     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="293.8,475.5 229.4,502.2 300.4,501.8     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="172.6,485.8 223.7,551.9 229.4,502.2     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="186.3,411.7 172.6,485.8 257.5,448.6     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="122.2,341.9 172.6,485.8 186.3,411.7     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="425.5,411.7 354.7,448.6 439.7,485.8     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="186.3,411.7 257.5,448.6 252.4,420.7     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="122.2,341.9 186.3,411.7 202.7,353.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#E4E4E4" points="369.6,191.6 306,219.3 451.4,238.6     " stroke-width="2.5" stroke="#E4E4E4" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="242.4,191.6 160.6,238.6 306,219.3     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CCCCCC" points="192.4,325.5 122.2,341.9 202.7,353.9     " stroke-width="2.5" stroke="#CCCCCC" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#BFBFBF" points="425.5,411.7 359.6,420.7 354.7,448.6     " stroke-width="2.5" stroke="#BFBFBF" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="409.3,353.9 363,355.1 352.8,377.6     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#D9D9D9" points="259.2,377.6 248.7,355.1 202.7,353.9     " stroke-width="2.5" stroke="#D9D9D9" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+  <g id="polyonlion-mane">
+    <polygon fill="#F06F28" points="369.6,191.6 242.4,191.6 306,219.3     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F79333" points="242.4,191.6 306,57.7 369.6,191.6    " stroke-width="2.5" stroke="#F79333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="160,88.5 306,57.7 242.4,191.6     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="160.6,238.6 242.4,191.6 160,88.5    " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F79333" points="60.2,184.7 160.6,238.6 160,88.5     " stroke-width="2.5" stroke="#F79333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="60.2,184.7 122.2,341.9 160.6,238.6    " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="60.2,184.7 13,341.9 122.2,341.9     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F1562F" points="13,341.9 49.4,503.7 122.2,341.9     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F79333" points="122.2,341.9 49.4,503.7 172.6,485.8    " stroke-width="2.5" stroke="#F79333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="172.6,485.8 49.4,503.7 223.7,551.9    " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="49.4,503.7 116.5,620 223.7,551.9    " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F1562F" points="223.7,551.9 116.5,620 250.9,605.5     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FFC149" points="250.9,605.5 116.5,620 203.9,694.2     " stroke-width="2.5" stroke="#FFC149" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="250.9,605.5 203.9,694.2 306,734.3     " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="361.2,605.5 250.9,605.5 306,734.3     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F79333" points="361.2,605.5 306,734.3 408.3,694.2     " stroke-width="2.5" stroke="#F79333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CB2E20" points="361.2,605.5 408.3,694.2 495.5,620     " stroke-width="2.5" stroke="#CB2E20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="388.3,551.9 361.2,605.5 495.5,620     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="562.6,503.7 388.3,551.9 495.5,620     " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="439.7,485.8 388.3,551.9 562.6,503.7     " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F1562F" points="490.1,341.9 439.7,485.8 562.6,503.7     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#CB2E20" points="599,341.9 490.1,341.9 562.6,503.7     " stroke-width="2.5" stroke="#CB2E20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F1562F" points="551.8,184.7 490.1,341.9 599,341.9     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F79333" points="451.4,238.6 551.8,184.7 490.1,341.9     " stroke-width="2.5" stroke="#F79333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#FAB03F" points="455.8,88.8 451.4,238.6 551.8,184.7    " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F06F28" points="455.8,88.8 369.6,191.6 451.4,238.6    " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+    <polygon fill="#F1562F" points="306,57.7 369.6,191.6 455.8,88.8     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
+</svg>

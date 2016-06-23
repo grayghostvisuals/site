@@ -8,7 +8,7 @@
 </nav>
 {{/is}}
 
-{{#is 'landing' this.basename}}
+{{#contains 'landing, categories' this.basename}}
 <nav id="nav" role="navigation">
   <a href="/work.html">Work</a>
   <a href="#about" id="ggv-about">About</a>
@@ -18,4 +18,4 @@
   <a href="http://blog.grayghostvisuals.com">Journal</a>
   <a href="/atomic-guide.html">Atomic Guide</a>
 </nav>
-{{/is}}
+{{/contains}}
