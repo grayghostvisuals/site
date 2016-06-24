@@ -16,6 +16,7 @@ var socialBloomer = function () {
       for (var i = 0, l = circle.length; i < l; i++) {
         circle[i].addEventListener('click', socialBloom);
         circle[i].addEventListener('mouseenter', socialBloom);
+        //circle[i].addEventListener('mouseleave', resetBloom);
       }
     }
   };

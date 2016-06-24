@@ -1,4 +1,4 @@
-var socialBloomer = (function() {
+let socialBloomer = (function() {
   return {
     init: function(el, state) {
       var circle = document.querySelectorAll(el);
@@ -14,7 +14,7 @@ var socialBloomer = (function() {
       for(var i = 0, l = circle.length; i < l; i++) {
         circle[i].addEventListener('click', socialBloom);
         circle[i].addEventListener('mouseenter', socialBloom);
-        circle[i].addEventListener('mouseleave', resetBloom);
+        //circle[i].addEventListener('mouseleave', resetBloom);
       }
     }
   };

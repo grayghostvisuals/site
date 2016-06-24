@@ -1,6 +1,17 @@
 html.case.theron {
   background: #161819;
-  *:not(a) {
+
+  main,
+  main h3,
+  footer[role="contentinfo"] small {
     color: white;
+  }
+
+  main a {
+    color: #FB4335;
+  }
+
+  .ggv-headline {
+    color: #FB4335;
   }
 }

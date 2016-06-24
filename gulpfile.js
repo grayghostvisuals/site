@@ -187,11 +187,12 @@ app.dataLoader('yaml', function(str, fp) {
 });
 
 app.data(
-  $.if(process.env.NODE_ENV === 'production', 'production', 'development')
+  $.if(process.env.NODE_ENV === 'production',
+    'production',
+    'development'
+  )
 );
 
-
-// Pull #3. Also see https://github.com/assemble/assemble/issues/715
 // create a `categories` object to keep categories in (e.g. 'clients')
 // categories: {
 //  clients: {
@@ -201,7 +202,7 @@ app.data(
 app.set('categories', {});
 
 /**
- Populate categories with pages that specify the categories they belong to.
+ populate categories with pages that specify the categories they belong to.
  When the onLoad middleware runs for a single file, it looks at the file's front-matter (file.data) to see if it contains a categories property. This property can be a string or an array of strings. If it exists, then the middleware updates the categories object for each category in the array. In the case of polyon.hbs, there is only 1 category called client, so the categories object becomes:
 
 categories: {
@@ -211,6 +212,10 @@ categories: {
 };
  */
 
+// middleware function
+// https://github.com/assemble/assemble/issues/715
+// Middleware functions are run at certain points during the build,
+// and only on templates that match the middleware's regex pattern.
 app.onLoad(/\.hbs/, function(file, next) {
   // if the file doesn't have a data object or
   // doesn't contain `categories` in it's
@@ -247,7 +252,7 @@ app.onLoad(/\.hbs/, function(file, next) {
  *
  * ```
  * {{#category "clients"}}
- *   <li>{{data.summary}}</li>
+ *   {{data.summary}}
  * {{/category}}
  * ```
  */
@@ -259,7 +264,7 @@ app.helper('category', function(category, options) {
   }
 
   return Object.keys(pages).map(function(page) {
-    // this renders the block between `{{#category}}` and `{{category}}` passing the
+    // this renders the block between `{{#category}}` and `{{/category}}` passing the
     // entire page object as the context.
     return options.fn(pages[page]).toLowerCase();
   }).join('\n');

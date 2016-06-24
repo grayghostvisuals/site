@@ -7,9 +7,9 @@
 
 var quotator = function () {
   return {
-    init: function init(selector, state, speed) {
+    init: function init(selector, condition, speed) {
       var quotes = document.querySelectorAll(selector),
-          state = replaceString(state),
+          state = replaceString(condition),
           cycle_speed = speed;
 
       if (quotes.length !== 'undefined') {
@@ -25,8 +25,9 @@ var quotator = function () {
       }
 
       function cycle(selector, state) {
-        var state = '.' + state,
-            current = document.querySelectorAll(state),
+        state = '.' + state;
+
+        var current = document.querySelectorAll(state),
             next = current[0].nextElementSibling;
 
         state = replaceString(state);

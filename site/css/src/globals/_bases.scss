@@ -51,6 +51,7 @@ svg {
 }
 
 a {
+  transition: 200ms all ease-in-out;
   text-decoration: none;
 
   &:link,

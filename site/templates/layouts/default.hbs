@@ -11,9 +11,9 @@
     <link rel="dns-prefetch" href="https://fast.fonts.net">
     <link rel="preconnect" href="https://fast.fonts.net">
     <link rel="prefetch" href="https://fast.fonts.net">
-    {{/if}}
     <link rel="prerender" href="">
     <link rel="subresource" href="./css/site.css">
+    {{/if}}
 
     <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{title}}</title>
 
@@ -51,8 +51,6 @@
 
     <link rel="author" href="{{site.url}}/humans.txt">
 
-    <!--[if lte IE 9]><style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
-
     <!-- build:css {{site.root}}/css/style.min.css -->
     {{#is 'atomicguide' this.basename}}
     <link rel="stylesheet" href="./css/atomic-guide.css">
@@ -63,6 +61,8 @@
     {{/contains}}
     <!-- endbuild -->
 
+    <!--[if lte IE 9]><style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
+
     {{#if production}}
     <script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
     {{/if}}
@@ -71,7 +71,11 @@
 
   <div class="sticky-container">
     <header class="sticky-row sticky-header" role="banner">
-      {{> logo}} {{#contains 'casestudy, experiments' this.basename}}<a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>{{/contains}}
+      {{> logo}}
+
+      {{#contains 'casestudy, experiments' this.basename}}
+      <a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>
+      {{/contains}}
 
       {{#is 'atomicguide' this.basename}}
       {{> atomic-nav}}
@@ -87,34 +91,24 @@
     {{> footer}}
   </div>
 
-  {{#is 'CodePen' this.title}}
+  {{#contains 'diy, Theron, Polyon' this.title}}
+  <script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+  {{/contains}}
+
+  {{#is 'categories' this.basename}}
   <script>
-    var request  = new XMLHttpRequest(),
-        codepens = document.getElementById('codepens');
+    if(window.location.pathname === '/work.html') {
+      var testimonials_link = document.getElementById('ggv-testimonials');
 
-    request.open('GET', 'http://cpv2api.com/pens/showcase/grayghostvisuals', true);
+      testimonials_link.addEventListener('click', function(event) {
+        event.preventDefault;
 
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        var data = JSON.parse(request.responseText);
+        var href     = this.getAttribute('href'),
+            link_url = window.location.origin + '/' + href;
 
-        for(var i = 0, l = data.data.length; i < l; i++) {
-          pen = document.createElement('li');
-          pen.className = 'pen';
-          pen.innerHTML = '<a href="' + data.data[i].link + '"><img src="' + data.data[i].images.large + '" class="pen"></a> <p class="pen-title">' + data.data[i].title + '</p>';
-
-          codepens.appendChild(pen);
-        }
-      } else {
-        console.log('server error');
-      }
-    };
-
-    request.onerror = function() {
-      console.log('connection error');
-    };
-
-    request.send();
+        window.location.href = link_url;
+      });
+    }
   </script>
   {{/is}}
 
@@ -122,6 +116,10 @@
   <script src="./js/lib/ffobserver.js"></script>
   <script src="./js/src/ffobserver-config.js"></script>
   <script src="./js/src/social-bloomer.js"></script>
+
+  {{#is 'CodePen' this.title}}
+  <script src="./js/src/codepenapi.js"></script>
+  {{/is}}
 
   {{#contains 'landing, atomicguide' this.basename}}
   <script src="./js/lib/TweenMax.min.js"></script>

@@ -3,11 +3,11 @@
 // @credit  : Created and shared by Dennis Gaebel (@gryghostvisuals)
 // @support : No dependencies required. IE10+ (querySelectorAll, classList)
 
-var quotator = (function() {
+let quotator = (function() {
   return {
-    init: function(selector, state, speed) {
-      var quotes      = document.querySelectorAll(selector),
-          state       = replaceString(state),
+    init: function(selector, condition, speed) {
+      let quotes      = document.querySelectorAll(selector),
+          state       = replaceString(condition),
           cycle_speed = speed;
 
       if(quotes.length !== 'undefined') {
@@ -23,8 +23,9 @@ var quotator = (function() {
       }
 
       function cycle(selector, state) {
-        var state   = '.' + state,
-            current = document.querySelectorAll(state),
+        state   = '.' + state;
+
+        let current = document.querySelectorAll(state),
             next    = current[0].nextElementSibling;
 
         state = replaceString(state);

@@ -1,0 +1,19 @@
+.portfolio header[role="banner"] {
+  padding: 60px 40px;
+  margin-bottom: 0px;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+}
+
+.portfolio header[role="banner"] a[href="/"] {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: 0;
+}
+
+.portfolio nav[role="navigation"] {
+  position: relative;
+  z-index: 0;
+}

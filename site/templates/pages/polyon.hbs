@@ -3,11 +3,11 @@ basename: casestudy
 title: Polyon
 layout: default
 description: |
-  Jonno Riekwel of Polyon enthusiastically approached Gray Ghost Visuals with a vision to develop and construct a vector animation sequence involving the Polyon logo wonderfully crafted by Jord Riekwel.  Polyon requested that each polygon element animate indenpendently and in a staggered fashion in a desired sequence.
+  Jonno Riekwel of Polyon enthusiastically approached Gray Ghost Visuals with a vision to develop and construct a vector animation sequence involving the Polyon logo wonderfully crafted by Jord Riekwel. Polyon requested that each polygon element animate indenpendently and in a staggered fashion in a desired sequence.
 categories: client
-summary: Vector Animation
+summary: Polygon Vector Animation using GreenSock
 url: http://polyon.co
-project: SVG Logo Animation
+project: SVG Polygon Logo Animation
 logo: logo-polyon.svg
 ---
 
@@ -15,28 +15,34 @@ logo: logo-polyon.svg
 
 <h2 class="ggv-headline _reverse"><span>Animated</span><span>Polylion</span></h2>
 
-<ul>
+<ul class="ggv-list">
   <li><b>Company:</b> {{title}}</li>
   <li><b>Category:</b> {{capitalize categories}}</li>
   <li><b>Project:</b> {{project}}</li>
   <li><b>Website:</b> <a href="{{url}}">{{url}}</a></li>
-</ul>
-
-<p>Jonno Riekwel of Polyon possessed a deep and enthusiastic vision to develop and construct a vector animation sequence involving the Polyon logo crafted by my own logo creator Jord Riekwel. Polyon requested that each polygon element animate indenpendently and in a staggered fashion for it's sequence.</p>
-
-<ul>
-  <li><b>Pre-Processors:</b> Haml, Sass, CoffeeScript</li>
-  <li><b>Languages:</b> HTML, CSS, JavaScript</li>
+  <li><b>Languages:</b> HTML, XML, Sass <code>(.scss)</code>, CoffeeScript</li>
   <li><b>Libraries:</b> jQuery, TweenMax</li>
+  <li><b>Tooling:</b> Adobe Illustrator, Node, Gulp, SVGO, Git</li>
 </ul>
 
-<p><strong>Noteworthy</strong> The project was picked up as a guest article with CSS-Tricks due to an earier demo exploring the polygon lion orignally posted ion Dribbble by Breno Bettnecourt. This demo was studying the capabilities of SVG polygons to move and be controlled independently using the GreenSock Animation Platform.</p>
+<p>Jonno Riekwel of Polyon possessed an enthusiastic vision to develop and construct a vector animation sequence involving the Polyon logo crafted by our own logo creator <a href="http://www.larkef.com">Jord Riekwel</a>. It was requested that each polygon element animate independently with a staggered effect in a particular sequence. The game was on as they say.</p>
 
 <figure class="figure-site">
   <img src="{{site.imgdir}}polyonsite.png" alt="">
 </figure>
 
-<div>
+<h3>Research</h3>
+
+<p>It was unclear how the motion would take place and sparked an ongoing research and discovery session searching for an answer. How to accomplish this task and what challenges would be faced was the goal so we began with a demo on CodePen of the lion below to test out theories and their results.</p>
+
+<figure class="figure-site">
+  <p data-height="322" data-theme-id="24353" data-slug-hash="RNLgJP" data-default-tab="html,result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/RNLgJP/">SVG Low PolyLion: Animated Polygons</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+  <figcaption><small>The Initial Polylion used as discovery. View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a></small></figcaption>
+</figure>
+
+<p>This demo proved it's worth in mountains of feedback and community support as well as the knowledge gained internally before moving on to the actual piece; Polyon's logo.</p>
+
+<div class="clearfix">
   <figure class="figure-txt">
     <img src="{{site.imgdir}}polyon-ai.png" alt="">
   </figure>
@@ -47,9 +53,9 @@ logo: logo-polyon.svg
   </div>
 </div>
 
-<figure>
+<!--<figure class="figure-site">
   <img src="{{site.imgdir}}polyonlion-pulse.gif" alt="">
-</figure>
+</figure>-->
 
 <h3>Challenges</h3>
 <p>In the initial researching phases I found CSS to be very difficult in terms of control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations, keyframes can be controlled and executed independently. As the project evolved each polygon element would allow for independent movement while being presented in a particular sequence.</p>
@@ -61,8 +67,14 @@ logo: logo-polyon.svg
 <p>Each polyon when placed within the browser seemed to have some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke with a value of 2.5 and the color of each corresponding polygon element it was placed on helped to alleviate this issue slightly. Post artile for CSS-Tricks brought plenty of smart suggestions using SVG filters, but none have completely solved the problem.</p>
 
 <h3>Results</h3>
-<figure>
-  <img src="{{site.imgdir}}polyonlion-hover.gif" alt="">
-</figure>
 
 <p>The final result is gorgeous and attractive. The cherry on top is the hidden easter egg for hover animations that Polyon asked as a last minute add on. The result is amusing and delightful.</p>
+
+<figure class="figure-site">
+  <img src="{{site.imgdir}}polyonlion-hover.gif" alt="">
+  <figcaption><small>View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a></small></figcaption>
+</figure>
+
+<h3>Noteworthy</h3>
+
+<p>The project was picked up as a guest article with <a href="https://css-tricks.com/polylion">CSS-Tricks</a> due to an earlier demo exploring the polygon lion orignally posted on Dribbble by Breno Bettnecourt. This demo was studying the capabilities of SVG polygons to move and be controlled independently using the GreenSock Animation Platform (GSAP). An invitation was also extended to the <a href="http://environmentsforhumans.com/2015/css-summit">CSS Summit</a> where a talk was given on creating and animating SVG polygons. That slide presentation can be seen more in-depth at <a href="http://slides.com/grayghostvisuals/svgpolygons">http://slides.com/grayghostvisuals/svgpolygons</a>. The talk was also given to the San Francisico CodePen meetup held at the Trulia headquarters.</p>
