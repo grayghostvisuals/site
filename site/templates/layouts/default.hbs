@@ -12,10 +12,10 @@
     <link rel="preconnect" href="https://fast.fonts.net">
     <link rel="prefetch" href="https://fast.fonts.net">
     <link rel="prerender" href="">
-    <link rel="subresource" href="./css/site.css">
+    <link rel="subresource" href="{{../site.css}}site.css">
     {{/if}}
 
-    <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{title}}</title>
+    <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
 
     <meta name="description" content="{{description}}">
 
@@ -33,7 +33,7 @@
     <meta name="MobileOptimized" content="320">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="designer" content="https://grayghostvisuals.comm">
+    <meta name="designer" content="{{site.url}}">
 
     {{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
     {{! <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -42,7 +42,7 @@
     <link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
     <link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png"> }}
 
-    <meta property="og:title" content="{{site.title}}">
+    <meta property="og:title" content="{{titleize site.title}}">
     <meta property="og:type" content="company">
     <meta property="og:url" content="{{site.url}}">
     <meta property="og:image" content="{{site.url}}/ograph.png">
@@ -51,13 +51,26 @@
 
     <link rel="author" href="{{site.url}}/humans.txt">
 
-    <!-- build:css {{site.root}}/css/style.min.css -->
+    {{#is 'categories' this.basename}}
+    <style>
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        opacity: 0.25;
+      }
+    </style>
+    {{/is}}
+
+    <!-- build:css {{site.css}}style.min.css -->
     {{#is 'atomicguide' this.basename}}
-    <link rel="stylesheet" href="./css/atomic-guide.css">
+    <link rel="stylesheet" href="{{../site.css}}atomic-guide.css">
     {{/is}}
 
     {{#contains 'landing, casestudy, categories, experiments' this.basename}}
-    <link rel="stylesheet" href="./css/site.css">
+    <link rel="stylesheet" href="{{../site.css}}site.css">
     {{/contains}}
     <!-- endbuild -->
 
@@ -74,7 +87,8 @@
       {{> logo}}
 
       {{#contains 'casestudy, experiments' this.basename}}
-      <a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>
+      <a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours.%0A">Get In Touch</a>
+      <!--<a href="tel:{{../site.tel}}">{{phoneNumber ../site.tel}}</a>-->
       {{/contains}}
 
       {{#is 'atomicguide' this.basename}}
@@ -92,55 +106,59 @@
   </div>
 
   {{#contains 'diy, Theron, Polyon' this.title}}
-  <script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+  <script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
   {{/contains}}
 
   {{#is 'categories' this.basename}}
   <script>
-    if(window.location.pathname === '/work.html') {
-      var testimonials_link = document.getElementById('ggv-testimonials');
+    // if(window.location.pathname === '/work.html') {
+    //   var testimonials_link = document.getElementById('ggv-testimonials');
 
-      testimonials_link.addEventListener('click', function(event) {
-        event.preventDefault;
+    //   testimonials_link.addEventListener('click', function(event) {
+    //     event.preventDefault;
 
-        var href     = this.getAttribute('href'),
-            link_url = window.location.origin + '/' + href;
+    //     var href     = this.getAttribute('href'),
+    //         link_url = window.location.origin + '/' + href;
 
-        window.location.href = link_url;
-      });
-    }
+    //     window.location.href = link_url;
+    //   });
+    // }
   </script>
   {{/is}}
 
-  <!-- build:js {{site.root}}/js/src/scripts.min.js -->
-  <script src="./js/lib/ffobserver.js"></script>
-  <script src="./js/src/ffobserver-config.js"></script>
-  <script src="./js/src/social-bloomer.js"></script>
+  <!-- build:js {{site.js}}scripts.min.js -->
+  <script src="{{site.jslib}}ffobserver.js"></script>
+  <script src="{{site.js}}ffobserver-config.js"></script>
+  <script src="{{site.js}}social-bloomer.js"></script>
 
   {{#is 'CodePen' this.title}}
-  <script src="./js/src/codepenapi.js"></script>
+  <script src="{{../site.js}}codepenapi.js"></script>
   {{/is}}
 
   {{#contains 'landing, atomicguide' this.basename}}
-  <script src="./js/lib/TweenMax.min.js"></script>
-  <script src="./bower_components/ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-  <script src="./bower_components/ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-  <script src="./js/lib/ScrollToPlugin.min.js"></script>
-  <script src="./js/src/scrollmation.js"></script>
-  <script src="./js/src/quotator.js"></script>
+  <script src="{{../site.jslib}}TweenMax.min.js"></script>
+  <script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+  <script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
+  <script src="{{../site.js}}scrollmation.js"></script>
+  <script src="{{../site.js}}quotator.js"></script>
   {{/contains }}
 
   {{#is 'landing' this.basename}}
-  <script src="./js/lib/DrawSVGPlugin.min.js"></script>
-  <script src="./js/src/iconography.js"></script>
+  <script src="{{../site.jslib}}DrawSVGPlugin.min.js"></script>
+  <script src="{{../site.js}}iconography.js"></script>
   {{/is}}
 
   {{#is 'atomicguide' this.basename}}
-  <script src="./js/lib/prism.js"></script>
-  <script src="./js/src/atomic-swatch.js"></script>
-  <script src="./js/src/atomic-generator.js"></script>
+  <script src="{{../site.jslib}}prism.js"></script>
+  <script src="{{../site.js}}atomic-swatch.js"></script>
+  <script src="{{../site.js}}atomic-generator.js"></script>
   {{/is}}
   <!-- endbuild -->
+
+  {{#is 'categories' this.basename}}
+  <script src="{{../site.js}}polyclouds.js"></script>
+  {{/is}}
 
   {{#if production}}
   <script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];

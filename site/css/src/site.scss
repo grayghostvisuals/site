@@ -5,12 +5,11 @@
 
 // UI
 @import "../../bower_components/normalize-scss/normalize.scss";
-@import "globals/**/*";
+@import "base/**/*";
 @import "plugins/*";
 @import "toolbox/**/*";
-@import "atoms/**/*";
-@import "molecules/**/*";
-@import "organisms/**/*";
+@import "components/**/*";
 @import "templates/**/*";
+@import "pages/**/*";
 @import "states/*";
 @import "utility/**/*";

@@ -18,9 +18,10 @@ var gulp            = require('gulp'),
                           'gulp-babel' : 'babel'
                         }
                       }),
-    assemble        = require('assemble'),
     yaml            = require('js-yaml'),
     helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
+    expand          = require('expand')(), // http://www.pincer.io/node/libraries/expand
+    assemble        = require('assemble'),
     app             = assemble(),
     del             = require('del'),
     merge           = require('merge-stream'),
@@ -70,20 +71,20 @@ var glob = {
 
 
 // ===================================================
-// Developin'
+// Servin'
 // ===================================================
 
 gulp.task('serve', ['assemble'], function() {
   $.connect.server({
     root: $.if(
-      process.env.NODE_ENV === 'development',
-      path.site,
-      path.dist
+      process.env.NODE_ENV === 'production',
+      path.dist,
+      path.site
     ),
     port: $.if(
-      process.env.NODE_ENV === 'development',
-      5000,
-      5001
+      process.env.NODE_ENV === 'production',
+      5001,
+      5000
     ),
     livereload: $.if(
       process.env.NODE_ENV === 'development',
@@ -113,7 +114,6 @@ gulp.task('mocha', function () {
   return gulp.src('test/*.js', { read: false })
     .pipe($.mocha({ reporter: 'nyan' }));
 });
-
 
 
 // ===================================================
@@ -150,20 +150,13 @@ gulp.task('sass', function() {
     ))
     .pipe($.sassglob())
     .pipe($.sass({
-      outputStyle: $.if(
-        process.env.NODE_ENV === 'development',
-        'expanded',
-        'compressed'
-      )
+      outputStyle: $.if(process.env.NODE_ENV === 'development', 'expanded', 'compressed')
     }))
     .pipe($.autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe($.if(
-      process.env.NODE_ENV === 'development',
-      $.sourcemaps.write()
-    ))
+    .pipe($.if(process.env.NODE_ENV === 'development', $.sourcemaps.write()))
     .pipe(gulp.dest(path.css))
     .pipe($.livereload());
 
@@ -178,7 +171,7 @@ gulp.task('sass', function() {
 // @reference
 // https://github.com/node-base/base-data#dataloader
 //
-// @notes
+// @info
 // Loading yaml files is not built in. Assemble uses
 // base-data now. You can add yaml loading by using
 // a custom dataLoader.
@@ -186,13 +179,9 @@ app.dataLoader('yaml', function(str, fp) {
   return yaml.safeLoad(str);
 });
 
-app.data(
-  $.if(process.env.NODE_ENV === 'production',
-    'production',
-    'development'
-  )
-);
+app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'));
 
+// @info
 // create a `categories` object to keep categories in (e.g. 'clients')
 // categories: {
 //  clients: {
@@ -212,11 +201,11 @@ categories: {
 };
  */
 
-// middleware function
+// @info
 // https://github.com/assemble/assemble/issues/715
 // Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
-app.onLoad(/\.hbs/, function(file, next) {
+app.onLoad(/\**\/*.hbs/, function(file, next) {
   // if the file doesn't have a data object or
   // doesn't contain `categories` in it's
   // front-matter, move on.
@@ -247,16 +236,14 @@ app.onLoad(/\.hbs/, function(file, next) {
 });
 
 
-/**
- * Handlebars helper to iterate over an object of pages for a specific category
- *
- * ```
- * {{#category "clients"}}
- *   {{data.summary}}
- * {{/category}}
- * ```
- */
-
+// @info
+// Handlebars helper that iterates over an
+// object of pages for a specific category
+//
+// @example
+// {{#category "clients"}}
+//   {{data.summary}}
+// {{/category}}
 app.helper('category', function(category, options) {
   var pages = this.app.get('categories.' + category);
   if (!pages) {
@@ -276,29 +263,14 @@ app.helper('date', function() {
 });
 
 function loadData() {
-
-  app.data([glob.data, 'site.yaml'], {
-    namespace: function(fp) {
-      var name = basename(fp, extname(fp));
-      return name;
-    }
-  });
-
-  app.data('package.json', {
-    namespace: function(fp) {
-      var name = basename(fp, extname(fp));
-      if (name === 'package') return 'package';
-      return name;
-    }
-  });
-
+  app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
+  app.data(expand(app.cache.data)); // https://github.com/assemble/issues/875
   //console.log(app.cache.data);
 }
 
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
-
   app.option('layout', 'default');
   app.helpers(helpers());
   app.layouts(glob.layouts);
@@ -314,12 +286,14 @@ gulp.task('assemble', function() {
     .pipe($.livereload());
 
   return stream;
-
 });
 
 
-gulp.task('babel', function() {
+// ===================================================
+// Transpilin'
+// ===================================================
 
+gulp.task('babel', function() {
   var stream = app.src(path.js + '/dev/*.js')
     .pipe($.babel({
       presets: ['es2015'],
@@ -329,7 +303,6 @@ gulp.task('babel', function() {
     .pipe($.livereload());
 
   return stream;
-
 });
 
 
@@ -372,11 +345,9 @@ gulp.task('svgstore', function() {
 // Buildin'
 // ===================================================
 
-/*
- * foreach is because usemin 0.3.11 won't manipulate
- * multiple files as an array.
- */
-
+// @info
+// foreach is because usemin 0.3.11 won't
+// manipulate multiple files as an array.
 gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 
   return gulp.src(glob.html)
@@ -425,11 +396,12 @@ gulp.task('copy', ['usemin'], function() {
 gulp.task('deploy', function() {
 
   return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
-             .pipe($.ghPages(
+              .pipe($.ghPages(
                 $.if(process.env.NODE_ENV === 'development',
-                { branch: 'staging' },
-                { branch: 'master' })
-             ));
+                  { branch: 'staging' },
+                  { branch: 'master' })
+                )
+              );
 
 });
 

@@ -15,10 +15,11 @@ pages:             <%= site.templates %>/pages
 includes:          <%= site.templates %>/{includes,pages}
 
 # assets
-imgdir:            ./img/site/
-js:                ./js/src/
-jslib:             ./js/lib/
-bowerlib:          ./bower_components/
+css:               <%= site.root %>/css/
+imgdir:            <%= site.root %>/img/site/
+js:                <%= site.root %>/js/src/
+jslib:             <%= site.root %>/js/lib/
+bower:             <%= site.root %>/bower_components/
 
 
 # =============================================
@@ -28,4 +29,6 @@ bowerlib:          ./bower_components/
 # site
 title:              Gray Ghost Visuals
 author:             Dennis Gaebel
+email:              grayghost@grayghostvisuals.com
 url:                http://grayghostvisuals.com
+tel:                5859449406

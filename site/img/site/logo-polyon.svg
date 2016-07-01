@@ -1,4 +1,12 @@
 <svg class="polyonlion" version="1.1" viewBox="13 103.7 586 580" width="200" height="236" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="polycleaner" color-interpolation-filters="sRGB">
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.5 1 1" />
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <g filter="url(#polycleaner)">
   <g id="polyonlion-mouth">
     <polygon fill="#231F20" points="306,524.3 388.3,551.9 311.6,502     " stroke-width="2.5" stroke="#231F20" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
     <polygon fill="#333333" points="223.7,551.9 306,524.3 300.4,501.8     " stroke-width="2.5" stroke="#333333" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
@@ -113,5 +121,6 @@
     <polygon fill="#FAB03F" points="455.8,88.8 451.4,238.6 551.8,184.7    " stroke-width="2.5" stroke="#FAB03F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
     <polygon fill="#F06F28" points="455.8,88.8 369.6,191.6 451.4,238.6    " stroke-width="2.5" stroke="#F06F28" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
     <polygon fill="#F1562F" points="306,57.7 369.6,191.6 455.8,88.8     " stroke-width="2.5" stroke="#F1562F" transform="matrix(1,0,0,1,0,0)" style="opacity: 1; transform-origin: 0px 0px 0px;"></polygon>
+  </g>
   </g>
 </svg>

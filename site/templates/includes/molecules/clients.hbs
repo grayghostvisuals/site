@@ -1,5 +1,6 @@
 <ul class="ggv-datalist ggv-datalist--clients list-reset">
   {{#category "client"}}
+  {{! (hyphenate this.title) }}
   <li class="ggv-datalist__item {{data.title}}">
     <a href="{{data.title}}.html">
       <span>{{data.categories}}</span>
@@ -7,6 +8,7 @@
       <img src="./img/site/{{data.logo}}" class="ggv-datalist__fig" alt="">
 
       <div class="ggv-summary">
+        <!--Tagged: {{!data.tags}}-->
         <h3 class="ggv-summary__title">{{data.title}}</h3>
         <p class="ggv-summary__desc">{{data.summary}}</p>
       </div>
