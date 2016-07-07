@@ -6,21 +6,23 @@ var gulp            = require('gulp'),
     gulpLoadPlugins = require('gulp-load-plugins'),
     $               = gulpLoadPlugins({
                         rename: {
-                          'gulp-if' : 'if',
-                          'gulp-gh-pages' : 'ghPages',
-                          'gulp-foreach' : 'foreach',
-                          'gulp-livereload' : 'livereload',
-                          'gulp-minify-css' : 'mincss',
-                          'gulp-minify-html' : 'minhtml',
-                          'gulp-mocha' : 'mocha',
-                          'gulp-sass-glob-import' : 'sassglob',
-                          'gulp-sourcemaps' : 'sourcemaps',
-                          'gulp-babel' : 'babel'
+                          'gulp-if': 'if',
+                          'gulp-newer': 'newer',
+                          'gulp-gh-pages': 'ghPages',
+                          'gulp-foreach': 'foreach',
+                          'gulp-livereload': 'livereload',
+                          'gulp-minify-css': 'mincss',
+                          'gulp-minify-html': 'minhtml',
+                          'gulp-mocha': 'mocha',
+                          'gulp-sass-glob-import': 'sassglob',
+                          'gulp-sourcemaps': 'sourcemaps',
+                          'gulp-babel': 'babel'
                         }
                       }),
     yaml            = require('js-yaml'),
     helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
-    expand          = require('expand')(), // http://www.pincer.io/node/libraries/expand
+    expand          = require('expand')(), // pincer.io/node/libraries/expand
+    permalinks      = require('assemble-permalinks'),
     assemble        = require('assemble'),
     app             = assemble(),
     del             = require('del'),
@@ -62,6 +64,7 @@ var glob = {
   css: path.css + '/*.css',
   sass: path.sass + '/**/*.scss',
   js: path.js + '/src/**/*.js',
+  jsdev: path.js + '/dev/**/*.js',
   jslibs : path.js + '/lib/**/*.js',
   layouts: path.templates + '/layouts/*.{md,hbs}',
   pages: path.templates + '/pages/**/*.{md,hbs}',
@@ -144,6 +147,7 @@ gulp.task('lintsass', function() {
 
 gulp.task('sass', function() {
   var stream = gulp.src(glob.sass)
+    .pipe($.newer(glob.sass))
     .pipe($.if(
       process.env.NODE_ENV === 'development',
       $.sourcemaps.init()
@@ -180,6 +184,15 @@ app.dataLoader('yaml', function(str, fp) {
 });
 
 app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'));
+
+// @reference
+// https://github.com/assemble/assemble-permalinks
+//
+// @info
+// plugin for easily creating permalinks
+// app.create('pages');
+// app.use(permalinks(':name.html'));
+// app.pages(glob.pages);
 
 // @info
 // create a `categories` object to keep categories in (e.g. 'clients')
@@ -278,6 +291,7 @@ gulp.task('assemble', function() {
   loadData();
 
   var stream = app.src(glob.pages)
+    .pipe($.newer(glob.pages))
     .on('error', console.log)
     .pipe(app.renderFile())
     .on('error', console.log)
@@ -294,7 +308,8 @@ gulp.task('assemble', function() {
 // ===================================================
 
 gulp.task('babel', function() {
-  var stream = app.src(path.js + '/dev/*.js')
+  var stream = app.src(glob.jsdev)
+    .pipe($.newer(glob.js))
     .pipe($.babel({
       presets: ['es2015'],
       plugins: ['transform-runtime']

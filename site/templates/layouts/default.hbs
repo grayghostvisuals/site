@@ -36,11 +36,11 @@
     <meta name="designer" content="{{site.url}}">
 
     {{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
-    {{! <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
-    <link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png"> }}
+    <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
+    <link rel="icon" href="{{site.url}}/favicon-16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="{{site.url}}/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="{{site.url}}/favicon-48.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="{{site.url}}/favicon-62.png" sizes="62x62" type="image/png">
 
     <meta property="og:title" content="{{titleize site.title}}">
     <meta property="og:type" content="company">
@@ -154,11 +154,11 @@
   <script src="{{../site.js}}atomic-swatch.js"></script>
   <script src="{{../site.js}}atomic-generator.js"></script>
   {{/is}}
-  <!-- endbuild -->
 
   {{#is 'categories' this.basename}}
   <script src="{{../site.js}}polyclouds.js"></script>
   {{/is}}
+  <!-- endbuild -->
 
   {{#if production}}
   <script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];

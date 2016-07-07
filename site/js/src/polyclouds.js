@@ -27,8 +27,8 @@ HSLA.prototype = {
 };
 
 var canvas = document.createElement('canvas'),
-    width,
-    height;
+    width = void 0,
+    height = void 0;
 
 function canvasStage() {
   // Make canvas width && height equal to window's inner width / height
@@ -60,11 +60,12 @@ var color = new HSLA(200, 80, 20, 0),
     ranVel = 0.3,
     ny,
     nx = ny = 15,
-    constraintLength = 22,
-    constraintForce = 0.5,
+    constraintLength = 20,
+    //22
+constraintForce = 0.5,
     boundaryForce = 0.004,
     dx = 0.5 * (width - nx * constraintLength),
-    dy = 0.5 * (height - nx * constraintLength);
+    dy = 0.125 * (height - nx * constraintLength);
 
 function Cloud() {
   this.nodes = [];

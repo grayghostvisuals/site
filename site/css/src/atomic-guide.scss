@@ -2,24 +2,21 @@
 // ===============================================
 
 @import "vars/**/*";
+@import "functions/*";
+@import "mixins/*";
 
 
-// Mixins
+// Globals
 // ===============================================
 
-@import "mixins/**/*";
+@import "base/**/*";
+@import "plugins/*";
 
 
 // Bower Plugins
 // ===============================================
 
 @import "../../bower_components/normalize-scss/normalize.scss";
-
-
-// Globals
-// ===============================================
-
-@import "globals/**/*";
 
 
 // Guide
@@ -38,7 +35,7 @@
 // Atoms
 // ===============================================
 
-@import "atoms/**/*";
+@import "components/**/*";
 
 .atomic-logos svg {
   height: 140px;
@@ -56,8 +53,6 @@
 
 // Molecules
 // ===============================================
-
-@import "molecules/**/*";
 
 // temporary until a better handlebars approach is found
 .primary-nav {
