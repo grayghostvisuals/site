@@ -3,7 +3,8 @@
 # =============================================
 
 # site
-root:             .
+# root:             ..
+root:             /
 dest:             <%= site.root %>
 data:             data
 
@@ -15,11 +16,11 @@ pages:             <%= site.templates %>/pages
 includes:          <%= site.templates %>/{includes,pages}
 
 # assets
-css:               <%= site.root %>/css/
-imgdir:            <%= site.root %>/img/site/
-js:                <%= site.root %>/js/src/
-jslib:             <%= site.root %>/js/lib/
-bower:             <%= site.root %>/bower_components/
+css:               <%= site.root %>css/
+imgdir:            <%= site.root %>img/site/
+js:                <%= site.root %>js/src/
+jslib:             <%= site.root %>js/lib/
+bower:             <%= site.root %>bower_components/
 
 
 # =============================================

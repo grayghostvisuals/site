@@ -3,20 +3,13 @@
 // ===================================================
 
 var gulp            = require('gulp'),
-    gulpLoadPlugins = require('gulp-load-plugins'),
-    $               = gulpLoadPlugins({
+    loadPlugins     = require('gulp-load-plugins'),
+    $               = loadPlugins({
                         rename: {
-                          'gulp-if': 'if',
-                          'gulp-newer': 'newer',
                           'gulp-gh-pages': 'ghPages',
-                          'gulp-foreach': 'foreach',
-                          'gulp-livereload': 'livereload',
                           'gulp-minify-css': 'mincss',
                           'gulp-minify-html': 'minhtml',
-                          'gulp-mocha': 'mocha',
-                          'gulp-sass-glob-import': 'sassglob',
-                          'gulp-sourcemaps': 'sourcemaps',
-                          'gulp-babel': 'babel'
+                          'gulp-sass-glob-import': 'sassglob'
                         }
                       }),
     yaml            = require('js-yaml'),
@@ -26,10 +19,10 @@ var gulp            = require('gulp'),
     assemble        = require('assemble'),
     app             = assemble(),
     del             = require('del'),
+    resolve         = require('path').resolve,
     merge           = require('merge-stream'),
     basename        = require('path').basename,
-    extname         = require('path').extname,
-    gulpStylelint   = require('gulp-stylelint');
+    extname         = require('path').extname;
 
 $.exec   = require('child_process').exec;
 $.fs     = require('fs');
@@ -128,7 +121,7 @@ gulp.task('mocha', function () {
 // https://github.com/stylelint/stylelint/blob/master/docs/user-guide/about-rules.md
 gulp.task('lintsass', function() {
   var stream = gulp.src(glob.sass)
-    .pipe(gulpStylelint({
+    .pipe($.stylelint({
       reporters: [
         {
           formatter: 'string',
@@ -172,30 +165,43 @@ gulp.task('sass', function() {
 // Templatin'
 // ===================================================
 
+
+// Data Loader
+// ================
+
 // @reference
 // https://github.com/node-base/base-data#dataloader
 //
 // @info
-// Loading yaml files is not built in. Assemble uses
-// base-data now. You can add yaml loading by using
-// a custom dataLoader.
+// Load yaml files using a custom dataLoader.
 app.dataLoader('yaml', function(str, fp) {
   return yaml.safeLoad(str);
 });
 
 app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'));
 
-// @reference
-// https://github.com/assemble/assemble-permalinks
-//
-// @info
-// plugin for easily creating permalinks
-// app.create('pages');
-// app.use(permalinks(':name.html'));
-// app.pages(glob.pages);
+function loadData() {
+  app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
+
+  // https://github.com/assemble/issues/875
+  app.data(expand(app.cache.data));
+
+  //console.log(app.cache.data);
+}
+
+// Setting Methods
+// ================
 
 // @info
 // create a `categories` object to keep categories in (e.g. 'clients')
+// populate categories with pages that specify the categories they belong to.
+// When the onLoad middleware runs for a single file, it looks at the file's
+// front-matter (file.data) to see if it contains a categories property. This
+// property can be a string or an array of strings. If it exists, then the
+// middleware updates the categories object for each category in the array. In
+// the case of polyon.hbs, there is only 1 category called client, so the categories
+// object becomes:
+//
 // categories: {
 //  clients: {
 //    "polyon": { ... }
@@ -203,22 +209,15 @@ app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'
 // };
 app.set('categories', {});
 
-/**
- populate categories with pages that specify the categories they belong to.
- When the onLoad middleware runs for a single file, it looks at the file's front-matter (file.data) to see if it contains a categories property. This property can be a string or an array of strings. If it exists, then the middleware updates the categories object for each category in the array. In the case of polyon.hbs, there is only 1 category called client, so the categories object becomes:
 
-categories: {
- clients: {
-   "polyon": { ... }
- }
-};
- */
+// Event Middleware
+// ================
 
 // @info
 // https://github.com/assemble/assemble/issues/715
 // Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
-app.onLoad(/\**\/*.hbs/, function(file, next) {
+function fileData(file, next) {
   // if the file doesn't have a data object or
   // doesn't contain `categories` in it's
   // front-matter, move on.
@@ -226,28 +225,51 @@ app.onLoad(/\**\/*.hbs/, function(file, next) {
     return next();
   }
 
-  // use the default `renameKey` function to store
-  // pages on the `categories` object
-  var renameKey = app.option('renameKey');
+  var renameKey = app.renameKey(file.key, file);
 
   // get the categories object
   var categories = app.get('categories');
 
-  // figure out which categories this file belongs to
+  // decipher what categories this file belongs to
   var cats = file.data.categories;
+
   cats = Array.isArray(cats) ? cats : [cats];
 
-  // add this file's data (file object) to each of
-  // it's categories
+  // add this file's data (file object)
+  // to each of it's categories
   cats.forEach(function(cat) {
     categories[cat] = categories[cat] || [];
-    categories[cat][renameKey(file.path)] = file;
+    categories[cat][renameKey] = file;
   });
 
-  // done
+  // complete
   next();
-});
+}
 
+app.onLoad(/\**\/*.hbs/, fileData);
+
+
+// Create Events
+// ================
+
+// @reference
+// plugin for creating permalinks
+// https://github.com/assemble/assemble-permalinks
+//
+// @info
+// Create a pages collection
+//app.create('pages').use(permalinks(':tags/:category():name.html', {
+app.create('pages').use(permalinks(':category():name.html', {
+  category: function() {
+    if (!this.categories) return '';
+    var category = Array.isArray(this.categories) ? this.categories[0] : this.categories;
+    return category ? category + '/' : '';
+  }
+}));
+
+
+// Custom Helpers
+// ================
 
 // @info
 // Handlebars helper that iterates over an
@@ -264,8 +286,9 @@ app.helper('category', function(category, options) {
   }
 
   return Object.keys(pages).map(function(page) {
-    // this renders the block between `{{#category}}` and `{{/category}}` passing the
-    // entire page object as the context.
+    // this renders the block between
+    // `{{#category}}` and `{{/category}}`
+    // passing the entire page object as the context.
     return options.fn(pages[page]).toLowerCase();
   }).join('\n');
 });
@@ -275,11 +298,9 @@ app.helper('date', function() {
   return time_stamp;
 });
 
-function loadData() {
-  app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
-  app.data(expand(app.cache.data)); // https://github.com/assemble/issues/875
-  //console.log(app.cache.data);
-}
+
+// App Tasks
+// ================
 
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
@@ -290,13 +311,29 @@ gulp.task('assemble', function() {
   app.partials(glob.includes);
   loadData();
 
-  var stream = app.src(glob.pages)
+  // @info
+  // load pages onto the pages collection
+  // https://github.com/assemble/assemble-permalinks/issues/8#issuecomment-231181277
+  // ensure the page templates are put on the correct collection
+  // and the middleware is triggered.
+  app.pages(glob.pages);
+
+  var stream = app.toStream('pages')
     .pipe($.newer(glob.pages))
     .on('error', console.log)
     .pipe(app.renderFile())
     .on('error', console.log)
     .pipe($.extname())
-    .pipe(app.dest(path.site))
+    .on('error', console.log)
+    // update the file.path before writing
+    // the file to the file system.
+    .pipe(app.dest(function(file) {
+      // Creates a permalink and puts it on file.data.permalink.
+      // This can be used in other templates for linking.
+      file.path = resolve(file.base, file.data.permalink);
+      return path.site;
+    }))
+    .on('error', console.log)
     .pipe($.livereload());
 
   return stream;
@@ -304,7 +341,7 @@ gulp.task('assemble', function() {
 
 
 // ===================================================
-// Transpilin'
+// JavaScript Transpilin'
 // ===================================================
 
 gulp.task('babel', function() {
@@ -322,7 +359,7 @@ gulp.task('babel', function() {
 
 
 // ===================================================
-// Optimizin'
+// SVG Optimizin'
 // ===================================================
 
 gulp.task('svgstore', function() {
@@ -430,7 +467,7 @@ gulp.task('clean', function(cb) {
   del([
     'dist',
     glob.css,
-    path.site + '/client',
+    path.site + '/{client,experiments}',
     glob.html
   ], cb);
 
