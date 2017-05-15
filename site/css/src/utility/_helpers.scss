@@ -1,3 +1,17 @@
+// Motion
+// ==========================================================================
+
+@keyframes fontFade {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+
+@keyframes fader {
+	from { opacity: 0; }
+	to   { opacity: 0.5; }
+}
+
+
 // Lists
 // ==========================================================================
 
@@ -42,7 +56,7 @@
 // Clearfix: contain floats
 // http://cssmojo.com/the-very-latest-clearfix-reloaded
 .clearfix::after {
-  content: " ";
-  display: block;
-  clear: both;
+	content: " ";
+	display: block;
+	clear: both;
 }

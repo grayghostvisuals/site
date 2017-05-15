@@ -1,8 +1,137 @@
-.landing main {
-  max-width: 1181px;
-  margin: 0 auto;
+// ==========================================================
+// Parts
+// ==========================================================
+
+.landing section {
+	max-width: 1181px;
+	margin: 0 auto;
 }
 
-.landing .ggv-wtypes {
-  display: flex;
+
+.landing .ggv-hero {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	background: #0C3E5E;
+}
+
+.landing .ggv-headline._hero {
+	color: white;
+}
+
+
+.landing canvas {
+	animation: fader 550ms cubic-bezier(.81, .01, .71, .98) 2s 1 forwards;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 0;
+	opacity: 0;
+}
+
+
+.landing .ggv-slogan {
+	max-width: 500px;
+	position: relative;
+	z-index: 1;
+	font-size: 1.125em;
+}
+
+
+.landing footer[role="contentinfo"] {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	small {
+		color: white;
+	}
+}
+
+
+// ==========================================================
+// Material Button
+// ==========================================================
+
+$material-fill-color: #76BFF4;
+
+.material-button {
+	border-radius: 2px;
+	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 1px 1.5px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.2);
+	display: inline-block;
+	text-align: center;
+	max-width: 500px;
+	padding: 1rem;
+	width: 100%;
+	text-transform: uppercase;
+	&:link,
+	&:visited {
+		font-weight: 600;
+		background: #19547b;
+		color: white;
+	}
+	&:focus,
+	&:hover,
+	&:active {
+		cursor: pointer;
+		outline: none;
+		background: #4A89B1;
+	}
+}
+
+.material-button {
+	appearance: none;
+	border: none;
+	position: relative;
+	transition: 250ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.material-ripple {
+	height: 100%;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 0;
+	fill: $material-fill-color;
+	use {
+		opacity: 0;
+	}
+}
+
+
+// ==========================================================
+// Bubble Effect
+// ==========================================================
+
+$b-size: 35px;
+$b-surface: -120vh;
+
+.landing .bubble {
+	border-radius: 100%;
+	position: absolute;
+	bottom: 0;
+	will-change: transform;
+	background: rgba(#FFF, .02); // gradient fallback
+	background: radial-gradient(circle at center, rgba(#FFF, .15) 0, rgba(#FFF, .02) 25%);
+	animation: bubble 5s infinite cubic-bezier(0.55, 0.06, 0.68, 0.19);
+}
+
+@keyframes bubble {
+	from {
+		transform: translateY($b-size);
+		opacity: 1;
+	}
+
+	to {
+		transform: translateY($b-surface);
+		opacity: 0.25;
+	}
 }

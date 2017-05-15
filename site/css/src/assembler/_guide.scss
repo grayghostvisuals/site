@@ -12,19 +12,6 @@ body.atomic {
   main[role="main"] .row {
     margin: 20px 0;
   }
-
-  header {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    flex-flow: inherit;
-    justify-content: space-between;
-
-    svg {
-      width: 80px !important;
-      height: 80px !important;
-    }
-  }
 }
 
 

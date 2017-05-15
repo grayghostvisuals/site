@@ -78,9 +78,9 @@ gulp.task('serve', ['assemble'], function() {
       path.site
     ),
     port: $.if(
-      process.env.NODE_ENV === 'production',
-      5001,
-      5000
+      process.env.NODE_ENV === 'development',
+      5000,
+      5001
     ),
     livereload: $.if(
       process.env.NODE_ENV === 'development',

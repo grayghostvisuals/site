@@ -1,170 +1,137 @@
 <!doctype html>
 <html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case default-template{{/is}}{{#is 'experiments' this.basename}} experiment default-template{{/is}}" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta http-equiv="cleartype" content="on">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta http-equiv="cleartype" content="on">
 
-    {{! Prefetching, preloading, prebrowsing }}
-    {{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
-    {{#if production}}
-    <link rel="dns-prefetch" href="https://fast.fonts.net">
-    <link rel="preconnect" href="https://fast.fonts.net">
-    <link rel="prefetch" href="https://fast.fonts.net">
-    <link rel="prerender" href="">
-    <link rel="subresource" href="{{../site.css}}site.css">
-    {{/if}}
+		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
+		{{#if production}}
+		<link rel="dns-prefetch" href="https://fast.fonts.net">
+		<link rel="preconnect" href="https://fast.fonts.net">
+		<link rel="prefetch" href="https://fast.fonts.net">
+		<link rel="prerender" href="">
+		<link rel="subresource" href="{{../site.css}}site.css">
+		{{/if}}
 
-    <title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
+		<title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
 
-    <meta name="description" content="{{description}}">
+		<meta name="description" content="{{description}}">
 
-    {{#if production}}
-    <meta name="robots" content="all">
-    {{else}}
-    <meta name="robots" content="none">
-    {{/if}}
+		{{#if production}}
+		<meta name="robots" content="all">
+		{{else}}
+		<meta name="robots" content="none">
+		{{/if}}
 
-    <meta name="author" content="{{title}}">
-    <meta name="Copyright" content="Copyright {{site.title}} ©{{#date}}{{/date}}. All Rights Reserved.">
+		<meta name="author" content="{{title}}">
+		<meta name="Copyright" content="Copyright {{site.title}} ©{{#date}}{{/date}}. All Rights Reserved.">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, shrink-to-fit=no">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="designer" content="{{site.url}}">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, shrink-to-fit=no">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="msapplication-tap-highlight" content="no">
+		<meta name="designer" content="{{site.url}}">
 
-    {{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
-    <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
-    <link rel="icon" href="{{site.url}}/favicon-16.png" sizes="16x16" type="image/png">
-    <link rel="icon" href="{{site.url}}/favicon-32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="{{site.url}}/favicon-48.png" sizes="48x48" type="image/png">
-    <link rel="icon" href="{{site.url}}/favicon-62.png" sizes="62x62" type="image/png">
+		{{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
+		<link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
+		<link rel="icon" href="{{site.url}}/favicon-16.png" sizes="16x16" type="image/png">
+		<link rel="icon" href="{{site.url}}/favicon-32.png" sizes="32x32" type="image/png">
+		<link rel="icon" href="{{site.url}}/favicon-48.png" sizes="48x48" type="image/png">
+		<link rel="icon" href="{{site.url}}/favicon-62.png" sizes="62x62" type="image/png">
 
-    <meta property="og:title" content="{{titleize site.title}}">
-    <meta property="og:type" content="company">
-    <meta property="og:url" content="{{site.url}}">
-    <meta property="og:image" content="{{site.url}}/ograph.png">
-    <meta property="og:description" content="{{site.description}}">
-    <meta property="fb:admins" content="1">
+		<meta property="og:title" content="{{titleize site.title}}">
+		<meta property="og:type" content="company">
+		<meta property="og:url" content="{{site.url}}">
+		<meta property="og:image" content="{{site.url}}/ograph.png">
+		<meta property="og:description" content="{{site.description}}">
+		<meta property="fb:admins" content="1">
 
-    <link rel="author" href="{{site.url}}/humans.txt">
+		<link rel="author" href="{{site.url}}/humans.txt">
 
-    {{#is 'categories' this.basename}}
-    <style>
-      canvas {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
-        opacity: 0.25;
-      }
-    </style>
-    {{/is}}
+		<!-- build:css {{site.css}}style.min.css -->
+		{{#is 'atomicguide' this.basename}}
+		<link rel="stylesheet" href="{{../site.css}}atomic-guide.css">
+		{{/is}}
 
-    <!-- build:css {{site.css}}style.min.css -->
-    {{#is 'atomicguide' this.basename}}
-    <link rel="stylesheet" href="{{../site.css}}atomic-guide.css">
-    {{/is}}
+		{{#contains 'landing, casestudy, categories' this.basename}}
+		<link rel="stylesheet" href="{{../site.css}}site.css">
+		{{/contains}}
+		<!-- endbuild -->
 
-    {{#contains 'landing, casestudy, categories, experiments' this.basename}}
-    <link rel="stylesheet" href="{{../site.css}}site.css">
-    {{/contains}}
-    <!-- endbuild -->
+		<!--[if lte IE 9]>
+		<style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style>
+		<![endif]-->
 
-    <!--[if lte IE 9]><style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style><![endif]-->
+		{{#if production}}
+		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
+		{{/if}}
+	</head>
 
-    {{#if production}}
-    <script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
-    {{/if}}
-  </head>
-  <body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
+	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
+		<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
+			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
+				<circle id="ripple-shape" cx="1" cy="1" r="1"/>
+			</svg>
+		</div>
 
-  <div class="sticky-container">
-    <header class="sticky-row sticky-header" role="banner">
-      {{> logo}}
+		<div class="sticky-container">
+			<header class="sticky-row sticky-header" role="banner">
+				{{> logo}}
 
-      {{#contains 'casestudy, experiments' this.basename}}
-      <a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours.%0A">Get In Touch</a>
-      <!--<a href="tel:{{../site.tel}}">{{phoneNumber ../site.tel}}</a>-->
-      {{/contains}}
+				{{#contains 'casestudy, experiments' this.basename}}
+				<a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours.%0A">Get In Touch</a>
+				{{/contains}}
 
-      {{#is 'atomicguide' this.basename}}
-      {{> atomic-nav}}
-      {{/is}}
+				{{#is 'atomicguide' this.basename}}
+				{{> atomic-nav}}
+				{{/is}}
 
-      {{> nav}}
-    </header>
+				{{> nav}}
+			</header>
 
-    <main class="sticky-row sticky-content" role="main">
-    {% body %}
-    </main>
+			<main class="sticky-row sticky-content" role="main">
+			{% body %}
+			</main>
 
-    {{> footer}}
-  </div>
+			{{> footer}}
+		</div>
 
-  {{#contains 'diy, Theron, Polyon' this.title}}
-  <script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
-  {{/contains}}
+	{{#contains 'diy, Theron, Polyon' this.title}}
+	<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
+	{{/contains}}
 
-  {{#is 'categories' this.basename}}
-  <script>
-    // if(window.location.pathname === '/work.html') {
-    //   var testimonials_link = document.getElementById('ggv-testimonials');
+	<!-- build:js {{site.js}}scripts.min.js -->
+	<script src="{{site.jslib}}ffobserver.js"></script>
+	<script src="{{site.js}}ffobserver-config.js"></script>
+	<script src="{{site.js}}social-bloomer.js"></script>
+	<script src="{{site.js}}material-ripple.js"></script>
 
-    //   testimonials_link.addEventListener('click', function(event) {
-    //     event.preventDefault;
+	{{#is 'landing' this.basename}}
+	<script src="{{../site.jslib}}TweenMax.min.js"></script>
+	<script src="{{../site.js}}polycloud.js"></script>
+	{{/is }}
 
-    //     var href     = this.getAttribute('href'),
-    //         link_url = window.location.origin + '/' + href;
+	{{#is 'atomicguide' this.basename}}
+	<script src="{{../site.jslib}}TweenMax.min.js"></script>
+	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
+	<script src="{{../site.js}}scrollmation.js"></script>
+	<script src="{{../site.js}}quotator.js"></script>
 
-    //     window.location.href = link_url;
-    //   });
-    // }
-  </script>
-  {{/is}}
+	<script src="{{../site.jslib}}prism.js"></script>
+	<script src="{{../site.js}}atomic-swatch.js"></script>
+	<script src="{{../site.js}}atomic-generator.js"></script>
+	{{/is}}
+	<!-- endbuild -->
 
-  <!-- build:js {{site.js}}scripts.min.js -->
-  <script src="{{site.jslib}}ffobserver.js"></script>
-  <script src="{{site.js}}ffobserver-config.js"></script>
-  <script src="{{site.js}}social-bloomer.js"></script>
-
-  {{#is 'CodePen' this.title}}
-  <script src="{{../site.js}}codepenapi.js"></script>
-  {{/is}}
-
-  {{#contains 'landing, atomicguide' this.basename}}
-  <script src="{{../site.jslib}}TweenMax.min.js"></script>
-  <script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-  <script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-  <script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
-  <script src="{{../site.js}}scrollmation.js"></script>
-  <script src="{{../site.js}}quotator.js"></script>
-  {{/contains }}
-
-  {{#is 'landing' this.basename}}
-  <script src="{{../site.jslib}}DrawSVGPlugin.min.js"></script>
-  <script src="{{../site.js}}iconography.js"></script>
-  {{/is}}
-
-  {{#is 'atomicguide' this.basename}}
-  <script src="{{../site.jslib}}prism.js"></script>
-  <script src="{{../site.js}}atomic-swatch.js"></script>
-  <script src="{{../site.js}}atomic-generator.js"></script>
-  {{/is}}
-
-  {{#is 'categories' this.basename}}
-  <script src="{{../site.js}}polyclouds.js"></script>
-  {{/is}}
-  <!-- endbuild -->
-
-  {{#if production}}
-  <script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
-  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-  s.parentNode.insertBefore(g,s)}(document,'script'));</script>
-  {{/if}}
-  </body>
+	{{#if production}}
+	<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+	{{/if}}
+	</body>
 </html>

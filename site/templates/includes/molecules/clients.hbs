@@ -3,7 +3,7 @@
   {{! (hyphenate this.title) }}
   <li class="ggv-datalist__item {{data.title}}">
     <a href="{{data.categories}}/{{data.title}}.html">
-      <span>{{data.categories}}</span>
+      <span>{{data.tags}}</span>
 
       <img src="./img/site/{{data.logo}}" class="ggv-datalist__fig" alt="">
 
@@ -11,7 +11,7 @@
         <h3 class="ggv-summary__title">{{data.title}}</h3>
         <p class="ggv-summary__desc">{{data.summary}}</p>
       </div>
-      {{!data.tags}}
+
     </a>
   </li>
   {{/category}}

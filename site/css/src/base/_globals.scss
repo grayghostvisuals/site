@@ -23,19 +23,12 @@ body {
 }
 
 body {
-  animation: fontFade 400ms normal forwards cubic-bezier(.81, .01, .71, .98);
-  animation-delay: 550ms;
+  animation: fontFade 200ms cubic-bezier(.81, .01, .71, .98) 0.25s 1 forwards;
   color: map-get($atomic-colors, midnight-blue);
   opacity: 0;
-
   .ffo-loaded & {
-    font-family:'Avenir LT W01_45 Book';
+    font-family: 'Avenir LT W01_45 Book';
   }
-}
-
-@keyframes fontFade {
-  from {opacity: 0;}
-  to   {opacity: 1;}
 }
 
 img,

@@ -3,18 +3,6 @@
 }
 
 .default-template header[role="banner"] {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  align-content: stretch;
-  transform: scale(0.7);
-  transform-origin: top right;
-
-  a[href="/"]{
-    transform: translateX(80px) scale(1.25);
-    transform-origin: top;
-  }
-
   a[href*="mailto"] {
     background: white;
     border-radius: 26px 0 0 40px;
@@ -36,7 +24,6 @@
   max-width: 571px;
   margin: 0 auto;
   padding-top: 50px;
-  //padding-bottom: 50px;
 }
 
 .default-template .ggv-headline {
