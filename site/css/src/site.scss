@@ -11,11 +11,5 @@
 @import "components/**/*";
 @import "templates/**/*";
 @import "pages/**/*";
-html.case.staple-web {
-  background: #e57253;
-  *:not(a) {
-    color: #FFFEFE;
-  }
-}
 @import "states/*";
 @import "utility/**/*";

@@ -3,7 +3,6 @@ function randomNumber(start, end){
 }
 
 function bubbler() {
-	// var water = document.getElementsByTagName('body')[0],
 	var water = document.querySelectorAll('.ggv-hero')[0],
 			i     = 0;
 

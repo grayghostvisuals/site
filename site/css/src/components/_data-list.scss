@@ -1,202 +1,179 @@
 $clients: (
-  1: polyon,
-  2: walmedia,
-  3: tracks,
-  4: theron,
-  5: murmuration-malts,
-  6: diy,
-  // 7: lean-labs,
-  8: staple-web
+	1: polyon,
+	2: walmedia,
+	3: tracks,
+	4: theron,
+	5: murmuration-malts,
+	6: diy,
+	7: staple-web
 );
 
 $clients-color: (
-  polyon: #060E17 img-url("clients/polyon/space.jpg") top left no-repeat,
-  walmedia: #1B2D33,
-  tracks: #5D5D7D,
-  theron: #161819,
-  murmuration-malts: #E2C454,
-  diy: #4B56AC,
-  // lean-labs: #EF4019,
-  staple-web: #E87558
-);
-
-$experiments: (
-  1: codepen
-);
-
-$experiments-color: (
-  codepen: black
+	polyon: #060E17 img-url("clients/polyon/space.jpg") top left no-repeat,
+	walmedia: #1B2D33,
+	tracks: #5D5D7D,
+	theron: #161819,
+	murmuration-malts: #E2C454,
+	diy: #4B56AC,
+	staple-web: #E87558
 );
 
 @keyframes panelSwing {
-  from { transform: scale(0); }
-  to { transform: scale(1); }
+	from { transform: scale(0); }
+	to { transform: scale(1); }
 }
 
 @mixin category-style($color, $map) {
-  @each $key, $value in $map {
-    .ggv-datalist__item.#{$value} {
-      background: map-get($color, $value);
-      background-size: cover;
-      color: white;
-      span {
-        background: map-get($color, $value);
-      }
-    }
-  }
+	@each $key, $value in $map {
+		.ggv-datalist__item.#{$value} {
+			background: map-get($color, $value);
+			background-size: cover;
+			color: white;
+			span {
+				background: map-get($color, $value);
+			}
+		}
+	}
 }
 
 @mixin animation-delay($delay, $map) {
-  @for $i from 1 through length(map-keys($map)) {
-    &:nth-child(#{$i}) {
-      animation-delay: $i * $delay;
-    }
-  }
+	@for $i from 1 through length(map-keys($map)) {
+		&:nth-child(#{$i}) {
+			animation-delay: $i * $delay;
+		}
+	}
 }
 
 .ggv-datalist {
-  display: flex;
-  flex-wrap: wrap;
-  // display: inline-block;
-  background: #F4F5F6;
+	display: flex;
+	flex-wrap: wrap;
+	background: #F4F5F6;
 }
 
 .ggv-datalist__fig {
-  margin: auto;
-  max-width: 100px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  transition: 240ms all ease-in-out;
-  text-align: center;
-  opacity: 1;
+	margin: auto;
+	max-width: 100px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: 240ms all ease-in-out;
+	text-align: center;
+	opacity: 1;
 }
 
 .ggv-datalist__item {
-  animation: 720ms ease(in-cubic) 0s panelSwing;
-  float: left;
-  width: 100%;
-  // display: flex;
-  // align-items: center;
-  // align-self: stretch;
-  // flex: 1 0 50%;
-  // flex: 1 0 300px;
-  // height: 300px;
-  height: 400px;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  transform-origin: center center;
-  color: white;
-  &::after {
-    content: 'read more';
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Ciutadella W04 SmBold";
-    z-index: 0;
-  }
+	animation: 400ms ease(in-cubic) 0s panelSwing;
+	float: left;
+	width: 100%;
+	height: 400px;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	transform-origin: center center;
+	color: white;
+	&::after {
+		content: 'read more';
+		padding: 20px 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: "Ciutadella W04 SmBold";
+		z-index: 0;
+	}
 }
 
 .ggv-datalist__item a {
-  display: block;
-  height: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  transition: 300ms all ease-in-out;
-  width: 50%;
-  z-index: 1;
-  color: white;
+	display: block;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	transition: 300ms all ease-in-out;
+	width: 50%;
+	z-index: 1;
+	color: white;
 
-  &:hover,
-  &:focus {
-    outline: none;
-    img {
-      opacity: 0.1;
-    }
+	&:hover,
+	&:focus {
+		outline: none;
+		img {
+			opacity: 0.1;
+		}
 
-    span {
-      opacity: 0;
-    }
+		span {
+			opacity: 0;
+		}
 
-    div {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+		div {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
 }
 
 .ggv-datalist__item span {
-  border-radius: 0 0 10px 10px;
-  transition: 300ms all ease-in-out;
-  // box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 -1px 10px rgba(0, 0, 0, 0.13);
-  display: inline-block;
-  max-width: 280px;
-  text-align: center;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-family: "Ciutadella W04 Lt";
-  left: 0;
-  z-index: 1;
-  right: 0;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  font-weight: 100;
+	border-radius: 0 0 10px 10px;
+	transition: 300ms all ease-in-out;
+	display: inline-block;
+	max-width: 280px;
+	text-align: center;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: "Ciutadella W04 Lt";
+	left: 0;
+	z-index: 1;
+	right: 0;
+	text-transform: uppercase;
+	font-size: 0.875rem;
+	font-weight: 100;
 }
 
 .ggv-datalist__item.theron img {
-  max-width: 200px;
+	max-width: 200px;
 }
 
 .ggv-datalist__item.murmuration-malts img {
-  max-width: 180px;
+	max-width: 180px;
 }
 
 .ggv-summary {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0;
-  transition: 240ms all ease-in-out;
-  transform-origin: center center;
-  transform: scale(0);
-  font-size: 1rem; // sets parent context as root size.
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	opacity: 0;
+	transition: 240ms all ease-in-out;
+	transform-origin: center center;
+	transform: scale(0);
+	font-size: 1rem; // sets parent context as root size.
 }
 
 .ggv-summary > * {
-  margin: 0;
-  text-align: center;
-  color: white;
+	margin: 0;
+	text-align: center;
+	color: white;
 }
 
 .ggv-summary__title {
-  font-size: context-calc(26, 16, em);
+	font-size: context-calc(26, 16, em);
 }
 
 .ggv-summary__desc {
-  text-transform: capitalize;
+	text-transform: capitalize;
 }
 
 .ggv-datalist--clients .ggv-datalist__item {
-  @include animation-delay(0.0675s, $clients);
+	@include animation-delay(0.0675s, $clients);
 }
 
-// .ggv-datalist--experiments .ggv-datalist__item {
-//   @include animation-delay(0.0675s, $experiments);
-// }
-
 @include category-style($clients-color, $clients);
-// @include category-style($experiments-color, $experiments);

@@ -103,24 +103,23 @@
 	{{/contains}}
 
 	<!-- build:js {{site.js}}scripts.min.js -->
-	<script src="{{site.jslib}}ffobserver.js"></script>
+	<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
+	<!-- <script src="{{site.jslib}}ffobserver.js"></script> -->
 	<script src="{{site.js}}ffobserver-config.js"></script>
+	<script src="{{site.jslib}}TweenMax.min.js"></script>
 	<script src="{{site.js}}social-bloomer.js"></script>
 	<script src="{{site.js}}material-ripple.js"></script>
 
 	{{#is 'landing' this.basename}}
-	<script src="{{../site.jslib}}TweenMax.min.js"></script>
-	<script src="{{../site.js}}polycloud.js"></script>
+	<script src="{{../site.js}}bubbles.js"></script>
 	{{/is }}
 
 	{{#is 'atomicguide' this.basename}}
-	<script src="{{../site.jslib}}TweenMax.min.js"></script>
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 	<script src="{{../site.js}}scrollmation.js"></script>
 	<script src="{{../site.js}}quotator.js"></script>
-
 	<script src="{{../site.jslib}}prism.js"></script>
 	<script src="{{../site.js}}atomic-swatch.js"></script>
 	<script src="{{../site.js}}atomic-generator.js"></script>

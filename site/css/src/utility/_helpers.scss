@@ -1,14 +1,8 @@
-// Motion
+// Animation
 // ==========================================================================
 
-@keyframes fontFade {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
-
-@keyframes fader {
-	from { opacity: 0; }
-	to   { opacity: 0.5; }
+@keyframes fadein {
+	to { opacity: 1; }
 }
 
 
