@@ -37,6 +37,10 @@
 
 @import "components/**/*";
 
+main {
+	padding-top: 120px;
+}
+
 .atomic-logos svg {
   height: 140px;
   width: 120px;
@@ -57,16 +61,6 @@
 // temporary until a better handlebars approach is found
 .primary-nav {
   display: none;
-}
-
-nav {
-  font-family: 'Ciutadella W04 SmBold';
-  text-transform: uppercase;
-
-  a {
-    padding: 4px;
-    transition: .3s color ease-in-out;
-  }
 }
 
 footer[role="contentinfo"] {

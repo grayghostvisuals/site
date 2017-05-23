@@ -35,17 +35,12 @@
 		<meta name="designer" content="{{site.url}}">
 
 		{{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
-		<link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
-		<link rel="icon" href="{{site.url}}/favicon-16.png" sizes="16x16" type="image/png">
-		<link rel="icon" href="{{site.url}}/favicon-32.png" sizes="32x32" type="image/png">
-		<link rel="icon" href="{{site.url}}/favicon-48.png" sizes="48x48" type="image/png">
-		<link rel="icon" href="{{site.url}}/favicon-62.png" sizes="62x62" type="image/png">
 
 		<meta property="og:title" content="{{titleize site.title}}">
 		<meta property="og:type" content="company">
 		<meta property="og:url" content="{{site.url}}">
 		<meta property="og:image" content="{{site.url}}/ograph.png">
-		<meta property="og:description" content="{{site.description}}">
+		<meta property="og:description" content="{{description}}">
 		<meta property="fb:admins" content="1">
 
 		<link rel="author" href="{{site.url}}/humans.txt">
@@ -81,7 +76,7 @@
 				{{> logo}}
 
 				{{#contains 'casestudy, experiments' this.basename}}
-				<a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours.%0A">Get In Touch</a>
+				<a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours. Here is the details…%0A">Get In Touch</a>
 				{{/contains}}
 
 				{{#is 'atomicguide' this.basename}}
@@ -104,7 +99,6 @@
 
 	<!-- build:js {{site.js}}scripts.min.js -->
 	<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
-	<!-- <script src="{{site.jslib}}ffobserver.js"></script> -->
 	<script src="{{site.js}}ffobserver-config.js"></script>
 	<script src="{{site.jslib}}TweenMax.min.js"></script>
 	<script src="{{site.js}}social-bloomer.js"></script>
@@ -119,7 +113,6 @@
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 	<script src="{{../site.js}}scrollmation.js"></script>
-	<script src="{{../site.js}}quotator.js"></script>
 	<script src="{{../site.jslib}}prism.js"></script>
 	<script src="{{../site.js}}atomic-swatch.js"></script>
 	<script src="{{../site.js}}atomic-generator.js"></script>

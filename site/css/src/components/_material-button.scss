@@ -5,6 +5,8 @@
 $material-fill-color: #76BFF4;
 
 .material-button {
+	appearance: none;
+	box-sizing: border-box;
 	border-radius: 2px;
 	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 1px 1.5px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.2);
 	display: inline-block;

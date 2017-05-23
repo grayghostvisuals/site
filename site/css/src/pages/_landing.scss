@@ -13,12 +13,16 @@
 
 
 .landing .ggv-hero {
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	background: #0C3E5E;
+	@media (max-width: 530px) {
+		padding: 1rem;
+	}
 }
 
 .landing .ggv-headline._hero {
@@ -49,9 +53,6 @@
 // Bubble Effect
 // ==========================================================
 
-$b-size: 35px;
-$b-surface: -120vh;
-
 .landing .bubble {
 	border-radius: 100%;
 	position: absolute;
@@ -62,6 +63,8 @@ $b-surface: -120vh;
 }
 
 @keyframes bubble {
+	$b-size: 35px;
+	$b-surface: -120vh;
 	from {
 		transform: translateY($b-size);
 		opacity: 1;
