@@ -1,26 +1,26 @@
 $clients: (
-	1: polyon,
-	2: walmedia,
-	3: tracks,
-	4: theron,
-	5: murmuration-malts,
-	6: diy,
-	7: staple-web
+	1: diy,
+	2: murmuration-malts,
+	3: polyon,
+	4: staple-web,
+	5: theron,
+	6: tracks,
+	7: walmedia
 );
 
 $clients-color: (
-	polyon: #060E17 img-url("clients/polyon/space.jpg") top left no-repeat,
-	walmedia: #1B2D33,
-	tracks: #5D5D7D,
-	theron: #161819,
-	murmuration-malts: #E2C454,
 	diy: #4B56AC,
-	staple-web: #E87558
+	murmuration-malts: #E2C454,
+	polyon: #060E17 img-url("clients/polyon/space.jpg") top left no-repeat,
+	staple-web: #E87558,
+	theron: #161819,
+	tracks: #5D5D7D,
+	walmedia: #1B2D33
 );
 
 @keyframes panelSwing {
-	from { transform: scale(0); }
-	to { transform: scale(1); }
+	from 	{ transform: scale(0); }
+	to 		{ transform: scale(1); }
 }
 
 @mixin category-style($color, $map) {
@@ -64,14 +64,15 @@ $clients-color: (
 }
 
 .ggv-datalist__item {
-	animation: 400ms ease(in-cubic) 0s panelSwing;
-	float: left;
+	animation: 700ms ease(in-quad) 0s panelSwing;
+	// float: left;
 	width: 100%;
 	height: 400px;
 	justify-content: center;
-	overflow: hidden;
+	// overflow: hidden;
 	position: relative;
 	transform-origin: center center;
+
 	color: white;
 	&::after {
 		content: 'read more';
@@ -118,7 +119,7 @@ $clients-color: (
 }
 
 .ggv-datalist__item span {
-	border-radius: 0 0 10px 10px;
+	// border-radius: 0 0 10px 10px;
 	transition: 300ms all ease-in-out;
 	display: inline-block;
 	max-width: 280px;
