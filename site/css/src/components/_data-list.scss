@@ -5,7 +5,8 @@ $clients: (
 	4: staple-web,
 	5: theron,
 	6: tracks,
-	7: walmedia
+	7: walmedia,
+	8: lean-labs
 );
 
 $clients-color: (
@@ -15,7 +16,8 @@ $clients-color: (
 	staple-web: #E87558,
 	theron: #161819,
 	tracks: #5D5D7D,
-	walmedia: #1B2D33
+	walmedia: #1B2D33,
+	lean-labs: #EF4019
 );
 
 @keyframes panelSwing {
