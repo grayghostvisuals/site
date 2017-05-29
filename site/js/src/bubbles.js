@@ -32,7 +32,7 @@ function bubbler() {
 	};
 
 	generateBubbles();
-	var cycle = setInterval(generateBubbles, 250);
+	var cycle = setInterval(generateBubbles, 150); // 250
 }
 
 bubbler();
