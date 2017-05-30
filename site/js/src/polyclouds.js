@@ -39,7 +39,7 @@ function canvasStage() {
 
 canvasStage();
 
-var body = document.getElementsByTagName('body')[0];
+var body = document.querySelector('.intro-deck');
 
 body.appendChild(canvas);
 

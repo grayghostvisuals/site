@@ -1,7 +1,7 @@
 .case header[role="banner"] {
 	svg {
-		width: 80px;
-		height: 80px;
+		width: 70px;
+		height: 70px;
 	}
 }
 
@@ -13,7 +13,7 @@
 	align-content: stretch;
 
 	a[href="/"]{
-		transform: translateX(80px) scale(1.25);
+		transform: translateX(70px) scale(1.25);
 		transform-origin: top;
 	}
 

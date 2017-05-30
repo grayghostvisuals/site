@@ -108,6 +108,10 @@
 	<script src="{{../site.js}}bubbles.js"></script>
 	{{/is }}
 
+	{{#is 'categories' this.basename}}
+	<script src="{{../site.js}}polyclouds.js"></script>
+	{{/is}}
+
 	{{#is 'atomicguide' this.basename}}
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>

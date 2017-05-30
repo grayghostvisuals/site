@@ -1,24 +1,38 @@
 .portfolio .intro-deck {
-  max-width: 740px;
-  margin: auto;
-  padding-bottom: 40px;
-  font-size: 18px;
-  opacity: 0.75;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 150px;
+	padding: 0 calc(100% - 70%) 40px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 134px;
+	position: relative;
+	h3 {
+		padding-top: 20px;
+		text-align: center;
+		font-size: 54px;
+		line-height: 0;
+		color: white;
+	}
 }
 
-.portfolio .intro-deck h3 {
-  text-align: center;
-  font-size: 54px;
-  line-height: 0;
-  color: white;
+.portfolio .intro-deck {
+	position: relative;
+	z-index: 0;
+}
+
+.portfolio .intro-deck canvas {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: -1;
+	opacity: 0.3;
 }
 
 .portfolio .sticky-container {
-  background: #002238;
-  color: white;
+	background: #002238;
+	color: white;
 }
