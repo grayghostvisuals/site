@@ -18,7 +18,7 @@ $clients-color: (
 	theron: #161819,
 	tracks: #5D5D7D,
 	walmedia: #1B2D33,
-	lean-labs: #EF4019,
+	lean-labs: #313543,
 	suit-and-axe: white
 );
 
@@ -144,6 +144,12 @@ $clients-color: (
 .ggv-datalist__item.suit-and-axe img {
 	max-width: 180px;
 }
+
+.ggv-datalist__item.lean-labs img {
+	max-width: 220px;
+	transform: translateZ(0);
+}
+
 .ggv-datalist__item.suit-and-axe,
 .ggv-datalist__item.suit-and-axe a,
 .ggv-datalist__item.suit-and-axe .ggv-summary {

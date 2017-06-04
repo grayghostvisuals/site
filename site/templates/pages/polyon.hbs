@@ -3,15 +3,13 @@ basename: casestudy
 layout: default
 title: Polyon
 logo: logo-polyon.svg
-description:
+description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing the construction of an SVG Animation Sequence for Polyon using GreenSock.
 tags: svg animation
 categories: client
 url: http://polyon.co
 project: SVG Animation
 summary: We Dream Big and Build Things
 ---
-
-<!-- 	Jonno Riekwel of Polyon enthusiastically approached Gray Ghost Visuals with a vision to develop and construct a vector animation sequence involving the Polyon logo wonderfully crafted by Jord Riekwel. Polyon requested that each polygon element animate indenpendently and in a staggered fashion in a desired sequence.  -->
 
 {{> logo-polyon}}
 
@@ -54,9 +52,14 @@ summary: We Dream Big and Build Things
 <p>In the initial researching phases I found CSS to be very difficult in terms of fine-grain control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations, keyframes can be controlled and executed independently. As the project evolved each polygon element would allow for independent movement while being presented in a particular sequence.</p>
 <figure>
 	<img src="{{site.imgdir}}clients/polyon/polyon-stroke.png" alt="">
+	<figcaption><small>Example of Stroke Fix</small></figcaption>
 </figure>
 
 <p>When viewed in the browser the lion displayed some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke width of 2.5px and a stroke color to match each corresponding polygon element was used. This helped to alleviate the anti-aliasing issues slightly, but still not entirely. A guest post article for CSS-Tricks produced plenty of smart suggestions from the community about using SVG filters instead of strokes and contributed to the final result.</p>
+<figure class="figure-site">
+	<p data-height="460" data-theme-id="1395" data-slug-hash="JKmRwY" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="PolyCleaner Filter" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/JKmRwY/">PolyCleaner Filter</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<figcaption><small>The PolyCleaner SVG Filter Fix</small></figcaption>
+</figure>
 
 <h3>Results</h3>
 <p>The final result is gorgeous and attractive. The cherry on top is the hidden easter egg for hover animations that Polyon asked as a last minute add on. The outcome is captivating.</p>
