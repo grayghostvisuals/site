@@ -29,10 +29,11 @@
 	right: 0;
 	width: 100%;
 	z-index: -1;
-	opacity: 0.3;
+	opacity: 0.4;
 }
 
 .portfolio .sticky-container {
-	background: #002238;
+	background: #002238 img-url("sky-opaque.png") center center no-repeat;
+	background-size: cover;
 	color: white;
 }

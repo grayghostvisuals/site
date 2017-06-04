@@ -19,7 +19,8 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: #0C3E5E;
+	background: #0C3E5E img-url("underwater.jpg") center center no-repeat;
+	background-size: cover;
 	@media (max-width: 530px) {
 		padding: 1rem;
 	}
@@ -67,11 +68,11 @@
 	$b-surface: -120vh;
 	from {
 		transform: translateY($b-size);
-		opacity: 1;
+		// opacity: 1;
 	}
 
 	to {
 		transform: translateY($b-surface);
-		opacity: 0.25;
+		// opacity: 0.25;
 	}
 }
