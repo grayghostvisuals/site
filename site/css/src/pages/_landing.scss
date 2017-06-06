@@ -11,7 +11,6 @@
 	margin: 0 auto;
 }
 
-
 .landing .ggv-hero {
 	box-sizing: border-box;
 	display: flex;
@@ -37,7 +36,6 @@
 	font-size: 1.125em;
 }
 
-
 .landing footer[role="contentinfo"] {
 	position: absolute;
 	bottom: 0;
@@ -59,7 +57,7 @@
 	position: absolute;
 	bottom: 0;
 	will-change: transform;
-	background: radial-gradient(circle at center, rgba(#FFF, .15) 0, rgba(#FFF, .02) 25%);
+	background: radial-gradient(circle at center, rgba(#FFF, .20) 0, rgba(#FFF, .03) 25%);
 	animation: bubble 5s infinite cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 

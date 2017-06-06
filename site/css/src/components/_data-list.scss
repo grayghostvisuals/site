@@ -6,8 +6,7 @@ $clients: (
 	5: theron,
 	6: tracks,
 	7: walmedia,
-	8: lean-labs,
-	9: suit-and-axe
+	8: lean-labs
 );
 
 $clients-color: (
@@ -18,8 +17,7 @@ $clients-color: (
 	theron: #161819,
 	tracks: #5D5D7D,
 	walmedia: #1B2D33,
-	lean-labs: #313543,
-	suit-and-axe: white
+	lean-labs: #313543
 );
 
 @keyframes panelSwing {
@@ -133,28 +131,25 @@ $clients-color: (
 	font-weight: 100;
 }
 
-.ggv-datalist__item.theron img {
+.ggv-datalist__item.theron img,
+.ggv-datalist__item.murmuration-malts img {
 	max-width: 200px;
 }
 
-.ggv-datalist__item.murmuration-malts img {
-	max-width: 180px;
-}
-
-.ggv-datalist__item.suit-and-axe img {
-	max-width: 180px;
-}
+// .ggv-datalist__item.suit-and-axe img {
+// 	max-width: 180px;
+// }
 
 .ggv-datalist__item.lean-labs img {
 	max-width: 220px;
 	transform: translateZ(0);
 }
 
-.ggv-datalist__item.suit-and-axe,
-.ggv-datalist__item.suit-and-axe a,
-.ggv-datalist__item.suit-and-axe .ggv-summary {
-	color: black !important;
-}
+// .ggv-datalist__item.suit-and-axe,
+// .ggv-datalist__item.suit-and-axe a,
+// .ggv-datalist__item.suit-and-axe .ggv-summary {
+// 	color: black !important;
+// }
 
 .ggv-summary {
 	height: 100%;

@@ -20,35 +20,48 @@ logo: logo-tracks.svg
 	<li><b>Company:</b> Goldhawk Ltd</li>
 	<li><b>Project:</b> Front-end Development</li>
 	<li><b>Project URL:</b> <a href="{{projecturl}}">http://tracks.beta.com</a></li>
+	<li><b>Atomic Guide:</b> <a href="{{projecturl}}/atomic-guide">http://tracks.beta.com/atomic-guide</a></li>
 	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Gulp, Git</li>
 	<li><b>Languages:</b> HTML, PHP, Sass, JavaScript</li>
 	<li><b>Libraries:</b> jQuery, Draggable, Pjax, Bootstrap, Rome</li>
 </ul>
 
-<p>Learning Sales Tracking has never been easier using tracks and it’s amazing drag and drop interface. Tracks is focused on helping small businesses keep up to date with monthly sales and revenue. This is the lifeblood of a small company. It’s what keeps you in business. And it’s what fuels your growth.</p>
+<h3>About Tracks</h3>
+<p>Learning Sales Tracking has never been easier using tracks and it’s amazing drag and drop interface. Tracks is focused on helping small businesses keep up to date with monthly sales and revenue that integrates with both Highrise CRM and Google Apps.</p>
 
-<p>Tracks integrates with both Highrise CRM and Google Apps. It is also a stand-alone sales pipeline tool, so you don’t need an account with either to sign up.</p>
-
+<h3>Project Request</h3>
+<p>Tracks provided several comps showcasing their new design that was in need of development. It was requested that the libraries listed for this project be an absolute requirement to fit in with their currrent platform. Before the project began it was suggested an atomic guide be created to keep track of components that were already in the system or could be used again in other contexts.</p>
+<p>The approach to Tracks’ interface started with each component investigated and isolated using the principles outlined by <a href="http://atomicdesign.bradfrost.com">Brad Frost</a>. These LEGO-like pieces would eventually be constructed together to form a larger distinctive part of the interface.</p>
 <figure class="figure-site">
-	<img src="{{site.imgdir}}clients/tracks/tracks-feat-img.png" alt="">
+	<img src="{{site.imgdir}}clients/tracks/tracks-patterns.png" alt="">
+	<figcaption><small>Sample from Tracks' Atomic Guide</small></figcaption>
 </figure>
 
 <h3>Process</h3>
-
-<p>Using prototypes created using in-vision build and structure a working and functional applicaiton interface. Since this was a complete build from the ground up SVG was used throughout along with flexbox to help.</p>
-
-<figure>
-	<img src="{{site.imgdir}}clients/tracks/tracks-menu.gif" alt="">
+<p>Prototypes were created with <a href="https://www.invisionapp.com">InVision</a> to build and structure a working and functional application interface. Since this was a build from the ground up, SVG was used throughout along with flexbox to assist in quick and easy layout typically resorted to with floats and margin trickery.</p>
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/tracks/flexbox-nav.png" alt="">
+	<figcaption><small>Flexbox for Header Layout</small></figcaption>
 </figure>
 
-<p>Motion was taken from Google material design principles stating interactions occur form the point of contact giving the user clear feedback and information as to the action that occurred smoothly without cignitive distruptiveness.</p>
+<h3>Motion Design</h3>
+<p>Motion was heavily based on Google <a href="https://material.io/guidelines/motion/material-motion.html">Material Design Motion Principles</a> stating interactions occur from the point of contact giving the user clear feedback and information as to the action without cognitive disruption. A smooth transition helps guide the user to the next step of an interaction.</p>
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/tracks/tracks-menu.gif" alt="">
+	<figcaption><small>Menu Toggle Animation</small></figcaption>
+</figure>
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/tracks/tracks-expandosearch.gif" alt="">
+	<figcaption><small>Expando Search Input Animation</small></figcaption>
+</figure>
 
 <h3>Challenges</h3>
+<b>calendar</b>, <b>isolated case studies of components</b>, <b>naming conventions<b>, <b>swatch creation</b> so developers could copy and paste hex values from the atomic guide. This required conversion of hex colors using regular expressions in JavaScript and some more traickery to work cross browser due to interpolation with rgba and rgb values.
 
-<b>calendar</b>
-<b>isolated case studies of components</b>
-<b>naming conventions<b>
-<b>swatch creation</b> so developers could copy and paste hex values from the atomic guide. Thsi required conversion of hex colors using regular expressions in javascript some some more traickery to work cross browser due to some interplation with rgba and rgb values.
+<h3>Final Product</h3>
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/tracks/tracks-timeline.png" alt="">
+</figure>
 
 <h3>Noteworthy</h3>
-This project was a deep exploration not only in atomic design, but also flexbox. Progress of the work was by chance discovered resulting in an invitation to write a guest post for Smashing Magazine titled “<a href="https://www.smashingmagazine.com/2015/11/flexbox-interfaces-tracks-case-study/">Flexbox Interfaces: Tracks Case Study</a>” discussing the experiences when using flexbox for complex interface layouts.
+This project was a deep exploration not only in atomic design, but also flexbox. Progress of the work was by chance discovered resulting in an invitation to write a guest post for <a href="https://www.smashingmagazine.com">Smashing Magazine</a> titled “<a href="https://www.smashingmagazine.com/2015/11/flexbox-interfaces-tracks-case-study/">Flexbox Interfaces: Tracks Case Study</a>” discussing the experiences when using flexbox for complex interface layouts.
