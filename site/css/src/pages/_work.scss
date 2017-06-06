@@ -1,5 +1,5 @@
 .portfolio .intro-deck {
-	padding: 10px calc(100vw - 1000px) 60px;
+	padding: 40px 0 110px;
 	font-size: 18px;
 	display: flex;
 	align-items: center;
@@ -7,6 +7,22 @@
 	flex-direction: column;
 	margin-top: 134px;
 	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	&__wrap {
+		max-width: 560px;
+		margin: auto;
+	}
+	canvas {
+		position: absolute;
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		z-index: -1;
+		opacity: 0.7;
+	}
 	h3 {
 		padding-top: 20px;
 		text-align: center;
@@ -14,28 +30,12 @@
 		line-height: 0;
 		color: white;
 	}
-}
-
-.portfolio .intro-deck {
-	position: relative;
-	z-index: 0;
-	overflow: hidden;
 	h4 {
 		margin-top: 0;
 		margin-bottom: 5px;
+		text-align: center;
 		color: white;
 	}
-}
-
-.portfolio .intro-deck canvas {
-	position: absolute;
-	bottom: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-	width: 100%;
-	z-index: -1;
-	opacity: 0.7;
 }
 
 .portfolio .sticky-container {
@@ -45,108 +45,9 @@
 }
 
 .portfolio .listing {
-	// box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	// padding: 2rem;
 	font-size: 0.875em;
 	text-transform: lowercase;
-	// background: rgba(17, 76, 115, 0.40);
 	a {
 		text-transform: uppercase;
 	}
-}
-
-
-
-
-
-// Google Expando Config
-$google_expando_radius: 2px;
-$google_expando_whsp: 48px;
-
-$google_materialshadow_ambient: (
-  shadow1: 0 1px 1.5px rgba(0, 0, 0, 0.12),
-  shadow2: 0 1px 1px rgba(0, 0, 0, 0.24)
-);
-
-$google_materialshadow: (
-  ambient: map-values($google_materialshadow_ambient)
-);
-
-$google_expando_proportions: (
-  icon_size: 24px,
-  card_size: 100%
-);
-
-$google_expando_transition: (
-  transition_one: .2s all cubic-bezier(.4,0,.2,1)
-);
-
-
-// Google Expando Styles !Required!
-.google-expando {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  &--wrap {
-    position: relative;
-    width: 100%;
-  }
-}
-
-.google-expando__icon {
-  border-radius: 90%;
-  box-shadow: map-get($google_materialshadow, ambient);
-  height: map-get($google_expando_proportions, icon_size);
-  width: map-get($google_expando_proportions, icon_size);
-  padding: $google_expando_whsp/8;
-  transition: map-values($google_expando_transition);
-  z-index: 2;
-  text-align: center;
-  background: #387EAC;
-  color: white;
-
-  svg {
-    height: map-get($google_expando_proportions, icon_size);
-    vertical-align: text-bottom;
-    width: map-get($google_expando_proportions, icon_size);
-    fill: white;
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.google-expando__card {
-  border-radius: $google_expando_radius;
-  box-shadow: map-get($google_materialshadow, ambient);
-  height: auto;
-  max-width: map-get($google_expando_proportions, card_size);
-  margin: 0 auto;
-  position: absolute;
-  top: (map-get($google_expando_proportions, icon_size) * 2) / 3;
-  left: 0;
-  right: 0;
-  transform: scale(0) translateZ(0);
-  transition: map-values($google_expando_transition);
-  transform-origin: top center;
-  z-index: 1;
-  background: white;
-	color: black;
-  opacity: 0;
-}
-
-
-// Google Expando State
-.google-expando__icon.active {
-  transform: rotate(45deg);
-}
-
-.google-expando__card.active {
-  height: auto;
-  padding: $google_expando_whsp;
-  transform: scale(1) translateZ(0);
-  opacity: 1;
 }

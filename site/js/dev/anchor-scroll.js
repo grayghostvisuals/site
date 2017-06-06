@@ -1,72 +1,104 @@
-// Init controller
+(function() {
+	var hero           = document.querySelector('.intro-deck'),
+			hero_height    = hero.clientHeight,
+			el             = document.querySelector('main'),
+			elChild        = document.createElement('a'),
+			content_height = el.clientHeight,
+			scrollTop      = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+
+	elChild.innerHTML = 'Back To Top';
+	elChild.classList.add('topsider');
+	elChild.setAttribute('href', '#top');
+
+	el.style.position = 'relative';
+
+	elChild.style.position = 'fixed';
+	elChild.style.zIndex = '9999';
+	elChild.style.right = 0;
+	elChild.style.bottom = 0;
+	elChild.style.backgroundColor = 'transparent';
+	elChild.style.textDecoration = 'none';
+	elChild.style.color = 'white';
+	elChild.style.padding = '6px 6px';
+
+	window.addEventListener('scroll', function(e) {
+
+		if(window.pageYOffset > hero_height) {
+			el.appendChild(elChild);
+			elChild.style.opacity = 1;
+		} else {
+			elChild.style.opacity = 0;
+		}
+
+		if(window.pageYOffset == (document.documentElement.scrollHeight - window.innerHeight)) {
+			elChild.style.opacity = 0;
+		}
+
+	});
+
+	elChild.addEventListener('click', function(event) {
+		elChild.style.opacity = 0;
+		scroller(event);
+	});
+
+})();
+
+
 var controller = new ScrollMagic.Controller({
 	globalSceneOptions: {
-		// duration: $('section').height(),
 		triggerHook: .025,
 		reverse: true
 	}
 });
 
 
-/*
-object to hold href values of links inside our nav with
-the class '.anchor-nav'
-
-scene_object = {
-'[scene-name]' : {
-	'[target-scene-id]' : '[anchor-href-value]'
-}
-}
-*/
 var scenes = {}
 
 for(var key in scenes) {
-// skip loop if the property is from prototype
-if (!scenes.hasOwnProperty(key)) continue;
+	if (!scenes.hasOwnProperty(key)) continue;
 
-var obj = scenes[key];
+	var obj = scenes[key];
 
-for (var prop in obj) {
-	// skip loop if the property is from prototype
-	if(!obj.hasOwnProperty(prop)) continue;
+	for (var prop in obj) {
+		if(!obj.hasOwnProperty(prop)) continue;
 
-	new ScrollMagic.Scene({ triggerElement: '#' + prop })
+		new ScrollMagic.Scene({ triggerElement: '#' + prop })
 			.setClassToggle('#' + obj[prop], 'active')
 			.addTo(controller);
-}
+	}
 }
 
 
-// Change behaviour of controller
-// to animate scroll instead of jump
 controller.scrollTo(function(target) {
-
-TweenMax.to(window, 0.5, {
-	scrollTo : {
-		y : target,
-		autoKill : true // Allow scroll position to change outside itself
-	},
-	ease : Cubic.easeInOut
+	TweenMax.to(window, 0.5, {
+		scrollTo : {
+			y : target,
+			autoKill : true
+		},
+		ease : Cubic.easeInOut
+	});
 });
 
-});
 
-
-//  Bind scroll to anchor links using Vanilla JavaScript
 var anchor_nav = document.querySelector('.anchor-nav');
 
-anchor_nav.addEventListener('click', function(e) {
-var target = e.target,
-		id     = target.getAttribute('href');
+function scroller(e) {
+	var target = e.target,
+			id     = target.getAttribute('href');
 
-if(id !== null) {
-	if(id.length > 0) {
-		e.preventDefault();
-		controller.scrollTo(id);
+	if(id !== null) {
+		if(id.length > 0) {
+			e.preventDefault();
+			controller.scrollTo(id);
 
-		if(window.history && window.history.pushState) {
-			history.pushState("", document.title, id);
+			if(window.history && window.history.pushState) {
+				history.pushState("", document.title, id);
+			}
 		}
 	}
 }
+
+
+anchor_nav.addEventListener('click', function(e) {
+	scroller(e)
 });

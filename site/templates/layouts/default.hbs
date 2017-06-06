@@ -110,33 +110,11 @@
 
 	{{#is 'categories' this.basename}}
 	<script src="{{../site.js}}polyclouds.js"></script>
-	<script src="{{../site.js}}back-to-top.js"></script>
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 	<script src="{{../site.js}}anchor-scroll.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script>
-	// Google Expando Method
-	// =====================================================
-
-	function googleExpandoToggle() {
-	$(this).toggleClass('active');
-	$(this).next().toggleClass('active');
-
-	// ARIA
-	$expando_card.attr('aria-hidden') === 'true' ? $expando.attr('aria-hidden', 'false') : $expando.attr('aria-hidden', 'true');
-	}
-
-
-	// Google Expando Event
-	// =====================================================
-
-	$('.google-expando__icon').on('click', function() {
-	googleExpandoToggle.call(this);
-	});
-	</script>
+	<script src="{{../site.js}}expando-card.js"></script>
 	{{/is}}
 
 	{{#is 'atomicguide' this.basename}}
