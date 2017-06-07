@@ -114,8 +114,11 @@
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 	<script src="{{../site.js}}anchor-scroll.js"></script>
-	<script src="{{../site.js}}expando-card.js"></script>
 	{{/is}}
+
+	{{#contains 'atomicguide, categories' this.basename}}
+	<script src="{{../site.js}}expando-card.js"></script>
+	{{/contains}}
 
 	{{#is 'atomicguide' this.basename}}
 	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>

@@ -1,5 +1,5 @@
 .portfolio .intro-deck {
-	padding: 40px 0 110px;
+	padding: 40px 0 120px;
 	font-size: 18px;
 	display: flex;
 	align-items: center;
@@ -32,17 +32,19 @@
 	}
 	h4 {
 		margin-top: 0;
-		margin-bottom: 5px;
+		margin-bottom: 10px;
 		text-align: center;
 		color: white;
 	}
 }
 
+
 .portfolio .sticky-container {
-	background: #003461 img-url("sky-opaque.png") 0 0 no-repeat;
+	background: #003461 img-url("poly-sky-opaque.png") 50% 50% no-repeat;
 	background-size: cover;
 	color: white;
 }
+
 
 .portfolio .listing {
 	font-size: 0.875em;

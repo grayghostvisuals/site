@@ -3,25 +3,22 @@
 // ==========================================================================
 
 $google_expando_radius: 2px;
-$google_expando_whsp: 48px;
-
+$google_expando_whsp: 28px;
 $google_materialshadow_ambient: (
 	shadow1: 0 1px 1.5px rgba(0, 0, 0, 0.12),
 	shadow2: 0 1px 1px rgba(0, 0, 0, 0.24)
 );
-
 $google_materialshadow: (
 	ambient: map-values($google_materialshadow_ambient)
 );
-
 $google_expando_proportions: (
 	icon_size: 24px,
 	card_size: 100%
 );
-
 $google_expando_transition: (
 	transition_one: .2s all cubic-bezier(.4,0,.2,1)
 );
+
 
 
 // ==========================================================================
@@ -33,35 +30,36 @@ $google_expando_transition: (
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 	&--wrap {
 		position: relative;
 		width: 100%;
 	}
 }
 
+
 .google-expando__icon {
 	border-radius: 90%;
 	box-shadow: map-get($google_materialshadow, ambient);
 	height: map-get($google_expando_proportions, icon_size);
-	width: map-get($google_expando_proportions, icon_size);
-	padding: $google_expando_whsp/8;
+	padding: 5px;
 	transition: map-values($google_expando_transition);
+	width: map-get($google_expando_proportions, icon_size);
 	z-index: 2;
 	text-align: center;
 	background: #387EAC;
 	color: white;
 	&:hover {
 		cursor: pointer;
+		background: #09a3ca;
 	}
-
 	svg {
 		height: map-get($google_expando_proportions, icon_size);
-		vertical-align: text-bottom;
+		vertical-align: center;
 		width: map-get($google_expando_proportions, icon_size);
 		fill: white;
 	}
 }
+
 
 .google-expando__card {
 	border-radius: $google_expando_radius;
@@ -83,6 +81,7 @@ $google_expando_transition: (
 }
 
 
+
 // ==========================================================================
 // Google Expando State
 // ==========================================================================
@@ -90,6 +89,7 @@ $google_expando_transition: (
 .google-expando__icon.active {
 	transform: rotate(45deg);
 }
+
 
 .google-expando__card.active {
 	height: auto;

@@ -1,33 +1,35 @@
 nav[role="navigation"] {
-  width: 100%;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 14px;
+	padding-top: 10px;
+	width: 100%;
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 14px;
 
-  a {
-    margin: 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #76bff4;
+	a {
+		margin: 10px;
+		padding: 5px 0;
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #76bff4;
 
-    &:visited {
-      color: #76bff4;
-    }
+		&:visited {
+			color: #76bff4;
+		}
 
-    &:hover,
-    &:focus,
-    &:active {
-      font-weight: inherit;
-      color: #4380A7;
-    }
+		&:hover,
+		&:focus,
+		&:active {
+			font-weight: inherit;
+			color: #4380A7;
+		}
 
-    &.active {
-      color: #4380A7;
-    }
-  }
-}
+		&.active {
+			color: #4380A7;
+		}
+	}
 
-.ffo-loaded nav[role="navigation"] {
-	font-family: 'Ciutadella W04 SmBold';
-  font-size: 16px;
+	.ffo-loaded & {
+		font-family: 'Ciutadella W04 SmBold';
+		font-size: 16px;
+	}
 }

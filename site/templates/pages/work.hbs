@@ -13,25 +13,7 @@ layout: default
 		</header>
 
 		<h4>Select A Case Study</h4>
-
-		<div class="google-expando--wrap" aria-hidden="true">
-			<div class="google-expando">
-
-				<div class="google-expando__icon">
-					<svg xmlns="//www.w3.org/2000/svg" viewBox="0 0 48 48"><path d="M38 26H26v12h-4V26H10v-4h12V10h4v12h12v4z"></path></svg>
-					<span class="visuallyhidden" aria-hidden="true">Expand Card</span>
-				</div>
-
-				<div class="google-expando__card" aria-hidden="true">
-					<ul class="list-reset listing anchor-nav">
-						{{#category "client"}}
-							<li><a href="#{{data.title}}">{{data.title}}</a> : {{ data.tags }}</li>
-						{{/category}}
-					</ul>
-				</div>
-
-			</div>
-		</div>
+		{{> expando-card}}
 		<p>Every client gets treated with the utmost care and respect towards the vision and request. Browse through past projects to gain further insight with each project's processes, challenges and solutions. If you're looking for more projects to convince you <a href="mailto:grayghost@grayghostvisuals.com?subject=Gray Ghost Visuals Project Inquiry&body=Howdy Dennis,%0A%0AWe would love to work with Gray Ghost Visuals for our upcoming project.%0A">Get In Touch</a>.</p>
 	</div>
 </section>

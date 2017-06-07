@@ -59,6 +59,11 @@ a {
 	}
 }
 
+abbr[title] {
+	border-bottom: none; // normalize override
+	text-decoration: none; // normalize override
+}
+
 figcaption {
 	text-align: center;
 }
