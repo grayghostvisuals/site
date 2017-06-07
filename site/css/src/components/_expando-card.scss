@@ -67,6 +67,7 @@ $google_expando_transition: (
 	height: auto;
 	max-width: map-get($google_expando_proportions, card_size);
 	margin: 0 auto;
+	padding: $google_expando_whsp;
 	position: absolute;
 	top: (map-get($google_expando_proportions, icon_size) * 2) / 3;
 	left: 0;
@@ -92,8 +93,6 @@ $google_expando_transition: (
 
 
 .google-expando__card.active {
-	height: auto;
-	padding: $google_expando_whsp;
 	transform: scale(1) translateZ(0);
 	opacity: 1;
 }
