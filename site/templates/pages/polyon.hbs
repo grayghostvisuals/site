@@ -44,18 +44,18 @@ summary: We Dream Big and Build Things
 
 	<div class="text">
 		<h3>Leave No Traces</h3>
-		<p>The original vector logo was cleaned from top to bottom ensuring by hand that each polygon element meticulously lined up to it’s adjacent and adjoining counterpart. Hours of work were invested to ensure each polygon rest prcisely on a pixel grid. The result is a crisp and beautiful polygon lion that helped push the boundaries of SVG and it's use on the Web.</p>
+		<p>The original vector logo was cleaned from top to bottom ensuring by hand that each polygon element meticulously lined up to it’s adjacent and adjoining counterpart. Hours of work were invested to ensure each polygon rest prcisely on a pixel grid. The result is a crisp and beautiful polygon lion that helped push the boundaries of <abbr title="scalable vector graphic">SVG</abbr> and it's use on the Web.</p>
 	</div>
 </div>
 
 <h3>Challenges</h3>
-<p>In the initial researching phases I found CSS to be very difficult in terms of fine-grain control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations, keyframes can be controlled and executed independently. As the project evolved each polygon element would allow for independent movement while being presented in a particular sequence.</p>
+<p>In the initial researching phases we found CSS to be very difficult in terms of fine-grain control compared to a library such as GreenSock and the one we chose for the final implementation. Since this type of library is geared towards JavaScript controlled animations, keyframes can be controlled and executed independently. As the project evolved each polygon element would allow for independent movement while being presented in a particular sequence of our choosing.</p>
 <figure>
 	<img src="{{site.imgdir}}clients/polyon/polyon-stroke.png" alt="">
 	<figcaption><small>Example of Stroke Fix</small></figcaption>
 </figure>
 
-<p>When viewed in the browser the lion displayed some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke width of 2.5px and a stroke color to match each corresponding polygon element was used. This helped to alleviate the anti-aliasing issues slightly, but still not entirely. A guest post article for CSS-Tricks produced plenty of smart suggestions from the community about using SVG filters instead of strokes and contributed to the final result.</p>
+<p>When viewed in the browser the lion displayed some anti-aliaising issues leaving roughly a 1px gap between each polygon element. To avoid this problem a stroke width of 2.5px and a stroke color to match each corresponding polygon element was used. This helped to alleviate the anti-aliasing issues slightly, but still not entirely. A guest post article for CSS-Tricks produced plenty of smart suggestions from the community regarding the use of <abbr title="scalable vector graphic">SVG</abbr> filters instead of strokes and contributed to the final result.</p>
 <figure class="figure-site">
 	<p data-height="460" data-theme-id="1395" data-slug-hash="JKmRwY" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="PolyCleaner Filter" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/JKmRwY/">PolyCleaner Filter</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 	<figcaption><small>The PolyCleaner SVG Filter Fix</small></figcaption>

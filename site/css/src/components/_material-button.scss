@@ -6,6 +6,7 @@ $material-fill-color: #76BFF4;
 
 .material-button {
 	appearance: none;
+	border: none;
 	box-sizing: border-box;
 	border-radius: 2px;
 	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 1px 1.5px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -13,7 +14,10 @@ $material-fill-color: #76BFF4;
 	text-align: center;
 	max-width: 500px;
 	padding: 1rem;
+	position: relative;
+	transition: 250ms all cubic-bezier(0.4, 0, 0.2, 1);
 	width: 100%;
+	font-family: 'Ciutadella W04 SmBold';
 	text-transform: uppercase;
 	&:link,
 	&:visited {
@@ -29,13 +33,6 @@ $material-fill-color: #76BFF4;
 	}
 }
 
-.material-button {
-	appearance: none;
-	border: none;
-	position: relative;
-	transition: 250ms all cubic-bezier(0.4, 0, 0.2, 1);
-	font-family: 'Ciutadella W04 SmBold';
-}
 
 .material-ripple {
 	height: 100%;

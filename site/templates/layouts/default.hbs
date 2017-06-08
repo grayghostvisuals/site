@@ -14,7 +14,7 @@
 		<link rel="subresource" href="{{../site.css}}site.css">
 		{{/if}}
 
-		<title>Gray Ghost Visuals › {{#is 'casestudy' this.basename}}Case Study{{/is}}{{#contains 'landing, categories' this.basename}}Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
+		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
 
 		<meta name="description" content="{{description}}">
 
@@ -50,7 +50,7 @@
 		<link rel="stylesheet" href="{{../site.css}}atomic-guide.css">
 		{{/is}}
 
-		{{#contains 'landing, casestudy, categories' this.basename}}
+		{{#contains 'landing, contact, casestudy, categories' this.basename}}
 		<link rel="stylesheet" href="{{../site.css}}site.css">
 		{{/contains}}
 		<!-- endbuild -->
@@ -74,16 +74,11 @@
 		<div class="sticky-container">
 			<header class="sticky-row sticky-header" role="banner">
 				{{> logo}}
-
-				{{#contains 'casestudy, experiments' this.basename}}
-				<a href="mailto:{{../site.email}}?subject={{../site.title}} Project Inquiry&body=Howdy {{../site.title}},%0A%0AWe'd love to work with your company for an upcoming project of ours. Here is the details…%0A">Get In Touch</a>
-				{{/contains}}
-
-				{{#is 'atomicguide' this.basename}}
-				{{> atomic-nav}}
-				{{/is}}
-
 				{{> nav}}
+
+				{{#contains 'casestudy' this.basename}}
+				<a href="/contact.html">Get In Touch</a>
+				{{/contains}}
 			</header>
 
 			<main class="sticky-row sticky-content" role="main">
@@ -93,49 +88,62 @@
 			{{> footer}}
 		</div>
 
-	{{#contains 'diy, Theron, Polyon' this.title}}
-	<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
-	{{/contains}}
+		{{#contains 'diy, Theron, Polyon' this.title}}
+		<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
+		{{/contains}}
 
-	<!-- build:js {{site.js}}scripts.min.js -->
-	<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
-	<script src="{{site.js}}ffobserver-config.js"></script>
-	<script src="{{site.jslib}}TweenMax.min.js"></script>
-	<script src="{{site.js}}social-bloomer.js"></script>
-	<script src="{{site.js}}material-ripple.js"></script>
+		<!-- build:js {{site.js}}scripts.min.js -->
+		<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
+		<script src="{{site.js}}ffobserver-config.js"></script>
+		<script src="{{site.js}}social-bloomer.js"></script>
 
-	{{#is 'landing' this.basename}}
-	<script src="{{../site.js}}bubbles.js"></script>
-	{{/is }}
+		{{#contains 'landing, atomicguide, categories' this.basename}}
+		<script src="{{../site.jslib}}TweenMax.min.js"></script>
+		{{/contains}}
 
-	{{#is 'categories' this.basename}}
-	<script src="{{../site.js}}polyclouds.js"></script>
-	<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
-	<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
-	<script src="{{../site.js}}anchor-scroll.js"></script>
-	{{/is}}
+		{{#contains 'landing, atomicguide' this.basename}}
+		<script src="{{../site.js}}material-ripple.js"></script>
+		{{/contains}}
 
-	{{#contains 'atomicguide, categories' this.basename}}
-	<script src="{{../site.js}}expando-card.js"></script>
-	{{/contains}}
+		{{#is 'landing' this.basename}}
+		<script src="{{../site.js}}bubbles.js"></script>
+		{{/is }}
 
-	{{#is 'atomicguide' this.basename}}
-	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-	<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-	<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
-	<script src="{{../site.js}}scrollmation.js"></script>
-	<script src="{{../site.jslib}}prism.js"></script>
-	<script src="{{../site.js}}atomic-swatch.js"></script>
-	<script src="{{../site.js}}atomic-generator.js"></script>
-	{{/is}}
-	<!-- endbuild -->
+		{{#contains 'contact, categories' this.basename}}
+		<script src="{{../site.js}}polyclouds.js"></script>
+		{{/contains}}
 
-	{{#if production}}
-	<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));</script>
-	{{/if}}
+		{{#is 'categories' this.basename}}
+		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
+		<script src="{{../site.js}}anchor-scroll.js"></script>
+		{{/is}}
+
+		{{#contains 'atomicguide, categories' this.basename}}
+		<script src="{{../site.js}}expando-card.js"></script>
+		{{/contains}}
+
+		{{#is 'contact' this.basename}}
+		<script src="{{../site.js}}wufoo.js"></script>
+		{{/is}}
+
+		{{#is 'atomicguide' this.basename}}
+		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
+		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
+		<script src="{{../site.js}}scrollmation.js"></script>
+		<script src="{{../site.jslib}}prism.js"></script>
+		<script src="{{../site.js}}atomic-swatch.js"></script>
+		<script src="{{../site.js}}atomic-generator.js"></script>
+		{{/is}}
+		<!-- endbuild -->
+
+		{{#if production}}
+		<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));</script>
+		{{/if}}
 	</body>
 </html>

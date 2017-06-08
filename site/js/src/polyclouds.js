@@ -28,8 +28,6 @@ var canvas = document.createElement('canvas'),
     height = void 0;
 
 function canvasStage() {
-	// Make canvas width && height equal to window's inner width / height
-	// rather than setting an exact size of canvas.
 	canvas.width = width = window.innerWidth;
 	canvas.height = height = window.innerHeight;
 }
@@ -146,21 +144,34 @@ var cloud1 = new Cloud(),
     cloud2 = new Cloud(),
     cloud3 = new Cloud();
 
-function update() {
-	ctx.clearRect(0, 0, width, height);
-	ctx.fillStyle = color.toString();
-	ctx.fillRect(0, 0, width, height);
-	cloud1.update();
-	cloud2.update();
-	cloud3.update();
-	cloud1.draw();
-	cloud2.draw();
-	cloud3.draw();
-	setTimeout(update.bind(this), framerate);
+var fps = 30,
+    interval = 1000 / fps,
+    then = Date.now(),
+    now = void 0,
+    delta = void 0;
+
+function render() {
+	requestAnimationFrame(render);
+
+	now = Date.now();
+	delta = now - then;
+
+	if (delta > interval) {
+		then = now;
+		ctx.clearRect(0, 0, width, height);
+		ctx.fillStyle = color.toString();
+		ctx.fillRect(0, 0, width, height);
+		cloud1.update();
+		cloud2.update();
+		cloud3.update();
+		cloud1.draw();
+		cloud2.draw();
+		cloud3.draw();
+	}
 }
 
 window.addEventListener('resize', function () {
 	canvasStage();
 }, false);
 
-update();
+render();
