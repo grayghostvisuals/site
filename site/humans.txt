@@ -39,6 +39,6 @@ ooooooooooooo                     oooo
 
 -------------------------------------------------------------------------------
 
-Tooling: Gulp, Assemble, Mocha, Stylelint, LiveReload, NPM, Bower
-Libs: Normalize, ScrollMagic, Prism, GSAP, FFObserver
+Tooling: Gulp, NPM, Bower
 Platform: Node
+GitHub URL: https://github.com/grayghostvisuals/site/tree/development
