@@ -32,6 +32,7 @@
     "gulp-extname": "0.2.0",
     "gulp-foreach": "0.1.0",
     "gulp-if": "1.2.5",
+    "gulp-imagemin": "^3.3.0",
     "gulp-load-plugins": "0.8.0",
     "gulp-minify-html": "^0.1.8",
     "gulp-rev": "3.0.0",
@@ -43,7 +44,7 @@
     "gulp-usemin": "0.3.11",
     "gulp-util": "3.0.3",
     "handlebars": "^4.0.5",
-    "handlebars-helpers": "^0.6.1",
+    "handlebars-helpers": "^0.6.2",
     "js-yaml": "^3.6.1",
     "merge-stream": "0.1.7"
   },

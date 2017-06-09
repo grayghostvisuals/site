@@ -3,26 +3,26 @@
 // ===================================================
 
 var gulp            = require('gulp'),
-    loadPlugins     = require('gulp-load-plugins'),
-    $               = loadPlugins({
-                        rename: {
-                          'gulp-gh-pages': 'ghPages',
-                          'gulp-minify-css': 'mincss',
-                          'gulp-minify-html': 'minhtml',
-                          'gulp-sass-glob-import': 'sassglob'
-                        }
-                      }),
-    yaml            = require('js-yaml'),
-    helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
-    expand          = require('expand')(), // pincer.io/node/libraries/expand
-    permalinks      = require('assemble-permalinks'),
-    assemble        = require('assemble'),
-    app             = assemble(),
-    del             = require('del'),
-    resolve         = require('path').resolve,
-    merge           = require('merge-stream'),
-    basename        = require('path').basename,
-    extname         = require('path').extname;
+		loadPlugins     = require('gulp-load-plugins'),
+		$               = loadPlugins({
+												rename: {
+													'gulp-gh-pages': 'ghPages',
+													'gulp-minify-css': 'mincss',
+													'gulp-minify-html': 'minhtml',
+													'gulp-sass-glob-import': 'sassglob'
+												}
+											}),
+		yaml            = require('js-yaml'),
+		helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
+		expand          = require('expand')(), // pincer.io/node/libraries/expand
+		permalinks      = require('assemble-permalinks'),
+		assemble        = require('assemble'),
+		app             = assemble(),
+		del             = require('del'),
+		resolve         = require('path').resolve,
+		merge           = require('merge-stream'),
+		basename        = require('path').basename,
+		extname         = require('path').extname;
 
 $.exec   = require('child_process').exec;
 $.fs     = require('fs');
@@ -33,36 +33,40 @@ $.fs     = require('fs');
 // ===================================================
 
 var asset_dir = {
-  site: 'site',
-  templates : 'templates',
-  data: 'data',
-  dist: 'dist',
-  js: 'js',
-  css: 'css',
-  sass: 'src'
+	site: 'site',
+	templates : 'templates',
+	data: 'data',
+	dist: 'dist',
+	js: 'js',
+	css: 'css',
+	sass: 'src',
+	images: 'img/site',
+	images_origin: 'img/site/origin'
 };
 
 var path = {
-  site: asset_dir.site,
-  data: './' + asset_dir.data,
-  templates: asset_dir.site + '/' + asset_dir.templates,
-  dist: asset_dir.dist,
-  js: asset_dir.site + '/' + asset_dir.js,
-  css: asset_dir.site + '/' + asset_dir.css,
-  sass: asset_dir.site + '/' + asset_dir.css + '/' + asset_dir.sass
+	site: asset_dir.site,
+	data: './' + asset_dir.data,
+	templates: asset_dir.site + '/' + asset_dir.templates,
+	dist: asset_dir.dist,
+	js: asset_dir.site + '/' + asset_dir.js,
+	css: asset_dir.site + '/' + asset_dir.css,
+	sass: asset_dir.site + '/' + asset_dir.css + '/' + asset_dir.sass,
+	images: asset_dir.site + '/' + asset_dir.images,
+	images_origin: asset_dir.site + '/' + asset_dir.images_origin,
 };
 
 var glob = {
-  html: path.site + '/*.html',
-  css: path.css + '/*.css',
-  sass: path.sass + '/**/*.scss',
-  js: path.js + '/src/**/*.js',
-  jsdev: path.js + '/dev/**/*.js',
-  jslibs : path.js + '/lib/**/*.js',
-  layouts: path.templates + '/layouts/*.{md,hbs}',
-  pages: path.templates + '/pages/**/*.{md,hbs}',
-  includes: path.templates + '/includes/**/*.{md,hbs}',
-  data: path.data + '/**/*.{json,yaml}'
+	html: path.site + '/*.html',
+	css: path.css + '/*.css',
+	sass: path.sass + '/**/*.scss',
+	js: path.js + '/src/**/*.js',
+	jsdev: path.js + '/dev/**/*.js',
+	jslibs : path.js + '/lib/**/*.js',
+	layouts: path.templates + '/layouts/*.{md,hbs}',
+	pages: path.templates + '/pages/**/*.{md,hbs}',
+	includes: path.templates + '/includes/**/*.{md,hbs}',
+	data: path.data + '/**/*.{json,yaml}'
 };
 
 
@@ -71,34 +75,34 @@ var glob = {
 // ===================================================
 
 gulp.task('serve', ['assemble'], function() {
-  $.connect.server({
-    root: $.if(
-      process.env.NODE_ENV === 'production',
-      path.dist,
-      path.site
-    ),
-    port: $.if(
-      process.env.NODE_ENV === 'development',
-      5000,
-      5001
-    ),
-    livereload: $.if(
-      process.env.NODE_ENV === 'development',
-      true,
-      false
-    ),
-    middleware: function(connect) {
-      return [
-        connect().use(connect.query())
-      ];
-    }
-  });
+	$.connect.server({
+		root: $.if(
+			process.env.NODE_ENV === 'production',
+			path.dist,
+			path.site
+		),
+		port: $.if(
+			process.env.NODE_ENV === 'development',
+			5000,
+			5001
+		),
+		livereload: $.if(
+			process.env.NODE_ENV === 'development',
+			true,
+			false
+		),
+		middleware: function(connect) {
+			return [
+				connect().use(connect.query())
+			];
+		}
+	});
 
-  $.exec($.if(
-    process.env.NODE_ENV === 'development',
-    'open http://localhost:5000',
-    'open http://localhost:5001'
-  ));
+	$.exec($.if(
+		process.env.NODE_ENV === 'development',
+		'open http://localhost:5000',
+		'open http://localhost:5001'
+	));
 });
 
 
@@ -107,8 +111,8 @@ gulp.task('serve', ['assemble'], function() {
 // ===================================================
 
 gulp.task('mocha', function () {
-  return gulp.src('test/*.js', { read: false })
-    .pipe($.mocha({ reporter: 'nyan' }));
+	return gulp.src('test/*.js', { read: false })
+		.pipe($.mocha({ reporter: 'nyan' }));
 });
 
 
@@ -120,17 +124,17 @@ gulp.task('mocha', function () {
 // https://github.com/kristerkari/stylelint-scss
 // https://github.com/stylelint/stylelint/blob/master/docs/user-guide/about-rules.md
 gulp.task('lintsass', function() {
-  var stream = gulp.src(glob.sass)
-    .pipe($.stylelint({
-      reporters: [
-        {
-          formatter: 'string',
-          console: true
-        }
-      ]
-    }));
+	var stream = gulp.src(glob.sass)
+		.pipe($.stylelint({
+			reporters: [
+				{
+					formatter: 'string',
+					console: true
+				}
+			]
+		}));
 
-  return stream;
+	return stream;
 });
 
 
@@ -139,25 +143,25 @@ gulp.task('lintsass', function() {
 // ===================================================
 
 gulp.task('sass', function() {
-  var stream = gulp.src(glob.sass)
-    .pipe($.newer(glob.sass))
-    .pipe($.if(
-      process.env.NODE_ENV === 'development',
-      $.sourcemaps.init()
-    ))
-    .pipe($.sassglob())
-    .pipe($.sass({
-      outputStyle: $.if(process.env.NODE_ENV === 'development', 'expanded', 'compressed')
-    }))
-    .pipe($.autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe($.if(process.env.NODE_ENV === 'development', $.sourcemaps.write()))
-    .pipe(gulp.dest(path.css))
-    .pipe($.livereload());
+	var stream = gulp.src(glob.sass)
+		.pipe($.newer(glob.sass))
+		.pipe($.if(
+			process.env.NODE_ENV === 'development',
+			$.sourcemaps.init()
+		))
+		.pipe($.sassglob())
+		.pipe($.sass({
+			outputStyle: $.if(process.env.NODE_ENV === 'development', 'expanded', 'compressed')
+		}))
+		.pipe($.autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
+		.pipe($.if(process.env.NODE_ENV === 'development', $.sourcemaps.write()))
+		.pipe(gulp.dest(path.css))
+		.pipe($.livereload());
 
-  return stream;
+	return stream;
 });
 
 
@@ -175,18 +179,18 @@ gulp.task('sass', function() {
 // @info
 // Load yaml files using a custom dataLoader.
 app.dataLoader('yaml', function(str, fp) {
-  return yaml.safeLoad(str);
+	return yaml.safeLoad(str);
 });
 
 app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'));
 
 function loadData() {
-  app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
+	app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
 
-  // https://github.com/assemble/issues/875
-  app.data(expand(app.cache.data));
+	// https://github.com/assemble/issues/875
+	app.data(expand(app.cache.data));
 
-  //console.log(app.cache.data);
+	//console.log(app.cache.data);
 }
 
 // Setting Methods
@@ -218,32 +222,32 @@ app.set('categories', {});
 // Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
 function fileData(file, next) {
-  // if the file doesn't have a data object or
-  // doesn't contain `categories` in it's
-  // front-matter, move on.
-  if (!file.data || !file.data.categories) {
-    return next();
-  }
+	// if the file doesn't have a data object or
+	// doesn't contain `categories` in it's
+	// front-matter, move on.
+	if (!file.data || !file.data.categories) {
+		return next();
+	}
 
-  var renameKey = app.renameKey(file.key, file);
+	var renameKey = app.renameKey(file.key, file);
 
-  // get the categories object
-  var categories = app.get('categories');
+	// get the categories object
+	var categories = app.get('categories');
 
-  // decipher what categories this file belongs to
-  var cats = file.data.categories;
+	// decipher what categories this file belongs to
+	var cats = file.data.categories;
 
-  cats = Array.isArray(cats) ? cats : [cats];
+	cats = Array.isArray(cats) ? cats : [cats];
 
-  // add this file's data (file object)
-  // to each of it's categories
-  cats.forEach(function(cat) {
-    categories[cat] = categories[cat] || [];
-    categories[cat][renameKey] = file;
-  });
+	// add this file's data (file object)
+	// to each of it's categories
+	cats.forEach(function(cat) {
+		categories[cat] = categories[cat] || [];
+		categories[cat][renameKey] = file;
+	});
 
-  // complete
-  next();
+	// complete
+	next();
 }
 
 app.onLoad(/\**\/*.hbs/, fileData);
@@ -260,11 +264,11 @@ app.onLoad(/\**\/*.hbs/, fileData);
 // Create a pages collection
 //app.create('pages').use(permalinks(':tags/:category():name.html', {
 app.create('pages').use(permalinks(':category():name.html', {
-  category: function() {
-    if (!this.categories) return '';
-    var category = Array.isArray(this.categories) ? this.categories[0] : this.categories;
-    return category ? category + '/' : '';
-  }
+	category: function() {
+		if (!this.categories) return '';
+		var category = Array.isArray(this.categories) ? this.categories[0] : this.categories;
+		return category ? category + '/' : '';
+	}
 }));
 
 
@@ -280,22 +284,22 @@ app.create('pages').use(permalinks(':category():name.html', {
 //   {{data.summary}}
 // {{/category}}
 app.helper('category', function(category, options) {
-  var pages = this.app.get('categories.' + category);
-  if (!pages) {
-    return '';
-  }
+	var pages = this.app.get('categories.' + category);
+	if (!pages) {
+		return '';
+	}
 
-  return Object.keys(pages).map(function(page) {
-    // this renders the block between
-    // `{{#category}}` and `{{/category}}`
-    // passing the entire page object as the context.
-    return options.fn(pages[page]).toLowerCase();
-  }).join('\n');
+	return Object.keys(pages).map(function(page) {
+		// this renders the block between
+		// `{{#category}}` and `{{/category}}`
+		// passing the entire page object as the context.
+		return options.fn(pages[page]).toLowerCase();
+	}).join('\n');
 });
 
 app.helper('date', function() {
-  var time_stamp = new Date().getFullYear();
-  return time_stamp;
+	var time_stamp = new Date().getFullYear();
+	return time_stamp;
 });
 
 
@@ -305,38 +309,38 @@ app.helper('date', function() {
 // Placing assemble setups inside the task allows
 // live reloading/monitoring for files changes.
 gulp.task('assemble', function() {
-  app.option('layout', 'default');
-  app.helpers(helpers());
-  app.layouts(glob.layouts);
-  app.partials(glob.includes);
-  loadData();
+	app.option('layout', 'default');
+	app.helpers(helpers());
+	app.layouts(glob.layouts);
+	app.partials(glob.includes);
+	loadData();
 
-  // @info
-  // load pages onto the pages collection
-  // https://github.com/assemble/assemble-permalinks/issues/8#issuecomment-231181277
-  // ensure the page templates are put on the correct collection
-  // and the middleware is triggered.
-  app.pages(glob.pages);
+	// @info
+	// load pages onto the pages collection
+	// https://github.com/assemble/assemble-permalinks/issues/8#issuecomment-231181277
+	// ensure the page templates are put on the correct collection
+	// and the middleware is triggered.
+	app.pages(glob.pages);
 
-  var stream = app.toStream('pages')
-    .pipe($.newer(glob.pages))
-    .on('error', console.log)
-    .pipe(app.renderFile())
-    .on('error', console.log)
-    .pipe($.extname())
-    .on('error', console.log)
-    // update the file.path before writing
-    // the file to the file system.
-    .pipe(app.dest(function(file) {
-      // Creates a permalink and puts it on file.data.permalink.
-      // This can be used in other templates for linking.
-      file.path = resolve(file.base, file.data.permalink);
-      return path.site;
-    }))
-    .on('error', console.log)
-    .pipe($.livereload());
+	var stream = app.toStream('pages')
+		.pipe($.newer(glob.pages))
+		.on('error', console.log)
+		.pipe(app.renderFile())
+		.on('error', console.log)
+		.pipe($.extname())
+		.on('error', console.log)
+		// update the file.path before writing
+		// the file to the file system.
+		.pipe(app.dest(function(file) {
+			// Creates a permalink and puts it on file.data.permalink.
+			// This can be used in other templates for linking.
+			file.path = resolve(file.base, file.data.permalink);
+			return path.site;
+		}))
+		.on('error', console.log)
+		.pipe($.livereload());
 
-  return stream;
+	return stream;
 });
 
 
@@ -345,52 +349,75 @@ gulp.task('assemble', function() {
 // ===================================================
 
 gulp.task('babel', function() {
-  var stream = app.src(glob.jsdev)
-    .pipe($.newer(glob.js))
-    .pipe($.babel({
-      presets: ['es2015'],
-      plugins: ['transform-runtime']
-    }))
-    .pipe(gulp.dest(path.js + '/src'))
-    .pipe($.livereload());
+	var stream = app.src(glob.jsdev)
+		.pipe($.newer(glob.js))
+		.pipe($.babel({
+			presets: ['es2015'],
+			plugins: ['transform-runtime']
+		}))
+		.pipe(gulp.dest(path.js + '/src'))
+		.pipe($.livereload());
 
-  return stream;
+	return stream;
 });
 
 
+
 // ===================================================
-// SVG Optimizin'
+// Image Optimizin'
 // ===================================================
+
+gulp.task('imgmin', function() {
+	return merge(
+		gulp.src(path.images_origin + '/*.{jpg,png,jpeg,svg,gif}')
+			.pipe($.imagemin({
+					interlaced: true,
+					progressive: true,
+					optimizationLevel: 5,
+					svgoPlugins: [{ removeViewBox: false }]
+			}))
+			.pipe(gulp.dest(path.images)),
+
+		gulp.src(path.images_origin + '/clients/**/*.{jpg,png,jpeg,svg,gif}')
+			.pipe($.imagemin({
+					interlaced: true,
+					progressive: true,
+					optimizationLevel: 5,
+					svgoPlugins: [{ removeViewBox: false }]
+			}))
+			.pipe(gulp.dest(path.images + '/' + 'clients'))
+	);
+});
+
 
 gulp.task('svgstore', function() {
+	var stream = gulp.src(path.images + '/svgsprite/*.svg')
+		.pipe($.svgmin({
+			plugins: [{
+				removeDoctype: true
+			},
+			{
+				removeComments: true
+			}]
+		}))
+		.pipe($.svgstore({
+			inlineSvg: true
+		}))
+		.pipe($.cheerio({
+			run: function($) {
+				$('svg').attr('style', 'display:none');
+			},
+			parserOptions: {
+				//https://github.com/cheeriojs/cheerio#loading
+				//https://github.com/fb55/htmlparser2/wiki/Parser-options#option-xmlmode
+				xmlMode: true
+			}
+		}))
+		.pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
 
-  var stream = gulp.src(path.images + '/svgsprite/*.svg')
-    .pipe($.svgmin({
-      plugins: [{
-        removeDoctype: true
-      },
-      {
-        removeComments: true
-      }]
-    }))
-    .pipe($.svgstore({
-      inlineSvg: true
-    }))
-    .pipe($.cheerio({
-      run: function($) {
-        $('svg').attr('style', 'display:none');
-      },
-      parserOptions: {
-        //https://github.com/cheeriojs/cheerio#loading
-        //https://github.com/fb55/htmlparser2/wiki/Parser-options#option-xmlmode
-        xmlMode: true
-      }
-    }))
-    .pipe(gulp.dest(path.templates + '/includes/atoms/svg-sprite.svg'));
-
-    return stream;
-
+		return stream;
 });
+
 
 
 // ===================================================
@@ -401,24 +428,23 @@ gulp.task('svgstore', function() {
 // foreach is because usemin 0.3.11 won't
 // manipulate multiple files as an array.
 gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
-
-  return gulp.src(glob.html)
-    .pipe($.foreach(function(stream, file) {
-      return stream
-        .pipe($.usemin({
-          assetsDir: path.site,
-          css: [$.rev()],
-          html: [$.minhtml({
-            empty: true,
-            collapseWhitespace: true,
-            removeComments: true
-          })],
-          js: [$.uglify(), $.rev()]
-        }))
-        .pipe(gulp.dest(path.dist));
-    }));
-
+	return gulp.src(glob.html)
+		.pipe($.foreach(function(stream, file) {
+			return stream
+				.pipe($.usemin({
+					assetsDir: path.site,
+					css: [$.rev()],
+					html: [$.minhtml({
+						empty: true,
+						collapseWhitespace: true,
+						removeComments: true
+					})],
+					js: [$.uglify(), $.rev()]
+				}))
+				.pipe(gulp.dest(path.dist));
+		}));
 });
+
 
 
 // ===================================================
@@ -426,19 +452,18 @@ gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 // ===================================================
 
 gulp.task('copy', ['usemin'], function() {
+	return merge(
+		gulp.src([path.site + '/{img,client,bower_components,js/lib}/**/*'])
+				.pipe(gulp.dest(path.dist)),
 
-  return merge(
-    gulp.src([path.site + '/{img,client,bower_components,js/lib}/**/*'])
-        .pipe(gulp.dest(path.dist)),
-
-    gulp.src([
-        'webhook.php',
-        path.site + '/*.{ico,png,txt}',
-        path.site + '/.htaccess',
-      ]).pipe(gulp.dest(path.dist))
-  );
-
+		gulp.src([
+				'webhook.php',
+				path.site + '/*.{ico,png,txt}',
+				path.site + '/.htaccess',
+			]).pipe(gulp.dest(path.dist))
+	);
 });
+
 
 
 // ===================================================
@@ -446,16 +471,15 @@ gulp.task('copy', ['usemin'], function() {
 // ===================================================
 
 gulp.task('deploy', function() {
-
-  return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
-              .pipe($.ghPages(
-                $.if(process.env.NODE_ENV === 'development',
-                  { branch: 'staging' },
-                  { branch: 'master' })
-                )
-              );
-
+	return gulp.src([path.dist + '/**/*', path.dist + '/.htaccess' ])
+							.pipe($.ghPages(
+								$.if(process.env.NODE_ENV === 'development',
+									{ branch: 'staging' },
+									{ branch: 'master' })
+								)
+							);
 });
+
 
 
 // ===================================================
@@ -463,15 +487,14 @@ gulp.task('deploy', function() {
 // ===================================================
 
 gulp.task('clean', function(cb) {
-
-  del([
-    'dist',
-    glob.css,
-    path.site + '/{client,experiments}',
-    glob.html
-  ], cb);
-
+	del([
+		'dist',
+		glob.css,
+		path.site + '/{client}',
+		glob.html
+	], cb);
 });
+
 
 
 // ===================================================
@@ -479,24 +502,23 @@ gulp.task('clean', function(cb) {
 // ===================================================
 
 gulp.task('watch', function() {
+	gulp.watch([
+		glob.sass
+	], ['sass']);
 
-  gulp.watch([
-    glob.sass
-  ], ['sass']);
+	gulp.watch([
+		glob.layouts,
+		glob.includes,
+		glob.pages
+	], ['assemble']);
 
-  gulp.watch([
-    glob.layouts,
-    glob.includes,
-    glob.pages
-  ], ['assemble']);
+	gulp.watch([
+		path.js + '/dev/*.js'
+	], ['babel']);
 
-  gulp.watch([
-    path.js + '/dev/*.js'
-  ], ['babel']);
-
-  $.livereload.listen();
-
+	$.livereload.listen();
 });
+
 
 
 // ===================================================
