@@ -57,6 +57,8 @@ var color = new HSLA(200, 80, 20, 0),
     boundaryForce = 0.004,
     dx = 0.5 * (width - nx * constraintLength),
     dy = 0.2 * (height - nx * constraintLength);
+// dy               = 0.2 * (height - (nx * constraintLength));
+
 
 function Cloud() {
 	this.nodes = [];

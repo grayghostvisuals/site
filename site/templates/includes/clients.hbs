@@ -2,7 +2,7 @@
 	{{#category "client"}}
 	<li id="{{data.title}}" class="ggv-datalist__item {{data.title}}">
 		<a href="{{data.categories}}/{{data.title}}.html">
-			<span>{{data.tags}}</span>
+			<span class="ggv-datalist__item-data">{{data.tags}}</span>
 
 			<img src="./img/site/{{data.logo}}" class="ggv-datalist__fig" alt="">
 
@@ -10,7 +10,6 @@
 				<h3 class="ggv-summary__title">{{data.title}}</h3>
 				<p class="ggv-summary__desc">{{data.summary}}</p>
 			</div>
-
 		</a>
 	</li>
 	{{/category}}

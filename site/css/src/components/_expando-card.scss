@@ -50,7 +50,7 @@ $google_expando_transition: (
 	color: white;
 	&:hover {
 		cursor: pointer;
-		background: #09a3ca;
+		background: map-get($atomic-colors, cerulean);
 	}
 	svg {
 		height: map-get($google_expando_proportions, icon_size);

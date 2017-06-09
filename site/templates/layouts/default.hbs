@@ -10,8 +10,9 @@
 		<link rel="dns-prefetch" href="https://fast.fonts.net">
 		<link rel="preconnect" href="https://fast.fonts.net">
 		<link rel="prefetch" href="https://fast.fonts.net">
-		<link rel="prerender" href="">
-		<link rel="subresource" href="{{../site.css}}site.css">
+		<link rel="dns-prefetch" href="https://assets.codepen.io">
+		<link rel="preconnect" href="https://assets.codepen.io">
+		<link rel="prefetch" href="https://assets.codepen.io">
 		{{/if}}
 
 		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
@@ -74,6 +75,7 @@
 		<div class="sticky-container">
 			<header class="sticky-row sticky-header" role="banner">
 				{{> logo}}
+
 				{{> nav}}
 
 				{{#contains 'casestudy' this.basename}}
@@ -87,10 +89,6 @@
 
 			{{> footer}}
 		</div>
-
-		{{#contains 'diy, Theron, Polyon' this.title}}
-		<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
-		{{/contains}}
 
 		<!-- build:js {{site.js}}scripts.min.js -->
 		<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
@@ -137,6 +135,10 @@
 		<script src="{{../site.js}}atomic-swatch.js"></script>
 		<script src="{{../site.js}}atomic-generator.js"></script>
 		{{/is}}
+
+		{{#contains 'diy, Theron, Polyon' this.title}}
+		<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
+		{{/contains}}
 		<!-- endbuild -->
 
 		{{#if production}}

@@ -1,5 +1,65 @@
+// ============================================================
+// General Media Query Helper
+// ============================================================
+
 @mixin bp($bp, $query) {
   @media screen and (min-width: $bp) and (min-height: $query) {
     @content;
   }
+}
+
+
+// ============================================================
+// Media Query Helper
+// ============================================================
+// @supports
+// @media min-width
+// @media max-width
+// @media min-device-width and max-device-width and orientation landscape
+// @media max-height
+// @media min-width and max-height
+$min: min-width;
+// @syntax
+// @include mq([min, max, minmax, landscape-device, maxheight, null], [pixel_value [,pixel_value]]) {}
+
+@mixin mq($constraint, $viewport1, $viewport2: null) {
+
+	@if $constraint == min {
+
+		@media screen and ($min: $viewport1) {
+			@content;
+		}
+
+	} @else if $constraint == max {
+
+		@media screen and ($max: $viewport1) {
+			@content;
+		}
+
+	} @else if $constraint == minmax {
+
+		@media screen and ($min: $viewport1) and ($max: $viewport2) {
+			@content;
+		}
+
+	} @else if $constraint == landscape-device {
+
+		@media screen and ($min-device: $viewport1) and ($max-device: $viewport2) and (orientation: landscape) {
+			@content;
+		}
+
+	} @else if $constraint == maxheight {
+
+		@media screen and ($max-height: $viewport1) {
+			@content;
+		}
+
+	} @else {
+
+		@media screen and ($min: $viewport1) and ($max-height: $viewport2) {
+			@content;
+		}
+
+	}
+
 }

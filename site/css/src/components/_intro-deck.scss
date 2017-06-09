@@ -1,12 +1,18 @@
 .intro-deck {
-	font-size: 18px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
 	position: relative;
 	z-index: 0;
-	overflow: hidden;
+	font-size: 18px;
+	background-color: map-get($atomic-colors, midnight-blue);
+	background-image: img-url("poly-sky-opaque.png");
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
 	&__wrap {
 		max-width: 560px;
 		margin: auto;
@@ -23,18 +29,9 @@
 	}
 	h3 {
 		padding-top: 20px;
-		text-align: center;
 		font-size: 54px;
 		line-height: 0;
+		text-align: center;
 		color: white;
 	}
-}
-
-
-// Come Back To Fix This
-.portfolio .sticky-container,
-.contact .sticky-container {
-	background: #003461 img-url("poly-sky-opaque.png") 50% 50% no-repeat;
-	background-size: cover;
-	color: white;
 }

@@ -1,9 +1,9 @@
 nav[role="navigation"] {
 	padding-top: 10px;
 	width: 100%;
-	text-align: center;
 	font-family: sans-serif;
 	font-size: 14px;
+	text-align: center;
 
 	a {
 		margin: 10px;
@@ -18,12 +18,9 @@ nav[role="navigation"] {
 
 		&:hover,
 		&:focus,
-		&:active {
-			font-weight: inherit;
-			color: #4380A7;
-		}
-
+		&:active,
 		&.active {
+			font-weight: inherit;
 			color: #4380A7;
 		}
 	}

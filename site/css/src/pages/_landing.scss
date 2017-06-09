@@ -1,9 +1,13 @@
 // ==========================================================
-// Parts
+// Page
 // ==========================================================
 
 .landing {
 	overflow: hidden;
+}
+
+.landing header[role="banner"] {
+	position: absolute;
 }
 
 .landing section {
@@ -18,7 +22,10 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background: #0C3E5E img-url("underwater.jpg") center center no-repeat;
+	background-color: map-get($atomic-colors, midnight-blue);
+	background-image: img-url("underwater.jpg");
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-size: cover;
 	@media (max-width: 530px) {
 		padding: 1rem;
@@ -41,7 +48,6 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
-
 	small {
 		color: white;
 	}
@@ -49,28 +55,21 @@
 
 
 // ==========================================================
-// Bubble Effect
+// Bubbles
 // ==========================================================
 
 .landing .bubble {
+	animation: bubble 5s infinite cubic-bezier(0.55, 0.06, 0.68, 0.19);
 	border-radius: 100%;
 	position: absolute;
 	bottom: 0;
 	will-change: transform;
 	background: radial-gradient(circle at center, rgba(#FFF, .20) 0, rgba(#FFF, .03) 25%);
-	animation: bubble 5s infinite cubic-bezier(0.55, 0.06, 0.68, 0.19);
 }
 
 @keyframes bubble {
 	$b-size: 35px;
 	$b-surface: -120vh;
-	from {
-		transform: translateY($b-size);
-		// opacity: 1;
-	}
-
-	to {
-		transform: translateY($b-surface);
-		// opacity: 0.25;
-	}
+	from 	{ transform: translateY($b-size); }
+	to 		{ transform: translateY($b-surface); }
 }

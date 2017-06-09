@@ -7,7 +7,7 @@
 
 html {
 	box-sizing: border-box;
-	background: #F4F5F6;
+	background: map-get($atomic-colors, porcelain);
 }
 
 html,
@@ -40,11 +40,11 @@ video {
 }
 
 svg {
-	max-width:100%;
+	max-width: 100%;
 }
 
 a {
-	transition: 200ms all ease-in-out;
+	transition: 200ms all ease(in-out-cubic);
 	text-decoration: none;
 
 	&:link,

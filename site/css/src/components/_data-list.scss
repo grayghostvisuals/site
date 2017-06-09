@@ -20,11 +20,6 @@ $clients-color: (
 	lean-labs: #313543
 );
 
-@keyframes panelSwing {
-	from 	{ transform: scale(0); }
-	to 		{ transform: scale(1); }
-}
-
 @mixin category-style($color, $map) {
 	@each $key, $value in $map {
 		.ggv-datalist__item.#{$value} {
@@ -46,7 +41,7 @@ $clients-color: (
 .ggv-datalist {
 	display: flex;
 	flex-wrap: wrap;
-	background: #F4F5F6;
+	background: map-get($atomic-colors, porcelain);
 }
 
 .ggv-datalist__fig {
@@ -57,7 +52,7 @@ $clients-color: (
 	bottom: 0;
 	left: 0;
 	right: 0;
-	transition: 240ms all ease-in-out;
+	transition: 240ms all ease(in-out-cubic);
 	text-align: center;
 	opacity: 1;
 
@@ -67,11 +62,11 @@ $clients-color: (
 }
 
 .ggv-datalist__item {
-	animation: 700ms ease(in-quad) 0s panelSwing;
-	width: 100%;
+	animation: 700ms ease(in-cubic) 0s expand;
 	height: 320px;
 	position: relative;
 	transform-origin: center center;
+	width: 100%;
 	color: white;
 	&::after {
 		content: 'read more';
@@ -81,10 +76,10 @@ $clients-color: (
 		left: 0;
 		right: 0;
 		width: 100%;
+		z-index: 0;
 		text-align: center;
 		text-transform: uppercase;
 		font-family: "Ciutadella W04 SmBold";
-		z-index: 0;
 	}
 }
 
@@ -94,7 +89,7 @@ $clients-color: (
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
-	transition: 300ms all ease-in-out;
+	transition: 300ms all ease(in-out-cubic);
 	width: 50%;
 	z-index: 1;
 	color: white;
@@ -113,22 +108,22 @@ $clients-color: (
 	}
 }
 
-.ggv-datalist__item span {
+.ggv-datalist__item-data {
 	display: inline-block;
-	max-width: 280px;
-	text-align: center;
 	margin: auto;
-	position: absolute;
-	top: 0;
+	// max-width: 280px; causing non-centered text in IE 11
 	padding-top: 10px;
 	padding-bottom: 10px;
-	font-family: "Ciutadella W04 Lt";
+	position: absolute;
+	top: 0;
+	right: 0;
 	left: 0;
 	z-index: 1;
-	right: 0;
-	text-transform: uppercase;
+	font-family: "Ciutadella W04 Lt";
 	font-size: 0.875rem;
 	font-weight: 100;
+	text-align: center;
+	text-transform: uppercase;
 }
 
 .ggv-datalist__item.theron img,
@@ -136,32 +131,22 @@ $clients-color: (
 	max-width: 200px;
 }
 
-// .ggv-datalist__item.suit-and-axe img {
-// 	max-width: 180px;
-// }
-
 .ggv-datalist__item.lean-labs img {
 	max-width: 220px;
 	transform: translateZ(0);
 }
 
-// .ggv-datalist__item.suit-and-axe,
-// .ggv-datalist__item.suit-and-axe a,
-// .ggv-datalist__item.suit-and-axe .ggv-summary {
-// 	color: black !important;
-// }
-
 .ggv-summary {
-	height: 100%;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	opacity: 0;
-	transition: 240ms all ease-in-out;
+	justify-content: center;
+	height: 100%;
+	transition: 240ms all ease(in-out-cubic);
 	transform-origin: center center;
 	transform: scale(0);
 	font-size: 1rem; // sets parent context as root size.
+	opacity: 0;
 }
 
 .ggv-summary > * {

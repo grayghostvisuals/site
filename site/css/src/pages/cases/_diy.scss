@@ -19,9 +19,12 @@ html.case.diy {
   }
 
   main svg {
-    width: 75%;
+    width: 45%;
     margin: auto;
     display: inherit;
+		@include mq(min, 840px) {
+			width: 75%;
+		}
   }
 }
 

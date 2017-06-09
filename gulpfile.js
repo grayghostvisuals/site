@@ -428,7 +428,7 @@ gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 gulp.task('copy', ['usemin'], function() {
 
   return merge(
-    gulp.src([path.site + '/{img,bower_components,js/lib}/**/*'])
+    gulp.src([path.site + '/{img,client,bower_components,js/lib}/**/*'])
         .pipe(gulp.dest(path.dist)),
 
     gulp.src([

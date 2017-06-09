@@ -1,35 +1,34 @@
-// Flexbox on Steroids
-// http://codepen.io/dennisgaebel/pen/LVvqOx
+@include mq(min, 840px) {
+	.sticky-body {
+		display: flex;
+		flex-direction: column;
+	}
 
-.sticky-body {
-  display: flex;
-  flex-direction: column;
-}
+	.sticky-container {
+		display: table;
+		display: flex;
+		flex-direction: column;
+		flex: 1 0 auto;
+		height: 100%;
+		width: 100%;
+	}
 
-.sticky-container {
-  display: table;
-  display: flex;
-  flex-direction: column;
-  flex: 1 0 auto;
-  height: 100%;
-  width: 100%;
-}
+	.sticky-row {
+		display: -moz-box; // As of FF42
+	}
 
-.sticky-row {
-  display: -moz-box; // As of FF42
-}
+	.sticky-header {
+		flex: none;
+	}
 
-.sticky-header {
-  flex: none;
-}
+	.sticky-content {
+		flex: 1 0 auto;
+		height: auto;
+	}
 
-.sticky-content {
-  flex: 1 0 auto;
-  height: auto;
-}
-
-.sticky-footer {
-  flex: none;
-  vertical-align: middle;
-  align-items: center;
+	.sticky-footer {
+		flex: none;
+		vertical-align: middle;
+		align-items: center;
+	}
 }

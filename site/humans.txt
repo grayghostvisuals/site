@@ -8,7 +8,7 @@
 
 -------------------------------------------------------------------------------
 
-Author: Dennis Gaebel
+Author: GRAY GHOST
 Copyright: GRAY GHOST VISUALS LLC.
 Site: http://www.grayghostvisuals.com
 Twitter: @gryghostvisuals
@@ -40,5 +40,5 @@ ooooooooooooo                     oooo
 -------------------------------------------------------------------------------
 
 Tooling: Gulp, Assemble, Mocha, Stylelint, LiveReload, NPM, Bower
-Libs: Normalize, Typeplate, ScrollMagic, Prism, GSAP, FFObserver
+Libs: Normalize, ScrollMagic, Prism, GSAP, FFObserver
 Platform: Node

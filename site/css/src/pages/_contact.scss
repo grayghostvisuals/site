@@ -1,10 +1,5 @@
-.contact .intro-deck {
-	height: 300px;
-}
-
-
 #contact {
-	background: #F4F5F6;
+	background: map-get($atomic-colors, porcelain);
 }
 
 
@@ -17,6 +12,5 @@
 
 
 .contact .intro-deck {
-	margin-top: 100px;
-	padding: 80px 0 80px;
+	padding: 80px 0 140px;
 }

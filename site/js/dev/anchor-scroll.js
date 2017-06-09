@@ -52,7 +52,7 @@ var controller = new ScrollMagic.Controller({
 });
 
 
-var scenes = {}
+let scenes = {};
 
 for(var key in scenes) {
 	if (!scenes.hasOwnProperty(key)) continue;
@@ -80,7 +80,7 @@ controller.scrollTo(function(target) {
 });
 
 
-var anchor_nav = document.querySelector('.anchor-nav');
+let anchor_nav = document.querySelector('.anchor-nav');
 
 function scroller(e) {
 	var target = e.target,

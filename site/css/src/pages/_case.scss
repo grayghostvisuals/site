@@ -1,4 +1,12 @@
 .case header[role="banner"] {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	align-content: stretch;
+	a[href="/"] {
+		transform: translateX(70px) scale(1.25);
+		transform-origin: top;
+	}
 	svg {
 		width: 70px;
 		height: 70px;
@@ -6,28 +14,6 @@
 }
 
 
-.case header[role="banner"] {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	align-content: stretch;
-
-	a[href="/"]{
-		transform: translateX(70px) scale(1.25);
-		transform-origin: top;
-	}
-
-	a[href*="contact"] {
-		background: white;
-		align-self: stretch;
-		justify-content: center;
-		align-items: center;
-		display: flex;
-		padding: 0 60px;
-		width: 200px;
-		font-family: "Ciutadella W04 Lt";
-		font-style: italic;
-		font-size: 24px;
-		border-radius: 25px 0 0 40px;
-	}
+.case .primary-nav {
+	display: none;
 }
