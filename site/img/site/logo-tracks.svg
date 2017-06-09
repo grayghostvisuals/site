@@ -1,18 +1,1 @@
-<svg version="1.1"
-   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-   x="0px" y="0px" width="158.5px" height="127.5px" viewBox="0 0 158.5 127.5" style="enable-background:new 0 0 158.5 127.5;"
-   xml:space="preserve">
-<style type="text/css">
-  .st0{fill:#DDE8EE;}
-  .st1{fill:#BDD9EA;}
-  .st2{fill:#E7E9EA;}
-  .st3{opacity:0.4;fill:#BBD7E8;enable-background:new    ;}
-</style>
-<defs>
-</defs>
-<path class="st0" d="M112.1,61.8c2,0.2,27.6,28.8,35.6,29l-27.5-13.3L18,27.5L0,127l102.4-57.5C105.1,64.1,110.4,61.6,112.1,61.8z"
-  />
-<polygon class="st1" points="1.5,126.1 65.8,50.9 83.3,59.4 0,127 "/>
-<polygon class="st2" points="138.8,0 0,127.5 158.5,127.5 "/>
-<polygon class="st3" points="149.3,68.3 0,127.5 158.5,127.5 "/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="158.5" height="127.5" viewBox="0 0 158.5 127.5"><style>.st0{fill:#dde8ee}.st1{fill:#bdd9ea}.st2{fill:#e7e9ea}.st3{opacity:.4;fill:#bbd7e8;enable-background:new}</style><path class="st0" d="M112.1 61.8c2 .2 27.6 28.8 35.6 29l-27.5-13.3L18 27.5 0 127l102.4-57.5c2.7-5.4 8-7.9 9.7-7.7z"/><path class="st1" d="M1.5 126.1l64.3-75.2 17.5 8.5L0 127z"/><path class="st2" d="M138.8 0L0 127.5h158.5z"/><path class="st3" d="M149.3 68.3L0 127.5h158.5z"/></svg>

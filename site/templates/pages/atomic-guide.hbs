@@ -5,13 +5,7 @@ layout: default
 description: The documented atomic guide of Gray Ghost Visuals intended to help analyze our system's interface from a molecular level to build out and structure a series of highly reusable components.
 ---
 
-<section class="intro-deck">
-	<div class="intro-deck__wrap">
-		<header>
-			<h3>Atomic Guide</h3>
-		</header>
-	</div>
-</section>
+{{> intro-deck}}
 
 {{! Colors }}
 <section class="row" id="colors">
@@ -42,6 +36,10 @@ description: The documented atomic guide of Gray Ghost Visuals intended to help 
 	<header>
 		<h1 class="typl8-delta">Typography</h1>
 	</header>
+
+	<h2 class="typl8-zeta">Anchors</h2>
+	{{> anchors}}
+	<pre class="language-html"><code>{{> anchors}}</code></pre>
 
 	<h2 class="typl8-zeta">Typescale : <a href="http://www.modularscale.com">modularscale</a></h2>
 	<span>14, 16, 18, 21, 24, 28, 32, 36, 42, 60, 72, 90</span>
@@ -97,6 +95,10 @@ font-family:'AvenirLTW01-65MediumObl';
 		<h1 class="typl8-delta">Components</h1>
 	</header>
 
+	<h2 class="typl8-zeta">Intro Deck</h2>
+	{{> intro-deck}}
+	<pre class="language-html"><code>{{> intro-deck}}</code></pre>
+
 	<h2 class="typl8-zeta">Ripple Button</h2>
 	{{> default-button}}
 	<pre class="language-html"><code>{{> default-button}}</code></pre>
@@ -105,16 +107,12 @@ font-family:'AvenirLTW01-65MediumObl';
 	{{> expando-card}}
 	<pre class="language-html"><code>{{> expando-card}}</code></pre>
 
-	<h2 class="typl8-zeta">Anchors</h2>
-	{{> anchors}}
-	<pre class="language-html"><code>{{> anchors}}</code></pre>
-
 	<div class="atomic-logos">
 		<h2 class="typl8-zeta">Logos</h2>
 		{{> logo}}
 	</div>
 
-	<h2 class="typl8-zeta">Featured Works</h2>
+	<h2 class="typl8-zeta">Data List</h2>
 	{{> clients}}
 	<pre class="language-html"><code>{{> clients}}</code></pre>
 
