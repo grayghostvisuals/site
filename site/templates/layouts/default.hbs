@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case default-template{{/is}}{{#is 'experiments' this.basename}} experiment default-template{{/is}}" lang="en">
+<html class="{{lowercase (hyphenate this.title)}}{{#is 'casestudy' this.basename}} case default-template{{/is}}" lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,15 +8,16 @@
 		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
 		{{#if production}}
 		<link rel="dns-prefetch" href="https://fast.fonts.net">
-		<link rel="preconnect" href="https://fast.fonts.net">
-		<link rel="prefetch" href="https://fast.fonts.net">
 		<link rel="dns-prefetch" href="https://assets.codepen.io">
+		<link rel="dns-prefetch" href="https://google-analytics.com">
+		<link rel="dns-prefetch" href="https://assets.codepen.io">
+		<link rel="preconnect" href="https://fast.fonts.net">
 		<link rel="preconnect" href="https://assets.codepen.io">
+		<link rel="prefetch" href="https://fast.fonts.net">
 		<link rel="prefetch" href="https://assets.codepen.io">
 		{{/if}}
 
 		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
-
 		<meta name="description" content="{{description}}">
 
 		{{#if production}}
@@ -27,7 +28,6 @@
 
 		<meta name="author" content="{{title}}">
 		<meta name="Copyright" content="Copyright {{site.title}} ©{{#date}}{{/date}}. All Rights Reserved.">
-
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, shrink-to-fit=no">
 		<meta name="HandheldFriendly" content="True">
 		<meta name="MobileOptimized" content="320">
@@ -66,16 +66,11 @@
 	</head>
 
 	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
-		<div style="height: 0; width: 0; position: absolute; visibility: hidden;" aria-hidden="true">
-			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" focusable="false">
-				<circle id="ripple-shape" cx="1" cy="1" r="1"/>
-			</svg>
-		</div>
+		{{> material-ripple}}
 
 		<div class="sticky-container">
 			<header class="sticky-row sticky-header" role="banner">
 				{{> logo}}
-
 				{{> nav}}
 
 				{{#contains 'casestudy' this.basename}}
