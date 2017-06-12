@@ -32,7 +32,7 @@
 @import "utility/**/*";
 
 
-// Atoms
+// Pages Components
 // ===============================================
 
 @import "components/**/*";
@@ -52,15 +52,6 @@
 
 .ggv-graphic:not(:last-child) {
 	margin-right: 40px;
-}
-
-
-// Molecules
-// ===============================================
-
-// temporary until a better handlebars approach is found
-.primary-nav {
-	display: none;
 }
 
 footer[role="contentinfo"] {
