@@ -4,5 +4,8 @@ footer[role="contentinfo"] {
 	text-align: center;
 	small {
 		text-transform: uppercase;
+		a {
+			color: inherit;
+		}
 	}
 }
