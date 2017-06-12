@@ -7,11 +7,16 @@
 		</div>
 
 		<div class="google-expando__card">
+			{{#is "categories" this.basename}}
 			<ul class="list-reset listing anchor-nav">
 				{{#category "client"}}
 					<li><a href="#{{data.title}}">{{data.title}}</a> : {{ data.tags }}</li>
 				{{/category}}
 			</ul>
+			{{/is}}
+			{{#is "atomicguide" this.basename}}
+			<p>This is the expando card</p>
+			{{/is}}
 		</div>
 
 	</div>
