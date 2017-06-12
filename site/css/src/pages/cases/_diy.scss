@@ -4,12 +4,15 @@ html.case.diy {
 		color: white;
 	}
 
-	main a,
-	footer a {
+	main a {
 		color: #4BBAFB;
 		&:hover {
 			color: white;
 		}
+	}
+
+	footer small a {
+		color: inherit;
 	}
 
 	.socials svg#trigger,
