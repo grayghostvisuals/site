@@ -8,7 +8,16 @@ html.case.walmedia {
   main a,
   footer a {
     color: #DFD151;
+		&:hover {
+			color: white;
+		}
   }
+
+	.socials svg#trigger,
+	.socials svg#trigger path,
+	.socials svg path {
+		fill: #DFD151;
+	}
 
   footer small {
     color: #D9DDDF;

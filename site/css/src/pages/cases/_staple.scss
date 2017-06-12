@@ -3,6 +3,11 @@ html.case.staple-web {
   *:not(a) {
     color: #FFFEFE;
   }
+	.socials svg#trigger,
+	.socials svg#trigger path,
+	.socials svg path {
+		fill: #353A41;
+	}
 	a {
 		color: #353A41;
 	}

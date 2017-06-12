@@ -68,3 +68,36 @@ body.atomic {
 		text-transform: lowercase;
 	}
 }
+
+
+.atomic-guide .intro-deck {
+	padding: 80px 0;
+}
+
+.atomic-logos svg {
+	height: 140px;
+	width: 120px;
+	&:not(:last-child) {
+		margin-right: 20px;
+	}
+}
+
+.ggv-graphic:not(:last-child) {
+	margin-right: 40px;
+}
+
+footer[role="contentinfo"] {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	width: 100%;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	small {
+		text-transform: uppercase;
+		color: #969DFF;
+		font-family: 'Ciutadella W04 SmBold';
+	}
+}

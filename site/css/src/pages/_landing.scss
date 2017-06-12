@@ -53,6 +53,18 @@
 	}
 }
 
+.landing {
+	.socials svg#trigger,
+	.socials svg#trigger path,
+	.socials svg path {
+		fill: #4BBAFB;
+	}
+
+	footer small a {
+		color: inherit;
+	}
+}
+
 
 // ==========================================================
 // Bubbles

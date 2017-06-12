@@ -7,8 +7,18 @@ html.case.theron {
     color: white;
   }
 
-  main a {
+	.socials svg#trigger,
+	.socials svg#trigger path,
+	.socials svg path {
+		fill: #FB4335;
+	}
+
+  main a,
+	footer small a {
     color: #FB4335;
+		&:hover {
+      color: white;
+    }
   }
 
   .ggv-headline {
