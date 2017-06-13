@@ -8,7 +8,6 @@ var gulp            = require('gulp'),
 												rename: {
 													'gulp-gh-pages': 'ghPages',
 													'gulp-minify-css': 'mincss',
-													'gulp-minify-html': 'minhtml',
 													'gulp-sass-glob-import': 'sassglob'
 												}
 											}),
@@ -186,11 +185,7 @@ app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'
 
 function loadData() {
 	app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
-
-	// https://github.com/assemble/issues/875
 	app.data(expand(app.cache.data));
-
-	//console.log(app.cache.data);
 }
 
 // Setting Methods
@@ -434,7 +429,7 @@ gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 				.pipe($.usemin({
 					assetsDir: path.site,
 					css: [$.rev()],
-					html: [$.minhtml({
+					html: [$.htmlmin({
 						empty: true,
 						collapseWhitespace: true,
 						removeComments: true
