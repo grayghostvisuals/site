@@ -1,8 +1,7 @@
-nav[role="navigation"] {
+html:not(.case) nav[role="navigation"] {
 	padding-top: 10px;
 	width: 100%;
-	font-family: sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	text-align: center;
 
 	a {

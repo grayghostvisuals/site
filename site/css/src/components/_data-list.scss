@@ -59,6 +59,10 @@ $clients-color: (
 	.ggv-datalist__item.staple-web & {
 		max-width: 200px;
 	}
+	.ggv-datalist__item.diy &,
+	.ggv-datalist__item.walmedia & {
+		width: 200px;
+	}
 }
 
 .ggv-datalist__item {
@@ -128,11 +132,13 @@ $clients-color: (
 
 .ggv-datalist__item.theron img,
 .ggv-datalist__item.murmuration-malts img {
-	max-width: 200px;
+	max-width: 100%;
+	width: 200px;
 }
 
 .ggv-datalist__item.lean-labs img {
-	max-width: 220px;
+	max-width: 100%;
+	width: 220px;
 	transform: translateZ(0);
 }
 

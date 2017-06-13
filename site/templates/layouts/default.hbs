@@ -65,20 +65,16 @@
 		{{/if}}
 	</head>
 
-	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}sticky-body" id="top">
+	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}" id="top">
 		{{> material-ripple}}
 
-		<div class="sticky-container">
-			<header class="sticky-row sticky-header" role="banner">
+		<div class="container">
+			<header role="banner">
 				{{> logo}}
 				{{> nav}}
-
-				{{#contains 'casestudy' this.basename}}
-				<a href="/contact.html">Get In Touch</a>
-				{{/contains}}
 			</header>
 
-			<main class="sticky-row sticky-content" role="main">
+			<main role="main">
 			{% body %}
 			</main>
 
@@ -102,7 +98,7 @@
 		<script src="{{../site.js}}bubbles.js"></script>
 		{{/is }}
 
-		{{#contains 'contact, categories' this.basename}}
+		{{#contains 'categories' this.basename}}
 		<script src="{{../site.js}}polyclouds.js"></script>
 		{{/contains}}
 
@@ -132,7 +128,7 @@
 		{{/is}}
 
 		{{#contains 'diy, Theron, Polyon' this.title}}
-		<script src="https://assets.codepen.io/assets/embed/ei.js" async></script>
+		<script src="{{../site.jslib}}codepen-embed.js" async></script>
 		{{/contains}}
 		<!-- endbuild -->
 

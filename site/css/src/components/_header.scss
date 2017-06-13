@@ -26,6 +26,7 @@ html:not(.case) header[role="banner"] {
 			position: absolute;
 			top: 0;
 			right:0;
+			z-index: 2; // causes issues in IE11. logo dissappears
 		}
 
 		svg {
