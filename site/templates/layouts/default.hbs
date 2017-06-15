@@ -86,10 +86,12 @@
 		<script src="{{site.js}}ffobserver-config.js"></script>
 
 		{{#is 'landing' this.basename}}
+		<script src="{{../site.jslib}}TweenMax.min.js"></script>
 		<script src="{{../site.js}}bubbles.js"></script>
 		{{/is }}
 
 		{{#is 'categories' this.basename}}
+		<script src="{{../site.jslib}}TweenMax.min.js"></script>
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
@@ -101,6 +103,7 @@
 		{{/is}}
 
 		{{#is 'atomicguide' this.basename}}
+		<script src="{{../site.jslib}}TweenMax.min.js"></script>
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
@@ -109,10 +112,6 @@
 		<script src="{{../site.js}}atomic-swatch.js"></script>
 		<script src="{{../site.js}}atomic-generator.js"></script>
 		{{/is}}
-
-		{{#contains 'landing, atomicguide, categories' this.basename}}
-		<script src="{{../site.jslib}}TweenMax.min.js"></script>
-		{{/contains}}
 
 		{{#contains 'landing, atomicguide' this.basename}}
 		<script src="{{../site.js}}material-ripple.js"></script>
