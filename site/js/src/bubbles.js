@@ -19,7 +19,7 @@ function bubbler() {
 			el.appendChild(circle);
 			el.setAttribute('viewBox', '0 0 100 100');
 			el.setAttribute('class', 'bubble');
-			el.setAttribute('style', 'width: ' + size + 'px; height: ' + size + 'px; left: ' + randomNumber(1, window.innerWidth / 4) + 'vw;');
+			el.setAttribute('style', 'width: ' + size + 'px; height: ' + size + 'px; left: ' + randomNumber(1, water.clientWidth) + 'px;');
 
 			circle.setAttribute('cx', 50);
 			circle.setAttribute('cy', 50);

@@ -1,16 +1,16 @@
 .ggv-graphic {
 	height: 192px;
 	max-width: 100%;
-	overflow: visible;
-	visibility: hidden;
-	width: auto;
+	// overflow: visible;
+	// visibility: hidden;
+	width: 172px;
 
 	&:not(:root) {
 		overflow: visible;
 	}
 
-	g > * {
-		stroke-dasharray: 1000;
-		stroke-dashoffset: 1000;
-	}
+	// g > * {
+	// 	stroke-dasharray: 1000;
+	// 	stroke-dashoffset: 1000;
+	// }
 }

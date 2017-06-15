@@ -84,23 +84,10 @@
 		<!-- build:js {{site.js}}scripts.min.js -->
 		<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
 		<script src="{{site.js}}ffobserver-config.js"></script>
-		<script src="{{site.js}}social-bloomer.js"></script>
-
-		{{#contains 'landing, atomicguide, categories' this.basename}}
-		<script src="{{../site.jslib}}TweenMax.min.js"></script>
-		{{/contains}}
-
-		{{#contains 'landing, atomicguide' this.basename}}
-		<script src="{{../site.js}}material-ripple.js"></script>
-		{{/contains}}
 
 		{{#is 'landing' this.basename}}
 		<script src="{{../site.js}}bubbles.js"></script>
 		{{/is }}
-
-		{{#contains 'categories' this.basename}}
-		<script src="{{../site.js}}polyclouds.js"></script>
-		{{/contains}}
 
 		{{#is 'categories' this.basename}}
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
@@ -108,10 +95,6 @@
 		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 		<script src="{{../site.js}}anchor-scroll.js"></script>
 		{{/is}}
-
-		{{#contains 'atomicguide, categories' this.basename}}
-		<script src="{{../site.js}}expando-card.js"></script>
-		{{/contains}}
 
 		{{#is 'contact' this.basename}}
 		<script src="{{../site.js}}wufoo.js"></script>
@@ -126,6 +109,23 @@
 		<script src="{{../site.js}}atomic-swatch.js"></script>
 		<script src="{{../site.js}}atomic-generator.js"></script>
 		{{/is}}
+
+		{{#contains 'landing, atomicguide, categories' this.basename}}
+		<script src="{{../site.jslib}}TweenMax.min.js"></script>
+		{{/contains}}
+
+		{{#contains 'landing, atomicguide' this.basename}}
+		<script src="{{../site.js}}material-ripple.js"></script>
+		<script src="{{../site.js}}quotator.js"></script>
+		{{/contains}}
+
+		{{#contains 'categories' this.basename}}
+		<script src="{{../site.js}}polyclouds.js"></script>
+		{{/contains}}
+
+		{{#contains 'atomicguide, categories' this.basename}}
+		<script src="{{../site.js}}expando-card.js"></script>
+		{{/contains}}
 
 		{{#contains 'diy, Theron, Polyon' this.title}}
 		<script src="{{../site.jslib}}codepen-embed.js" async></script>

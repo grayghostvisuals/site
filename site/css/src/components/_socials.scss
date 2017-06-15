@@ -17,9 +17,13 @@ $proportion: 48px;
 	svg#trigger,
 	a { width: $proportion; }
 
-	svg path               { fill: #FF6500; }
-	svg#trigger path       { fill: #FF6500; }
-	svg#trigger:hover path { fill: #CA4D00; }
+	svg#trigger,
+	svg#trigger path,
+	svg path {
+		fill: #4BBAFB;
+	}
+
+	svg#trigger:hover path { fill: #003461; }
 
 	a {
 		display: flex;
@@ -34,8 +38,8 @@ $proportion: 48px;
 		z-index: 0;
 		opacity: 0;
 		&:hover                  { cursor: pointer; }
-		&:hover svg path         { fill: #CA4D00;   }
-		&:hover svg#trigger path { fill: #FF7E00;   }
+		&:hover svg path         { fill: #003461;   }
+		&:hover svg#trigger path { fill: #003461;   }
 	}
 
 	svg         { transform: rotate(-180deg); }
@@ -46,14 +50,16 @@ $proportion: 48px;
 	svg:hover   { cursor: pointer; }
 }
 
-.socials.is-bloomed a {
+// .socials.is-bloomed a
+.socials a {
 	opacity: 1;
 	padding-top: 50%;
 	z-index: 0;
 }
 
 @for $i from 1 through $count {
-	.socials.is-bloomed a:nth-of-type(#{$i}) {
+	// .socials.is-bloomed a:nth-of-type(#{$i})
+	.socials a:nth-of-type(#{$i}) {
 		transform: rotate(($i * (360/($count - 1))) + deg);
 		transition-delay: $i * 36ms;
 	}

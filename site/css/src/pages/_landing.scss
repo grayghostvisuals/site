@@ -3,17 +3,9 @@
 // ==========================================================
 
 .landing {
-	overflow: hidden;
+	overflow-x: hidden;
 }
 
-.landing header[role="banner"] {
-	position: absolute;
-}
-
-.landing section {
-	max-width: 1181px;
-	margin: 0 auto;
-}
 
 .landing .ggv-hero {
 	box-sizing: border-box;
@@ -21,20 +13,42 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	position: relative;
 	background-color: map-get($atomic-colors, midnight-blue);
 	background-image: img-url("underwater.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	> div {
+		margin: 80px 0 120px;
+	}
+
 	@media (max-width: 530px) {
 		padding: 1rem;
 	}
 }
 
+
 .landing .ggv-headline._hero {
+	text-align: center;
 	color: white;
 }
+
+
+.landing section > .ggv-headline {
+	font-size: 54px;
+	text-align: center;
+	box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.13), 0 1px 0 rgba(255, 255, 255, 0.92);
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+
+.landing .ggv-winfo {
+	padding-top: 80px;
+}
+
 
 .landing .ggv-slogan {
 	max-width: 500px;
@@ -43,27 +57,6 @@
 	font-size: 1.125em;
 }
 
-.landing footer[role="contentinfo"] {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	small {
-		color: white;
-	}
-}
-
-.landing {
-	.socials svg#trigger,
-	.socials svg#trigger path,
-	.socials svg path {
-		fill: #4BBAFB;
-	}
-
-	footer small a {
-		color: inherit;
-	}
-}
 
 
 // ==========================================================

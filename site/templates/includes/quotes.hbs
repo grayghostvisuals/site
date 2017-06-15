@@ -1,25 +1,26 @@
 {{#testimonials}}
 <div class="testimonials">
-  <div class="quotator">
+	<div class="quotator">
 
-    {{#each endorsements}}
-    <div class="quote">
-      <figure>
-        <blockquote>
-          <p>{{this.quote}}</p>
-        </blockquote>
+		{{#each endorsements}}
+		<div class="quote">
+			<figure>
+				<blockquote>
+					<p>{{this.quote}}</p>
+				</blockquote>
 
-        <figcaption>
-          <cite>
-            <small>
-              <a href="{{this.twitter}}">{{this.cite}}</a> &bull; <a href="{{this.url}}">{{company}}</a>
-            </small>
-          </cite>
-        </figcaption>
-      </figure>
-    </div>
-    {{/each}}
+				<figcaption>
+					<cite>
+						<img src="/img/site/{{this.avatar}}" alt="Avatar of {{this.cite}}">
+						<small>
+							<a href="{{this.twitter}}">{{this.cite}}</a> &bull; <a href="{{this.url}}">{{company}}</a>
+						</small>
+					</cite>
+				</figcaption>
+			</figure>
+		</div>
+		{{/each}}
 
-  </div>
+	</div>
 </div>
 {{/testimonials}}

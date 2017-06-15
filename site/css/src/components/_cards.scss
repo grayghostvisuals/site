@@ -1,0 +1,22 @@
+.ggv-cards {
+	display: flex;
+	max-width: 1181px;
+	margin: 0 auto;
+}
+
+
+.ggv-cards > div {
+	display: flex;
+	align-items: baseline;
+	align-content: flex-start;
+	flex: 1;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding: 20px;
+	h4 {
+		margin-bottom: 10px;
+		flex: 100%;
+		font-size: 24px;
+		text-align: center;
+	}
+}
