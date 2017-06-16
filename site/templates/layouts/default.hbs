@@ -5,16 +5,14 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta http-equiv="cleartype" content="on">
 
-		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
 		{{#if production}}
+		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
 		<link rel="dns-prefetch" href="https://fast.fonts.net">
 		<link rel="dns-prefetch" href="https://assets.codepen.io">
 		<link rel="dns-prefetch" href="https://google-analytics.com">
-		<link rel="dns-prefetch" href="https://assets.codepen.io">
 		<link rel="preconnect" href="https://fast.fonts.net">
 		<link rel="preconnect" href="https://assets.codepen.io">
-		<link rel="prefetch" href="https://fast.fonts.net">
-		<link rel="prefetch" href="https://assets.codepen.io">
+		<link rel="preconnect" href="https://google-analytics.com">
 		{{/if}}
 
 		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
@@ -119,7 +117,7 @@
 		{{/contains}}
 
 		{{#contains 'categories' this.basename}}
-		<script src="{{../site.js}}polyclouds.js"></script>
+		<script src="{{../site.js}}bubbles.js"></script>
 		{{/contains}}
 
 		{{#contains 'atomicguide, categories' this.basename}}

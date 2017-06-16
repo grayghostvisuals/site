@@ -23,7 +23,7 @@ $proportion: 48px;
 		fill: #4BBAFB;
 	}
 
-	svg#trigger:hover path { fill: #003461; }
+	// svg#trigger:hover path { fill: #003461; }
 
 	a {
 		display: flex;
@@ -39,7 +39,7 @@ $proportion: 48px;
 		opacity: 0;
 		&:hover                  { cursor: pointer; }
 		&:hover svg path         { fill: #003461;   }
-		&:hover svg#trigger path { fill: #003461;   }
+		// &:hover svg#trigger path { fill: #003461;   }
 	}
 
 	svg         { transform: rotate(-180deg); }
@@ -47,7 +47,7 @@ $proportion: 48px;
 	svg#github  { transform: rotate(-90deg);  }
 	svg#dribble { transform: rotate(90deg);   }
 
-	svg:hover   { cursor: pointer; }
+	// svg:hover   { cursor: pointer; }
 }
 
 // .socials.is-bloomed a

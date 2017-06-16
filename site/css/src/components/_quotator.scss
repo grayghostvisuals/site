@@ -16,7 +16,7 @@ $quotator-motion: (
 		border-radius: 80%;
 		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 		display: block;
-		width: 54px;
+		width: 64px;
 		margin: auto;
 	}
 }
@@ -51,7 +51,12 @@ $quotator-motion: (
 	}
 
 	cite {
+		font-size: 110%;
 		font-style: normal;
+		small {
+			display: inline-block;
+			margin-top: 10px;
+		}
 	}
 
 	blockquote {
