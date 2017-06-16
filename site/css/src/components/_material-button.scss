@@ -2,14 +2,12 @@
 // Material Button
 // ==========================================================
 
-$material-fill-color: #76BFF4;
+$material-fill-color: rgba(130, 176, 205, 0.8);
 
 .material-button {
 	appearance: none;
-	border: none;
 	box-sizing: border-box;
 	border-radius: 2px;
-	box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.3), 0 1px 1.5px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.2);
 	display: inline-block;
 	text-align: center;
 	max-width: 500px;
@@ -19,17 +17,11 @@ $material-fill-color: #76BFF4;
 	width: 100%;
 	font-family: 'Ciutadella W04 SmBold';
 	text-transform: uppercase;
-	&:link,
-	&:visited {
-		background: #19547b;
-		color: white;
-	}
 	&:focus,
 	&:hover,
 	&:active {
 		cursor: pointer;
 		outline: none;
-		background: #4A89B1;
 	}
 }
 
