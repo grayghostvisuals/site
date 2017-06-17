@@ -1,12 +1,22 @@
 html.case.polyon {
-  background: img-url("clients/polyon/space.jpg") top left no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  *:not(a) {
-    color: white;
-  }
-}
+	background: img-url("clients/polyon/space.jpg") top left no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	*:not(a) {
+		color: white;
+	}
+	.polyonlion {
+		transform: translateX(100%);
+	}
+	.socials {
+		svg#trigger,
+		svg#trigger path,
+		svg path {
+			fill: #EB8315;
+		}
 
-html.case.polyon .polyonlion {
-  transform: translateX(100%);
+		a {
+			&:hover svg path  { fill: white; }
+		}
+	}
 }
