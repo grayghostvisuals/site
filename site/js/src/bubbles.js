@@ -5,7 +5,7 @@ function randomNumber(start, end) {
 }
 
 function bubbler() {
-	var water = document.querySelectorAll('.ggv-hero')[0],
+	var water = document.querySelectorAll('.ggv-banner')[0],
 	    i = 0;
 
 	function generateBubbles() {
