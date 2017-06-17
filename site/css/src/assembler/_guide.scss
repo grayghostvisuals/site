@@ -86,9 +86,13 @@ body.atomic {
 	margin-right: 40px;
 }
 
-footer[role="contentinfo"] {
+.atomic .material-button {
+	background: rgb(0, 52, 97);
+	color: white;
+}
+
+.atomic main + footer[role="contentinfo"] {
 	padding-top: 50px;
-	padding-bottom: 100px;
 	width: 100%;
 	text-align: center;
 	display: flex;
