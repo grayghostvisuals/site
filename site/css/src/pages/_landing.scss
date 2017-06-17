@@ -7,27 +7,6 @@
 }
 
 
-.landing .ggv-hero {
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	background-color: map-get($atomic-colors, midnight-blue);
-	background-image: img-url("underwater.jpg");
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	> div {
-		margin: 80px 0 120px;
-	}
-	@media (max-width: 530px) {
-		padding: 1rem;
-	}
-}
-
-
 .landing .ggv-headline._hero {
 	text-align: center;
 	color: white;
@@ -72,26 +51,4 @@
 	&:active {
 		background: rgba(130, 176, 205, 0.7);
 	}
-}
-
-
-
-// ==========================================================
-// Bubbles
-// ==========================================================
-
-.landing .bubble {
-	animation: bubble 5s infinite cubic-bezier(0.55, 0.06, 0.68, 0.19);
-	border-radius: 100%;
-	position: absolute;
-	bottom: 0;
-	will-change: transform;
-	background: radial-gradient(circle at center, rgba(#FFF, .20) 0, rgba(#FFF, .03) 25%);
-}
-
-@keyframes bubble {
-	$b-size: 35px;
-	$b-surface: -120vh;
-	from 	{ transform: translateY($b-size); }
-	to 		{ transform: translateY($b-surface); }
 }
