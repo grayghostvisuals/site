@@ -1,7 +1,7 @@
 'use strict';
 
 (function () {
-	var hero = document.querySelector('.intro-deck'),
+	var hero = document.querySelector('.ggv-banner'),
 	    hero_height = hero.clientHeight,
 	    el = document.querySelector('main'),
 	    elChild = document.createElement('a'),
