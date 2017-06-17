@@ -181,10 +181,9 @@ app.dataLoader('yaml', function(str, fp) {
 	return yaml.safeLoad(str);
 });
 
-app.data($.if(process.env.NODE_ENV === 'production', 'production', 'development'));
-
 function loadData() {
 	app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
+	app.data('production', process.env.NODE_ENV === 'production');
 	app.data(expand(app.cache.data));
 }
 
