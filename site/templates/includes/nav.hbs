@@ -6,13 +6,13 @@
 	<a href="#components" id="atomic-components">components</a>
 	{{/is}}
 	{{#is 'casestudy' this.basename}}
-	<a href="/contact.html">Get In Touch</a>
+	<a href="/contact">Get In Touch</a>
 	{{/is}}
 	{{#contains 'categories, landing, contact' this.basename}}
-	<a href="/work.html" class="{{#is 'categories' ...basename}}active{{/is}}">Featured Work</a>
-	<a href="/contact.html" class="{{#is 'contact' ...basename}}active{{/is}}">Get In Touch</a>
+	<a href="/work" class="{{#is 'categories' ...basename}}active{{/is}}">Featured Work</a>
+	<a href="/contact" class="{{#is 'contact' ...basename}}active{{/is}}">Get In Touch</a>
 	<a href="http://blog.grayghostvisuals.com">Journal</a>
 	<a href="http://codepen.io/grayghostvisuals">Experiments</a>
-	<a href="/atomic-guide.html">Atomic Guide</a>
+	<a href="/atomic-guide">Atomic Guide</a>
 	{{/contains}}
 </nav>
