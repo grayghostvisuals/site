@@ -1,0 +1,48 @@
+<section class="ggv-banner">
+	<div class="ggv-banner__wrap">
+		{{#is 'landing' this.basename}}
+		<h1 class="ggv-headline _default _hero">
+			<span>Helping</span>
+			<span>Create</span>
+		</h1>
+
+		<h2 class="ggv-headline _default _hero">
+			<span>A</span>
+			<span>Better</span>
+			<span>Web</span>
+		</h2>
+
+		<div class="ggv-slogan">
+			<p>Pragmatic and thoughtful solutions are what drive work each day. Think abstractly and work pragmatically.</p>
+			<a href="/contact.html" id="js-ripple-btn" class="material-button">
+				Start A New Project
+				<svg class="material-ripple" id="js-ripple" aria-hidden="true">
+					<use height="100" width="100" xlink:href="#ripple-shape" class="js-ripple"></use>
+				</svg>
+			</a>
+		</div>
+		{{/is}}
+
+		{{#is 'categories' this.basename}}
+		<h3>Featured Work</h3>
+		{{/is}}
+		{{#is 'contact' this.basename}}
+		<h3>Get In Touch</h3>
+		{{/is}}
+		{{#is 'atomicguide' this.basename}}
+		<h3>Atomic Guide</h3>
+		{{/is}}
+
+		{{#is 'categories' this.basename}}
+		<h4>Select A Case Study</h4>
+		{{> expando-card}}
+		<p>Every client gets treated with the utmost care and respect towards the vision and request. Browse through past projects to gain further insight with each project's processes, challenges and solutions. If you're looking for more projects to convince you <a href="/contact.html">Get In Touch</a>.</p>
+		{{/is}}
+		{{#is 'contact' this.basename}}
+		<p>Every client gets treated with the utmost care and respect towards the vision and request. If you're looking for more projects to convince you or have a project inquiry <a href="#contact">contact us</a>.</p>
+		{{/is}}
+		{{#is 'atomicguide' this.basename}}
+		<p>Breaking down our interface from a molecular level to build out and structure a series of highly reusable components.</p>
+		{{/is}}
+	</div>
+</section>
