@@ -85,7 +85,6 @@
 
 		{{#is 'landing' this.basename}}
 		<script src="{{../site.jslib}}TweenMax.min.js"></script>
-		<script src="{{../site.js}}bubbles.js"></script>
 		{{/is }}
 
 		{{#is 'categories' this.basename}}
@@ -110,6 +109,10 @@
 		<script src="{{../site.js}}atomic-swatch.js"></script>
 		<script src="{{../site.js}}atomic-generator.js"></script>
 		{{/is}}
+
+		{{#contains 'landing, categories, contact, atomicguide' this.basename}}
+		<script src="{{../site.js}}bubbles.js"></script>
+		{{/contains}}
 
 		{{#contains 'landing, atomicguide' this.basename}}
 		<script src="{{../site.js}}material-ripple.js"></script>
