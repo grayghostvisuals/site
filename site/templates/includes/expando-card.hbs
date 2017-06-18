@@ -10,7 +10,7 @@
 			{{#is "categories" this.basename}}
 			<ul class="list-reset listing anchor-nav">
 				{{#category "client"}}
-					<li><a href="#{{data.title}}">{{data.title}}</a> : {{data.tags }}</li>
+					<li><a href="#{{lowercase data.title}}">{{data.title}}</a> : {{data.tags}}</li>
 				{{/category}}
 			</ul>
 			{{/is}}
