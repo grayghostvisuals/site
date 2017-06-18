@@ -172,9 +172,6 @@ gulp.task('sass', function() {
 // Data Loader
 // ================
 
-// @reference
-// https://github.com/node-base/base-data#dataloader
-//
 // @info
 // Load yaml files using a custom dataLoader.
 app.dataLoader('yaml', function(str, fp) {
@@ -261,7 +258,6 @@ app.onLoad(/\**\/*.hbs/, fileData);
 //
 // @info
 // Create a pages collection
-//app.create('pages').use(permalinks(':tags/:category():name.html', {
 app.create('pages').use(permalinks(':category:name.html', {
 	category: function() {
 		if (!this.categories) return '';
@@ -292,7 +288,8 @@ app.helper('category', function(category, options) {
 		// this renders the block between
 		// `{{#category}}` and `{{/category}}`
 		// passing the entire page object as the context.
-		return options.fn(pages[page]).toLowerCase();
+		// return options.fn(pages[page]).toLowerCase();
+		return options.fn(pages[page]);
 	}).join('\n');
 });
 
