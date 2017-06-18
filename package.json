@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "assemble": "^0.24.3",
-    "assemble-permalinks": "^0.5.0",
+    "assemble-permalinks": "^0.6.0",
     "babel-plugin-transform-runtime": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "base-data": "0.5.0",
