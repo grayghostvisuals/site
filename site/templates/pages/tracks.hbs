@@ -26,10 +26,14 @@ logo: logo-tracks.svg
 </ul>
 
 <h3>About Tracks</h3>
-<p>Learning Sales Tracking has never been easier using tracks and it’s amazing drag and drop interface. Tracks is focused on helping small businesses keep up to date with monthly sales and revenue that integrates with both Highrise CRM and Google Apps.</p>
+<p>Learning sales tracking has never been easier using Tracks and it’s amazing drag and drop interface. Tracks is focused on helping small businesses keep up to date with monthly sales and revenue that integrates with both Highrise CRM and Google Apps.</p>
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/tracks/tracks-home.png" alt="">
+	<figcaption><small>Tracks Home Page Design</small></figcaption>
+</figure>
 
 <h3>Project Request</h3>
-<p>Tracks provided several comps showcasing their new design that was in need of development. It was requested that the libraries listed for this project be an absolute requirement to fit in with their currrent platform. Before the project began it was suggested an atomic guide be created to keep track of components that were already in the system or could be used again in other contexts.</p>
+<p>Tracks provided several comps showcasing their new design that was in need of development. It was requested that the libraries listed for this project be an absolute requirement to fit in with their currrent platform. Before the project began we suggested an atomic guide be created to keep track of components that were already in the system or could be used again in other contexts.</p>
 <p>The approach to Tracks’ interface started with each component investigated and isolated using the principles outlined by <a href="http://atomicdesign.bradfrost.com">Brad Frost</a>. These LEGO-like pieces would eventually be constructed together to form a larger distinctive part of the interface.</p>
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-patterns.png" alt="">
@@ -37,11 +41,12 @@ logo: logo-tracks.svg
 </figure>
 
 <h3>Process</h3>
-<p>Prototypes were created with <a href="https://www.invisionapp.com">InVision</a> to build and structure a working and functional application interface. Since this was a build from the ground up, SVG was used throughout along with flexbox to assist in quick and easy layout typically resorted to with floats and margin trickery.</p>
+<p>Prototypes were created with <a href="https://www.invisionapp.com">InVision</a> to build and structure a working and functional application interface. We also examined the design mockups to identify common UI values for white space, font-sizing and icons to ensure consistency was used throughout the CSS codebase. This thorough examination also helped to identify common naming patterns in order to keep classes meaningful and coherent when and if future updates are made by outside entities.</p>
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/flexbox-nav.png" alt="">
 	<figcaption><small>Flexbox for Header Layout</small></figcaption>
 </figure>
+<p>Since this was a build from the ground up, SVG was used throughout along with flexbox to assist in quick and easy layout typically resorted to with floats and margin trickery.</p>
 
 <h3>Motion Design</h3>
 <p>Motion was heavily based on Google <a href="https://material.io/guidelines/motion/material-motion.html">Material Design Motion Principles</a> stating interactions occur from the point of contact giving the user clear feedback and information as to the action without cognitive disruption. A smooth transition helps guide the user to the next step of an interaction.</p>
@@ -55,11 +60,16 @@ logo: logo-tracks.svg
 </figure>
 
 <h3>Challenges</h3>
-<p>This project was not without it's challenges in multiple cases. It was required to create a custom dynamic calendar picker that usgin custom selections would display dats in a very particular fashion. For this we hired the help of <a href="https://shanehudson.net">Shane Hudson</a>.</p>
-
-<p>Other challenging spects were flexbox layout implementations as cross-browser was extremely fragile. To solve this issue with odler browsers we reverted to table display to ensure layouts did not break. Creating <b>isolated components and case studies</b>, <b>naming conventions<b>, <b>color swatch picker</b>, draggable card sorting and motion design.<</p>
+<p>This project was not without it's challenges in multiple cases. It was required to create a dynamic calendar picker for custom selections that display dates in a very particular fashion. For this we hired the help of <a href="https://shanehudson.net">Shane Hudson</a>.</p>
+<figure class="figure-site" style="margin: 0;">
+	<img src="{{site.imgdir}}clients/tracks/datepicker.gif" alt="">
+	<figcaption><small>Timeline Datepicker</small></figcaption>
+</figure>
+<p>This custom datepicker leverages the power of <a href="https://bevacqua.github.io/rome">Rome</a> as a base and config that is combined with a custom <a href="https://bitbucket.org/grayghostvisuals/tracks/src/da226bb268769ee6e523220e986c124fa48dd9c8/js/src/datepicker.js?at=datepicker&fileviewer=file-view-default">JS file</a> to create special conditions and filtering in order to return the correct selections.</p>
+<p>Other challenging spects were flexbox layout implementations as cross-browser was extremely fragile. To solve this issue with odler browsers we reverted to table display to ensure layouts did not break. Creating <b>isolated components and case studies</b>, <b>naming conventions<b>, <b>color swatch picker</b>, draggable card sorting and motion design.</p>
 
 <h3>Final Product</h3>
+<p>After months of work the interface was ready for testing among a select group of individuals.</p>
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-timeline.png" alt="">
 	<figcaption><small>Final Interface Design</small></figcaption>
