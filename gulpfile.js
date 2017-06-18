@@ -181,9 +181,14 @@ app.dataLoader('yaml', function(str, fp) {
 	return yaml.safeLoad(str);
 });
 
+app.helper('isEnv', function(env) {
+	return process.env.NODE_ENV === env;
+});
+
 function loadData() {
 	app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
-	app.data('production', process.env.NODE_ENV === 'production');
+	// app.data('env', process.env.NODE_ENV === 'production' ? 'production' : 'development');
+	// app.data('env', process.env.NODE_ENV);
 	app.data(expand(app.cache.data));
 }
 
@@ -257,7 +262,7 @@ app.onLoad(/\**\/*.hbs/, fileData);
 // @info
 // Create a pages collection
 //app.create('pages').use(permalinks(':tags/:category():name.html', {
-app.create('pages').use(permalinks(':category():name.html', {
+app.create('pages').use(permalinks(':category:name.html', {
 	category: function() {
 		if (!this.categories) return '';
 		var category = Array.isArray(this.categories) ? this.categories[0] : this.categories;
@@ -436,6 +441,24 @@ gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 					js: [$.uglify(), $.rev()]
 				}))
 				.pipe(gulp.dest(path.dist));
+		}));
+});
+
+gulp.task('mincats', function() {
+	return gulp.src(path.site + '/client/*.html')
+		.pipe($.foreach(function(stream, file) {
+			return stream
+				.pipe($.usemin({
+					assetsDir: path.site,
+					css: [$.rev()],
+					html: [$.htmlmin({
+						empty: true,
+						collapseWhitespace: true,
+						removeComments: true
+					})],
+					js: [$.uglify(), $.rev()]
+				}))
+				.pipe(gulp.dest(path.dist + '/client'));
 		}));
 });
 

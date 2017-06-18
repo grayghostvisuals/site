@@ -5,7 +5,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta http-equiv="cleartype" content="on">
 
-		{{#if production}}
+		{{#if (isEnv "production")}}
 		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
 		<link rel="dns-prefetch" href="https://fast.fonts.net">
 		<link rel="dns-prefetch" href="https://assets.codepen.io">
@@ -18,7 +18,7 @@
 		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
 		<meta name="description" content="{{description}}">
 
-		{{#if production}}
+		{{#if (isEnv "production")}}
 		<meta name="robots" content="all">
 		{{else}}
 		<meta name="robots" content="none">
@@ -62,7 +62,7 @@
 		<style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style>
 		<![endif]-->
 
-		{{#if production}}
+		{{#if (isEnv "production")}}
 		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
 		{{/if}}
 	</head>
@@ -132,7 +132,7 @@
 		{{/contains}}
 		<!-- endbuild -->
 
-		{{#if production}}
+		{{#if (isEnv "production")}}
 		<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];
 		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
 		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
