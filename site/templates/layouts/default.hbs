@@ -15,7 +15,7 @@
 		<link rel="preconnect" href="https://google-analytics.com">
 		{{/if}}
 
-		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}} › {{titleize this.title}}</title>
+		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories, contact' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}}{{#isnt 'landing' this.basename}} › {{titleize this.title}}{{/isnt}}</title>
 		<meta name="description" content="{{description}}">
 
 		{{#if (isEnv "production")}}
