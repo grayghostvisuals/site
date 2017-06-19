@@ -1,4 +1,4 @@
-<nav id="nav" {{#isnt 'atomicguide' this.basename}}class="primary-nav"{{/isnt}} role="navigation">
+<nav {{#contains 'atomicguide, categories, landing, contact' this.basename}}class="primary-nav"{{/contains}} role="navigation">
 	{{#is 'atomicguide' this.basename}}
 	<a href="#colors" id="atomic-colors">Colors</a>
 	<a href="#utilities" id="atomic-utilities">Utilities</a>
