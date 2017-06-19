@@ -115,7 +115,6 @@ $clients-color: (
 .ggv-datalist__item-data {
 	display: inline-block;
 	margin: auto;
-	// max-width: 280px; causing non-centered text in IE 11
 	padding-top: 10px;
 	padding-bottom: 10px;
 	position: absolute;
@@ -123,7 +122,7 @@ $clients-color: (
 	right: 0;
 	left: 0;
 	z-index: 1;
-	font-family: "Ciutadella W04 Lt";
+	@include font-loader('"Ciutadella W04 Lt", sans-serif');
 	font-size: 0.875rem;
 	font-weight: 100;
 	text-align: center;

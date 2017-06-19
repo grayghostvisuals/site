@@ -23,9 +23,9 @@ html:not(.case) nav[role="navigation"] {
 			color: #4380A7;
 		}
 	}
+}
 
-	.ffo-loaded & {
-		font-family: 'Ciutadella W04 SmBold';
-		font-size: 16px;
-	}
+
+nav[role="navigation"] {
+	@include font-loader('"Ciutadella W04 SmBold", sans-serif');
 }

@@ -23,12 +23,8 @@ body {
 }
 
 body {
-	animation: fadein 300ms cubic-bezier(.57,.25,.65,1) 1 0.5s forwards;
+	@include font-loader('"Avenir LT W01_45 Book", sans-serif');
 	color: map-get($atomic-colors, midnight-blue);
-	opacity: 0;
-	.ffo-loaded & {
-		font-family: 'Avenir LT W01_45 Book';
-	}
 }
 
 img,
@@ -72,9 +68,11 @@ figcaption {
 	h#{$i} {
 		text-transform: uppercase;
 		color: #132e49;
-
-		.ffo-loaded & {
-			font-family:'Ciutadella W04 Medium';
-		}
+		@include font-loader('"Ciutadella W04 Medium", sans-serif');
 	}
+}
+
+.ggv-container {
+	max-width: 1181px;
+	margin: 0 auto;
 }
