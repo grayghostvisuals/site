@@ -11,7 +11,7 @@ var gulp            = require('gulp'),
 													'gulp-sass-glob-import': 'sassglob'
 												}
 											}),
-		connectRewrite  = require('connect-modrewrite'), // https://www.npmjs.com/package/connect-modrewrite
+		connectRewrite  = require('connect-modrewrite'),
 		yaml            = require('js-yaml'),
 		helpers         = require('handlebars-helpers'),
 		expand          = require('expand')(), // pincer.io/node/libraries/expand
