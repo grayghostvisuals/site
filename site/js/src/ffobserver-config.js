@@ -16,5 +16,7 @@
 
 	w.Promise.all([fontAvenirLT.load(), fontCiutadellaLT.load(), fontCiutadellaSmBold.load(), fontCiutadellaMed.load(), fontCiutadellaBold.load()]).then(function () {
 		w.document.documentElement.className += ' ffo-loaded';
+	}, function () {
+		w.document.documentElement.className += ' ffo-inactive';
 	});
 })(window);
