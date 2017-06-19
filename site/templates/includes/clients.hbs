@@ -1,7 +1,7 @@
 <ul class="ggv-datalist ggv-datalist--clients list-reset">
 	{{#category "client"}}
 	<li id="{{lowercase data.title}}" class="ggv-datalist__item {{lowercase data.title}}">
-		<a href="{{data.categories}}/{{lowercase data.title}}{{#if (isEnv "development")}}.html{{/if}}">
+		<a href="{{data.categories}}/{{lowercase data.title}}">
 			<span class="ggv-datalist__item-data">{{data.tags}}</span>
 
 			<img src="./img/site/{{data.logo}}" class="ggv-datalist__fig" alt="">
