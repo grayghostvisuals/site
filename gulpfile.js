@@ -12,7 +12,7 @@ var gulp            = require('gulp'),
 												}
 											}),
 		yaml            = require('js-yaml'),
-		helpers         = require('handlebars-helpers'), // github.com/assemble/handlebars-helpers
+		helpers         = require('handlebars-helpers'),
 		expand          = require('expand')(), // pincer.io/node/libraries/expand
 		permalinks      = require('assemble-permalinks'),
 		assemble        = require('assemble'),
@@ -169,7 +169,7 @@ gulp.task('sass', function() {
 // ===================================================
 
 
-// Data Loader
+// Loaders
 // ================
 
 // @info
@@ -178,14 +178,8 @@ app.dataLoader('yaml', function(str, fp) {
 	return yaml.safeLoad(str);
 });
 
-app.helper('isEnv', function(env) {
-	return process.env.NODE_ENV === env;
-});
-
 function loadData() {
 	app.data([glob.data, 'site.yaml', 'package.json'], { namespace: true });
-	// app.data('env', process.env.NODE_ENV === 'production' ? 'production' : 'development');
-	// app.data('env', process.env.NODE_ENV);
 	app.data(expand(app.cache.data));
 }
 
@@ -193,14 +187,14 @@ function loadData() {
 // ================
 
 // @info
-// create a `categories` object to keep categories in (e.g. 'clients')
-// populate categories with pages that specify the categories they belong to.
+// Create a `categories` object to keep categories in (e.g. 'clients').
+// Populate categories with pages that specify the categories they belong to.
 // When the onLoad middleware runs for a single file, it looks at the file's
 // front-matter (file.data) to see if it contains a categories property. This
 // property can be a string or an array of strings. If it exists, then the
 // middleware updates the categories object for each category in the array. In
-// the case of polyon.hbs, there is only 1 category called client, so the categories
-// object becomes:
+// the case of polyon.hbs, there is only 1 category called client, so the
+// categories object becomes:
 //
 // categories: {
 //  clients: {
@@ -225,13 +219,9 @@ function fileData(file, next) {
 		return next();
 	}
 
-	var renameKey = app.renameKey(file.key, file);
-
-	// get the categories object
-	var categories = app.get('categories');
-
-	// decipher what categories this file belongs to
-	var cats = file.data.categories;
+	var renameKey  = app.renameKey(file.key, file),
+			categories = app.get('categories'), // get the categories object
+			cats       = file.data.categories; // decipher what categories this file belongs to
 
 	cats = Array.isArray(cats) ? cats : [cats];
 
@@ -242,20 +232,15 @@ function fileData(file, next) {
 		categories[cat][renameKey] = file;
 	});
 
-	// complete
-	next();
+	next(); // complete
 }
 
 app.onLoad(/\**\/*.hbs/, fileData);
 
 
-// Create Events
+// Permalinks
 // ================
 
-// @reference
-// plugin for creating permalinks
-// https://github.com/assemble/assemble-permalinks
-//
 // @info
 // Create a pages collection
 app.create('pages').use(permalinks(':category:name.html', {
@@ -269,6 +254,12 @@ app.create('pages').use(permalinks(':category:name.html', {
 
 // Custom Helpers
 // ================
+
+// @info
+// Custom helper for environment control w/compiling
+app.helper('isEnv', function(env) {
+	return process.env.NODE_ENV === env;
+});
 
 // @info
 // Handlebars helper that iterates over an
@@ -299,7 +290,7 @@ app.helper('date', function() {
 });
 
 
-// App Tasks
+// Assemble Tasks
 // ================
 
 // Placing assemble setups inside the task allows
@@ -312,10 +303,9 @@ gulp.task('assemble', function() {
 	loadData();
 
 	// @info
-	// load pages onto the pages collection
 	// https://github.com/assemble/assemble-permalinks/issues/8#issuecomment-231181277
-	// ensure the page templates are put on the correct collection
-	// and the middleware is triggered.
+	// Load pages onto the pages collection to ensure the page templates are put on the
+	// correct collection and the middleware is triggered.
 	app.pages(glob.pages);
 
 	var stream = app.toStream('pages')
