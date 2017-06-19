@@ -26,6 +26,6 @@ html:not(.case) nav[role="navigation"] {
 }
 
 
-nav[role="navigation"] {
+.primary-nav {
 	@include font-loader('"Ciutadella W04 SmBold", sans-serif');
 }
