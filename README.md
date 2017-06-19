@@ -44,6 +44,12 @@ From any template use the ``{{#if}}`` condition to control output for post compi
 ```shell
 export NODE_ENV=production
 ```
+
 ```shell
 export NODE_ENV=development
+```
+
+```handlebars
+{{#if (isEnv "production")}}
+{{/if}}
 ```
