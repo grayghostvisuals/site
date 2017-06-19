@@ -49,6 +49,7 @@
     "merge-stream": "0.1.7"
   },
   "devDependencies": {
+    "connect-modrewrite": "^0.10.1",
     "del": "^1.1.1",
     "gulp-connect": "^4.1.0",
     "gulp-gh-pages": "^0.5.1",

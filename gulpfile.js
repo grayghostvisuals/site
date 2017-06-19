@@ -11,6 +11,7 @@ var gulp            = require('gulp'),
 													'gulp-sass-glob-import': 'sassglob'
 												}
 											}),
+		connectRewrite  = require('connect-modrewrite'), // https://www.npmjs.com/package/connect-modrewrite
 		yaml            = require('js-yaml'),
 		helpers         = require('handlebars-helpers'),
 		expand          = require('expand')(), // pincer.io/node/libraries/expand
@@ -92,7 +93,10 @@ gulp.task('serve', ['assemble'], function() {
 		),
 		middleware: function(connect) {
 			return [
-				connect().use(connect.query())
+				connect().use(connect.query()),
+				connectRewrite([
+					'^.([^\\.]+)$ /$1.html [L]',
+				])
 			];
 		}
 	});
