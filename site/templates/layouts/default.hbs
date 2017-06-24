@@ -102,6 +102,11 @@
 
 		{{#is 'contact' this.basename}}
 		<script src="{{../site.js}}wufoo.js"></script>
+		<script src="https://js.stripe.com/v3/"></script>
+		<script>
+			var stripe = Stripe('pk_test_acXiTTn61uUUjaKsYdPRlFHB');
+			var elements = stripe.elements();
+		</script>
 		{{/is}}
 
 		{{#is 'atomicguide' this.basename}}
