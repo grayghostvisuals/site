@@ -63,6 +63,7 @@ var glob = {
 	js: path.js + '/src/**/*.js',
 	jsdev: path.js + '/dev/**/*.js',
 	jslibs : path.js + '/lib/**/*.js',
+	images: path.images + '/*.{js,svg,png,jpg}',
 	layouts: path.templates + '/layouts/*.{md,hbs}',
 	pages: path.templates + '/pages/**/*.{md,hbs}',
 	includes: path.templates + '/includes/**/*.{md,hbs}',
@@ -499,7 +500,9 @@ gulp.task('clean', function(cb) {
 		'dist',
 		glob.css,
 		path.site + '/{client}',
-		glob.html
+		glob.html,
+		glob.images,
+		path.images + '/clients'
 	], cb);
 });
 
