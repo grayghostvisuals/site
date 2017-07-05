@@ -14,7 +14,7 @@ var gulp            = require('gulp'),
 		connectRewrite  = require('connect-modrewrite'),
 		yaml            = require('js-yaml'),
 		helpers         = require('handlebars-helpers'),
-		expand          = require('expand')(), // pincer.io/node/libraries/expand
+		expand          = require('expand')(),
 		permalinks      = require('assemble-permalinks'),
 		assemble        = require('assemble'),
 		app             = assemble(),
@@ -213,10 +213,10 @@ app.set('categories', {});
 // ================
 
 // @info
-// https://github.com/assemble/assemble/issues/715
 // Middleware functions are run at certain points during the build,
 // and only on templates that match the middleware's regex pattern.
 function fileData(file, next) {
+	// @info
 	// if the file doesn't have a data object or
 	// doesn't contain `categories` in it's
 	// front-matter, move on.
@@ -230,6 +230,7 @@ function fileData(file, next) {
 
 	cats = Array.isArray(cats) ? cats : [cats];
 
+	// @info
 	// add this file's data (file object)
 	// to each of it's categories
 	cats.forEach(function(cat) {
@@ -284,7 +285,6 @@ app.helper('category', function(category, options) {
 		// this renders the block between
 		// `{{#category}}` and `{{/category}}`
 		// passing the entire page object as the context.
-		// return options.fn(pages[page]).toLowerCase();
 		return options.fn(pages[page]);
 	}).join('\n');
 });
@@ -298,8 +298,9 @@ app.helper('date', function() {
 // Assemble Tasks
 // ================
 
+// @info
 // Placing assemble setups inside the task allows
-// live reloading/monitoring for files changes.
+// live reloading/monitoring of files changed.
 gulp.task('assemble', function() {
 	app.option('layout', 'default');
 	app.helpers(helpers());
@@ -320,9 +321,11 @@ gulp.task('assemble', function() {
 		.on('error', console.log)
 		.pipe($.extname())
 		.on('error', console.log)
+		// @info
 		// update the file.path before writing
 		// the file to the file system.
 		.pipe(app.dest(function(file) {
+			// @info
 			// Creates a permalink and puts it on file.data.permalink.
 			// This can be used in other templates for linking.
 			file.path = resolve(file.base, file.data.permalink);
@@ -399,8 +402,9 @@ gulp.task('svgstore', function() {
 				$('svg').attr('style', 'display:none');
 			},
 			parserOptions: {
-				//https://github.com/cheeriojs/cheerio#loading
-				//https://github.com/fb55/htmlparser2/wiki/Parser-options#option-xmlmode
+				// @info
+				// https://github.com/cheeriojs/cheerio#loading
+				// https://github.com/fb55/htmlparser2/wiki/Parser-options#option-xmlmode
 				xmlMode: true
 			}
 		}))
@@ -436,7 +440,7 @@ gulp.task('usemin', ['babel', 'assemble', 'sass'], function() {
 		}));
 });
 
-gulp.task('mincats', function() {
+gulp.task('mincats', ['usemin'], function() {
 	return gulp.src(path.site + '/client/*.html')
 		.pipe($.foreach(function(stream, file) {
 			return stream
@@ -462,8 +466,12 @@ gulp.task('mincats', function() {
 
 gulp.task('copy', ['usemin'], function() {
 	return merge(
-		gulp.src([path.site + '/{img,client,bower_components,js/lib}/**/*'])
+		gulp.src([path.site + '/{img,client,js/lib}/**/*'])
 				.pipe(gulp.dest(path.dist)),
+
+		gulp.src([
+				path.site + '/css/print.css'
+			]).pipe(gulp.dest(path.dist + '/css')),
 
 		gulp.src([
 				'webhook.php',
@@ -484,7 +492,7 @@ gulp.task('deploy', function() {
 							.pipe($.ghPages(
 								$.if(process.env.NODE_ENV === 'development',
 									{ branch: 'staging' },
-									{ branch: 'master' })
+									{ branch: 'master'  })
 								)
 							);
 });
@@ -536,5 +544,5 @@ gulp.task('watch', function() {
 // Taskin'
 // ===================================================
 
-gulp.task('build', [ 'copy', 'usemin' ]);
+gulp.task('build', [ 'copy', 'usemin', 'mincats' ]);
 gulp.task('default', [ 'sass', 'serve', 'watch' ]);
