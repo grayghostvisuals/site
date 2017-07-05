@@ -5,15 +5,18 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 		<meta http-equiv="cleartype" content="on">
 
-		{{#if (isEnv "production")}}
 		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
-		<link rel="dns-prefetch" href="https://fast.fonts.net">
-		<link rel="dns-prefetch" href="https://assets.codepen.io">
-		<link rel="dns-prefetch" href="https://google-analytics.com">
-		<link rel="preconnect" href="https://fast.fonts.net">
-		<link rel="preconnect" href="https://assets.codepen.io">
-		<link rel="preconnect" href="https://google-analytics.com">
+		{{#if (isEnv "production")}}
+		<link href="https://fast.fonts.net" rel="dns-prefetch">
+		<link href="https://assets.codepen.io" rel="dns-prefetch">
+		<link href="https://google-analytics.com" rel="dns-prefetch">
+		<link href="https://fast.fonts.net" rel="preconnect">
+		<link href="https://assets.codepen.io" rel="preconnect">
+		<link href="https://google-analytics.com" rel="preconnect">
 		{{/if}}
+
+		{{! https://www.sitepoint.com/critical-rendering-path-css-fast-loading-website }}
+		{{! <link rel="preload" as="style" href="site.css" onload="this.rel='stylesheet'"> }}
 
 		<title>Gray Ghost Visuals{{#is 'casestudy' this.basename}} › Case Study{{/is}}{{#contains 'landing, categories, contact' this.basename}} › Front-end Web Development, Interaction &amp; Design{{/contains}}{{#isnt 'landing' this.basename}} › {{titleize this.title}}{{/isnt}}</title>
 		<meta name="description" content="{{description}}">
@@ -34,10 +37,10 @@
 		<meta name="designer" content="{{site.url}}">
 
 		{{! More info: https://bitsofco.de/all-about-favicons-and-touch-icons }}
+		<link href="{{site.root}}favicon.ico" rel="icon" type="image/x-icon">
 
 		{{! https://developers.google.com/web/updates/2014/11/Support-for-theme-color-in-Chrome-39-for-Android }}
-		<link rel="icon" type="image/x-icon" href="{{site.root}}favicon.ico">
-		<link rel="icon" sizes="192x192" href="{{site.root}}icon-android-192x192.png">
+		<link href="{{site.root}}icon-android-192x192.png" rel="icon" sizes="192x192">
 		<meta name="theme-color" content="#006ea0">
 
 		<meta property="og:title" content="{{titleize site.title}}">
@@ -50,18 +53,16 @@
 		<link rel="author" href="{{site.url}}/humans.txt">
 
 		<!-- build:css {{site.css}}style.min.css -->
-		{{#is 'atomicguide' this.basename}}
-		<link rel="stylesheet" href="{{../site.css}}atomic-guide.css">
-		{{/is}}
-
 		{{#contains 'landing, contact, casestudy, categories' this.basename}}
-		<link rel="stylesheet" href="{{../site.css}}site.css">
+		<link href="{{../site.css}}site.css" rel="stylesheet">
 		{{/contains}}
+
+		{{#is 'atomicguide' this.basename}}
+		<link href="{{../site.css}}atomic-guide.css" rel="stylesheet">
+		{{/is}}
 		<!-- endbuild -->
 
-		<!--[if lte IE 9]>
-		<style>body {display: none!important;}html{background:red !important;color:white;max-width:300px;margin:0 auto;}html:before {content: 'IE9 and below is no longer supported by Microsoft. Please upgrade to Windows 10 for a more secure browsing experience.';font-size:1.25em;display: block;margin-top:100%;}</style>
-		<![endif]-->
+		<link href="{{site.css}}print.css" rel="stylesheet" media="print">
 
 		{{#if (isEnv "production")}}
 		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
@@ -69,13 +70,12 @@
 	</head>
 
 	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}" id="top">
+		{{#contains 'landing, atomicguide' this.basename}}
 		{{> material-ripple}}
+		{{/contains}}
 
 		<div class="container">
-			<header role="banner">
-				{{> logo}}
-				{{> nav}}
-			</header>
+			{{> header}}
 
 			<main role="main">
 			{% body %}
@@ -88,15 +88,17 @@
 		<script src="{{site.bower}}fontfaceobserver/fontfaceobserver.js"></script>
 		<script src="{{site.js}}ffobserver-config.js"></script>
 
-		{{#is 'landing' this.basename}}
+		{{#contains 'landing, categories, atomicguide' this.basename}}
 		<script src="{{../site.jslib}}TweenMax.min.js"></script>
-		{{/is }}
+		{{/contains}}
 
-		{{#is 'categories' this.basename}}
-		<script src="{{../site.jslib}}TweenMax.min.js"></script>
+		{{#contains 'categories, atomicguide' this.basename}}
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/ScrollMagic.min.js"></script>
 		<script src="{{../site.bower}}ScrollMagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
 		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
+		{{/contains}}
+
+		{{#is 'categories' this.basename}}
 		<script src="{{../site.js}}anchor-scroll.js"></script>
 		{{/is}}
 
@@ -105,10 +107,6 @@
 		{{/is}}
 
 		{{#is 'atomicguide' this.basename}}
-		<script src="{{../site.jslib}}TweenMax.min.js"></script>
-		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/ScrollMagic.js"></script>
-		<script src="{{../site.bower}}ScrollMagic/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-		<script src="{{../site.jslib}}ScrollToPlugin.min.js"></script>
 		<script src="{{../site.js}}scrollmation.js"></script>
 		<script src="{{../site.jslib}}prism.js"></script>
 		<script src="{{../site.js}}atomic-swatch.js"></script>
