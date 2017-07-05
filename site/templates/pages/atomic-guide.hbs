@@ -25,10 +25,7 @@ description: The documented Atomic Guide for Gray Ghost Visuals intended to help
 
 	<h2 class="typl8-zeta">Display Headlines</h2>
 	<h1 class="ggv-headline _default"><span>Building</span><span>Incredible</span></h1>
-	<pre class="language-html"><code><h1 class="ggv-headline _default"><span>Building</span><span>Incredible</span></h1></code></pre>
-
 	<h1 class="ggv-headline _reverse"><span>Building</span><span>Incredible</span></h1>
-	<pre class="language-html"><code><h1 class="ggv-headline _reverse"><span>Building</span><span>Incredible</span></h1></code></pre>
 </section>
 
 {{! Typography }}
@@ -52,12 +49,6 @@ description: The documented Atomic Guide for Gray Ghost Visuals intended to help
 		<div style="font-family:'Ciutadella W04 Bold';">Ciutadella W04 Bold</div>
 	</div>
 
-	<pre class="language-scss"><code>font-family:'Ciutadella W04 Lt';
-font-family:'Ciutadella W04 Medium';
-font-family:'Ciutadella W04 SmBold';
-font-family:'Ciutadella W04 Bold';
-</code></pre>
-
 	<h2 class="typl8-zeta">Copy</h2>
 
 	<div class="fontdisplay">
@@ -68,25 +59,15 @@ font-family:'Ciutadella W04 Bold';
 		<div style="font-family:'AvenirLTW01-65MediumObl';">Avenir® W01 65 Medium Oblique</div>
 	</div>
 
-	<pre class="language-scss"><code>font-family:'Avenir LT W01_35 Light';
-font-family:'Avenir LT W01_45 Book';
-font-family:'AvenirLTW01-45BookObliq';
-font-family:'Avenir LT W01_65 Medium';
-font-family:'AvenirLTW01-65MediumObl';
-</code></pre>
-
 	<h2 class="typl8-zeta">Typescale</h2>
 	{{> headings}}
-	<pre class="language-html"><code>{{> headings}}</code></pre>
 
 	<h2 class="typl8-zeta">Paragraphs</h2>
 	{{> paragraphs}}
 	{{> paragraphs}}
-	<pre class="language-html"><code>{{> paragraphs}}</code></pre>
 
 	<h2 class="typl8-zeta">Unordered List</h2>
 	{{> unordered-list}}
-	<pre class="language-html"><code>{{> unordered-list}}</code></pre>
 </section>
 
 {{! Components }}
@@ -95,40 +76,35 @@ font-family:'AvenirLTW01-65MediumObl';
 		<h1 class="typl8-delta">Components</h1>
 	</header>
 
-	<h2 class="typl8-zeta">Navigation</h2>
-	{{> nav}}
-	<pre class="language-html"><code>{{> nav}}</code></pre>
-
-	<h2 class="typl8-zeta">Footer</h2>
-	{{> footer}}
-	<pre class="language-html"><code>{{> footer}}</code></pre>
+	<div class="atomic-logos">
+		<h2 class="typl8-zeta">Logos</h2>
+		{{> logo}}
+	</div>
 
 	<h2 class="typl8-zeta">Banner</h2>
 	{{> banner}}
-	<pre class="language-html"><code>{{> banner}}</code></pre>
 
-	<h2 class="typl8-zeta">Ripple Button</h2>
-	{{> default-button}}
-	<pre class="language-html"><code>{{> default-button}}</code></pre>
+	<h2 class="typl8-zeta">Navigation</h2>
+	{{> nav}}
 
-	<h2 class="typl8-zeta">Expando Card</h2>
-	{{> expando-card}}
-	<pre class="language-html"><code>{{> expando-card}}</code></pre>
+	<h2 class="typl8-zeta">Header</h2>
+	{{> header}}
 
-	<div class="atomic-logos">
-	<h2 class="typl8-zeta">Logos</h2>
-	{{> logo}}
-	</div>
-
-	<h2 class="typl8-zeta">Quotator</h2>
-	{{> quotes}}
-	<pre class="language-html"><code>{{> quotes}}</code></pre>
-
-	<h2 class="typl8-zeta">Data List</h2>
-	{{> clients}}
-	<pre class="language-html"><code>{{> clients}}</code></pre>
+	<h2 class="typl8-zeta">Footer</h2>
+	{{> footer}}
 
 	<h2 class="typl8-zeta">Social Bloomer</h2>
 	{{> social-bloomer}}
-	<pre class="language-html"><code>{{> social-bloomer}}</code></pre>
+
+	<h2 class="typl8-zeta">Ripple Button</h2>
+	{{> default-button}}
+
+	<h2 class="typl8-zeta">Expando Card</h2>
+	{{> expando-card}}
+
+	<h2 class="typl8-zeta">Quotator</h2>
+	{{> quotes}}
+
+	<h2 class="typl8-zeta">Data List</h2>
+	{{> clients}}
 </section>
