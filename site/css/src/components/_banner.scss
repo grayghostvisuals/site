@@ -5,29 +5,21 @@
 	flex-direction: column;
 	justify-content: center;
 	overflow: hidden;
+	padding: 1rem;
 	position: relative;
-	font-size: 18px;
-	background-color: map-get($atomic-colors, midnight-blue);
-	background-image: img-url("underwater.jpg");
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: white;
 
-	@media (max-width: 530px) {
-		padding: 1rem;
+	&--underwater {
+		background-color: map-get($atomic-colors, midnight-blue);
+		background-image: img-url("underwater.jpg");
 	}
 
 	&__wrap {
 		max-width: 560px;
 		margin: auto;
-	}
-
-	h3 {
-		font-size: 54px;
-		line-height: 0;
-		text-align: center;
-		color: white;
 	}
 
 	h4 {
@@ -38,6 +30,11 @@
 	> div {
 		margin: 80px 0 120px;
 	}
+}
+
+.ggv-banner__title {
+	text-align: center;
+	color: white;
 }
 
 

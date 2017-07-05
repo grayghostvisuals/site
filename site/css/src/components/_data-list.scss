@@ -67,10 +67,9 @@ $clients-color: (
 
 .ggv-datalist__item {
 	animation: 700ms ease(in-cubic) 0s expand;
-	height: 320px;
 	position: relative;
+	@include size(100%, 320px);
 	transform-origin: center center;
-	width: 100%;
 	color: white;
 	&::after {
 		content: 'read more';
@@ -82,19 +81,16 @@ $clients-color: (
 		width: 100%;
 		z-index: 0;
 		text-align: center;
-		text-transform: uppercase;
-		font-family: "Ciutadella W04 SmBold";
 	}
 }
 
 .ggv-datalist__item a {
 	display: block;
-	height: 100%;
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
+	@include size(50%, 100%);
 	transition: 300ms all ease(in-out-cubic);
-	width: 50%;
 	z-index: 1;
 	color: white;
 
@@ -122,11 +118,7 @@ $clients-color: (
 	right: 0;
 	left: 0;
 	z-index: 1;
-	@include font-loader('"Ciutadella W04 Lt", sans-serif');
-	font-size: 0.875rem;
-	font-weight: 100;
 	text-align: center;
-	text-transform: uppercase;
 }
 
 .ggv-datalist__item.theron img,
@@ -150,7 +142,6 @@ $clients-color: (
 	transition: 240ms all ease(in-out-cubic);
 	transform-origin: center center;
 	transform: scale(0);
-	font-size: 1rem; // sets parent context as root size.
 	opacity: 0;
 }
 
@@ -158,14 +149,6 @@ $clients-color: (
 	margin: 0;
 	text-align: center;
 	color: white;
-}
-
-.ggv-summary__title {
-	font-size: context-calc(26, 16, em);
-}
-
-.ggv-summary__desc {
-	text-transform: capitalize;
 }
 
 .ggv-datalist--clients .ggv-datalist__item {

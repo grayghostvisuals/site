@@ -17,6 +17,6 @@
 .ggv-cards__title {
 	flex: 100%;
 	margin-bottom: 10px;
-	font-size: 24px;
+	font-size: context-calc(24, 16, rem);
 	text-align: center;
 }

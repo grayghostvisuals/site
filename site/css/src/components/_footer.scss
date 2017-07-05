@@ -4,8 +4,6 @@ footer[role="contentinfo"] {
 	width: 100%;
 	text-align: center;
 	small {
-		@include font-loader('"Ciutadella W04 SmBold", sans-serif');
-		text-transform: uppercase;
 		a {
 			color: inherit;
 		}

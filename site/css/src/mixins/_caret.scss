@@ -5,10 +5,10 @@
 // ============================================================
 
 @mixin caret($point, $border-width, $color) {
-  $opposite: opposite-direction($point);
-  border: $border-width solid transparent;
-  border-#{$opposite}: $border-width solid $color;
-  border-#{$point}: 0;
-  height: 0;
-  width: 0;
+	$opposite: opposite-direction($point);
+	border: $border-width solid transparent;
+	border-#{$opposite}: $border-width solid $color;
+	border-#{$point}: 0;
+	height: 0;
+	width: 0;
 }

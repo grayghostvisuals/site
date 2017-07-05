@@ -27,12 +27,11 @@ $material-fill-color: rgba(130, 176, 205, 0.8);
 
 
 .material-ripple {
-	height: 100%;
 	pointer-events: none;
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	@include size(100%, 100%);
 	z-index: 0;
 	fill: $material-fill-color;
 	use {

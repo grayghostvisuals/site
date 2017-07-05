@@ -12,18 +12,13 @@ html {
 
 html,
 body {
-	height:100%;
-}
-
-html,
-body {
+	height: 100%;
 	margin: 0;
 	padding: 0;
 	min-height: 100%;
 }
 
 body {
-	@include font-loader('"Avenir LT W01_45 Book", sans-serif');
 	color: map-get($atomic-colors, midnight-blue);
 }
 
@@ -66,9 +61,7 @@ figcaption {
 
 @for $i from 1 through 6 {
 	h#{$i} {
-		text-transform: uppercase;
 		color: #132e49;
-		@include font-loader('"Ciutadella W04 Medium", sans-serif');
 	}
 }
 

@@ -2,11 +2,10 @@ $count: 5;
 $proportion: 48px;
 
 .socials {
-	height: $proportion;
 	margin: auto;
 	margin-bottom: 60px;
 	position: relative;
-	width: $proportion;
+	@include size($proportion);
 
 	svg#trigger {
 		height: $proportion;
