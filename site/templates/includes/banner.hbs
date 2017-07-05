@@ -1,4 +1,4 @@
-<section class="ggv-banner">
+<section class="ggv-banner{{#contains 'landing, contact, casestudy, categories, atomicguide' this.basename}} ggv-banner--underwater{{/contains}}">
 	<div class="ggv-banner__wrap">
 		{{#is 'landing' this.basename}}
 		<h1 class="ggv-headline _default _hero">
@@ -24,13 +24,13 @@
 		{{/is}}
 
 		{{#is 'categories' this.basename}}
-		<h3>Featured Work</h3>
+		<h3 class="ggv-banner__title">Featured Work</h3>
 		{{/is}}
 		{{#is 'contact' this.basename}}
-		<h3>Get In Touch</h3>
+		<h3 class="ggv-banner__title">Get In Touch</h3>
 		{{/is}}
 		{{#is 'atomicguide' this.basename}}
-		<h3>Atomic Guide</h3>
+		<h3 class="ggv-banner__title">Atomic Guide</h3>
 		{{/is}}
 
 		{{#is 'categories' this.basename}}
