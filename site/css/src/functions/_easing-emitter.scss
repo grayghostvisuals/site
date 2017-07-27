@@ -1,9 +1,0 @@
-// https://css-tricks.com/snippets/sass/easing-map-get-function
-@function ease($key) {
-  @if map-has-key($eases, $key) {
-    @return map-get($eases, $key);
-  }
-
-  @warn "Unkown '#{$key}' in $ease.";
-  @return null;
-}
