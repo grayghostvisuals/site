@@ -4,6 +4,13 @@
 // @support : No dependencies required. IE10+ (querySelectorAll, classList)
 
 let quotator = (function() {
+  function lazyLoad(img) {
+    img.src = img.getAttribute('data-src');
+    img.removeAttribute('data-src');
+    img.srcset = img.getAttribute('data-srcset');
+    img.removeAttribute('data-srcset');
+  }
+
   return {
     init: function(selector, condition, speed) {
       let quotes      = document.querySelectorAll(selector),
@@ -12,6 +19,10 @@ let quotator = (function() {
 
       if(quotes.length !== 'undefined') {
         quotes[0].classList.add(state);
+
+        // lazy load
+        var img = document.querySelector('.quote-avatar');
+        lazyLoad(img);
 
         setInterval(function() {
           cycle(quotes, state);
@@ -34,6 +45,10 @@ let quotator = (function() {
           current[0].classList.remove(state);
           selector[0].classList.add(state);
         } else {
+          // lazy load
+          var img = next.children[0].lastElementChild.lastElementChild.children[0];
+          lazyLoad(img);
+
           current[0].classList.remove(state);
           next.classList.add(state);
         }
