@@ -454,9 +454,20 @@ gulp.task('mincats', ['usemin'], function() {
 					})],
 					js: [$.uglify(), $.rev()]
 				}))
-				.pipe(gulp.dest(path.dist + '/client'));
+				.pipe(gulp.dest(path.dist + '/client'))
 		}));
 });
+
+gulp.task('cleanclient', function(cb) {
+	gulp.src([path.dist + '/client/css/*.css'])
+			.pipe(gulp.dest(path.dist + '/css'));
+	gulp.src([path.dist + '/client/js/src/*.js'])
+			.pipe(gulp.dest(path.dist + '/js/src'));
+	del([
+		path.dist + '/client/css',
+		path.dist + '/client/js'
+	], cb);
+})
 
 
 
