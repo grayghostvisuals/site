@@ -6,7 +6,9 @@
 		<meta http-equiv="cleartype" content="on">
 
 		{{! More info: https://css-tricks.com/prefetching-preloading-prebrowsing }}
+		{{! https://css-tricks.com/the-critical-request }}
 		{{#if (isEnv "production")}}
+		<link href="http://static.grayghostvisuals.com" rel="dns-prefetch">
 		<link href="https://fast.fonts.net" rel="dns-prefetch">
 		<link href="https://assets.codepen.io" rel="dns-prefetch">
 		<link href="https://google-analytics.com" rel="dns-prefetch">
