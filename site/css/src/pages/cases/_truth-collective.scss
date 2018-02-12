@@ -1,0 +1,32 @@
+html.case.truth-collective {
+	background: white;
+
+	.ggv-headline {
+		text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2784313725490196);
+		color: #f5f5f5;
+	}
+
+	.figure-site.tools {
+		display: flex;
+		svg {flex: 1 0 auto;}
+	}
+
+	a[href*="contact"] {
+		background: #ffd74e;
+		color: white;
+	}
+
+	.socials {
+		svg#trigger,
+		svg#trigger path,
+		svg path {
+			fill: #F1CD46;
+		}
+
+		a {
+			&:hover svg path  {
+				fill: white;
+			}
+		}
+	}
+}

@@ -66,6 +66,8 @@
 
 		<link href="{{site.css}}print.css" rel="stylesheet" media="print">
 
+		<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+
 		{{#if (isEnv "production")}}
 		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
 		{{/if}}
@@ -132,6 +134,12 @@
 		<script src="{{../site.jslib}}codepen-embed.js" async></script>
 		{{/contains}}
 		<!-- endbuild -->
+
+		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+		<script>
+		var carousel = document.querySelector('.main-carousel');
+		var flkty = new Flickity( carousel, {});
+		</script>
 
 		{{#if (isEnv "production")}}
 		<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];

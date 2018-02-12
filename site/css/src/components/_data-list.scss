@@ -6,7 +6,8 @@ $clients: (
 	5: theron,
 	6: tracks,
 	7: walmedia,
-	8: lean-labs
+	8: lean-labs,
+	9: truth-collective
 );
 
 $clients-color: (
@@ -17,7 +18,8 @@ $clients-color: (
 	theron: #161819,
 	tracks: #5D5D7D,
 	walmedia: #1B2D33,
-	lean-labs: #313543
+	lean-labs: #313543,
+	truth-collective: #FFFFFF
 );
 
 @mixin category-style($color, $map) {
@@ -131,6 +133,11 @@ $clients-color: (
 	max-width: 100%;
 	width: 220px;
 	transform: translateZ(0);
+}
+
+.ggv-datalist__item.truth-collective img {
+	max-width: 100%;
+	width: 300px;
 }
 
 .ggv-summary {

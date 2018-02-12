@@ -1,0 +1,103 @@
+---
+basename: casestudy
+layout: default
+title: truth-collective
+logo: logo-truthcollective.png
+description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing a wireframe and prototyping process with a custom quiz module.
+categories: client
+tags: wireframing, prototyping, ux, atomic design
+project: Prototyping & UX
+url: https://www.truthcollective.com
+summary: You have to make them feel something if you want them to do something.
+---
+
+<img src="{{site.imgdir}}logo-truthcollective.png" alt="">
+<h2 class="ggv-headline _reverse"><span>Assessment</span><span>Quiz</span></h2>
+
+<ul class="ggv-list">
+	<li><b>Company:</b> <a href="{{url}}">Truth Collective</a></li>
+	<li><b>Category:</b> {{capitalize categories}}</li>
+	<li><b>Project:</b> Deliver a personalized, relationship-based planning experience for students and doctors of optometry through a custom web quiz tool.</li>
+	<li><b>Duties:</b> Wireframing & Prototyping</li>
+	<li><b>Tooling:</b> <a href="https://www.sketchapp.com">Sketch</a>, <a href="https://atomic.io">Atomic</a></li>
+</ul>
+
+<h3>About Truth Collective</h3>
+<p>With an agency model built for ambitious clients, strategies that defy inertia, ideas that rattle entire categories, and—above all; a belief in the unrivaled power of human feeling. We're Truth Collective. We're addicted to emotion.</p>
+
+<h3>Project Goals</h3>
+
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/truth-collective/approach-intro.png" alt="">
+	<figcaption><small>Truth Collective Project Brief</small></figcaption>
+</figure>
+
+<p>The intentions was to deliver a self-guided, personalized, relationship-based planning experience through a web quiz that adapts to various screen sizes in order to inspire students and fulfill career aspirations. This tool also serves as an entry point for planning via personalized content, and stir curiosity for a potential modality.</p>
+
+<h3>Indentifying Building Blocks</h3>
+
+<p>Through the use of this supplied project brief containing research for success, content, and general functionality, we started by identifying user flow based using required content provided. This content expressed each portion of the quiz that included questions, inputs and results displayed based on answers provided by the user.</p>
+
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/truth-collective/lego-blocks.png" alt="">
+	<figcaption><small>deciding what parts make up the whole</small></figcaption>
+</figure>
+
+<p>Using <a href="http://atomicdesign.bradfrost.com" target="_blank">Atomic Design</a> philosophies, we started creating white board sketches to visually identify building blocks of the interface. This process helped to assist in identifying and isolating the required content, components and patterns thereby minimizing the interface to only required elements. Building the foundation using Atomic Design philosophies allowed for a lego-like approach to ensure modularity for developers and resulting in an easily maintainable, portable and modular system.</p>
+
+<p>This time spent preparing and planning helps developers build in isolation allowing for portability and modularity within the codebase.</p>
+
+<h3>Wireframing & Prototyping</h3>
+
+<p>Creating the wireframe outlining user flow was prepared in Sketch without the inclusion of visual aesthetics. With each series of questions examined helped to draft and iterate very quickly based on rounds of feedback.</p>
+
+<figure class="figure-site tools">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 30">
+		<g fill="none" fill-rule="evenodd">
+			<g fill="currentColor">
+				<path d="M50.822 18.655v-.776l-3.325.53c-1.132.176-1.981.704-1.981 1.94 0 .917.601 1.799 2.087 1.799 1.592 0 3.22-.776 3.22-3.493m-5.413-3.247l4.14-.635c.955-.14 1.272-.6 1.272-1.2 0-1.023-.884-1.905-2.582-1.905-1.875 0-2.901 1.27-3.007 2.576l-4.67-.953c.212-2.505 2.547-5.822 7.713-5.822 5.695 0 7.783 3.176 7.783 6.775v8.574c0 1.377.177 2.541.212 2.718h-4.847c-.036-.142-.176-.777-.176-1.976-.921 1.482-2.619 2.47-4.954 2.47-3.856 0-6.085-2.54-6.085-5.329 0-3.105 2.3-4.869 5.2-5.293M65.911 8.003h3.432v4.694H65.91v6.563c0 1.446.779 1.835 1.946 1.835.566 0 1.097-.106 1.416-.177v4.446c-.213.106-1.097.494-2.796.494-3.644 0-5.873-2.152-5.873-5.646v-7.515h-3.113V8.003h.885c1.84 0 2.724-1.235 2.724-2.858V2.887h4.811v5.116zM84.414 16.754c0-2.964-1.91-4.34-3.963-4.34-2.016 0-3.962 1.376-3.962 4.34 0 2.929 1.946 4.376 3.962 4.376 2.053 0 3.963-1.411 3.963-4.376m5.378 0c0 5.434-4.069 9.316-9.34 9.316-5.237 0-9.34-3.882-9.34-9.316 0-5.434 4.103-9.28 9.34-9.28 5.271 0 9.34 3.846 9.34 9.28M92.095 25.672V8.044h5.13v2.022c.885-1.56 3.15-2.553 5.06-2.553 2.511 0 4.316 1.028 5.2 2.766 1.38-1.987 3.078-2.766 5.449-2.766 3.326 0 6.51 1.95 6.51 6.738v11.421h-5.201V15.458c0-1.668-.885-2.98-2.795-2.98s-2.937 1.454-2.937 3.014v10.18h-5.306V15.458c0-1.668-.885-2.98-2.83-2.98-1.876 0-2.902 1.454-2.902 3.05v10.144h-5.378zM122.391 8.044h5.378v17.628h-5.378V8.044zm2.654-7.982c1.769 0 3.184 1.418 3.184 3.156a3.167 3.167 0 0 1-3.184 3.157c-1.698 0-3.113-1.419-3.113-3.157s1.415-3.156 3.113-3.156zM135.381 16.876c0 2.802 1.875 4.363 4.104 4.363 2.087 0 3.255-1.313 3.644-2.625l4.74 1.454c-.778 3.086-3.679 6.137-8.384 6.137-5.236 0-9.446-3.867-9.446-9.329 0-5.497 4.103-9.364 9.269-9.364 4.847 0 7.677 2.98 8.456 6.137l-4.812 1.454c-.39-1.348-1.45-2.625-3.538-2.625-2.229 0-4.033 1.56-4.033 4.398"/>
+			</g>
+			<path d="M15.867 17.333c-1.68 2.895-16.69 5.683-15.09 2.924L10.84 2.915c1.601-2.76 6.7 11.536 5.028 14.418z" fill="#2962FF"/><path d="M15.852 17.324c-1.67-2.88 3.432-17.168 5.032-14.41l10.062 17.343c1.601 2.759-13.413-.035-15.094-2.933z" fill="#00D7FF"/><path d="M25.924 28.914H5.8c-3.202 0 6.724-11.542 10.087-11.542 3.345 0 13.238 11.542 10.037 11.542z" fill="#F50057"/><path d="M15.844 17.372l-5.016 8.645c0 .006-.006.006-.006.012-.006.005-.006.011-.012.017a5.796 5.796 0 0 1-5.01 2.868h-.018a7.006 7.006 0 0 1-.632-.034l-.232-.035a4.843 4.843 0 0 1-.684-.15 1.296 1.296 0 0 1-.255-.075 5.404 5.404 0 0 1-1.08-.48c-.034-.022-.069-.04-.104-.063a5.403 5.403 0 0 1-.463-.311c-.064-.046-.122-.093-.18-.139a5.944 5.944 0 0 1-.453-.404c-.063-.063-.127-.133-.191-.202a.829.829 0 0 1-.116-.133 2.443 2.443 0 0 1-.191-.236 3.23 3.23 0 0 1-.21-.283 1.38 1.38 0 0 1-.121-.196 1.045 1.045 0 0 1-.116-.19 2.952 2.952 0 0 1-.174-.33c-.006 0-.006-.005-.006-.011-.052-.11-.104-.22-.145-.33-.04-.091-.075-.19-.11-.282a5.622 5.622 0 0 1-.25-1.01c-.005-.011-.005-.023-.005-.034A1.784 1.784 0 0 1 .04 23.8c-.012-.098-.023-.19-.03-.283v-.006c-.005-.127-.01-.248-.01-.37v-.016a6.905 6.905 0 0 1 .034-.63l.035-.23c.029-.225.08-.456.15-.681a1.28 1.28 0 0 1 .076-.254c.116-.364.278-.727.481-1.074l.064-.104A5.799 5.799 0 0 1 5.8 17.372h10.044z" fill="#2962FF"/><path d="M31.724 23.126v.017c0 .121-.006.242-.012.37v.005c-.006.092-.017.185-.029.283-.006.063-.012.127-.023.185 0 .011 0 .023-.006.034a6.107 6.107 0 0 1-.25 1.01c-.034.092-.069.19-.11.283-.04.11-.092.22-.145.329 0 .006 0 .011-.005.011-.053.116-.11.225-.174.33-.035.069-.07.132-.116.19a1.38 1.38 0 0 1-.122.196 3.23 3.23 0 0 1-.209.283c-.058.08-.122.161-.191.236a.829.829 0 0 1-.116.133 5.944 5.944 0 0 1-.644.606c-.058.046-.116.093-.18.139-.145.11-.301.213-.464.311-.035.023-.07.04-.104.064a5.404 5.404 0 0 1-1.079.479 1.296 1.296 0 0 1-.255.075c-.226.07-.458.115-.684.15l-.232.035c-.099.011-.192.017-.285.023-.116.005-.232.011-.348.011h-.017a5.796 5.796 0 0 1-5.01-2.868c-.007-.006-.007-.012-.012-.017 0-.006-.006-.006-.006-.012l-5.017-8.645h10.045c2.1 0 3.944 1.113 4.959 2.781l.063.104c.203.347.366.71.482 1.074.035.08.058.167.075.254.07.225.122.456.151.68l.035.232c.011.098.017.19.023.282.006.116.012.231.012.347" fill="#F50057"/><path d="M15.862 17.343l-5.023-8.657a5.746 5.746 0 0 1-.023-5.731c.064-.11.134-.225.203-.335.07-.098.134-.196.209-.288a5.618 5.618 0 0 1 1.148-1.143c.093-.075.192-.139.29-.208.099-.063.197-.121.296-.179.122-.069.25-.138.377-.196a3.61 3.61 0 0 1 .342-.15c.232-.098.47-.179.708-.237.238-.063.481-.11.725-.144a5.901 5.901 0 0 1 1.496 0c.244.035.487.08.725.144.243.064.475.139.707.237a5.879 5.879 0 0 1 1.015.525c.099.07.198.133.29.208.099.075.198.15.29.23.227.191.435.399.627.624.08.092.156.19.232.289.075.092.139.19.208.288.064.098.122.196.18.295l.023.04a5.746 5.746 0 0 1-.023 5.73l-5.022 8.658z" fill="#00D7FF"/>
+		</g>
+	</svg>
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 389 182">
+		<g fill="none" fill-rule="evenodd">
+			<path fill="#000" d="M128.188992 103.9117138L128.11634 102.94H120l.044795 1.0929967c.499072 12.1773683 8.708737 20.2430033 23.309119 20.2430033 13.925229 0 23.394-7.2348517 23.394-18.186 0-5.9215478-2.05438-10.112024-5.969081-12.9738378-3.011317-2.2014008-6.61187-3.4422549-12.582423-4.7368179-.398924-.0864967-.814731-.1750321-1.313007-.279883-.295882-.0622618-1.357507-.284493-1.301166-.2726813-10.842929-2.2731672-14.282323-4.2478563-14.282323-10.12878 0-6.0813084 4.973129-9.954 13.314-9.954 8.115024 0 13.243659 4.9562434 13.482492 12.7581278L158.127565 81.52h8.05686l-.02479-1.0742243C165.87899 68.2845154 157.719276 60.1 144.529914 60.1c-12.926708 0-21.462 7.7783391-21.462 17.85 0 5.9048062 2.052204 10.0168746 5.973079 12.7642805 2.986946 2.0929909 6.447158 3.2025603 12.551119 4.4349514.285868.0577169.584126.1172974.939207.1877365.219794.0436015.468031.0926876.933899.1847856 5.775379 1.1426937 8.32366 1.8479845 10.648423 3.1998229 2.885962 1.6781724 4.318273 4.0752886 4.318273 7.7884231 0 6.4468018-5.420404 10.122-14.91 10.122-9.084667 0-14.722512-4.5560439-15.332922-12.7202862zM183.757914 59.05V58h-8.064v65.1h8.064v-12.2829251l8.488419-8.2669815 15.158786 20.1315095.315048.4183971h10.031221l-1.27918-1.6849118-18.512747-24.3846307 17.07315-16.9922339L216.835378 78.244h-10.960571l-.307983.3101754-21.80891 21.9641333V59.05zm75.348 44.394h.986424l.061531-.9845028c.010823-.1731549.026872-.4593763.042911-.8042127.012696-.272962.023167-.5389501.030651-.7904293.008111-.2725209.012483-.5204201.012483-.7388552 0-13.1792967-8.729302-22.89-21.63-22.89-12.87646 0-22.05 10.3367549-22.05 23.394 0 13.4361336 8.75774 23.478 22.134 23.478 10.114182 0 17.927867-6.0011063 20.74312-15.1037568l.420694-1.3602432h-8.381377l-.247986.6988697c-1.767872 4.9821856-6.55424 8.2891303-12.450451 8.2891303-7.708403 0-13.081921-5.2937112-14.049936-13.188h34.377936zm-34.133591-6.972c1.361124-7.0683624 6.559612-11.76 13.637591-11.76 7.295176 0 12.32973 4.537681 13.430952 11.76h-27.068543zm61.727591-11.088h1.05v-7.14h-9.828v-12.18h-8.064v12.18h-8.148v7.14h8.148v25.158c0 8.2529923 4.28062 12.726 12.138 12.726 1.371438 0 2.553699-.0821015 3.546447-.2199831.613427-.0851983 1.037037-.1734503 1.270579-.2383231l.768974-.2136039v-7.4768753l-1.273051.2767502c-.050884.0110617-.153963.032037-.301202.0596444-.249486.0467787-.527381.0937204-.825516.1375637-.7635.1122795-1.520772.1842424-2.217958.1968726-.071714.0012992-.142487.0019545-.212273.0019545-3.442042 0-4.83-1.6167424-4.83-5.67V85.384h8.778zm25.074 38.724c11.16181 0 19.042817-7.0631669 21.022-17.0580396l.248309-1.2539604h-8.133659l-.207409.7802538c-1.695496 6.3782946-6.297447 10.0557462-12.929241 10.0557462-8.276272 0-13.986-6.5286528-13.986-15.918 0-9.4619782 5.699811-16.002 13.986-16.002 6.631794 0 11.233745 3.6774516 12.929241 10.0557462l.207409.7802538h8.133659l-.248309-1.2539604c-1.979183-9.9948727-9.86019-17.0580396-21.022-17.0580396-12.965969 0-22.134 10.4098108-22.134 23.478 0 12.996313 9.180655 23.394 22.134 23.394zm36.12-65.058V58h-8.064v65.1h8.064V96.766c0-7.7035477 4.68896-12.222 11.802-12.222 6.793649 0 10.206 3.9328794 10.206 11.382V123.1h8.064V94.75c0-10.5223584-6.515508-17.514-17.262-17.514-5.528719 0-9.972738 2.0255513-12.81 4.9327318V59.05z" class="sketch-wordmark"></path>
+			<path fill="#FDB300" d="M20.9032258 50.8314732l27-2.8314732 27 2.8314732 20.9032258 27.8348214L47.9032258 134 0 78.6662946l20.9032258-27.8348214z"></path>
+			<path fill="#EA6C00" d="M19.403 78.666295l28.5 55.334L0 78.666295m76.403678 0l-28.5 55.334 47.903-55.334"></path>
+			<path fill="#FDAD00" d="M19.403 78.666295h57l-28.5 55.334"></path>
+			<path fill="#FDD231" d="M47.903 48l-27 2.831-1.5 27.835M47.903452 48l27 2.831 1.5 27.835"></path>
+			<path fill="#FDAD00" d="M95.806678 78.666l-20.903-27.835 1.5 27.835M0 78.666l20.903-27.835-1.5 27.835"></path>
+			<path fill="#FEEEB7" d="M47.903 48l-28.5 30.666h57"></path>
+		</g>
+	</svg>
+</figure>
+
+<p>Wireframes were kept to their most simplistic form in order to avoid discussions revolving around aesthetic aspects such as color as not to hinder the core goals of creating a fluid and sensible experience for the user. Deciding what input methods made the most sense for ease of use and adaptability across a variety of screen dimensions was also extremely crucial.</p>
+
+<figure class="figure-site">
+	<div class="main-carousel">
+		<div class="carousel-cell">
+			<img src="{{site.imgdir}}clients/truth-collective/view-results.png" alt="">
+		</div>
+
+		<div class="carousel-cell">
+			<img src="{{site.imgdir}}clients/truth-collective/test.png" alt="">
+		</div>
+	</div>
+	<figcaption><small>Results screen. Large view</small></figcaption>
+</figure>
+
+<p>A prototype that could show basic interactions was created with Atomic to help educate visually how a user traverses and interacts through the flow of the interface and quiz experience. Discussions such as how a user returns to any querstion was also examined and helped to make a more sensible process towards the end result.</p>
+
+<h3>Final Product</h3>
+
+<p>The final product was an interactive prototype containing all the research and discussions that helped in forming the final result.</p>
+
+<figure class="figure-site">
+	<img src="{{site.imgdir}}clients/truth-collective/view-results.png" alt="">
+	<figcaption><small>Results</small></figcaption>
+</figure>
+
+<p>Final deliverables were given in the form of a Sketch file containing easy to arrange and well named layers for designers to use as a reference towards the visual aesthetics done in house.</p>
