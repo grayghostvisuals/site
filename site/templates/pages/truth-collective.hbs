@@ -50,40 +50,12 @@ summary: You have to make them feel something if you want them to do something.
 
 <p>Using <a href="http://atomicdesign.bradfrost.com" target="_blank">Atomic Design</a> philosophies, we began with white board sketches to visually identify neccesities & building blocks of the interface. This process helped to catalog patterns in isolation thereby minimizing the interface to only the essential pieces. Creating the foundation in this fashion also helps developers build for portability, maintainability and modularity thus impacting the capability to iterate efficiently within a succinct code base.</p>
 
-<p>It was equally important to understand not only how each portion of the interface is presented on large screens as well as the ability to adapt within smaller contexts. By combining both thought processes the interface could easily transfer between each with ease therby providing the user with the best experience and control.</p>
+<p>It was equally important to understand not only how each portion of the interface is presented on large screens, but the ability to adapt within smaller contexts as well. By combining both thought processes the interface could easily transfer between each with ease therby providing the user with the best experience and control.</p>
 
 {{! ---- CREATING---- }}
 <h3>Wireframing & Prototyping</h3>
 
-<!-- <figure class="figure-site tools">
-	<svg viewBox="0 0 286 132" version="1.1" xmlns="http://www.w3.org/2000/svg">
-		<title></title>
-		<desc></desc>
-		<defs></defs>
-		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-			<g fill-rule="nonzero">
-				<g id="sketch" transform="translate(2.000000, 2.000000)">
-					<polygon id="Shape" fill="#FDB300" points="31.3548387 4.2472098 71.8548387 0 112.354839 4.2472098 143.709677 45.9994419 71.8548387 129 0 45.9994419"></polygon>
-					<path d="M29.1045,45.9994425 L71.8545,129.000442 L0,45.9994425 M114.605517,45.9994425 L71.855517,129.000442 L143.710017,45.9994425" id="Shape" fill="#EA6C00"></path>
-					<polyline id="Shape" fill="#FDAD00" points="29.1045 45.9994425 114.6045 45.9994425 71.8545 129.000442"></polyline>
-					<path d="M71.8545,0 L31.3545,4.2465 L29.1045,45.999 M71.855178,0 L112.355178,4.2465 L114.605178,45.999" id="Shape" fill="#FDD231"></path>
-					<path d="M143.710017,45.999 L112.355517,4.2465 L114.605517,45.999 M0,45.999 L31.3545,4.2465 L29.1045,45.999" id="Shape" fill="#FDAD00"></path>
-					<polyline id="Shape" fill="#FEEEB7" points="71.8545 0 29.1045 45.999 114.6045 45.999"></polyline>
-				</g>
-				<g id="atomic" transform="translate(146.000000, 3.000000)">
-					<path d="M68.9222813,74.7112069 C61.6247812,87.1896552 -3.57490625,99.2068966 3.37509375,87.3146552 L47.08625,12.5646552 C54.0405937,0.668103448 76.189375,62.2887931 68.926625,74.7112069 L68.9222813,74.7112069 Z" id="Shape" fill="#2962FF"></path>
-					<path d="M68.857125,74.6724138 C61.6030625,62.2586207 83.764875,0.672413793 90.714875,12.5603448 L134.421687,87.3146552 C141.376031,99.2068966 76.1589687,87.1637931 68.857125,74.6724138 Z" id="Shape" fill="#00D7FF"></path>
-					<path d="M112.607375,124.62931 L25.19375,124.62931 C11.2850625,124.62931 54.401125,74.8793103 69.0091563,74.8793103 C83.539,74.8793103 126.511719,124.62931 112.607375,124.62931 Z" id="Shape" fill="#F50057"></path>
-					<path d="M68.822375,74.8792812 L47.034125,112.142241 C47.034125,112.168103 47.0080625,112.168103 47.0080625,112.193966 C46.982,112.215517 46.982,112.241379 46.9559375,112.267241 C42.433021,119.934554 34.1469085,124.641503 25.19375,124.62931 L25.1155625,124.62931 C24.1987216,124.621522 23.2827038,124.572621 22.3703125,124.482759 L21.3625625,124.331897 C20.3577627,124.187804 19.3647928,123.971722 18.3914375,123.685345 C18.0120292,123.615541 17.6408589,123.507213 17.2837813,123.362069 C15.6485067,122.84468 14.0753511,122.150877 12.5925313,121.293103 C12.4448438,121.198276 12.2928125,121.12069 12.1407813,121.021552 C11.447585,120.60937 10.7763054,120.161934 10.129625,119.681034 C9.851625,119.482759 9.5996875,119.280172 9.34775,119.081897 C8.66238536,118.535069 8.00562304,117.953852 7.38003125,117.340517 C7.106375,117.068966 6.828375,116.767241 6.550375,116.469828 C6.36233904,116.297071 6.19342381,116.10489 6.0465,115.896552 C5.74896175,115.574868 5.47187473,115.235132 5.21684375,114.87931 C4.89063798,114.489476 4.58612238,114.082261 4.30465625,113.659483 C4.10603871,113.3929 3.93022853,113.110307 3.7790625,112.814655 C3.58219756,112.560248 3.41328104,112.285702 3.2751875,111.99569 C2.99327969,111.537839 2.74083822,111.062752 2.519375,110.573276 C2.4933125,110.573276 2.4933125,110.551724 2.4933125,110.525862 C2.2674375,110.051724 2.0415625,109.577586 1.86346875,109.103448 C1.68971875,108.711207 1.5376875,108.284483 1.38565625,107.887931 C0.888839357,106.473212 0.525303704,105.015822 0.29971875,103.534483 C0.278,103.487069 0.278,103.435345 0.278,103.387931 C0.229108582,103.122688 0.194310512,102.855077 0.17375,102.586207 C0.121625,102.163793 0.07384375,101.767241 0.0434375,101.366379 L0.0434375,101.340517 C0.02171875,100.793103 0,100.271552 0,99.7456897 L0,99.6767241 C0.0075079402,98.7697916 0.0567885352,97.8636736 0.1476875,96.9612069 L0.29971875,95.9698276 C0.4256875,95 0.64721875,94.0043103 0.95128125,93.0344828 C1.02283539,92.6591848 1.13347038,92.2922745 1.28140625,91.9396552 C1.78528125,90.3706897 2.48896875,88.8060345 3.37075,87.3103448 L3.64875,86.862069 C8.22887089,79.4084053 16.3960854,74.8660168 25.19375,74.8793103 L68.822375,74.8792812 Z" id="Shape" fill="#2962FF"></path>
-					<path d="M137.801125,99.6810345 L137.801125,99.7543103 C137.801125,100.275862 137.775063,100.797414 137.749,101.349138 L137.749,101.37069 C137.722938,101.767241 137.675156,102.168103 137.623031,102.590517 C137.596969,102.862069 137.570906,103.137931 137.523125,103.387931 C137.523125,103.435345 137.523125,103.487069 137.497063,103.534483 C137.260547,105.013645 136.89725,106.470079 136.411125,107.887931 C136.263438,108.284483 136.111406,108.706897 135.933312,109.107759 C135.759563,109.581897 135.533688,110.056034 135.303469,110.525862 C135.303469,110.551724 135.303469,110.573276 135.28175,110.573276 C135.051531,111.073276 134.803938,111.543103 134.525937,111.99569 C134.373906,112.293103 134.221875,112.564655 134.022063,112.814655 C133.869507,113.110458 133.692241,113.393056 133.492125,113.659483 C133.212067,114.082156 132.909003,114.489369 132.584281,114.87931 C132.332344,115.224138 132.054344,115.573276 131.754625,115.896552 C131.607701,116.10489 131.438786,116.297071 131.25075,116.469828 C130.384944,117.408233 129.449899,118.281338 128.453375,119.081897 C128.201438,119.280172 127.9495,119.482759 127.6715,119.681034 C127.041656,120.155172 126.364031,120.599138 125.656,121.021552 C125.503969,121.12069 125.351938,121.193966 125.20425,121.297414 C123.722619,122.153411 122.150941,122.84576 120.517344,123.362069 C120.160266,123.507213 119.789096,123.615541 119.409688,123.685345 C118.428,123.987069 117.42025,124.181034 116.438563,124.331897 L115.430813,124.482759 C115.000781,124.530172 114.596813,124.556034 114.192844,124.581897 C113.688969,124.603448 113.185094,124.62931 112.681219,124.62931 L112.607375,124.62931 C103.654217,124.641503 95.368104,119.934554 90.8451875,112.267241 C90.8147813,112.241379 90.8147813,112.215517 90.7930625,112.193966 C90.7930625,112.168103 90.767,112.168103 90.767,112.142241 L68.9744063,74.8793103 L112.607375,74.8793103 C121.72925,74.8793103 129.739125,79.6767241 134.148031,86.8663793 L134.421688,87.3146552 C135.303469,88.8103448 136.0115,90.375 136.515375,91.9439655 C136.667406,92.2887931 136.767313,92.6637931 136.841156,93.0387931 C137.145219,94.0086207 137.371094,95.0043103 137.497063,95.9698276 L137.649094,96.9698276 C137.696875,97.3922414 137.722938,97.7887931 137.749,98.1853448 C137.775063,98.6853448 137.801125,99.1810345 137.801125,99.6810345" id="Shape" fill="#F50057"></path>
-					<path d="M68.9005625,74.7543103 L47.0819063,37.4396552 C42.6174452,29.8107589 42.5793899,20.4012774 46.982,12.737069 C47.26,12.262931 47.5640625,11.7672414 47.8637813,11.2931034 C48.1678438,10.8706897 48.4458438,10.4482759 48.771625,10.0517241 C50.1852408,8.17904715 51.8649075,6.51955711 53.75825,5.125 C54.1622187,4.80172414 54.59225,4.52586207 55.0179375,4.22844828 C55.4479687,3.95689655 55.8736562,3.70689655 56.3036875,3.45689655 C56.833625,3.15948276 57.389625,2.86206897 57.9412812,2.61206897 C58.4248957,2.37126284 58.9207465,2.15545691 59.4268437,1.96551724 C60.4345937,1.54310345 61.4684062,1.19396552 62.5022187,0.943965517 C63.5360312,0.672413793 64.5915625,0.469827586 65.6514375,0.323275862 C67.8087493,0.0497153143 69.9923757,0.0497153143 72.1496875,0.323275862 C73.2095625,0.474137931 74.2650937,0.668103448 75.2989062,0.943965517 C76.3544375,1.21982759 77.3621875,1.54310345 78.3699375,1.96551724 C79.9101395,2.57596896 81.3867486,3.33385866 82.7788437,4.22844828 C83.208875,4.53017241 83.6389062,4.80172414 84.0385312,5.125 C84.4685625,5.44827586 84.8985937,5.77155172 85.2982187,6.11637931 C86.28425,6.93965517 87.18775,7.8362069 88.02175,8.80603448 C88.36925,9.20258621 88.699375,9.625 89.0295,10.0517241 C89.3552812,10.4482759 89.6332812,10.8706897 89.933,11.2931034 C90.211,11.7155172 90.4629375,12.137931 90.714875,12.5646552 L90.8147812,12.737069 C95.2157245,20.4001761 95.1776711,29.8075428 90.714875,37.4353448 L68.9005625,74.7543103 Z" id="Shape" fill="#00D7FF"></path>
-				</g>
-			</g>
-		</g>
-	</svg>
-</figure> -->
-
-<p>Creating wireframes to outline user flow was prepared in Sketch without the inclusion of visual aesthetics; some would also call this the "gray box technique." Each series of questions were examined carefully to assist in indentifying the best way for displaying information, and providing efficiency in regards to feedback and iterations. The ability to <a href="https://www.smashingmagazine.com/2017/04/symbols-sketch">create symbols in Sketch</a> was certainly an ally throughout the process.</p>
+<p>Creating wireframes to outline user flow was prepared in Sketch without the inclusion of visual aesthetics; some would also call this the "gray box technique." Each series of questions were examined carefully to assist in indentifying the best way for displaying information. The ability to <a href="https://www.smashingmagazine.com/2017/04/symbols-sketch">create symbols in Sketch</a> was certainly an ally throughout the process in order to provide efficiency in regards to iterations and feedback.</p>
 
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/truth-collective/sketch-wireframe.png" alt="">
@@ -102,6 +74,8 @@ summary: You have to make them feel something if you want them to do something.
 {{! ---- Challenges ---- }}
 <h3>Challenges</h3>
 
+<p>While not all portions of this project presented an array of challenges, there were certainly a few that had to be addressed.</p>
+
 <figure class="figure-site" style="width: 100%;margin: auto;">
 	<div class="flex-inline">
 		<img src="{{site.imgdir}}clients/truth-collective/multiple-choice.png" alt="">
@@ -110,9 +84,7 @@ summary: You have to make them feel something if you want them to do something.
 	<figcaption><small>Multiple Choice vs. Select Menu</small></figcaption>
 </figure>
 
-<p>While not all portions of this project presented many challneges there were a couple that had to be addressed. The screenshots displayed above show a multiple choice selection for the quiz. While having multiple choice is completely acceptable, it also presents a problem for smaller screens and requires more cognitive overhead for the user to scroll and search for answers where real-estate is at a premium. In that vein we opted for a select emnu making it easier on the user and keeping them isolated within the space they are present in.</p>
-
-<p>This decision also made it simple for developers to cater to and not requiring any fancy shuffling or maneuvering to switch from a select on mobile to mc on larger screens. With this approach its a one size fits all solution.</p>
+<p>The screenshots displayed above show a multiple choice selection for the quiz. While having multiple choice is completely acceptable, it also presents a problem for smaller screens, and requires more cognitive overhead for the user to scroll though results where real-estate is at a premium. Ultimately, we opted for a select menu making it easier on the user, and keeping them isolated within the space they're present in. This decision supplied simplicity for developers coding by not requiring the switch from a select menu to multiple choice on larger screens; its a one size fits all solution.</p>
 
 <figure class="figure-site" style="width: 100%;margin: auto;">
 	<div class="flex-inline">
@@ -122,9 +94,9 @@ summary: You have to make them feel something if you want them to do something.
 	<figcaption><small>Results Screens and Variations</small></figcaption>
 </figure>
 
-<p>Variations of the results screen required critical thinking and consideration regarding different layouts and scenarios. It was imperative to look at diffrent approaches of displaying information that remained beneficial for readability, but also made sense from an information hierarchy perspective. For the results with information stacked we decided smaller contexts would have the ability to swipe, or click to the next result saving screen real estate, and avoiding the user from scrolling.</p>
+<p>Variations of each results screen required critical thinking and consideration regarding different layouts and contexts. It was imperative to look at diffrent approaches of displaying information that still remained beneficial for readability, but also made sense from an information hierarchy perspective. For the results with information stacked we decided smaller contexts would have the ability to swipe, or click to the next result saving screen real estate, and avoiding the user from scrolling.</p>
 
-<p>The column approach allowed for easy scanning of the data from left to right, but in smaller contexts the information would be displayed as a single column. In this case we decided to hyper link to the CTAs just under the first result allowing users to click this hyper link that automatically scrolls the user to the CTAs efficiently and intuitively.</p>
+<p>The multi-column approach allowed for easy scanning of the data from left to right, but in smaller contexts the information would be displayed as a single column. In this case we decided to hyper link to the CTAs just under the first result giving users the option to  automatically scroll to CTAs efficiently and intuitively. This also avoided CTAs from becoming lost and forgotten by keeping the user focused.</p>
 
 {{! ---- RESULTS ---- }}
 <h3>Final Product</h3>
@@ -141,4 +113,4 @@ summary: You have to make them feel something if you want them to do something.
 	<figcaption><small>Prototype Large: <a href="https://app.atomic.io/d/k8PXZP7szk7y">Live Demo</a></small> | <small>Prototype Small: <a href="https://app.atomic.io/d/BFurxPT8G56q">Live Demo</a></small></figcaption>
 </figure>
 
-<p>The deliverable was handed over as an interactive prototype containing all the research and discussions that helped in forming the final result. A completed Sketch file was also presented containing easy to arrange, and well named layers, and symbols for designers to reference regarding the visual aesthetics. A smaller preview of <a href="https://app.atomic.io/d/R0VPGcnnSsB5">Motion</a> was used as an example along side the prototypes, however deadlines hindered further investigations.</p>
+<p>The deliverable were handed over as an interactive prototype along with a completed Sketch file containing easy to arrange, well named layers, and symbols for designers to reference. A smaller preview of <a href="https://app.atomic.io/d/R0VPGcnnSsB5">Motion</a> was used as an example along side the prototypes, however deadlines hindered further investigations.</p>
