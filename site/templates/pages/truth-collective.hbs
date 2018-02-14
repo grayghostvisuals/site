@@ -11,9 +11,13 @@ url: https://www.truthcollective.com
 summary: You have to make them feel something if you want them to do something.
 ---
 
+{{! ---- LOGO ---- }}
 <img src="{{site.imgdir}}logo-truthcollective.png" alt="">
+
+{{! ---- TAGLINE ---- }}
 <h2 class="ggv-headline _reverse"><span>Assessment</span><span>Quiz</span></h2>
 
+{{! ---- META ---- }}
 <ul class="ggv-list">
 	<li><b>Company:</b> <a href="{{url}}">Truth Collective</a></li>
 	<li><b>Category:</b> {{capitalize categories}}</li>
@@ -22,82 +26,119 @@ summary: You have to make them feel something if you want them to do something.
 	<li><b>Tooling:</b> <a href="https://www.sketchapp.com">Sketch</a>, <a href="https://atomic.io">Atomic</a></li>
 </ul>
 
+{{! ---- ABOUT ---- }}
 <h3>About Truth Collective</h3>
-<p>With an agency model built for ambitious clients, strategies that defy inertia, ideas that rattle entire categories, and—above all; a belief in the unrivaled power of human feeling. We're Truth Collective. We're addicted to emotion.</p>
+<p>With an agency model built for ambitious clients, strategies that defy inertia, ideas that rattle entire categories, and above all; a belief in the unrivaled power of human feeling. We're Truth Collective. We're addicted to emotion.</p>
 
+{{! ---- GOALS ---- }}
 <h3>Project Goals</h3>
-
 <figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/approach-intro.png" alt="">
+	<img src="{{site.imgdir}}clients/truth-collective/project-brief.png" alt="">
 	<figcaption><small>Truth Collective Project Brief</small></figcaption>
 </figure>
 
-<p>The intentions was to deliver a self-guided, personalized, relationship-based planning experience through a web quiz that adapts to various screen sizes in order to inspire students and fulfill career aspirations. This tool also serves as an entry point for planning via personalized content, and stir curiosity for a potential modality.</p>
+<p>The intention was to deliver a self-guided, personalized, relationship-based planning experience through a web assessment quiz that adapts to various screen sizes in order to inspire and fulfill career aspirations. This tool was also expected to serve as an entry point for planning via personalized content, and stir curiosity for a potential modality. The end result would be integrated into a "well" section of the clients home page while keeping the user stationary thus resisting the need for a page refresh, or new URL produced.</p>
 
+{{! ---- PROCESS ---- }}
 <h3>Indentifying Building Blocks</h3>
-
-<p>Through the use of this supplied project brief containing research for success, content, and general functionality, we started by identifying user flow based using required content provided. This content expressed each portion of the quiz that included questions, inputs and results displayed based on answers provided by the user.</p>
+<p>Through the use of a supplied project brief containing criteria for success, content, and general functionality, we started by identifying user flow with content as the guide. This content document expressed each portion of the quiz that included questions, suggested input methods, and results of user entered data.</p>
 
 <figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/lego-blocks.png" alt="">
-	<figcaption><small>deciding what parts make up the whole</small></figcaption>
+	<img src="{{site.imgdir}}clients/truth-collective/legos.jpg" alt="">
+	<figcaption><small>Deciding what parts make up the whole.</small></figcaption>
 </figure>
 
-<p>Using <a href="http://atomicdesign.bradfrost.com" target="_blank">Atomic Design</a> philosophies, we started creating white board sketches to visually identify building blocks of the interface. This process helped to assist in identifying and isolating the required content, components and patterns thereby minimizing the interface to only required elements. Building the foundation using Atomic Design philosophies allowed for a lego-like approach to ensure modularity for developers and resulting in an easily maintainable, portable and modular system.</p>
+<p>Using <a href="http://atomicdesign.bradfrost.com" target="_blank">Atomic Design</a> philosophies, we began with white board sketches to visually identify neccesities & building blocks of the interface. This process helped to catalog patterns in isolation thereby minimizing the interface to only the essential pieces. Creating the foundation in this fashion also helps developers build for portability, maintainability and modularity thus impacting the capability to iterate efficiently within a succinct code base.</p>
 
-<p>This time spent preparing and planning helps developers build in isolation allowing for portability and modularity within the codebase.</p>
+<p>It was equally important to understand not only how each portion of the interface is presented on large screens as well as the ability to adapt within smaller contexts. By combining both thought processes the interface could easily transfer between each with ease therby providing the user with the best experience and control.</p>
 
+{{! ---- CREATING---- }}
 <h3>Wireframing & Prototyping</h3>
 
-<p>Creating the wireframe outlining user flow was prepared in Sketch without the inclusion of visual aesthetics. With each series of questions examined helped to draft and iterate very quickly based on rounds of feedback.</p>
-
-<figure class="figure-site tools">
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 30">
-		<g fill="none" fill-rule="evenodd">
-			<g fill="currentColor">
-				<path d="M50.822 18.655v-.776l-3.325.53c-1.132.176-1.981.704-1.981 1.94 0 .917.601 1.799 2.087 1.799 1.592 0 3.22-.776 3.22-3.493m-5.413-3.247l4.14-.635c.955-.14 1.272-.6 1.272-1.2 0-1.023-.884-1.905-2.582-1.905-1.875 0-2.901 1.27-3.007 2.576l-4.67-.953c.212-2.505 2.547-5.822 7.713-5.822 5.695 0 7.783 3.176 7.783 6.775v8.574c0 1.377.177 2.541.212 2.718h-4.847c-.036-.142-.176-.777-.176-1.976-.921 1.482-2.619 2.47-4.954 2.47-3.856 0-6.085-2.54-6.085-5.329 0-3.105 2.3-4.869 5.2-5.293M65.911 8.003h3.432v4.694H65.91v6.563c0 1.446.779 1.835 1.946 1.835.566 0 1.097-.106 1.416-.177v4.446c-.213.106-1.097.494-2.796.494-3.644 0-5.873-2.152-5.873-5.646v-7.515h-3.113V8.003h.885c1.84 0 2.724-1.235 2.724-2.858V2.887h4.811v5.116zM84.414 16.754c0-2.964-1.91-4.34-3.963-4.34-2.016 0-3.962 1.376-3.962 4.34 0 2.929 1.946 4.376 3.962 4.376 2.053 0 3.963-1.411 3.963-4.376m5.378 0c0 5.434-4.069 9.316-9.34 9.316-5.237 0-9.34-3.882-9.34-9.316 0-5.434 4.103-9.28 9.34-9.28 5.271 0 9.34 3.846 9.34 9.28M92.095 25.672V8.044h5.13v2.022c.885-1.56 3.15-2.553 5.06-2.553 2.511 0 4.316 1.028 5.2 2.766 1.38-1.987 3.078-2.766 5.449-2.766 3.326 0 6.51 1.95 6.51 6.738v11.421h-5.201V15.458c0-1.668-.885-2.98-2.795-2.98s-2.937 1.454-2.937 3.014v10.18h-5.306V15.458c0-1.668-.885-2.98-2.83-2.98-1.876 0-2.902 1.454-2.902 3.05v10.144h-5.378zM122.391 8.044h5.378v17.628h-5.378V8.044zm2.654-7.982c1.769 0 3.184 1.418 3.184 3.156a3.167 3.167 0 0 1-3.184 3.157c-1.698 0-3.113-1.419-3.113-3.157s1.415-3.156 3.113-3.156zM135.381 16.876c0 2.802 1.875 4.363 4.104 4.363 2.087 0 3.255-1.313 3.644-2.625l4.74 1.454c-.778 3.086-3.679 6.137-8.384 6.137-5.236 0-9.446-3.867-9.446-9.329 0-5.497 4.103-9.364 9.269-9.364 4.847 0 7.677 2.98 8.456 6.137l-4.812 1.454c-.39-1.348-1.45-2.625-3.538-2.625-2.229 0-4.033 1.56-4.033 4.398"/>
+<!-- <figure class="figure-site tools">
+	<svg viewBox="0 0 286 132" version="1.1" xmlns="http://www.w3.org/2000/svg">
+		<title></title>
+		<desc></desc>
+		<defs></defs>
+		<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+			<g fill-rule="nonzero">
+				<g id="sketch" transform="translate(2.000000, 2.000000)">
+					<polygon id="Shape" fill="#FDB300" points="31.3548387 4.2472098 71.8548387 0 112.354839 4.2472098 143.709677 45.9994419 71.8548387 129 0 45.9994419"></polygon>
+					<path d="M29.1045,45.9994425 L71.8545,129.000442 L0,45.9994425 M114.605517,45.9994425 L71.855517,129.000442 L143.710017,45.9994425" id="Shape" fill="#EA6C00"></path>
+					<polyline id="Shape" fill="#FDAD00" points="29.1045 45.9994425 114.6045 45.9994425 71.8545 129.000442"></polyline>
+					<path d="M71.8545,0 L31.3545,4.2465 L29.1045,45.999 M71.855178,0 L112.355178,4.2465 L114.605178,45.999" id="Shape" fill="#FDD231"></path>
+					<path d="M143.710017,45.999 L112.355517,4.2465 L114.605517,45.999 M0,45.999 L31.3545,4.2465 L29.1045,45.999" id="Shape" fill="#FDAD00"></path>
+					<polyline id="Shape" fill="#FEEEB7" points="71.8545 0 29.1045 45.999 114.6045 45.999"></polyline>
+				</g>
+				<g id="atomic" transform="translate(146.000000, 3.000000)">
+					<path d="M68.9222813,74.7112069 C61.6247812,87.1896552 -3.57490625,99.2068966 3.37509375,87.3146552 L47.08625,12.5646552 C54.0405937,0.668103448 76.189375,62.2887931 68.926625,74.7112069 L68.9222813,74.7112069 Z" id="Shape" fill="#2962FF"></path>
+					<path d="M68.857125,74.6724138 C61.6030625,62.2586207 83.764875,0.672413793 90.714875,12.5603448 L134.421687,87.3146552 C141.376031,99.2068966 76.1589687,87.1637931 68.857125,74.6724138 Z" id="Shape" fill="#00D7FF"></path>
+					<path d="M112.607375,124.62931 L25.19375,124.62931 C11.2850625,124.62931 54.401125,74.8793103 69.0091563,74.8793103 C83.539,74.8793103 126.511719,124.62931 112.607375,124.62931 Z" id="Shape" fill="#F50057"></path>
+					<path d="M68.822375,74.8792812 L47.034125,112.142241 C47.034125,112.168103 47.0080625,112.168103 47.0080625,112.193966 C46.982,112.215517 46.982,112.241379 46.9559375,112.267241 C42.433021,119.934554 34.1469085,124.641503 25.19375,124.62931 L25.1155625,124.62931 C24.1987216,124.621522 23.2827038,124.572621 22.3703125,124.482759 L21.3625625,124.331897 C20.3577627,124.187804 19.3647928,123.971722 18.3914375,123.685345 C18.0120292,123.615541 17.6408589,123.507213 17.2837813,123.362069 C15.6485067,122.84468 14.0753511,122.150877 12.5925313,121.293103 C12.4448438,121.198276 12.2928125,121.12069 12.1407813,121.021552 C11.447585,120.60937 10.7763054,120.161934 10.129625,119.681034 C9.851625,119.482759 9.5996875,119.280172 9.34775,119.081897 C8.66238536,118.535069 8.00562304,117.953852 7.38003125,117.340517 C7.106375,117.068966 6.828375,116.767241 6.550375,116.469828 C6.36233904,116.297071 6.19342381,116.10489 6.0465,115.896552 C5.74896175,115.574868 5.47187473,115.235132 5.21684375,114.87931 C4.89063798,114.489476 4.58612238,114.082261 4.30465625,113.659483 C4.10603871,113.3929 3.93022853,113.110307 3.7790625,112.814655 C3.58219756,112.560248 3.41328104,112.285702 3.2751875,111.99569 C2.99327969,111.537839 2.74083822,111.062752 2.519375,110.573276 C2.4933125,110.573276 2.4933125,110.551724 2.4933125,110.525862 C2.2674375,110.051724 2.0415625,109.577586 1.86346875,109.103448 C1.68971875,108.711207 1.5376875,108.284483 1.38565625,107.887931 C0.888839357,106.473212 0.525303704,105.015822 0.29971875,103.534483 C0.278,103.487069 0.278,103.435345 0.278,103.387931 C0.229108582,103.122688 0.194310512,102.855077 0.17375,102.586207 C0.121625,102.163793 0.07384375,101.767241 0.0434375,101.366379 L0.0434375,101.340517 C0.02171875,100.793103 0,100.271552 0,99.7456897 L0,99.6767241 C0.0075079402,98.7697916 0.0567885352,97.8636736 0.1476875,96.9612069 L0.29971875,95.9698276 C0.4256875,95 0.64721875,94.0043103 0.95128125,93.0344828 C1.02283539,92.6591848 1.13347038,92.2922745 1.28140625,91.9396552 C1.78528125,90.3706897 2.48896875,88.8060345 3.37075,87.3103448 L3.64875,86.862069 C8.22887089,79.4084053 16.3960854,74.8660168 25.19375,74.8793103 L68.822375,74.8792812 Z" id="Shape" fill="#2962FF"></path>
+					<path d="M137.801125,99.6810345 L137.801125,99.7543103 C137.801125,100.275862 137.775063,100.797414 137.749,101.349138 L137.749,101.37069 C137.722938,101.767241 137.675156,102.168103 137.623031,102.590517 C137.596969,102.862069 137.570906,103.137931 137.523125,103.387931 C137.523125,103.435345 137.523125,103.487069 137.497063,103.534483 C137.260547,105.013645 136.89725,106.470079 136.411125,107.887931 C136.263438,108.284483 136.111406,108.706897 135.933312,109.107759 C135.759563,109.581897 135.533688,110.056034 135.303469,110.525862 C135.303469,110.551724 135.303469,110.573276 135.28175,110.573276 C135.051531,111.073276 134.803938,111.543103 134.525937,111.99569 C134.373906,112.293103 134.221875,112.564655 134.022063,112.814655 C133.869507,113.110458 133.692241,113.393056 133.492125,113.659483 C133.212067,114.082156 132.909003,114.489369 132.584281,114.87931 C132.332344,115.224138 132.054344,115.573276 131.754625,115.896552 C131.607701,116.10489 131.438786,116.297071 131.25075,116.469828 C130.384944,117.408233 129.449899,118.281338 128.453375,119.081897 C128.201438,119.280172 127.9495,119.482759 127.6715,119.681034 C127.041656,120.155172 126.364031,120.599138 125.656,121.021552 C125.503969,121.12069 125.351938,121.193966 125.20425,121.297414 C123.722619,122.153411 122.150941,122.84576 120.517344,123.362069 C120.160266,123.507213 119.789096,123.615541 119.409688,123.685345 C118.428,123.987069 117.42025,124.181034 116.438563,124.331897 L115.430813,124.482759 C115.000781,124.530172 114.596813,124.556034 114.192844,124.581897 C113.688969,124.603448 113.185094,124.62931 112.681219,124.62931 L112.607375,124.62931 C103.654217,124.641503 95.368104,119.934554 90.8451875,112.267241 C90.8147813,112.241379 90.8147813,112.215517 90.7930625,112.193966 C90.7930625,112.168103 90.767,112.168103 90.767,112.142241 L68.9744063,74.8793103 L112.607375,74.8793103 C121.72925,74.8793103 129.739125,79.6767241 134.148031,86.8663793 L134.421688,87.3146552 C135.303469,88.8103448 136.0115,90.375 136.515375,91.9439655 C136.667406,92.2887931 136.767313,92.6637931 136.841156,93.0387931 C137.145219,94.0086207 137.371094,95.0043103 137.497063,95.9698276 L137.649094,96.9698276 C137.696875,97.3922414 137.722938,97.7887931 137.749,98.1853448 C137.775063,98.6853448 137.801125,99.1810345 137.801125,99.6810345" id="Shape" fill="#F50057"></path>
+					<path d="M68.9005625,74.7543103 L47.0819063,37.4396552 C42.6174452,29.8107589 42.5793899,20.4012774 46.982,12.737069 C47.26,12.262931 47.5640625,11.7672414 47.8637813,11.2931034 C48.1678438,10.8706897 48.4458438,10.4482759 48.771625,10.0517241 C50.1852408,8.17904715 51.8649075,6.51955711 53.75825,5.125 C54.1622187,4.80172414 54.59225,4.52586207 55.0179375,4.22844828 C55.4479687,3.95689655 55.8736562,3.70689655 56.3036875,3.45689655 C56.833625,3.15948276 57.389625,2.86206897 57.9412812,2.61206897 C58.4248957,2.37126284 58.9207465,2.15545691 59.4268437,1.96551724 C60.4345937,1.54310345 61.4684062,1.19396552 62.5022187,0.943965517 C63.5360312,0.672413793 64.5915625,0.469827586 65.6514375,0.323275862 C67.8087493,0.0497153143 69.9923757,0.0497153143 72.1496875,0.323275862 C73.2095625,0.474137931 74.2650937,0.668103448 75.2989062,0.943965517 C76.3544375,1.21982759 77.3621875,1.54310345 78.3699375,1.96551724 C79.9101395,2.57596896 81.3867486,3.33385866 82.7788437,4.22844828 C83.208875,4.53017241 83.6389062,4.80172414 84.0385312,5.125 C84.4685625,5.44827586 84.8985937,5.77155172 85.2982187,6.11637931 C86.28425,6.93965517 87.18775,7.8362069 88.02175,8.80603448 C88.36925,9.20258621 88.699375,9.625 89.0295,10.0517241 C89.3552812,10.4482759 89.6332812,10.8706897 89.933,11.2931034 C90.211,11.7155172 90.4629375,12.137931 90.714875,12.5646552 L90.8147812,12.737069 C95.2157245,20.4001761 95.1776711,29.8075428 90.714875,37.4353448 L68.9005625,74.7543103 Z" id="Shape" fill="#00D7FF"></path>
+				</g>
 			</g>
-			<path d="M15.867 17.333c-1.68 2.895-16.69 5.683-15.09 2.924L10.84 2.915c1.601-2.76 6.7 11.536 5.028 14.418z" fill="#2962FF"/><path d="M15.852 17.324c-1.67-2.88 3.432-17.168 5.032-14.41l10.062 17.343c1.601 2.759-13.413-.035-15.094-2.933z" fill="#00D7FF"/><path d="M25.924 28.914H5.8c-3.202 0 6.724-11.542 10.087-11.542 3.345 0 13.238 11.542 10.037 11.542z" fill="#F50057"/><path d="M15.844 17.372l-5.016 8.645c0 .006-.006.006-.006.012-.006.005-.006.011-.012.017a5.796 5.796 0 0 1-5.01 2.868h-.018a7.006 7.006 0 0 1-.632-.034l-.232-.035a4.843 4.843 0 0 1-.684-.15 1.296 1.296 0 0 1-.255-.075 5.404 5.404 0 0 1-1.08-.48c-.034-.022-.069-.04-.104-.063a5.403 5.403 0 0 1-.463-.311c-.064-.046-.122-.093-.18-.139a5.944 5.944 0 0 1-.453-.404c-.063-.063-.127-.133-.191-.202a.829.829 0 0 1-.116-.133 2.443 2.443 0 0 1-.191-.236 3.23 3.23 0 0 1-.21-.283 1.38 1.38 0 0 1-.121-.196 1.045 1.045 0 0 1-.116-.19 2.952 2.952 0 0 1-.174-.33c-.006 0-.006-.005-.006-.011-.052-.11-.104-.22-.145-.33-.04-.091-.075-.19-.11-.282a5.622 5.622 0 0 1-.25-1.01c-.005-.011-.005-.023-.005-.034A1.784 1.784 0 0 1 .04 23.8c-.012-.098-.023-.19-.03-.283v-.006c-.005-.127-.01-.248-.01-.37v-.016a6.905 6.905 0 0 1 .034-.63l.035-.23c.029-.225.08-.456.15-.681a1.28 1.28 0 0 1 .076-.254c.116-.364.278-.727.481-1.074l.064-.104A5.799 5.799 0 0 1 5.8 17.372h10.044z" fill="#2962FF"/><path d="M31.724 23.126v.017c0 .121-.006.242-.012.37v.005c-.006.092-.017.185-.029.283-.006.063-.012.127-.023.185 0 .011 0 .023-.006.034a6.107 6.107 0 0 1-.25 1.01c-.034.092-.069.19-.11.283-.04.11-.092.22-.145.329 0 .006 0 .011-.005.011-.053.116-.11.225-.174.33-.035.069-.07.132-.116.19a1.38 1.38 0 0 1-.122.196 3.23 3.23 0 0 1-.209.283c-.058.08-.122.161-.191.236a.829.829 0 0 1-.116.133 5.944 5.944 0 0 1-.644.606c-.058.046-.116.093-.18.139-.145.11-.301.213-.464.311-.035.023-.07.04-.104.064a5.404 5.404 0 0 1-1.079.479 1.296 1.296 0 0 1-.255.075c-.226.07-.458.115-.684.15l-.232.035c-.099.011-.192.017-.285.023-.116.005-.232.011-.348.011h-.017a5.796 5.796 0 0 1-5.01-2.868c-.007-.006-.007-.012-.012-.017 0-.006-.006-.006-.006-.012l-5.017-8.645h10.045c2.1 0 3.944 1.113 4.959 2.781l.063.104c.203.347.366.71.482 1.074.035.08.058.167.075.254.07.225.122.456.151.68l.035.232c.011.098.017.19.023.282.006.116.012.231.012.347" fill="#F50057"/><path d="M15.862 17.343l-5.023-8.657a5.746 5.746 0 0 1-.023-5.731c.064-.11.134-.225.203-.335.07-.098.134-.196.209-.288a5.618 5.618 0 0 1 1.148-1.143c.093-.075.192-.139.29-.208.099-.063.197-.121.296-.179.122-.069.25-.138.377-.196a3.61 3.61 0 0 1 .342-.15c.232-.098.47-.179.708-.237.238-.063.481-.11.725-.144a5.901 5.901 0 0 1 1.496 0c.244.035.487.08.725.144.243.064.475.139.707.237a5.879 5.879 0 0 1 1.015.525c.099.07.198.133.29.208.099.075.198.15.29.23.227.191.435.399.627.624.08.092.156.19.232.289.075.092.139.19.208.288.064.098.122.196.18.295l.023.04a5.746 5.746 0 0 1-.023 5.73l-5.022 8.658z" fill="#00D7FF"/>
 		</g>
 	</svg>
+</figure> -->
 
-	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 389 182">
-		<g fill="none" fill-rule="evenodd">
-			<path fill="#000" d="M128.188992 103.9117138L128.11634 102.94H120l.044795 1.0929967c.499072 12.1773683 8.708737 20.2430033 23.309119 20.2430033 13.925229 0 23.394-7.2348517 23.394-18.186 0-5.9215478-2.05438-10.112024-5.969081-12.9738378-3.011317-2.2014008-6.61187-3.4422549-12.582423-4.7368179-.398924-.0864967-.814731-.1750321-1.313007-.279883-.295882-.0622618-1.357507-.284493-1.301166-.2726813-10.842929-2.2731672-14.282323-4.2478563-14.282323-10.12878 0-6.0813084 4.973129-9.954 13.314-9.954 8.115024 0 13.243659 4.9562434 13.482492 12.7581278L158.127565 81.52h8.05686l-.02479-1.0742243C165.87899 68.2845154 157.719276 60.1 144.529914 60.1c-12.926708 0-21.462 7.7783391-21.462 17.85 0 5.9048062 2.052204 10.0168746 5.973079 12.7642805 2.986946 2.0929909 6.447158 3.2025603 12.551119 4.4349514.285868.0577169.584126.1172974.939207.1877365.219794.0436015.468031.0926876.933899.1847856 5.775379 1.1426937 8.32366 1.8479845 10.648423 3.1998229 2.885962 1.6781724 4.318273 4.0752886 4.318273 7.7884231 0 6.4468018-5.420404 10.122-14.91 10.122-9.084667 0-14.722512-4.5560439-15.332922-12.7202862zM183.757914 59.05V58h-8.064v65.1h8.064v-12.2829251l8.488419-8.2669815 15.158786 20.1315095.315048.4183971h10.031221l-1.27918-1.6849118-18.512747-24.3846307 17.07315-16.9922339L216.835378 78.244h-10.960571l-.307983.3101754-21.80891 21.9641333V59.05zm75.348 44.394h.986424l.061531-.9845028c.010823-.1731549.026872-.4593763.042911-.8042127.012696-.272962.023167-.5389501.030651-.7904293.008111-.2725209.012483-.5204201.012483-.7388552 0-13.1792967-8.729302-22.89-21.63-22.89-12.87646 0-22.05 10.3367549-22.05 23.394 0 13.4361336 8.75774 23.478 22.134 23.478 10.114182 0 17.927867-6.0011063 20.74312-15.1037568l.420694-1.3602432h-8.381377l-.247986.6988697c-1.767872 4.9821856-6.55424 8.2891303-12.450451 8.2891303-7.708403 0-13.081921-5.2937112-14.049936-13.188h34.377936zm-34.133591-6.972c1.361124-7.0683624 6.559612-11.76 13.637591-11.76 7.295176 0 12.32973 4.537681 13.430952 11.76h-27.068543zm61.727591-11.088h1.05v-7.14h-9.828v-12.18h-8.064v12.18h-8.148v7.14h8.148v25.158c0 8.2529923 4.28062 12.726 12.138 12.726 1.371438 0 2.553699-.0821015 3.546447-.2199831.613427-.0851983 1.037037-.1734503 1.270579-.2383231l.768974-.2136039v-7.4768753l-1.273051.2767502c-.050884.0110617-.153963.032037-.301202.0596444-.249486.0467787-.527381.0937204-.825516.1375637-.7635.1122795-1.520772.1842424-2.217958.1968726-.071714.0012992-.142487.0019545-.212273.0019545-3.442042 0-4.83-1.6167424-4.83-5.67V85.384h8.778zm25.074 38.724c11.16181 0 19.042817-7.0631669 21.022-17.0580396l.248309-1.2539604h-8.133659l-.207409.7802538c-1.695496 6.3782946-6.297447 10.0557462-12.929241 10.0557462-8.276272 0-13.986-6.5286528-13.986-15.918 0-9.4619782 5.699811-16.002 13.986-16.002 6.631794 0 11.233745 3.6774516 12.929241 10.0557462l.207409.7802538h8.133659l-.248309-1.2539604c-1.979183-9.9948727-9.86019-17.0580396-21.022-17.0580396-12.965969 0-22.134 10.4098108-22.134 23.478 0 12.996313 9.180655 23.394 22.134 23.394zm36.12-65.058V58h-8.064v65.1h8.064V96.766c0-7.7035477 4.68896-12.222 11.802-12.222 6.793649 0 10.206 3.9328794 10.206 11.382V123.1h8.064V94.75c0-10.5223584-6.515508-17.514-17.262-17.514-5.528719 0-9.972738 2.0255513-12.81 4.9327318V59.05z" class="sketch-wordmark"></path>
-			<path fill="#FDB300" d="M20.9032258 50.8314732l27-2.8314732 27 2.8314732 20.9032258 27.8348214L47.9032258 134 0 78.6662946l20.9032258-27.8348214z"></path>
-			<path fill="#EA6C00" d="M19.403 78.666295l28.5 55.334L0 78.666295m76.403678 0l-28.5 55.334 47.903-55.334"></path>
-			<path fill="#FDAD00" d="M19.403 78.666295h57l-28.5 55.334"></path>
-			<path fill="#FDD231" d="M47.903 48l-27 2.831-1.5 27.835M47.903452 48l27 2.831 1.5 27.835"></path>
-			<path fill="#FDAD00" d="M95.806678 78.666l-20.903-27.835 1.5 27.835M0 78.666l20.903-27.835-1.5 27.835"></path>
-			<path fill="#FEEEB7" d="M47.903 48l-28.5 30.666h57"></path>
-		</g>
-	</svg>
-</figure>
-
-<p>Wireframes were kept to their most simplistic form in order to avoid discussions revolving around aesthetic aspects such as color as not to hinder the core goals of creating a fluid and sensible experience for the user. Deciding what input methods made the most sense for ease of use and adaptability across a variety of screen dimensions was also extremely crucial.</p>
+<p>Creating wireframes to outline user flow was prepared in Sketch without the inclusion of visual aesthetics; some would also call this the "gray box technique." Each series of questions were examined carefully to assist in indentifying the best way for displaying information, and providing efficiency in regards to feedback and iterations. The ability to <a href="https://www.smashingmagazine.com/2017/04/symbols-sketch">create symbols in Sketch</a> was certainly an ally throughout the process.</p>
 
 <figure class="figure-site">
-	<div class="main-carousel">
-		<div class="carousel-cell">
-			<img src="{{site.imgdir}}clients/truth-collective/view-results.png" alt="">
-		</div>
-
-		<div class="carousel-cell">
-			<img src="{{site.imgdir}}clients/truth-collective/test.png" alt="">
-		</div>
-	</div>
-	<figcaption><small>Results screen. Large view</small></figcaption>
+	<img src="{{site.imgdir}}clients/truth-collective/sketch-wireframe.png" alt="">
+	<figcaption><small>Sketch File of Wireframe Comps </small></figcaption>
 </figure>
 
-<p>A prototype that could show basic interactions was created with Atomic to help educate visually how a user traverses and interacts through the flow of the interface and quiz experience. Discussions such as how a user returns to any querstion was also examined and helped to make a more sensible process towards the end result.</p>
+<p>Maintaining wireframes in their most simplistic form avoided discussions revolving around aesthetics as not to hinder the core goals; creating a fluid, and sensible experience for the user. This method aided the group in determining input methods for each series of questions based on ease of use, and adaptability across a variety of screens alleviating discussion revolving around favorite color, or font face.</p>
 
+<figure class="figure-site">
+	<iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="840" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	<figcaption><small><a href="https://vimeo.com/255285256">Syncing Designs with Sketch</a> from <a href="https://vimeo.com/atomicapp">Atomic</a></small></figcaption>
+</figure>
+
+<p>A prototype depicting interactions & flow was created with <a href="https://atomic.io">Atomic</a> to guide and educate visually how a user traverses, and interacts during the quiz experience. Discussions such as how users return to particular points of quiz, selects answers, and accesses each input method within different screen contexts were examined. This helped to maintain a sensible process towards the final results screen. Placement was also discussed to help honor the flow of users traversing through each point of the experience. Since Atomic works quite well with Sketch it allowed for quick syncing between multiple Sketch artboards, and designs allowing new content to be pushed rapidly with ease.</p>
+
+{{! ---- Challenges ---- }}
+<h3>Challenges</h3>
+
+<figure class="figure-site" style="width: 100%;margin: auto;">
+	<div class="flex-inline">
+		<img src="{{site.imgdir}}clients/truth-collective/multiple-choice.png" alt="">
+		<img src="{{site.imgdir}}clients/truth-collective/dropdown-selected.png" alt="">
+	</div>
+	<figcaption><small>Multiple Choice vs. Select Menu</small></figcaption>
+</figure>
+
+<p>While not all portions of this project presented many challneges there were a couple that had to be addressed. The screenshots displayed above show a multiple choice selection for the quiz. While having multiple choice is completely acceptable, it also presents a problem for smaller screens and requires more cognitive overhead for the user to scroll and search for answers where real-estate is at a premium. In that vein we opted for a select emnu making it easier on the user and keeping them isolated within the space they are present in.</p>
+
+<p>This decision also made it simple for developers to cater to and not requiring any fancy shuffling or maneuvering to switch from a select on mobile to mc on larger screens. With this approach its a one size fits all solution.</p>
+
+<figure class="figure-site" style="width: 100%;margin: auto;">
+	<div class="flex-inline">
+		<img src="{{site.imgdir}}clients/truth-collective/results-stacked.png" alt="">
+		<img src="{{site.imgdir}}clients/truth-collective/results-column.png" alt="">
+	</div>
+	<figcaption><small>Results Screens and Variations</small></figcaption>
+</figure>
+
+<p>Variations of the results screen required critical thinking and consideration regarding different layouts and scenarios. It was imperative to look at diffrent approaches of displaying information that remained beneficial for readability, but also made sense from an information hierarchy perspective. For the results with information stacked we decided smaller contexts would have the ability to swipe, or click to the next result saving screen real estate, and avoiding the user from scrolling.</p>
+
+<p>The column approach allowed for easy scanning of the data from left to right, but in smaller contexts the information would be displayed as a single column. In this case we decided to hyper link to the CTAs just under the first result allowing users to click this hyper link that automatically scrolls the user to the CTAs efficiently and intuitively.</p>
+
+{{! ---- RESULTS ---- }}
 <h3>Final Product</h3>
 
-<p>The final product was an interactive prototype containing all the research and discussions that helped in forming the final result.</p>
-
 <figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/view-results.png" alt="">
-	<figcaption><small>Results</small></figcaption>
+	<div class="flex-inline">
+		<a href="https://app.atomic.io/d/k8PXZP7szk7y">
+			<img src="{{site.imgdir}}clients/truth-collective/prototype-large.png" alt="">
+		</a>
+		<a href="https://app.atomic.io/d/BFurxPT8G56q">
+			<img src="{{site.imgdir}}clients/truth-collective/prototype-small.png" alt="">
+		</a>
+	</div>
+	<figcaption><small>Prototype Large: <a href="https://app.atomic.io/d/k8PXZP7szk7y">Live Demo</a></small> | <small>Prototype Small: <a href="https://app.atomic.io/d/BFurxPT8G56q">Live Demo</a></small></figcaption>
 </figure>
 
-<p>Final deliverables were given in the form of a Sketch file containing easy to arrange and well named layers for designers to use as a reference towards the visual aesthetics done in house.</p>
+<p>The deliverable was handed over as an interactive prototype containing all the research and discussions that helped in forming the final result. A completed Sketch file was also presented containing easy to arrange, and well named layers, and symbols for designers to reference regarding the visual aesthetics. A smaller preview of <a href="https://app.atomic.io/d/R0VPGcnnSsB5">Motion</a> was used as an example along side the prototypes, however deadlines hindered further investigations.</p>

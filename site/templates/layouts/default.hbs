@@ -66,7 +66,9 @@
 
 		<link href="{{site.css}}print.css" rel="stylesheet" media="print">
 
-		<link rel="stylesheet" href="https://npmcdn.com/flickity@2/dist/flickity.css">
+		{{#contains 'truth-collective' this.title}}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.10/flickity.min.css">
+		{{/contains}}
 
 		{{#if (isEnv "production")}}
 		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
@@ -135,11 +137,13 @@
 		{{/contains}}
 		<!-- endbuild -->
 
+		{{#contains 'truth-collective' this.title}}
 		<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 		<script>
-		var carousel = document.querySelector('.main-carousel');
-		var flkty = new Flickity( carousel, {});
+		// var carousel = document.querySelector('.main-carousel');
+		// var flkty = new Flickity( carousel, {});
 		</script>
+		{{/contains}}
 
 		{{#if (isEnv "production")}}
 		<script>var _gaq=[['_setAccount','UA-22249186-1'],['_setDomainName','www.grayghostvisuals.com'],['_trackPageview'],['_trackPageLoadTime']];

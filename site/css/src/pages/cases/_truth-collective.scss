@@ -2,13 +2,30 @@ html.case.truth-collective {
 	background: white;
 
 	.ggv-headline {
-		text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2784313725490196);
-		color: #f5f5f5;
+		// text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2784313725490196);
+		// color: #f5f5f5;
+		text-shadow: -1px 1px 1px #846e25;
+		color: #ffd74e;
 	}
 
 	.figure-site.tools {
+		max-width: 400px;
+		margin: auto;
+	}
+
+	.figure-site img[src*="wireframe"],
+	.figure-site iframe {
+		box-shadow: none !important;
+	}
+
+	.flex-inline {
 		display: flex;
-		svg {flex: 1 0 auto;}
+		justify-content: center;
+		align-items: flex-start;
+	}
+
+	iframe {
+		max-width: 100%;
 	}
 
 	a[href*="contact"] {
