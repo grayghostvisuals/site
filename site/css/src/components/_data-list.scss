@@ -73,6 +73,7 @@ $clients-color: (
 	@include size(100%, 320px);
 	transform-origin: center center;
 	color: white;
+
 	&::after {
 		content: 'read more';
 		padding: 20px 0;
@@ -84,28 +85,28 @@ $clients-color: (
 		z-index: 0;
 		text-align: center;
 	}
-}
 
-.ggv-datalist__item a {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;
-	@include size(50%, 100%);
-	transition: 300ms all ease(in-out-cubic);
-	z-index: 1;
-	color: white;
+	a {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		@include size(50%, 100%);
+		transition: 300ms all ease(in-out-cubic);
+		z-index: 1;
+		color: white;
 
-	&:hover,
-	&:focus {
-		outline: none;
-		img {
-			opacity: 0.1;
-		}
+		&:hover,
+		&:focus {
+			outline: none;
+			img {
+				opacity: 0.1;
+			}
 
-		div {
-			opacity: 1;
-			transform: scale(1);
+			div {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
 	}
 }
@@ -138,6 +139,25 @@ $clients-color: (
 .ggv-datalist__item.truth-collective img {
 	max-width: 100%;
 	width: 300px;
+	transform: translateZ(0);
+}
+
+.ggv-datalist__item.truth-collective {
+	a {
+		color: #1d1b1b;
+		&:hover,
+		&:focus {
+			img {
+				opacity: 0.02;
+			}
+			.ggv-summary > * {
+				color: black;
+			}
+		}
+	}
+	&::after {
+		color: #1d1b1b;
+	}
 }
 
 .ggv-summary {
@@ -150,12 +170,11 @@ $clients-color: (
 	transform-origin: center center;
 	transform: scale(0);
 	opacity: 0;
-}
-
-.ggv-summary > * {
-	margin: 0;
-	text-align: center;
-	color: white;
+	> * {
+		margin: 0;
+		text-align: center;
+		color: white;
+	}
 }
 
 .ggv-datalist--clients .ggv-datalist__item {
