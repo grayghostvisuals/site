@@ -6,11 +6,6 @@ html.case.truth-collective {
 		color: #ffd74e;
 	}
 
-	.figure-site.tools {
-		max-width: 400px;
-		margin: auto;
-	}
-
 	.figure-site img[src*="wireframe"],
 	.figure-site img[src*="results-stacked"],
 	.figure-site img[src*="results-column"],
@@ -18,10 +13,19 @@ html.case.truth-collective {
 		box-shadow: none !important;
 	}
 
-	.flex-inline {
-		display: flex;
-		justify-content: center;
-		align-items: flex-start;
+	.figure-site > {
+		a[href="https://app.atomic.io/d/k8PXZP7szk7y"] {
+			float: left;
+			width: 80%;
+		}
+		a[href="https://app.atomic.io/d/BFurxPT8G56q"] {
+			float: right;
+			width: 20%;
+		}
+	}
+
+	.figure-site > a[href="https://app.atomic.io/d/BFurxPT8G56q"] + figcaption {
+		clear: both;
 	}
 
 	iframe {
