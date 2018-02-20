@@ -11,69 +11,90 @@ summary: Helping small businesses keep up to date with monthly sales and revenue
 logo: logo-tracks.svg
 ---
 
+{{! ---- LOGO ---- }}
 {{> logo-tracks}}
 
+{{! ---- TAGLINE ---- }}
 <h2 class="ggv-headline _reverse"><span>Atomic</span><span>App</span></h2>
 
+{{! ---- META ---- }}
 <ul class="ggv-list">
 	<li><b>Company:</b> Goldhawk Ltd</li>
 	<li><b>Project:</b> Front-end Development</li>
 	<li><b>Project URL:</b> <a href="{{projecturl}}">http://tracks.beta.com</a></li>
 	<li><b>Atomic Guide:</b> <a href="{{projecturl}}/atomic-guide">http://tracks.beta.com/atomic-guide</a></li>
 	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Gulp, Git</li>
-	<li><b>Languages:</b> HTML, PHP, Sass, JavaScript</li>
+	<li><b>Languages:</b> HTML, PHP, CSS, Sass, JavaScript</li>
 	<li><b>Libraries:</b> jQuery, Draggable, Pjax, Bootstrap, Rome</li>
 </ul>
 
+{{! ---- ABOUT ---- }}
 <h3>About Tracks</h3>
 <p>Learning sales tracking has never been easier using Tracks and it’s amazing drag and drop interface. Tracks is focused on helping small businesses keep up to date with monthly sales and revenue that integrates with both Highrise CRM and Google Apps.</p>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-home.png" alt="">
 	<figcaption><small>Tracks Home Page Design</small></figcaption>
 </figure>
 
+{{! ---- GOALS ---- }}
 <h3>Project Request</h3>
 <p>Tracks provided several comps showcasing their new design that was in need of development. It was requested that the libraries listed for this project be an absolute requirement to fit in with their currrent platform. Before the project began we suggested an atomic guide be created to keep track of components that were already in the system or could be used again in other contexts.</p>
+
 <p>The approach to Tracks’ interface started with each component investigated and isolated using the principles outlined by <a href="http://atomicdesign.bradfrost.com">Brad Frost</a>. These LEGO-like pieces would eventually be constructed together to form a larger distinctive part of the interface.</p>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-patterns.png" alt="">
 	<figcaption><small>Sample from Tracks' Atomic Guide</small></figcaption>
 </figure>
 
+{{! ---- PROCESS ---- }}
 <h3>Process</h3>
 <p>Prototypes were created with <a href="https://www.invisionapp.com">InVision</a> to build and structure a working and functional application interface. We also examined the design mockups to identify common UI values for white space, font-sizing and icons to ensure consistency was used throughout the CSS codebase. This thorough examination also helped to identify common naming patterns in order to keep classes meaningful and coherent when and if future updates are made by outside entities.</p>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/flexbox-nav.png" alt="">
 	<figcaption><small>Flexbox for Header Layout</small></figcaption>
 </figure>
+
 <p>Since this was a build from the ground up, SVG was used throughout along with flexbox to assist in quick and easy layout typically resorted to with floats and margin trickery.</p>
 
 <h3>Motion Design</h3>
 <p>Motion was heavily based on Google <a href="https://material.io/guidelines/motion/material-motion.html">Material Design Motion Principles</a> stating interactions occur from the point of contact giving the user clear feedback and information as to the action without cognitive disruption. A smooth transition helps guide the user to the next step of an interaction.</p>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-menu.gif" alt="">
 	<figcaption><small>Menu Toggle Animation</small></figcaption>
 </figure>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-expandosearch.gif" alt="">
 	<figcaption><small>Expando Search Input Animation</small></figcaption>
 </figure>
 
+{{! ---- CHALLENGES ---- }}
 <h3>Challenges</h3>
 <p>This project was not without it's challenges in multiple cases. It was required to create a dynamic calendar picker for custom selections that display dates in a very particular fashion. For this we hired the help of <a href="https://shanehudson.net">Shane Hudson</a>.</p>
+
 <figure class="figure-site" style="margin: 0;">
 	<img src="{{site.imgdir}}clients/tracks/datepicker.gif" alt="">
 	<figcaption><small>Timeline Datepicker</small></figcaption>
 </figure>
+
 <p>This custom datepicker leverages the power of <a href="https://bevacqua.github.io/rome">Rome</a> as a base and config that is combined with a custom <a href="https://bitbucket.org/grayghostvisuals/tracks/src/da226bb268769ee6e523220e986c124fa48dd9c8/js/src/datepicker.js?at=datepicker&fileviewer=file-view-default">JS file</a> to create special conditions and filtering in order to return the correct selections.</p>
+
 <p>An additionally challenging aspect was flexbox layout implementations as cross-browser support was extremely fragile. To solve this issue with older browsers we reverted to table display in our CSS cascade to ensure layouts didn't break for these older browsers.</p>
 
+{{! ---- RESULTS ---- }}
 <h3>Final Product</h3>
 <p>After months of work the interface was ready for testing among a select group of individuals.</p>
+
 <figure class="figure-site">
 	<img src="{{site.imgdir}}clients/tracks/tracks-timeline.png" alt="">
 	<figcaption><small>Final Interface Design</small></figcaption>
 </figure>
+
+<p>Additional samples of project work can also be seen on Dribbble such as <a href="https://dribbble.com/shots/1970511-Expando-Search">Expando-Search</a>, <a href="https://dribbble.com/shots/1974484-Color-Swatch-Hex-Display">Color Swatch Hex Display</a>, <a href="https://dribbble.com/shots/1974782-Atomic-Guide">Atomic Guide</a>, <a href="https://dribbble.com/shots/1976325-Atomic-Pattern">Atomic Pattern</a>, <a href="https://dribbble.com/shots/2036851-Tracks-Atomic-Template">Tracks Atomic Template</a>, <a href="https://dribbble.com/shots/2038508-Tracks-Timeline">Tracks Timeline</a>, <a href="https://dribbble.com/shots/2038684-Tracks-Expando-Search">Tracks Expando Search</a>, and <a href="https://dribbble.com/shots/2058367-Tracks-Bubble-Menu">Tracks Bubble Menu</a></p>
 
 <h3>Noteworthy</h3>
 <p>This project was a deep exploration not only in atomic design, but also flexbox. Progress of the work was by chance discovered resulting in an invitation to write a guest post for <a href="https://www.smashingmagazine.com">Smashing Magazine</a> titled “<a href="https://www.smashingmagazine.com/2015/11/flexbox-interfaces-tracks-case-study/">Flexbox Interfaces: Tracks Case Study</a>” discussing the experiences when using flexbox for complex interface layouts.</p>
