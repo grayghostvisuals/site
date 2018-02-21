@@ -66,11 +66,15 @@
 
 		<link href="{{site.css}}print.css" rel="stylesheet" media="print">
 
+		{{!--
+		This is causing console errors
 		{{#if (isEnv "production")}}
-		<script>var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();</script>
+		<script>
+		var MTIProjectId='219bbe02-c520-46b7-ae72-478c2c37fe2f';(function(){var mtiTracking=document.createElement('script');mtiTracking.async='true';mtiTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/t/trackingCode.js';(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtiTracking)})();
+		</script>
 		{{/if}}
+		--}}
 	</head>
-
 	<body class="{{#is 'atomicguide' this.basename}}atomic {{/is}}" id="top">
 		{{#contains 'landing, atomicguide' this.basename}}
 		{{> material-ripple}}
