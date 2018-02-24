@@ -32,10 +32,8 @@ summary: You have to make them feel something if you want them to do something.
 
 {{! ---- GOALS ---- }}
 <h3>Project Goals</h3>
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/project-brief.png" alt="">
-	<figcaption><small>Truth Collective Project Brief</small></figcaption>
-</figure>
+
+{{> figure figure.truthcollective.section.a}}
 
 <p>The intention was to deliver a self-guided, personalized, relationship-based planning experience presented as a web assessment quiz that adapts to various screen sizes in order to inspire and fulfill career aspirations. This tool was also expected to serve as an entry point for planning via personalized content, and stir curiosity for a potential modality. The end result would be integrated into a "well" section of the clients home page while keeping the user stationary, and resisting the call for a page refresh and new URL produced.</p>
 
@@ -43,10 +41,7 @@ summary: You have to make them feel something if you want them to do something.
 <h3>Indentifying Building Blocks</h3>
 <p>Through the use of a supplied project brief containing criteria for success, content, and general functionality, we started by identifying user flow with content as the guide. This content document expressed each portion of the quiz that included questions, suggested input methods, and results of user entered data.</p>
 
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/legos.jpg" alt="">
-	<figcaption><small>Determining what parts make up the whole.</small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.b}}
 
 <p>Using <a href="http://atomicdesign.bradfrost.com/chapter-2" target="_blank">Atomic Design</a> philosophies, we began with white board sketches to visually identify neccesities & building blocks of the interface. This process helped to catalog patterns in isolation thereby minimizing the interface to only the essential pieces. Creating the foundation in this fashion also helps developers build for portability, maintainability, modularity, and impacting the capability to iterate efficiently within a succinct code base.</p>
 
@@ -57,17 +52,11 @@ summary: You have to make them feel something if you want them to do something.
 
 <p>Creating wireframes to outline user flow was prepared in Sketch without the inclusion of visual aesthetics; some would also call this the "gray box technique." Each series of questions were examined carefully to assist in identifying an advantageous method for displaying information. The ability to <a href="https://www.smashingmagazine.com/2017/04/symbols-sketch">create symbols in Sketch</a> was certainly an ally throughout the process in order to provide efficiency in regards to iterations and feedback.</p>
 
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/sketch-wireframe.png" alt="">
-	<figcaption><small>Sketch File of Wireframe Comps </small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.c}}
 
 <p>Maintaining wireframes in their most simplistic form avoided discussions revolving around aesthetics as not to hinder the core goals; creating a fluid, and sensible experience for the user. This method aided the group in determining input methods for each series of questions based on ease of use, adaptability across a variety of screens, and alleviating discussions revolving around favorite colors, or font face for example.</p>
 
-<figure class="figure-site">
-	<iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	<figcaption><small><a href="https://vimeo.com/255285256">Syncing Designs from Sketch</a> to <a href="https://vimeo.com/atomicapp">Atomic</a></small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.d}}
 
 <p>A prototype depicting interactions & flow was created with <a href="https://atomic.io">Atomic</a> to guide and educate visually how a user traverses, and interacts during the quiz experience. Discussions such as how users return to particular points of quiz, select answers, and accesses each input method within different screen contexts were carefully reviewed. This helped to maintain a sensible process towards the final results screen. Placement was also discussed to help honor the flow of users traversing through each point of the experience. Since Atomic works quite well with Sketch it allowed for quick syncing between multiple artboards, and designs allowing new content to be pushed rapidly with ease.</p>
 
@@ -76,27 +65,13 @@ summary: You have to make them feel something if you want them to do something.
 
 <p>While not all portions of this project presented an array of challenges, there were certainly a few that had to be addressed. We started by examining the benefits and drawbacks of multiple choice vs. select menu inputs.</p>
 
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/multiple-choice.png" alt="">
-	<figcaption><small>Multiple Choice Menu</small></figcaption>
-</figure>
-
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/dropdown-selected.png" alt="">
-	<figcaption><small>Select Menu</small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.e}}
+{{> figure figure.truthcollective.section.f}}
 
 <p>The screenshots displayed above are variations of input options considered. While multiple choice is completely acceptable, it also presents a problem for smaller screens, and requires more cognitive overhead for the user to scroll though results where screen real-estate is precious. Ultimately, we opted for a select menu making it easier on the user to select a choice while eliminating unneccesary scrolling. This decision supplied simplicity for developers coding as well by not requiring the switch from a select menu to multiple choice on larger screens; its a one size fits all solution.</p>
 
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/results-stacked.png" alt="">
-	<figcaption><small>Results Screen Stacked</small></figcaption>
-</figure>
-
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/truth-collective/results-column.png" alt="">
-	<figcaption><small>Results Screen Multi-Column</small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.g}}
+{{> figure figure.truthcollective.section.h}}
 
 <p>Results screens required critical thinking and consideration regarding layout and context variations. It was imperative to consider different approaches for displaying information that still remained beneficial with readability, but also made sense from an information hierarchy perspective. For the results with information stacked we decided smaller contexts would have the ability to swipe, or click to the next result saving screen real estate, and avoiding the user from scrolling.</p>
 
@@ -105,14 +80,6 @@ summary: You have to make them feel something if you want them to do something.
 {{! ---- DELIVERABLES ---- }}
 <h3>Final Product</h3>
 
-<figure class="figure-site">
-	<a href="https://app.atomic.io/d/k8PXZP7szk7y">
-		<img src="{{site.imgdir}}clients/truth-collective/prototype-large.png" alt="">
-	</a>
-	<a href="https://app.atomic.io/d/BFurxPT8G56q">
-		<img src="{{site.imgdir}}clients/truth-collective/prototype-small.png" alt="">
-	</a>
-	<figcaption><small>Prototype Large: <a href="https://app.atomic.io/d/k8PXZP7szk7y">Live Demo</a> | Prototype Small: <a href="https://app.atomic.io/d/BFurxPT8G56q">Live Demo</a></small></figcaption>
-</figure>
+{{> figure figure.truthcollective.section.i}}
 
 <p>The final deliverable was presented as an interactive prototype along with a completed Sketch file containing easy to arrange, well named layers, and symbols for designers to reference. A smaller preview of <a href="https://app.atomic.io/d/R0VPGcnnSsB5">Motion</a> was used as an example along side the prototypes, however deadlines hindered further investigations. You can also view additional samples posted on Dribbble such as <a href="https://dribbble.com/shots/4088272-Quiz-Results-Wireframe">Quiz Results Wireframe</a>, <a href="https://dribbble.com/shots/4088299-Quiz-Range-Slider">Quiz Range Slider</a>, <a href="https://dribbble.com/shots/4091295-Compare-Paths-Modal">Compare Paths Modal</a>, and <a href="https://dribbble.com/shots/4094118-View-Results-Secondary">Results View Secondary</a></p>

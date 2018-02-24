@@ -4,7 +4,7 @@ title: Theron
 layout: default
 description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing custom Web Development using Jekyll, Bootstrap and Chart.JS for custom canvas work depicting an animated chart.
 categories: client
-tags: design, web development
+tags: design, responsive design, web development
 projecturl: https://www.wearethehits.com
 url: http://theronstudios.com
 summary: a small team of giants that believes in helping companies grow their brand
@@ -16,10 +16,10 @@ logo: logo-theron.svg
 <h2 class="ggv-headline _reverse"><span>Building</span><span>Incredible</span></h2>
 
 <ul class="ggv-list">
-	<li><b>Project:</b> Front-end Development</li>
+	<li><b>Project:</b> Front-end Development & Design</li>
 	<li><b>Project URL:</b> <a href="{{projecturl}}">{{projecturl}}</a></li>
-	<li><b>Languages:</b> HTML, Sass, JavaScript</li>
-	<li><b>Tooling:</b> Adobe Photoshop, Jekyll, Gulp, Git</li>
+	<li><b>Languages:</b> HTML, CSS, Sass, JavaScript</li>
+	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git</li>
 	<li><b>Libraries:</b> jQuery, Bootstrap</li>
 </ul>
 
@@ -28,19 +28,17 @@ logo: logo-theron.svg
 
 <h3>Project Details</h3>
 <p>Using Jekyll and Bootstrap the interface for WATH required an easy handoff to a third party team with the intentions of integrating into Angular. Bootstrap and jQuery were requested for the convenience of additional developers to understand and manage the code base.</p>
-<figure class="figure-site">
-	<img src="{{site.imgdir}}clients/theron/theron-feat-img.png" alt="">
-	<figcaption><small>Account Page Design</small></figcaption>
-</figure>
+
+{{> figure figure.theron.section.a}}
 
 <h3>Process</h3>
 <p>This project was straight forward as all page designs were created in Sketch and used for reference. Scope requirements were clear and objectives discussed through a short Q&amp;A session with Theron Studios.</p>
 
+<p>Using Bootstrap we were tasked with designing and implementing the Boostrap framework for example purposes in order for additonal development to possess a guide. Implementation was done for the following interfaces.</p>
+
+{{> figure figure.theron.section.b}}
+
 <h3>Noteworthy</h3>
 <p>This project introduced a custom chart using Canvas as the foundation and was written about on our personal blog regarding the process and customization techniques titled <a href="http://blog.grayghostvisuals.com/js/custom-chartjs-gradient">“Creating A Custom Graph And Gradient With ChartJS.”</a></p>
 
-<figure class="figure-site">
-	<p data-height="425" data-theme-id="24353" data-slug-hash="gpROOz" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/gpROOz/">Custom ChartJS Gradient</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-
-	<figcaption><small>View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/gpROOz">CodePen</a></small></figcaption>
-</figure>
+{{> figure figure.theron.section.c}}
