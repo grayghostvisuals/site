@@ -1,0 +1,16 @@
+<figure class="{{class}}{{#if modifierclass}} {{modifierclass}}{{/if}}">
+	{{#if img}}
+		{{#if root}}
+			{{#each img}}
+				<img src="{{@root.site.imgdir}}{{url}}" alt="">
+			{{/each}}
+			{{else}}
+			{{#each img}}
+				<img src="{{url}}" alt="">
+			{{/each}}
+		{{/if}}
+	{{else}}
+	{{{content}}}
+	{{/if}}
+	<figcaption><small>{{{caption}}}</small></figcaption>
+</figure>
