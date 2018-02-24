@@ -6,32 +6,6 @@ html.case.truth-collective {
 		color: #ffd74e;
 	}
 
-	.figure-site img[src*="wireframe"],
-	.figure-site img[src*="results-stacked"],
-	.figure-site img[src*="results-column"],
-	.figure-site iframe {
-		box-shadow: none !important;
-	}
-
-	.figure-site > {
-		a[href="https://app.atomic.io/d/k8PXZP7szk7y"] {
-			float: left;
-			width: 80%;
-		}
-		a[href="https://app.atomic.io/d/BFurxPT8G56q"] {
-			float: right;
-			width: 20%;
-		}
-	}
-
-	.figure-site > a[href="https://app.atomic.io/d/BFurxPT8G56q"] + figcaption {
-		clear: both;
-	}
-
-	iframe {
-		max-width: 100%;
-	}
-
 	a[href*="contact"] {
 		background: #ffd74e;
 		color: white;
