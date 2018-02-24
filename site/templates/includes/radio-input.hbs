@@ -1,4 +1,9 @@
+{{!--
+{{> radio-input modifier}}
+{{> radio-input modifier.a}}
+{{> radio-input modifier.b}}
+--}}
 <label for="radio{{version}}" class="control radio {{modifierclass}}">
-  <input type="radio" id="radio{{version}}" name="radio" value="radio-value{{version}}" {{state}}>
+  <input type="radio" id="radio{{version}}" name="radio" value="radio{{version}}" {{state}}>
   <span class="control__indicator"></span> Radio Input
 </label>
