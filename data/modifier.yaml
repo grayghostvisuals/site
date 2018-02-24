@@ -1,7 +1,7 @@
-elementA:
+a:
   version: a
   modifierclass: active
   state: checked
-elementB:
+b:
   version: b
   modifierclass: hidden
