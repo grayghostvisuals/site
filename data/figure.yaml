@@ -1,0 +1,379 @@
+atomic:
+  section:
+    a:
+      root: false
+      img:
+        - url: "https://via.placeholder.com/900x640"
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Material Figure with Image
+    b:
+      root: false
+      img:
+        - url: "https://via.placeholder.com/900x640"
+      class: figure-site
+      caption: Figure with Image
+    c:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+            <iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      caption: Figure with iframe and Caption
+tracks:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/tracks/tracks-home.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Home Page Design
+    b:
+      root: true
+      img:
+        - url: clients/tracks/tracks-patterns.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Atomic Guide
+    c:
+      root: true
+      img:
+        - url: clients/tracks/flexbox-nav.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Flexbox for Header Layout
+    d:
+      root: true
+      img:
+        - url: clients/tracks/tracks-menu.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Menu Toggle Animation
+    e:
+      root: true
+      img:
+        - url: clients/tracks/tracks-expandosearch.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Expando Search Input Animation
+    f:
+      root: true
+      img:
+        - url: clients/tracks/datepicker.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Timeline Datepicker
+    g:
+      root: true
+      img:
+        - url: clients/tracks/tracks-timeline.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Final Interface Design
+walmedia:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/walmedia/faithmade-feat-img.jpg
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Home Page Design
+    b:
+      root: true
+      img:
+        - url: clients/walmedia/walmedia-fathmade-vectorlines.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Group organization and path checks using Adobe Illustrator
+    c:
+      root: true
+      img:
+        - url: clients/walmedia/faithmade-svganimation.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/qEeypz">CodePen</a>
+staple:
+  section:
+    a:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+            <iframe width="800" height="420" src="https://www.youtube.com/embed/ojAwie25ohg" frameborder="0" allowfullscreen></iframe>
+      caption: 6 Hours of Spa-Francorchamps
+    b:
+      root: true
+      img:
+        - url: clients/staple-web/protocar.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: SVG Prototype Car Up Close
+    c:
+      root: true
+      img:
+        - url: clients/staple-web/staple-svg.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Final Production Placement
+polyon:
+  section:
+    a:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="322" data-theme-id="24353" data-slug-hash="RNLgJP" data-default-tab="html,result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/RNLgJP/">SVG Low PolyLion: Animated Polygons</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+      caption: |
+          The Initial Polylion used as discovery. View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
+    b:
+      root: true
+      img:
+        - url: clients/polyon/polyon-stroke.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Example of Stroke Fix
+    c:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="391" data-theme-id="24353" data-slug-hash="2ebac396daeb16ddbe2263fd5a36140b" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="PolyCleaner Filter" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/2ebac396daeb16ddbe2263fd5a36140b/">PolyCleaner Filter</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      caption: The PolyCleaner SVG Filter Fix
+    d:
+      root: true
+      img:
+        - url: clients/polyon/polyonlion-hover.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
+leanlabs:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/leanlabs/rocketspace.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: UI Design and Development for Tech Startup Page
+    b:
+      root: true
+      img:
+        - url: clients/leanlabs/rs-component-guide.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          RocketSpace's HubSpot <a href="http://staging.leanlabs.info:8080/rocketspace/custom/page/leanlabs-hubl/component-guide.html">Component Guide</a>
+    c:
+      root: true
+      img:
+        - url: clients/leanlabs/brandvious-type-pairing.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          Brandvious <a href="https://dribbble.com/shots/3170883-Brandvious-Color-Type-Pairing">Type Pairing</a>
+    d:
+      root: true
+      img:
+        - url: clients/leanlabs/brandvious.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Early Type Samples
+    e:
+      root: true
+      img:
+        - url: clients/leanlabs/brandvious-logo.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Brandvious Logo Mark without Color
+    f:
+      root: true
+      img:
+        - url: clients/leanlabs/brandvious-logo-pink.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Brandvious Logo Mark with Color
+murmuration:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/murmuration/mm-logostyles.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          Style Samples used for <a href="https://www.invisionapp.com/blog/boards-share-design-inspiration-assets">InVision Board</a> Discovery Stage
+    b:
+      root: true
+      img:
+        - url: clients/murmuration/mm-identity.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Final Identity Mark
+    c:
+      root: true
+      img:
+        - url: clients/murmuration/mm-bc.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Business Card
+    d:
+      root: true
+      img:
+        - url: clients/murmuration/malt-tag.jpg
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Malt Bag Card
+    e:
+      root: true
+      img:
+        - url: clients/murmuration/mm-sticker-gold.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Sticker Design
+    f:
+      root: true
+      img:
+        - url: clients/murmuration/mm-letterhead.jpg
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Letterhead
+    g:
+      root: true
+      img:
+        - url: clients/murmuration/invision-mm-devnotes.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: InVision Development Outline
+    h:
+      root: true
+      img:
+        - url: clients/murmuration/home-design-invision.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: InVision Mockup Outline
+    i:
+      root: true
+      img:
+        - url: clients/murmuration/mm-large.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Large Screen View of Home Page
+    j:
+      root: true
+      img:
+        - url: "clients/murmuration/murmurationmalts.com-(Nexus 5X).png"
+      class: figure-site
+      caption: Nexus 5X Screen
+diy:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/diy/diy-feat-img.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: "Credits: Design &amp; Illustration by Tyler Thompson"
+    b:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="522" data-theme-id="24353" data-slug-hash="xwbrGM" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM/">Kid Passions</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+      caption: |
+          Final Animation Sequence. View the live demo on <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM">CodePen</a>
+    c:
+      root: true
+      class: figure-site
+      img:
+        - url: clients/diy/underneath.svg
+      caption: "Credits: Illustration by Isaiah Saxon"
+    d:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="660" data-theme-id="24353" data-slug-hash="dGKgKP" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">Underneath</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+      caption: |
+          View the live demo of Underneath on <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">CodePen</a>
+theron:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/theron/theron-feat-img.png
+      class: figure-site
+      caption: Account Page Design
+    b:
+      root: true
+      img:
+        - url: clients/theron/home-large.png
+      class: figure-site
+      caption: "Home Page Design: Large"
+    c:
+      content: |
+            <p data-height="425" data-theme-id="24353" data-slug-hash="gpROOz" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/gpROOz/">Custom ChartJS Gradient</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+      class: figure-site
+      caption: |
+          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/gpROOz">CodePen</a>
+truthcollective:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/truth-collective/project-brief.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Truth Collective Project Brief
+    b:
+      root: true
+      img:
+        - url: clients/truth-collective/legos.jpg
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: "Determining what parts make up the whole."
+    c:
+      root: true
+      img:
+        - url: clients/truth-collective/sketch-wireframe.png
+      class: figure-site
+      caption: Sketch File of Wireframe Comps
+    d:
+      content: |
+            <iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          <a href="https://vimeo.com/255285256">Syncing Designs from Sketch</a> to <a href="https://vimeo.com/atomicapp">Atomic</a>
+    e:
+      root: true
+      img:
+        - url: clients/truth-collective/multiple-choice.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Multiple Choice Menu
+    f:
+      root: true
+      img:
+        - url: clients/truth-collective/dropdown-selected.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Select Menu
+    g:
+      root: true
+      img:
+        - url: clients/truth-collective/results-stacked.png
+      class: figure-site
+      caption: Results Screen Stacked
+    h:
+      root: true
+      img:
+        - url: clients/truth-collective/results-column.png
+      class: figure-site
+      caption: Results Screen Multi-Column
+    i:
+      root: true
+      img:
+        - url: clients/truth-collective/prototype-large.png
+        - url: clients/truth-collective/prototype-small.png
+      class: figure-site
+      modifierclass: inline figure-site--material-card
+      caption: |
+          Prototype Large: <a href="https://app.atomic.io/d/k8PXZP7szk7y">Live Demo</a> | Prototype Small: <a href="https://app.atomic.io/d/BFurxPT8G56q">Live Demo</a>
