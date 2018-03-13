@@ -1,38 +1,33 @@
 // Config
 // ===============================================
-
 @import "vars/**/*";
+
+// Helpers
+// ===============================================
 @import "functions/*";
 @import "mixins/*";
 
-
-// Globals
+// Packages
 // ===============================================
-
-@import "base/**/*";
-@import "plugins/prism";
-
-
-// Bower Plugins
-// ===============================================
-
 @import "../../bower_components/normalize-scss/normalize.scss";
 
-
-// Guide
+// Baseline
 // ===============================================
+@import "base/**/*";
 
+// Plugins
+// ===============================================
+@import "plugins/prism";
+// @import "plugins/devices/device/macbook";
+// @import "plugins/devices/device/iphone";
+@import "plugins/devices/minimal-devices";
+
+// Page Components
+// ===============================================
 @import "assembler/guide";
 @import "assembler/swatch";
-
+@import "components/**/*";
 
 // Utilities
 // ===============================================
-
 @import "utility/**/*";
-
-
-// Pages Components
-// ===============================================
-
-@import "components/**/*";
