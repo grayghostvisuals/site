@@ -36,15 +36,6 @@
 	color: white;
 }
 
-.default-template .figure-site {
-	margin-left: 0;
-	margin-right: 0;
-	@include mq(min, 840px) {
-		margin-left: -120px;
-		margin-right: -120px;
-	}
-}
-
 .default-template .ggv-list {
 	margin-bottom: 60px;
 	b {
