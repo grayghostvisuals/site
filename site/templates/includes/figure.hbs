@@ -1,16 +1,65 @@
 <figure class="{{class}}{{#if modifierclass}} {{modifierclass}}{{/if}}">
+	{{#if device}}
+	<div class="md-device md-{{devicetype}}{{#if mdclasses}} {{mdclasses}}{{/if}}">
+		{{#contains devicetype 'iphone-5'}}
+		<div class="md-body">
+		{{/contains}}
+		{{#contains devicetype 'ipad'}}
+		<div class="md-body">
+		{{/contains}}
+
+		{{#contains devicetype 'macbook-pro'}}
+		<div class="md-lid">
+			<div class="md-camera"></div>
+		{{/contains}}
+		{{#contains devicetype 'iphone-5'}}
+			<div class="md-buttons"></div>
+
+			<div class="md-front-camera"></div>
+			<div class="md-top-speaker"></div>
+		{{/contains}}
+		{{#contains devicetype 'ipad'}}
+		<div class="md-front-camera"></div>
+		{{/contains}}
+
+			<div class="md-screen">
+				<img src="{{@root.site.imgdir}}{{deviceimg}}" alt="">
+			</div>
+
+		{{#contains devicetype 'macbook-pro'}}
+		</div>
+		<div class="md-base"></div>
+		{{/contains}}
+		{{#contains devicetype 'iphone-5'}}
+			<button class="md-home-button"></button>
+		</div>
+		{{/contains}}
+		{{#contains devicetype 'ipad'}}
+			<button class="md-home-button"></button>
+		</div>
+		{{/contains}}
+	</div>
+	{{/if}}
+
+	{{#if iframe}}
+	<iframe src="{{iframeurl}}" width="{{width}}" height="{{height}}" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+	{{/if}}
 	{{#if img}}
 		{{#if root}}
 			{{#each img}}
-				<img src="{{@root.site.imgdir}}{{url}}" alt="">
+			<img src="{{@root.site.imgdir}}{{url}}" alt="">
 			{{/each}}
 			{{else}}
 			{{#each img}}
-				<img src="{{url}}" alt="">
+			<img src="{{url}}" alt="">
 			{{/each}}
 		{{/if}}
-	{{else}}
+	{{/if}}
+	{{#if content}}
 	{{{content}}}
 	{{/if}}
+
+	{{#if caption}}
 	<figcaption><small>{{{caption}}}</small></figcaption>
+	{{/if}}
 </figure>
