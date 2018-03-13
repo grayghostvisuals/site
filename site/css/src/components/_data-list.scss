@@ -7,7 +7,8 @@ $clients: (
 	6: tracks,
 	7: walmedia,
 	8: lean-labs,
-	9: truth-collective
+	9: truth-collective,
+	10: newbird
 );
 
 $clients-color: (
@@ -19,7 +20,8 @@ $clients-color: (
 	tracks: #5D5D7D,
 	walmedia: #1B2D33,
 	lean-labs: #313543,
-	truth-collective: #FFFFFF
+	truth-collective: #FFFFFF,
+	newbird: #293FF8
 );
 
 @mixin category-style($color, $map) {
