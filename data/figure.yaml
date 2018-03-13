@@ -1,159 +1,74 @@
 atomic:
   section:
     a:
-      root: false
       img:
         - url: "https://via.placeholder.com/900x640"
       class: figure-site
       modifierclass: figure-site--material-card
       caption: Material Figure with Image
     b:
-      root: false
       img:
         - url: "https://via.placeholder.com/900x640"
       class: figure-site
-      caption: Figure with Image
+      caption: Plain Figure with Image
     c:
+      iframe: true
       class: figure-site
       modifierclass: figure-site--material-card
-      content: |
-            <iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      caption: Figure with iframe and Caption
-tracks:
-  section:
-    a:
-      root: true
-      img:
-        - url: clients/tracks/tracks-home.png
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Home Page Design
-    b:
-      root: true
-      img:
-        - url: clients/tracks/tracks-patterns.png
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Atomic Guide
-    c:
-      root: true
-      img:
-        - url: clients/tracks/flexbox-nav.png
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Flexbox for Header Layout
+      iframeurl: https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0
+      width: 800
+      height: 450
+      caption: Material Figure with iframe and Caption
     d:
-      root: true
-      img:
-        - url: clients/tracks/tracks-menu.gif
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/murmuration/mm-large.png
       class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Menu Toggle Animation
+      caption: Large Screen. Scroll device screen to view full site design
     e:
-      root: true
-      img:
-        - url: clients/tracks/tracks-expandosearch.gif
+      device: true
+      devicetype: iphone-5
+      deviceimg: clients/murmuration/murmurationmalts-small-s5.png
       class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Expando Search Input Animation
-    f:
-      root: true
-      img:
-        - url: clients/tracks/datepicker.gif
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Timeline Datepicker
-    g:
-      root: true
-      img:
-        - url: clients/tracks/tracks-timeline.png
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Final Interface Design
-walmedia:
+      mdclasses: md-black-device
+      caption: Small Screen. Scroll device screen to view full site design
+diy:
   section:
     a:
       root: true
       img:
-        - url: clients/walmedia/faithmade-feat-img.jpg
+        - url: clients/diy/diy-feat-img.png
       class: figure-site
       modifierclass: figure-site--material-card
-      caption: Home Page Design
+      caption: "Credits: Design &amp; Illustration by Tyler Thompson"
     b:
-      root: true
-      img:
-        - url: clients/walmedia/walmedia-fathmade-vectorlines.png
       class: figure-site
       modifierclass: figure-site--material-card
-      caption: Group organization and path checks using Adobe Illustrator
-    c:
-      root: true
-      img:
-        - url: clients/walmedia/faithmade-svganimation.gif
-      class: figure-site
-      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="522" data-theme-id="24353" data-slug-hash="xwbrGM" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM/">Kid Passions</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
       caption: |
-          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/qEeypz">CodePen</a>
-staple:
-  section:
-    a:
-      class: figure-site
-      modifierclass: figure-site--material-card
-      content: |
-            <iframe width="800" height="420" src="https://www.youtube.com/embed/ojAwie25ohg" frameborder="0" allowfullscreen></iframe>
-      caption: 6 Hours of Spa-Francorchamps
-    b:
-      root: true
-      img:
-        - url: clients/staple-web/protocar.gif
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: SVG Prototype Car Up Close
+          Final Animation Sequence. View the live demo on <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM">CodePen</a>
     c:
       root: true
+      class: figure-site
       img:
-        - url: clients/staple-web/staple-svg.gif
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Final Production Placement
-polyon:
-  section:
-    a:
-      class: figure-site
-      modifierclass: figure-site--material-card
-      content: |
-          <p data-height="322" data-theme-id="24353" data-slug-hash="RNLgJP" data-default-tab="html,result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/RNLgJP/">SVG Low PolyLion: Animated Polygons</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-      caption: |
-          The Initial Polylion used as discovery. View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
-    b:
-      root: true
-      img:
-        - url: clients/polyon/polyon-stroke.png
-      class: figure-site
-      modifierclass: figure-site--material-card
-      caption: Example of Stroke Fix
-    c:
-      class: figure-site
-      modifierclass: figure-site--material-card
-      content: |
-          <p data-height="391" data-theme-id="24353" data-slug-hash="2ebac396daeb16ddbe2263fd5a36140b" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="PolyCleaner Filter" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/2ebac396daeb16ddbe2263fd5a36140b/">PolyCleaner Filter</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-      caption: The PolyCleaner SVG Filter Fix
+        - url: clients/diy/underneath.svg
+      caption: "Credits: Illustration by Isaiah Saxon"
     d:
-      root: true
-      img:
-        - url: clients/polyon/polyonlion-hover.gif
       class: figure-site
       modifierclass: figure-site--material-card
+      content: |
+          <p data-height="660" data-theme-id="24353" data-slug-hash="dGKgKP" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">Underneath</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
       caption: |
-          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
+          View the live demo of Underneath on <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">CodePen</a>
 leanlabs:
   section:
     a:
-      root: true
-      img:
-        - url: clients/leanlabs/rocketspace.png
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/leanlabs/rocketspace.png
       class: figure-site
-      modifierclass: figure-site--material-card
+      mdclasses: md-glare
       caption: UI Design and Development for Tech Startup Page
     b:
       root: true
@@ -252,47 +167,128 @@ murmuration:
       modifierclass: figure-site--material-card
       caption: InVision Mockup Outline
     i:
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/murmuration/mm-large.png
+      class: figure-site
+      mdclasses: md-glare
+      caption: Large Device
+    j:
+      device: true
+      devicetype: iphone-5
+      deviceimg: clients/murmuration/murmurationmalts-small-s5.png
+      class: figure-site
+      mdclasses: md-black-device md-glare
+      caption: Small Device
+    k:
       root: true
       img:
-        - url: clients/murmuration/mm-large.png
+        - url: clients/murmuration/icons.png
       class: figure-site
       modifierclass: figure-site--material-card
-      caption: Large Screen View of Home Page
-    j:
-      root: true
-      img:
-        - url: "clients/murmuration/murmurationmalts.com-(Nexus 5X).png"
-      class: figure-site
-      caption: Nexus 5X Screen
-diy:
+      caption: Custom Icons
+newbird:
   section:
     a:
       root: true
       img:
-        - url: clients/diy/diy-feat-img.png
+        - url: clients/newbird/site-newbird.png
       class: figure-site
-      modifierclass: figure-site--material-card
-      caption: "Credits: Design &amp; Illustration by Tyler Thompson"
     b:
+      root: true
+      img:
+        - url: clients/newbird/allout-large.png
       class: figure-site
-      modifierclass: figure-site--material-card
-      content: |
-          <p data-height="522" data-theme-id="24353" data-slug-hash="xwbrGM" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM/">Kid Passions</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-      caption: |
-          Final Animation Sequence. View the live demo on <a href="https://codepen.io/grayghostvisuals/pen/xwbrGM">CodePen</a>
+      caption: All Out LGBT Workers Campaign.
     c:
       root: true
-      class: figure-site
       img:
-        - url: clients/diy/underneath.svg
-      caption: "Credits: Illustration by Isaiah Saxon"
+        - url: clients/newbird/allout.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Responsive Design, Interaction Design and Motion in action.
     d:
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/newbird/allout-large.png
+      class: figure-site
+      caption: Large Screen. Scroll device screen to view full site design
+    e:
+      device: true
+      devicetype: iphone-5
+      deviceimg: clients/newbird/allout-palm.png
+      class: figure-site
+      mdclasses: md-black-device
+      caption: iPhone Layout. Scroll device screen to view full design.
+    f:
+      iframe: true
+      iframeurl: https://codepen.io/dennisgaebel/embed/ZGwKXB/?width=800&height=500&theme-id=light&default-tab=result&embed-version=2
+      width: 800
+      height: 500
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Custom Goal Tracker Component. Hover on right corner to rerun demo.
+    g:
+      device: true
+      devicetype: ipad
+      deviceimg: clients/newbird/allout-tablet.png
+      class: figure-site
+      mdclasses: md-black-device
+      caption: iPad Layout. Scroll device screen to view full design.
+polyon:
+  section:
+    a:
       class: figure-site
       modifierclass: figure-site--material-card
       content: |
-          <p data-height="660" data-theme-id="24353" data-slug-hash="dGKgKP" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">Underneath</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <p data-height="322" data-theme-id="24353" data-slug-hash="RNLgJP" data-default-tab="html,result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/RNLgJP/">SVG Low PolyLion: Animated Polygons</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
       caption: |
-          View the live demo of Underneath on <a href="https://codepen.io/grayghostvisuals/pen/dGKgKP/">CodePen</a>
+          The Initial Polylion used as discovery. View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
+    b:
+      root: true
+      img:
+        - url: clients/polyon/polyon-stroke.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Example of Stroke Fix
+    c:
+      class: figure-site
+      modifierclass: figure-site--material-card
+      content: |
+          <p data-height="391" data-theme-id="24353" data-slug-hash="2ebac396daeb16ddbe2263fd5a36140b" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="PolyCleaner Filter" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/2ebac396daeb16ddbe2263fd5a36140b/">PolyCleaner Filter</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+      caption: The PolyCleaner SVG Filter Fix
+    d:
+      root: true
+      img:
+        - url: clients/polyon/polyonlion-hover.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/radeqX">CodePen</a>
+staple:
+  section:
+    a:
+      iframe: true
+      class: figure-site
+      modifierclass: figure-site--material-card
+      iframeurl: https://www.youtube.com/embed/ojAwie25ohg
+      width: 800
+      height: 420
+      caption: 6 Hours of Spa-Francorchamps
+    b:
+      root: true
+      img:
+        - url: clients/staple-web/protocar.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: SVG Prototype Car Up Close
+    c:
+      root: true
+      img:
+        - url: clients/staple-web/staple-svg.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Final Production Placement
 theron:
   section:
     a:
@@ -302,10 +298,11 @@ theron:
       class: figure-site
       caption: Account Page Design
     b:
-      root: true
-      img:
-        - url: clients/theron/home-large.png
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/theron/home-large.png
       class: figure-site
+      mdclasses: md-glare
       caption: "Home Page Design: Large"
     c:
       content: |
@@ -313,6 +310,57 @@ theron:
       class: figure-site
       caption: |
           View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/gpROOz">CodePen</a>
+tracks:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/tracks/tracks-home.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Home Page Design
+    b:
+      root: true
+      img:
+        - url: clients/tracks/tracks-patterns.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Atomic Guide
+    c:
+      root: true
+      img:
+        - url: clients/tracks/flexbox-nav.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Flexbox for Header Layout
+    d:
+      root: true
+      img:
+        - url: clients/tracks/tracks-menu.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Menu Toggle Animation
+    e:
+      root: true
+      img:
+        - url: clients/tracks/tracks-expandosearch.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Expando Search Input Animation
+    f:
+      root: true
+      img:
+        - url: clients/tracks/datepicker.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Timeline Datepicker
+    g:
+      root: true
+      img:
+        - url: clients/tracks/tracks-timeline.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Final Interface Design
 truthcollective:
   section:
     a:
@@ -336,8 +384,10 @@ truthcollective:
       class: figure-site
       caption: Sketch File of Wireframe Comps
     d:
-      content: |
-            <iframe src="https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      iframe: true
+      iframeurl: https://player.vimeo.com/video/139398787?title=0&byline=0&portrait=0
+      width: 800
+      height: 450
       class: figure-site
       modifierclass: figure-site--material-card
       caption: |
@@ -377,3 +427,27 @@ truthcollective:
       modifierclass: inline figure-site--material-card
       caption: |
           Prototype Large: <a href="https://app.atomic.io/d/k8PXZP7szk7y">Live Demo</a> | Prototype Small: <a href="https://app.atomic.io/d/BFurxPT8G56q">Live Demo</a>
+walmedia:
+  section:
+    a:
+      root: true
+      img:
+        - url: clients/walmedia/faithmade-feat-img.jpg
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Home Page Design
+    b:
+      root: true
+      img:
+        - url: clients/walmedia/walmedia-fathmade-vectorlines.png
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: Group organization and path checks using Adobe Illustrator
+    c:
+      root: true
+      img:
+        - url: clients/walmedia/faithmade-svganimation.gif
+      class: figure-site
+      modifierclass: figure-site--material-card
+      caption: |
+          View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/qEeypz">CodePen</a>
