@@ -1,0 +1,53 @@
+@import "utilities";
+@import "shared-structure";
+
+.md-ipad {
+    width: pxtoem(854);
+    height: pxtoem(1271);
+    position: relative;
+
+    .md-body {
+        @extend %device-body;
+    }
+
+    .md-front-camera {
+
+        top: pxtoem(50);
+        @extend %front-camera;
+
+    }
+
+    .md-screen {
+        width: pxtoem(768);
+        height: pxtoem(1024);
+        top: pxtoem(100);
+        @extend %device-screen;
+    }
+
+    .md-home-button {
+        bottom: pxtoem(-140);
+        @extend %home-button;
+    }
+
+    &.md-glare {
+        &:before {
+            @extend %glare;
+            background: linear-gradient(68deg, rgba(#fff, 0) 50%, rgba(#f7f8f0, 0.025) 50%, rgba(#faf5fc, 0.08));
+        }
+    }
+
+    &.md-landscape {
+        // @include transform3d(rotateZ(90deg));
+        transform: rotateZ(90deg);
+
+        &.md-glare {
+            &:before {
+                transform: rotateY(180deg);
+                left: pxtoem(10);
+                top: pxtoem(10);
+            }
+        }
+    }
+}
+
+@import "color-variations";

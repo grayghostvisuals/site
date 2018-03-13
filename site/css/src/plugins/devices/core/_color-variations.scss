@@ -1,0 +1,98 @@
+// Portrait Gradients
+%white-gradient { background: linear-gradient(#d0d0c5, #eeeeea); }
+%black-gradient { background: linear-gradient(#141917, #202623); }
+
+//Landscape Gradients
+%white-gradient-landscape { background: linear-gradient(left, #d0d0c5, #eeeeea); }
+%black-gradient-landscape { background: linear-gradient(left, #141917, #202623); }
+
+.md-white-device {
+    .md-body {
+        background-color: $white-phone-base;
+        border-color: #f1f2eb;
+    }
+
+    .md-buttons {
+        background-color: $white-phone-base;
+
+        &:after, &:before {
+            background-color: $white-phone-base;
+        }
+    }
+
+    .md-front-camera {
+        @extend %white-gradient;
+
+        &:after { background-color: #8c8091; }
+    }
+
+    .md-top-speaker {
+        @extend %white-gradient;
+
+        &:after { background-color: #4b414a }
+    }
+
+    .md-home-button {
+        @extend %white-gradient;
+
+        &:after { border-color: #eff1e6; }
+    }
+
+    &:after {
+        background: $white-phone-base;
+    }
+
+    &.md-landscape {
+
+        .md-home-button, .md-front-camera, .md-top-speaker {
+            @extend %white-gradient-landscape;
+        }
+
+    }
+}
+
+.md-black-device {
+
+    .md-body {
+        background-color: $black-phone-base;
+        border-color: #282e2b;
+    }
+
+    .md-buttons {
+        background-color: $black-phone-base;
+
+        &:after, &:before {
+            background-color: $black-phone-base;
+        }
+    }
+
+    .md-front-camera {
+        @extend %black-gradient;
+
+        &:after { background-color: #2c292f; }
+    }
+
+    .md-top-speaker {
+        @extend %black-gradient;
+
+        &:after { background-color: #191616; }
+    }
+
+    .md-home-button {
+        @extend %black-gradient;
+
+        &:after { border-color: #444a45; }
+    }
+
+
+    &:after {
+        background: $black-phone-base;
+    }
+
+    &.md-landscape {
+
+        .md-home-button, .md-front-camera, .md-top-speaker {
+            @extend %black-gradient-landscape;
+        }
+    }
+}
