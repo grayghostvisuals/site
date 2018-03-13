@@ -1,0 +1,104 @@
+---
+basename: casestudy
+layout: default
+title: newbird
+logo: logo-newbird.png
+description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing interactive motion & responsive development and design on a web based project for Newbird Web design and Digital Marketing.
+categories: client
+tags: interaction, motion, responsive design, web development
+project: Page development and interaction design on a campaign that expresses the need for protection towards LGBT workers.
+url: https://newbirddesign.com
+summary: There is no tool more powerful than human collaboration
+---
+
+{{! ---- LOGO ---- }}
+<img src="{{site.imgdir}}{{logo}}" alt="web design and digital marketing agency">
+
+{{! ---- TAGLINE ---- }}
+<!--
+WE ARE
+VISUALLY, Techincally, Strategically and Digitally DRIVEN. We have the development aptitude to build exactly what you need.
+-->
+<h2 class="ggv-headline _reverse"><span>Digitally</span><span>Driven</span></h2>
+
+{{! ---- META ---- }}
+<ul class="ggv-list">
+	<li><b>Company:</b> <a href="{{url}}" target="_blank">Newbird</a> for <a href="https://allout.org/en">All Out</a></li>
+	<li><b>Project:</b> {{project}}</li>
+	<li><b>CMS</b>: Custom PHP Platform</li>
+	<li><b>Duties:</b> Planning & Consultant, Responsive Design & Development, Interaction Design & Motion Development</li>
+	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Skype, Git, Grunt, MAMP, Browserstack, Xcode Device Simulator, Chrome DevTools</li>
+	<li><b>Languages:</b> PHP, HTML, CSS, Sass, JavaScript</li>
+	<li><b>Libraries:</b> jQuery, Bootstrap</li>
+</ul>
+
+{{! ---- ABOUT ---- }}
+<h3>About Newbird</h3>
+
+{{> figure figure.newbird.section.a}}
+<p>Even in today’s world, ruled by devices and machines, there still is no tool more powerful than human collaboration. We work with you side by side to learn your business challenge and find the most suitable digital solution – whether it’s a new website, an interactive sales tool, an attention-grabbing online advertising campaign, or anything in between. When you team up with Newbird for web design and digital marketing, you can count on an experience guided by our agency’s core values.</p>
+
+{{! ---- GOALS ---- }}
+<h3>Project Goals</h3>
+<p>The initial project briefing noted very important aspects to the success of this project that included, responsive adaptation between multiple screen dimensions, easily digestable for another development team to consume, and a design that stays true to original comp provided.</p>
+
+{{> figure figure.newbird.section.b}}
+
+<p>Interactive Motion & Responsive Development/Design were the core disciplines required to complete the tasks at hand. Libraries that required presence were jQuery and Bootstrap to provide the handoff team a consistent codebase that's easy to comrehend, widely understood, and well documented.</p>
+
+{{! ---- PROCESS ---- }}
+<h3>Process</h3>
+<p>Upon examination of comps we began the process by creating a bare bones layout structure without the inclusion of any visual aesthetics and flourishes. It was also decided that if anything can be done using CSS then CSS would be the implementation of choice. This proved useful in many aspects such as the slanted banner in order to avoid the need for an image and additional http requests to grab said image. It also lent for crisper rendering as using CSS allows for resolution independence.</p>
+
+<p>Additional aspects and features regarding motion were created in an isolated scenario in order to keep focus on the motion above all else.</p>
+
+<p>Since the deign required adaptation amongst other screen dimensions we discussed early in the project phase what device types, browsers and operating systems required the most minimal support. ANything outside that spectrum would be progressively enhanced as needed.</p>
+
+{{! ---- BUILDING ---- }}
+<h3>Building</h3>
+{{!--
+- srcset for image swapping with diff resolutions for images of flags
+- use structures that are familiar and use bootstrap patterns where/if needed.
+- use scroll effects only where applicable. dont overdo it on devices.
+- to keep small file size footprint, everything was coded from scratch. since features were small in requirements to build it was possible to work from scratch.
+--}}
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+{{> figure figure.newbird.section.c}}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+{{! ---- CHALLENGES ---- }}
+<h3>Challenges</h3>
+
+{{!--
+Animated tracker and form slide. Heavy lifting by CSS w/a touch of JavaScript. Goal Tracker Markup and Scripting loaded conditionally gte 768px.
+--}}
+
+{{!--
+- scroll detection on touch screens can be problematic since they don't fire until the finger lifts the screen.
+- slanting text using only font was pixelating and not rendering crisp so we opted for an SVG
+- slanted banner. text had to be transformed opposite direction due to the nature of markup
+- had to be handed off to a team and be able to be interpreted easily
+- slanted banner had to stick to top of browser window on scroll. this was a bit tedious due to the nature of ther detection.
+- some assets did not need to be loaded all the time so we opted to conditiponally load where we can based on browser resize and window reresh to detect.
+- had to work backwards as comps only showed a few variations at first inluding only a large design provided initially
+- progress tracker had to maintain ability to be cusotmized using their data. wrote expressive functions that accept any argument in order to work within their system desired. Also gave them a custom Sass file with the ability to quickly changes aesthetics and sizing on the fly.
+- had to work with large imagery and discuss removal at times due to importance. ultimately this saved us on load times and performance.
+--}}
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+{{> figure figure.newbird.section.f}}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+{{! ---- DELIVERABLES ---- }}
+<h3>Deliverables</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+{{> figure figure.newbird.section.g}}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+{{> figure figure.newbird.section.e}}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

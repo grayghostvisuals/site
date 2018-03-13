@@ -1,0 +1,38 @@
+html.case.newbird {
+	background: map-get($clients-color, newbird);
+
+	body {
+		color: white;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		color: white;
+	}
+
+	main a {
+		color: #d3ff00;
+		&:hover,
+		&:focus {
+			color: white;
+		}
+	}
+
+	img[src*="logo-newbird"] {
+		display: inherit;
+		margin: auto;
+	}
+
+	.socials {
+		svg#trigger,
+		svg#trigger path,
+		svg path {
+			fill: #d3ff00;
+		}
+
+		a {
+			&:hover svg path  {
+				fill: white;
+			}
+		}
+	}
+}
