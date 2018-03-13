@@ -1,15 +1,41 @@
 // Config
+// ===============================================
 @import "vars/**/*";
+
+// Helpers
+// ===============================================
 @import "functions/*";
 @import "mixins/*";
 
-// UI
+// Packages
+// ===============================================
 @import "../../bower_components/normalize-scss/normalize.scss";
+
+// Baseline
+// ===============================================
 @import "base/**/*";
-// @import "plugins/*";
+
+// Plugins
+// ===============================================
+@import "plugins/devices/device/macbook";
+@import "plugins/devices/device/iphone";
+@import "plugins/devices/device/ipad";
+// @import "plugins/devices/minimal-devices";
+
+// UI Patterns
+// ===============================================
 @import "toolbox/**/*";
+
+// Site
+// ===============================================
 @import "components/**/*";
 @import "templates/**/*";
 @import "pages/**/*";
+
+// State Management
+// ===============================================
 @import "states/*";
+
+// Utilities
+// ===============================================
 @import "utility/**/*";
