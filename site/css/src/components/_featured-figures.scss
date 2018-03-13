@@ -1,6 +1,14 @@
 .figure-site {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+	margin-left: 0;
+	margin-right: 0;
+	text-align: center;
+	@include mq(min, 840px) {
+		margin-left: -120px;
+		margin-right: -120px;
+	}
+
 	img,
 	iframe {
 		display: inherit;
@@ -8,10 +16,26 @@
 	}
 
 	figcaption {
-		padding-top: 0.5rem;
+		padding-top: 1rem;
 		padding-bottom: 0.5rem;
 	}
 
+	// Device
+	.md-device {
+		max-width: 100%;
+		margin: auto;
+	}
+
+	.md-screen {
+		overflow: scroll;
+		img {
+			position: absolute;
+			top: 0;
+			z-index: 1;
+		}
+	}
+
+	// Modifier
 	&.inline {
 		> img {
 			&:nth-of-type(1) {
@@ -28,6 +52,7 @@
 		}
 	}
 
+	// Modifier
 	&--material-card {
 		iframe,
 		img {
