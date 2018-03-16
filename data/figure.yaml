@@ -178,7 +178,7 @@ murmuration:
       devicetype: iphone-5
       deviceimg: clients/murmuration/murmurationmalts-small-s5.png
       class: figure-site
-      mdclasses: md-black-device md-glare
+      mdclasses: md-black-device
       caption: Small Device
     k:
       root: true
@@ -222,9 +222,9 @@ newbird:
       caption: iPhone Layout. Scroll device screen to view full design.
     f:
       iframe: true
-      iframeurl: https://codepen.io/dennisgaebel/embed/ZGwKXB/?width=800&height=500&theme-id=light&default-tab=result&embed-version=2
+      iframeurl: https://codepen.io/dennisgaebel/embed/ZGwKXB/?width=800&height=400&theme-id=light&default-tab=result&embed-version=2
       width: 800
-      height: 500
+      height: 400
       class: figure-site
       modifierclass: figure-site--material-card
       caption: Custom Goal Tracker Component. Hover on right corner to rerun demo.
@@ -235,6 +235,12 @@ newbird:
       class: figure-site
       mdclasses: md-black-device
       caption: iPad Layout. Scroll device screen to view full design.
+    h:
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/newbird/allout-large.png
+      class: figure-site
+      caption: MacBook Layout.
 polyon:
   section:
     a:
@@ -300,16 +306,35 @@ theron:
     b:
       device: true
       devicetype: macbook-pro
-      deviceimg: clients/theron/home-large.png
+      deviceimg: clients/theron/wath/dash-desktop.png
       class: figure-site
       mdclasses: md-glare
-      caption: "Home Page Design: Large"
+      caption: "Uploads Dashboard Design: Large"
     c:
       content: |
             <p data-height="425" data-theme-id="24353" data-slug-hash="gpROOz" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/grayghostvisuals/pen/gpROOz/">Custom ChartJS Gradient</a> by GRAY GHOST (<a href="http://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="http://codepen.io">CodePen</a>.</p>
       class: figure-site
       caption: |
           View the live demo on <a href="http://codepen.io/grayghostvisuals/pen/gpROOz">CodePen</a>
+    d:
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/theron/smarton/full-dashboard.png
+      class: figure-site
+      caption: "Account Dashboard Design: MacBook"
+    e:
+      device: true
+      devicetype: macbook-pro
+      deviceimg: clients/theron/smarton/courses.png
+      class: figure-site
+      caption: "Courses Dashboard Design: MacBook"
+    f:
+      device: true
+      devicetype: iphone-5
+      deviceimg: clients/theron/wath/dash-mobile.png
+      class: figure-site
+      mdclasses: md-black-device
+      caption: "Uploads Dashboard Design: iPhone"
 tracks:
   section:
     a:
