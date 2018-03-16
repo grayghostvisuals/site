@@ -5,7 +5,6 @@ layout: default
 description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing custom Web Development using Jekyll, Bootstrap and Chart.JS for custom canvas work depicting an animated chart.
 categories: client
 tags: design, responsive design, web development, svg animation
-projecturl: https://www.wearethehits.com
 url: http://theronstudios.com
 summary: a small team of giants that believes in helping companies grow their brand
 logo: logo-theron.svg
@@ -16,39 +15,58 @@ logo: logo-theron.svg
 <h2 class="ggv-headline _reverse"><span>Building</span><span>Incredible</span></h2>
 
 <ul class="ggv-list">
-	<li><b>Projects:</b>
-		<ul>
+	<li><b>Company:</b> Theron</li>
+	<li><b>Project:</b> Interface development and design handoff for We Are The Hits.
+		{{!--<ul>
 			<li><a href="#wath">WATH</a>: Front-end Development & Design</li>
+			<li><a href="#smarton">Smarton</a>: Front-end Development & Design</li>
 			<li><a href="#xandali">Xandali</a>: SVG Logo Animation</li>
 			<li><a href="#suitaxe">Suit and Axe</a>: SVG Logo Animation</li>
-		</ul>
+		</ul>--}}
 	</li>
-	<li><b>Languages:</b> HTML, CSS, Sass, JavaScript, YAML, Liquid</li>
-	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git</li>
+	<li><b>Duties:</b> Front-end Development & Design</li>
+	<li><b>Languages:</b> HTML, CSS, Sass, JavaScript, Liquid, YAML</li>
+	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git, Xcode Device Simulator, Chrome DevTools, Browserstack</li>
 	<li><b>Libraries:</b> jQuery, Bootstrap</li>
 </ul>
 
-<h3>About Theron Studios</h3>
-<p>We are a digital creative agency specializing in mobile. We are a small team of giants that believes in helping companies grow their brand by using innovative strategies &amp; beautiful designs. Our passion is to help clients build amazing experiences for their customers. At the heart of what we do, the reason why we wake up, and the goal of our company is to create.</p>
+{{!-- ABOUT --}}
+<section>
+	<h3>About Theron Studios</h3>
+	<p>We are a digital creative agency specializing in mobile. We are a small team of giants that believes in helping companies grow their brand by using innovative strategies &amp; beautiful designs. Our passion is to help clients build amazing experiences for their customers. At the heart of what we do, the reason why we wake up, and the goal of our company is to create.</p>
+</section>
 
-<h3 id="wath"><a href="{{projecturl}}">WATH</a> Project Details</h3>
-<p>Using Jekyll and Bootstrap the interface for <a href="{{projecturl}}">WATH</a> required an easy handoff to a third party team with the intentions of integrating into Angular. Bootstrap and jQuery were requested for the convenience of additional developers to understand and manage the code base.</p>
+{{!-- CASE STUDY --}}
+<section>
+	{{! ---- GOALS ---- }}
+	<h3>Project Goals</h3>
+	<p>Using Jekyll and Bootstrap the interface for <a href="https://www.wearethehits.com">WATH</a> required an easy handoff to a third party team with the intentions of integrating into Angular. Bootstrap and jQuery were requested for the convenience of additional developers to understand and manage the code base.</p>
 
-{{> figure figure.theron.section.a}}
+	{{> figure figure.theron.section.a}}
 
-<h3>Process</h3>
-<p>This project was straight forward as all page designs were created in Sketch and used for reference. Scope requirements were clear and objectives discussed through a short Q&amp;A session with Theron Studios.</p>
+	{{! ---- PROCESS ---- }}
+	<h3>Process</h3>
+	<p>All page designs were created with Sketch and used for reference towards development. Scope requirements were discussed through an informal and short Q&amp;A session, and documented with Evernote. Any development updates requiring review were pushed to GitHub to preview first hand.</p>
 
-<p>Using Bootstrap we were tasked with designing and implementing the Boostrap framework for example purposes in order for additonal development to possess a guide. Implementation was done for the following interfaces.</p>
+	{{> figure figure.theron.section.c}}
 
-{{> figure figure.theron.section.b}}
+	<p>A custom chart was created using Canvas as the foundation, and the techniques for building this component are also documented on our personal blog <a href="http://blog.grayghostvisuals.com/js/custom-chartjs-gradient">“Creating A Custom Graph And Gradient With ChartJS.”</a></p>
 
-<h3>Noteworthy</h3>
-<p>This project introduced a custom chart using Canvas as the foundation and was written about on our personal blog regarding the process and customization techniques titled <a href="http://blog.grayghostvisuals.com/js/custom-chartjs-gradient">“Creating A Custom Graph And Gradient With ChartJS.”</a></p>
+	<p>Bootstrap was required in order for additional developers to possess a trusted guide for any future changes/additions. Device testing was completed with Xcode simulator for iOS and Browserstack for additional support checks. Jekyll was also used for creating template structure as the foundation for the template handoff drafts.</p>
 
-{{> figure figure.theron.section.c}}
+	<h3>Final Results</h3>
+	{{> figure figure.theron.section.b}}
+	{{> figure figure.theron.section.f}}
+</section>
 
-<h3 id="xandali">Xandali Logo</h3>
+{{!--
+<h3 id="smarton">Smarton</h3>
+{{> figure figure.theron.section.d}}
+{{> figure figure.theron.section.e}}
+--}}
+
+{{!--
+<h3 id="xandali">Xandali</h3>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 <p data-height="445" data-theme-id="24353" data-slug-hash="pjbNQY" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="The Xandali Effect: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/pjbNQY/">The Xandali Effect: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
@@ -61,3 +79,4 @@ logo: logo-theron.svg
 <p data-height="395" data-theme-id="24353" data-slug-hash="MaWNKN" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="Suit & Axe: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/MaWNKN/">Suit & Axe: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+--}}
