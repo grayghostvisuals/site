@@ -6,6 +6,10 @@
   "homepage": "http://grayghostvisuals.com",
   "main": "http://grayghostvisuals.com",
   "license": "CC-BY-NC-ND-4.0",
+  "engines" : {
+    "node" : "^6.0.0",
+    "npm" : "^3.0.0"
+  },
   "bugs": {
     "url": "https://github.com/grayghostvisuals/grayghostvisuals/issues"
   },
