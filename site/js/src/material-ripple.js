@@ -1,8 +1,13 @@
 'use strict';
 
-var materialRipple = function () {
-	var circle = document.getElementById('js-ripple'),
-	    ripple = document.querySelectorAll('.js-ripple');
+var materialRipple = function (e) {
+	var circle = document.querySelectorAll('.material-ripple'),
+
+	// circle = document.getElementById('js-ripple'),
+	ripple = document.querySelectorAll('.js-ripple');
+
+	console.log('the circle is' + circle.length);
+	console.log('the ripple is' + ripple.length);
 
 	function rippleAnimation(event, timing) {
 		var tl = new TimelineMax(),
@@ -33,15 +38,20 @@ var materialRipple = function () {
 
 	return {
 		init: function init(target, timing) {
-			var button = document.getElementById(target);
+			// let button = document.getElementById(target);
+			var button = document.querySelectorAll(target);
+			console.log('the button is' + button.length);
 
 			if (button) {
-				button.addEventListener('click', function (event) {
-					rippleAnimation.call(this, event, timing);
-				});
+				button.forEach(function (element) {
+					element.addEventListener('click', function (event) {
+						rippleAnimation.call(this, event, timing);
+					});
+				}, false);
 			}
 		}
 	};
 }();
 
-materialRipple.init('js-ripple-btn', 0.575);
+// materialRipple.init('js-ripple-btn', 0.575);
+materialRipple.init('.material-button', 0.575);

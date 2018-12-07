@@ -2,7 +2,7 @@
 basename: casestudy
 title: Theron
 layout: default
-description: A case study example by Gray Ghost Visuals based in Rochester, New York showcasing custom Web Development using Jekyll, Bootstrap and Chart.JS for custom canvas work depicting an animated chart.
+description: A case study example by Gray Ghost Visuals showcasing interface design, SVG animations, and Front-end Web development.
 categories: client
 tags: design, responsive design, web development, svg animation
 url: http://theronstudios.com
@@ -16,18 +16,47 @@ logo: logo-theron.svg
 
 <ul class="ggv-list">
 	<li><b>Company:</b> Theron</li>
-	<li><b>Project:</b> Interface development and design handoff for We Are The Hits.
-		{{!--<ul>
-			<li><a href="#wath">WATH</a>: Front-end Development & Design</li>
-			<li><a href="#smarton">Smarton</a>: Front-end Development & Design</li>
-			<li><a href="#xandali">Xandali</a>: SVG Logo Animation</li>
-			<li><a href="#suitaxe">Suit and Axe</a>: SVG Logo Animation</li>
-		</ul>--}}
+	<li><b>Projects:</b>
+		<ul>
+			<li>
+				<a href="#wath">WATH</a>
+				<ul>
+					<li><b>Duties:</b> Front-end Development</li>
+					<li><b>Languages:</b> HTML, CSS, Sass, JavaScript, Liquid, YAML</li>
+					<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git</li>
+					<li><b>Libraries:</b> jQuery, Bootstrap</li>
+				</ul>
+			</li>
+			{{!--
+			<li>
+				<a href="#smarton">Smarton</a>
+				<ul>
+					<li><b>Duties:</b> Development & Design</li>
+					<li><b>Languages:</b> HTML, CSS, Sass, JavaScript, Liquid, YAML</li>
+					<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#xandali">Xandali</a>
+				<ul>
+					<li><b>Duties:</b> SVG Development & Animation</li>
+					<li><b>Languages:</b> HTML, Sass, JavaScript, XML</li>
+					<li><b>Tooling:</b> Adobe Illustrator, CodePen</li>
+					<li><b>Libraries:</b> GreenSock</li>
+				</ul>
+			</li>
+			<li>
+				<a href="#suitaxe">Suit and Axe</a>
+				<ul>
+					<li><b>Duties:</b> SVG Development & Animation</li>
+					<li><b>Languages:</b> HTML, Sass, JavaScript, XML</li>
+					<li><b>Tooling:</b> Adobe Illustrator, CodePen</li>
+					<li><b>Libraries:</b> GreenSock</li>
+				</ul>
+			</li>
+			--}}
+		</ul>
 	</li>
-	<li><b>Duties:</b> Front-end Development & Design</li>
-	<li><b>Languages:</b> HTML, CSS, Sass, JavaScript, Liquid, YAML</li>
-	<li><b>Tooling:</b> Adobe Illustrator, Adobe Photoshop, Jekyll, Gulp, Git, Xcode Device Simulator, Chrome DevTools, Browserstack</li>
-	<li><b>Libraries:</b> jQuery, Bootstrap</li>
 </ul>
 
 {{!-- ABOUT --}}
@@ -36,10 +65,11 @@ logo: logo-theron.svg
 	<p>We are a digital creative agency specializing in mobile. We are a small team of giants that believes in helping companies grow their brand by using innovative strategies &amp; beautiful designs. Our passion is to help clients build amazing experiences for their customers. At the heart of what we do, the reason why we wake up, and the goal of our company is to create.</p>
 </section>
 
-{{!-- CASE STUDY --}}
-<section>
+{{!-- WATH --}}
+<section id="wath">
 	{{! ---- GOALS ---- }}
-	<h3>Project Goals</h3>
+	<h3>WATH Project</h3>
+	<p>Interface development and design handoff for We Are The Hits.</p>
 	<p>Using Jekyll and Bootstrap the interface for <a href="https://www.wearethehits.com">WATH</a> required an easy handoff to a third party team with the intentions of integrating into Angular. Bootstrap and jQuery were requested for the convenience of additional developers to understand and manage the code base.</p>
 
 	{{> figure figure.theron.section.a}}
@@ -59,24 +89,38 @@ logo: logo-theron.svg
 	{{> figure figure.theron.section.f}}
 </section>
 
+{{!-- SMARTON --}}
 {{!--
-<h3 id="smarton">Smarton</h3>
-{{> figure figure.theron.section.d}}
-{{> figure figure.theron.section.e}}
+<section id="smarton">
+	<h3>Smarton Interface Design & Development</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	{{> figure figure.theron.section.d}}
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	{{> figure figure.theron.section.e}}
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
 --}}
 
+{{!-- XANDALI --}}
 {{!--
-<h3 id="xandali">Xandali</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<section id="xandali">
+	<h3>Xandali</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<p data-height="445" data-theme-id="24353" data-slug-hash="pjbNQY" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="The Xandali Effect: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/pjbNQY/">The Xandali Effect: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<p data-height="445" data-theme-id="24353" data-slug-hash="pjbNQY" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="The Xandali Effect: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/pjbNQY/">The Xandali Effect: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
+--}}
 
-<h3 id="suitaxe"><a href="http://suitandaxe.com">Suit and Axe</a> Logo</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{{!-- SUIT & AXE --}}
+{{!--
+<section id="suit-and-axe">
+	<h3 id="suitaxe"><a href="http://suitandaxe.com">Suit and Axe</a> Logo</h3>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-<p data-height="395" data-theme-id="24353" data-slug-hash="MaWNKN" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="Suit & Axe: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/MaWNKN/">Suit & Axe: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+	<p data-height="395" data-theme-id="24353" data-slug-hash="MaWNKN" data-default-tab="result" data-user="grayghostvisuals" data-embed-version="2" data-pen-title="Suit & Axe: Animated Logo" class="codepen">See the Pen <a href="https://codepen.io/grayghostvisuals/pen/MaWNKN/">Suit & Axe: Animated Logo</a> by GRAY GHOST (<a href="https://codepen.io/grayghostvisuals">@grayghostvisuals</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</section>
 --}}
